@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Menu</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+  </head>
+  <body>
+    <nav class="vpro-1" aria-label="Vertical Toggle Menu">
+      <button
+        class="vpro-1__toggle"
+        aria-expanded="true"
+        aria-controls="vpro1-list"
+      >
+        <span class="vpro-1__burger" aria-hidden="true"></span>
+        <span class="vpro-1__label">Categories</span>
+      </button>
+
+      <ul id="vpro1-list" class="vpro-1__list">
+        <li class="active">
+          <a href="#">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M3 13h8V3H3v10zM13 21h8v-8h-8v8z" />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
+            </svg>
+            <span>Shop</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M3 6h18v2H3zM3 11h12v2H3zM3 16h18v2H3z" />
+            </svg>
+            <span>Collections</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            ><svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
+            </svg>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M12 12l8-5v10l-8-5zM4 7v10l8-5z" />
+            </svg>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="vpro-2" aria-label="Vertical Mega Menu">
+      <ul>
+        <li class="has-mega">
+          <button class="label">Apparel<span class="caret">▸</span></button>
+          <div class="mega">
+            <div class="grid">
+              <a href="#">
+                <img src="https://via.placeholder.com/120x80" alt="" />
+                <div><strong>Tops</strong><small>Shirts & tees</small></div></a
+              >
+              <a href="#"
+                ><img src="https://via.placeholder.com/120x80" alt="" />
+                <div><strong>Outerwear</strong><small>Jackets</small></div></a
+              >
+              <a href="#">
+                <img src="https://via.placeholder.com/120x80" alt="" />
+                <div>
+                  <strong>Accessories</strong><small>Hats, belts</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="simple">Electronics</a></li>
+        <li class="has-mega">
+          <button class="label">
+            Home & Living<span class="caret">▸</span>
+          </button>
+          <div class="mega">
+            <div class="grid">
+              <a href="#"
+                ><img src="https://via.placeholder.com/120x80" alt="" />
+                <div><strong>Kitchen</strong><small>Cookware</small></div></a
+              >
+              <a href="#"
+                ><img src="https://via.placeholder.com/120x80" alt="" />
+                <div><strong>Decor</strong><small>Lighting</small></div></a
+              >
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="simple">Blog</a></li>
+      </ul>
+    </nav>
+
+    <nav class="vpro-3" aria-label="Neon Vertical Menu">
+      <ul>
+        <li data-index="0" class="active">
+          <a href="#"
+            ><span class="dot" aria-hidden></span
+            ><span class="txt">Discover</span></a
+          >
+        </li>
+        <li data-index="1">
+          <a href="#"
+            ><span class="dot"></span><span class="txt">Trending</span></a
+          >
+        </li>
+        <li data-index="2">
+          <a href="#"
+            ><span class="dot"></span><span class="txt">Genres</span></a
+          >
+        </li>
+        <li data-index="3">
+          <a href="#"
+            ><span class="dot"></span><span class="txt">Bookmarks</span></a
+          >
+        </li>
+      </ul>
+      <div class="vpro-3__glow" aria-hidden></div>
+    </nav>
+
+    <nav class="vk-menu vk-sticky" aria-label="Sticky menu">
+      <ul>
+        <li><a href="#sec1">Overview</a></li>
+        <li><a href="#sec2">Features</a></li>
+        <li><a href="#sec3">Pricing</a></li>
+        <li><a href="#sec4">FAQ</a></li>
+      </ul>
+    </nav>
+    <!-- Example sections to test scrollspy -->
+    <section id="sec1" style="height: 500px"></section>
+    <section id="sec2" style="height: 500px"></section>
+    <section id="sec3" style="height: 500px"></section>
+    <section id="sec4" style="height: 500px"></section>
+
+    <script>
+      (function () {
+        const nav = document.querySelector(".vpro-1");
+        const toggle = nav.querySelector(".vpro-1__toggle");
+        toggle.addEventListener("click", () => {
+          const collapsed = nav.classList.toggle("collapsed");
+          toggle.setAttribute("aria-expanded", (!collapsed).toString());
+        });
+      })();
+
+      (function () {
+        document.querySelectorAll(".vpro-2 .has-mega .label").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const li = btn.closest("li");
+            li.classList.toggle("open");
+            // close siblings
+            li.parentElement.querySelectorAll(":scope > li").forEach((s) => {
+              if (s !== li) s.classList.remove("open");
+            });
+          });
+        });
+        // close when clicking outside
+        document.addEventListener("click", (ev) => {
+          if (!ev.target.closest(".vpro-2")) {
+            document
+              .querySelectorAll(".vpro-2 li.open")
+              .forEach((n) => n.classList.remove("open"));
+          }
+        });
+      })();
+
+      (function () {
+        const nav = document.querySelector(".vpro-3");
+        const glow = nav.querySelector(".vpro-3__glow");
+        nav.addEventListener("mousemove", (e) => {
+          const r = nav.getBoundingClientRect();
+          const x = e.clientX - r.left - r.width / 2;
+          const y = e.clientY - r.top - r.height / 2;
+          // move glow slightly
+          glow.style.transform = `translate(${x * 0.06}px, ${y * 0.06}px)`;
+        });
+        nav.addEventListener("mouseleave", () => {
+          glow.style.transform = "translate(0,0)";
+        });
+        // click to set active
+        nav.querySelectorAll("li").forEach((li) => {
+          li.addEventListener("click", () => {
+            nav
+              .querySelectorAll("li")
+              .forEach((n) => n.classList.remove("active"));
+            li.classList.add("active");
+          });
+        });
+      })();
+
+      // scrollspy simple
+      const items = Array.from(document.querySelectorAll(".vk-sticky a"));
+      const sections = items.map((a) =>
+        document.querySelector(a.getAttribute("href"))
+      );
+      function onScroll() {
+        const top = window.scrollY + window.innerHeight / 4;
+        let current = sections.findIndex(
+          (sec) =>
+            top >= sec.offsetTop && top < sec.offsetTop + sec.offsetHeight
+        );
+        if (current === -1) current = 0;
+        items.forEach((a, i) => a.classList.toggle("active", i === current));
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    </script>
+  </body>
+</html>
