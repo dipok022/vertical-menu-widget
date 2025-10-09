@@ -7,145 +7,153 @@
     <link rel="stylesheet" href="./scss/style.css" />
   </head>
   <body>
-    <nav class="vpro-1" aria-label="Vertical Toggle Menu">
-      <button
-        class="vpro-1__toggle"
-        aria-expanded="true"
-        aria-controls="vpro1-list"
-      >
-        <span class="vpro-1__burger" aria-hidden="true"></span>
-        <span class="vpro-1__label">Categories</span>
-      </button>
+    <section class="container">
+      <div class="header">
+        <p>Design 1</p>
+        <h2>Simple Vertical Menu</h2>
+      </div>
+      <nav class="vpro-1" aria-label="Vertical Toggle Menu">
+        <button
+          class="vpro-1__toggle"
+          aria-expanded="true"
+          aria-controls="vpro1-list"
+        >
+          <span class="vpro-1__burger" aria-hidden="true"></span>
+          <span class="vpro-1__label">Categories</span>
+        </button>
 
-      <ul id="vpro1-list" class="vpro-1__list">
-        <li class="active">
-          <a href="#">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M3 13h8V3H3v10zM13 21h8v-8h-8v8z" />
-            </svg>
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
-            </svg>
-            <span>Shop</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            ><svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M3 6h18v2H3zM3 11h12v2H3zM3 16h18v2H3z" />
-            </svg>
-            <span>Collections</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"
-            ><svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
-            </svg>
-            <span>About</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-              <path d="M12 12l8-5v10l-8-5zM4 7v10l8-5z" />
-            </svg>
-            <span>Contact</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+        <ul id="vpro1-list" class="vpro-1__list">
+          <li class="active">
+            <a href="#">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M3 13h8V3H3v10zM13 21h8v-8h-8v8z" />
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
+              </svg>
+              <span>Shop</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M3 6h18v2H3zM3 11h12v2H3zM3 16h18v2H3z" />
+              </svg>
+              <span>Collections</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
+              </svg>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 12l8-5v10l-8-5zM4 7v10l8-5z" />
+              </svg>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    <nav class="vpro-2" aria-label="Vertical Mega Menu">
-      <ul>
-        <li class="has-mega">
-          <button class="label">Apparel<span class="caret">▸</span></button>
-          <div class="mega">
-            <div class="grid">
-              <a href="#">
-                <img src="https://via.placeholder.com/120x80" alt="" />
-                <div><strong>Tops</strong><small>Shirts & tees</small></div></a
-              >
-              <a href="#"
-                ><img src="https://via.placeholder.com/120x80" alt="" />
-                <div><strong>Outerwear</strong><small>Jackets</small></div></a
-              >
-              <a href="#">
-                <img src="https://via.placeholder.com/120x80" alt="" />
-                <div>
-                  <strong>Accessories</strong><small>Hats, belts</small>
-                </div>
-              </a>
+      <nav class="vpro-2" aria-label="Vertical Mega Menu">
+        <ul>
+          <li class="has-mega">
+            <button class="label">Apparel<span class="caret">▸</span></button>
+            <div class="mega">
+              <div class="grid">
+                <a href="#">
+                  <img src="https://via.placeholder.com/120x80" alt="" />
+                  <div>
+                    <strong>Tops</strong><small>Shirts & tees</small>
+                  </div></a
+                >
+                <a href="#"
+                  ><img src="https://via.placeholder.com/120x80" alt="" />
+                  <div><strong>Outerwear</strong><small>Jackets</small></div></a
+                >
+                <a href="#">
+                  <img src="https://via.placeholder.com/120x80" alt="" />
+                  <div>
+                    <strong>Accessories</strong><small>Hats, belts</small>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-        </li>
-        <li><a href="#" class="simple">Electronics</a></li>
-        <li class="has-mega">
-          <button class="label">
-            Home & Living<span class="caret">▸</span>
-          </button>
-          <div class="mega">
-            <div class="grid">
-              <a href="#"
-                ><img src="https://via.placeholder.com/120x80" alt="" />
-                <div><strong>Kitchen</strong><small>Cookware</small></div></a
-              >
-              <a href="#"
-                ><img src="https://via.placeholder.com/120x80" alt="" />
-                <div><strong>Decor</strong><small>Lighting</small></div></a
-              >
+          </li>
+          <li><a href="#" class="simple">Electronics</a></li>
+          <li class="has-mega">
+            <button class="label">
+              Home & Living<span class="caret">▸</span>
+            </button>
+            <div class="mega">
+              <div class="grid">
+                <a href="#"
+                  ><img src="https://via.placeholder.com/120x80" alt="" />
+                  <div><strong>Kitchen</strong><small>Cookware</small></div></a
+                >
+                <a href="#"
+                  ><img src="https://via.placeholder.com/120x80" alt="" />
+                  <div><strong>Decor</strong><small>Lighting</small></div></a
+                >
+              </div>
             </div>
-          </div>
-        </li>
-        <li><a href="#" class="simple">Blog</a></li>
-      </ul>
-    </nav>
+          </li>
+          <li><a href="#" class="simple">Blog</a></li>
+        </ul>
+      </nav>
 
-    <nav class="vpro-3" aria-label="Neon Vertical Menu">
-      <ul>
-        <li data-index="0" class="active">
-          <a href="#"
-            ><span class="dot" aria-hidden></span
-            ><span class="txt">Discover</span></a
-          >
-        </li>
-        <li data-index="1">
-          <a href="#"
-            ><span class="dot"></span><span class="txt">Trending</span></a
-          >
-        </li>
-        <li data-index="2">
-          <a href="#"
-            ><span class="dot"></span><span class="txt">Genres</span></a
-          >
-        </li>
-        <li data-index="3">
-          <a href="#"
-            ><span class="dot"></span><span class="txt">Bookmarks</span></a
-          >
-        </li>
-      </ul>
-      <div class="vpro-3__glow" aria-hidden></div>
-    </nav>
+      <nav class="vpro-3" aria-label="Neon Vertical Menu">
+        <ul>
+          <li data-index="0" class="active">
+            <a href="#"
+              ><span class="dot" aria-hidden></span
+              ><span class="txt">Discover</span></a
+            >
+          </li>
+          <li data-index="1">
+            <a href="#"
+              ><span class="dot"></span><span class="txt">Trending</span></a
+            >
+          </li>
+          <li data-index="2">
+            <a href="#"
+              ><span class="dot"></span><span class="txt">Genres</span></a
+            >
+          </li>
+          <li data-index="3">
+            <a href="#"
+              ><span class="dot"></span><span class="txt">Bookmarks</span></a
+            >
+          </li>
+        </ul>
+        <div class="vpro-3__glow" aria-hidden></div>
+      </nav>
 
-    <nav class="vk-menu vk-sticky" aria-label="Sticky menu">
-      <ul>
-        <li><a href="#sec1">Overview</a></li>
-        <li><a href="#sec2">Features</a></li>
-        <li><a href="#sec3">Pricing</a></li>
-        <li><a href="#sec4">FAQ</a></li>
-      </ul>
-    </nav>
+      <nav class="vk-menu vk-sticky" aria-label="Sticky menu">
+        <ul>
+          <li><a href="#sec1">Overview</a></li>
+          <li><a href="#sec2">Features</a></li>
+          <li><a href="#sec3">Pricing</a></li>
+          <li><a href="#sec4">FAQ</a></li>
+        </ul>
+      </nav>
 
-    <section id="sec1" style="height: 500px"></section>
-    <section id="sec2" style="height: 500px"></section>
-    <section id="sec3" style="height: 500px"></section>
-    <section id="sec4" style="height: 500px"></section>
+      <section id="sec1" style="height: 500px"></section>
+      <section id="sec2" style="height: 500px"></section>
+      <section id="sec3" style="height: 500px"></section>
+      <section id="sec4" style="height: 500px"></section>
+    </section>
 
     <script>
       (function () {
