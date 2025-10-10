@@ -1,37 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", Sans-serif;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
 }
 
 .container {
   width: 1140px;
   margin: 100px auto;
-  .header {
-    p {
-      color: #df0463;
-      font-family: "Roboto", Sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 22px;
-      margin: 0px 0px 15px 0px;
-    }
-
-    h2 {
-      color: #021343;
-      margin: 0px 0px 38px 0px;
-      font-family: "Roboto", Sans-serif;
-      font-size: 50px;
-      font-weight: 800;
-      line-height: 58px;
-    }
+  .header-title {
+    color: #df0463;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 38px 0;
   }
 }
 
 // design 1
+.thha-vertical-menu {
+  &.style-1 {
+    width: 340px;
+    height: 400px;
+    box-shadow: 0px 20px 30px 0px
+      rgba(2.0000000000000058, 19.000000000000064, 67, 0.1);
+
+    .thha-menu-item {
+      border-bottom: 1px solid #ededed;
+      .thha-menu-nav-link {
+        display: block;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #13151d;
+      }
+    }
+  }
+}
 
 .vpro-1 {
   --width-expanded: 260px;
