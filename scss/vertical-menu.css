@@ -32,12 +32,22 @@
   border-bottom: 1px solid #ededed;
 }
 .thha-vertical-menu.style-1 .thha-menu-item .thha-menu-nav-link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 24px;
   color: #13151d;
+}
+.thha-vertical-menu.style-1 .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 8px;
+  border-radius: 8px;
 }
 
 .vpro-1 {
@@ -370,4 +380,4 @@
   border-left-color: #0b66ff;
   background: rgba(11, 102, 255, 0.06);
   font-weight: 700;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=vertical-menu.css.map */
