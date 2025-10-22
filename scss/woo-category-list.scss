@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Sans-serif;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+  .header-title {
+    color: #df0463;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 22px;
+    text-align: center;
+    margin: 38px 0 50px 0;
+  }
+}
+
+.thha-woo-category-list {
+  // design 1
+  &.thha-presets-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    .thha-woo-category-item {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+
+      .thha-woo-category-link {
+        position: relative;
+        box-shadow: 0px 20px 30px 0px
+          rgba(2.0000000000000058, 19.000000000000064, 67, 0.1);
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .thha-woo-category-title {
+          position: absolute;
+          left: 0;
+          bottom: 20px;
+          width: calc(100% - 40px);
+          color: #fff;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 28px;
+          font-family: "Courier New", Courier, monospace;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 10px 15px;
+          margin: 0 20px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+
+          .count {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: transparent;
+            margin-top: 4px;
+          }
+        }
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+          .thha-woo-category-title {
+            transform: scale(1.1);
+            background-color: rgba(223, 4, 99, 0.8);
+          }
+        }
+      }
+    }
+  }
+}
