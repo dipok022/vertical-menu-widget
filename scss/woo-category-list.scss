@@ -38,8 +38,6 @@
 
       .thha-woo-category-link {
         position: relative;
-        box-shadow: 0px 20px 30px 0px
-          rgba(2.0000000000000058, 19.000000000000064, 67, 0.1);
 
         img {
           width: 100%;
@@ -84,6 +82,85 @@
           .thha-woo-category-title {
             transform: scale(1.1);
             background-color: rgba(223, 4, 99, 0.8);
+          }
+        }
+      }
+    }
+  }
+
+  // design 2
+  &.thha-presets-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    .thha-woo-category-item {
+      display: block;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+
+      .thha-woo-category-link {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .thha-woo-category-title {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 0;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+          pointer-events: none;
+          transition: all 0.25s ease-out;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 160px;
+          height: 160px;
+
+          .count {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: transparent;
+            margin-top: 4px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.35s ease;
+            z-index: -1;
+          }
+          &.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            &::before {
+              transform: translate(-50%, -50%) scale(1);
+            }
           }
         }
       }
