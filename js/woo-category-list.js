@@ -1,6 +1,6 @@
-// design 2
+// design 3
 $(document).ready(function () {
-  $(".thha-presets-2")
+  $(".thha-presets-3")
     .find(".thha-woo-category-link")
     .on("mousemove", function (e) {
       const $title = $(this).find(".thha-woo-category-title");
