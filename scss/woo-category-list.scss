@@ -75,6 +75,7 @@
             margin-top: 4px;
           }
         }
+
         &:hover {
           img {
             transform: scale(1.05);
@@ -189,10 +190,10 @@
         .thha-woo-category-title {
           position: absolute;
           bottom: 0;
-          margin: 20px;
+          left: -100%;
           margin-left: 0;
           padding: 10px 15px;
-          width: 100%;
+
           color: #ffffff;
           background-color: rgba(0, 0, 0, 0.5);
           font-size: 24px;
@@ -219,8 +220,7 @@
             transform: scale(1.05);
           }
           .thha-woo-category-title {
-            transform: scale(1.1);
-            background-color: rgba(223, 4, 99, 0.8);
+            left: 0;
           }
         }
       }
@@ -301,6 +301,95 @@
               transform: translate(-50%, -50%) scale(1);
             }
           }
+        }
+      }
+    }
+  }
+}
+
+// design 5
+.thha-woo-category-carousel-wrap {
+  &.thha-presets-5 {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .thha-woo-category-list {
+      display: flex;
+      gap: 15px;
+      transition: transform 0.6s ease;
+      will-change: transform;
+
+      .thha-woo-category-item {
+        position: relative;
+        flex: 0 0 calc(33.333% - 10px);
+        height: 470px;
+        background: #fff;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+
+        .thha-woo-category-title {
+          position: absolute;
+          left: 0;
+          bottom: 20px;
+          width: calc(100% - 40px);
+          color: #fff;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 28px;
+          font-family: "Courier New", Courier, monospace;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 10px 15px;
+          margin: 0 20px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+
+          .count {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: transparent;
+            margin-top: 4px;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+
+    .thha-woo-category-list-bullets {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 25px;
+      z-index: 2;
+
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: #000;
+          transform: scale(1.3);
         }
       }
     }
