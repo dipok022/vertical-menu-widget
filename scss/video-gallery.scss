@@ -25,7 +25,8 @@
 }
 
 .thha-Video-gallerys {
-  &.thha-presets-1 {
+  &.thha-presets-1,
+  &.thha-presets-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
@@ -77,6 +78,35 @@
         transform: translateY(-6px);
       }
     }
+  }
+  &.thha-presets-2 {
+    .thha-video-card {
+      .thha-video-thumb {
+        .thha-play-btn {
+          &:before {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+            opacity: 0.6;
+            background: rgb(4 4 4 / 74%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
   }
 }
 

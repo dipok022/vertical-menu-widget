@@ -24,12 +24,12 @@
   margin: 38px 0 50px 0;
 }
 
-.thha-Video-gallerys.thha-presets-1 {
+.thha-Video-gallerys.thha-presets-1, .thha-Video-gallerys.thha-presets-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card, .thha-Video-gallerys.thha-presets-2 .thha-video-card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -37,12 +37,12 @@
   box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb {
   position: relative;
   padding-top: 56.25%;
   background: #ddd;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb img {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb img, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -51,7 +51,7 @@
      object-fit: cover;
   display: block;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -64,15 +64,35 @@
   align-items: center;
   justify-content: center;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn svg {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn svg {
   width: 28px;
   height: 28px;
   fill: #fff;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card:hover {
+.thha-Video-gallerys.thha-presets-1 .thha-video-card:hover, .thha-Video-gallerys.thha-presets-2 .thha-video-card:hover {
   transform: translateY(-6px);
 }
+.thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  opacity: 0.6;
+  background: rgba(4, 4, 4, 0.74);
+}
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
 /* Modal */
 .thha-Video-modal {
   position: fixed;
