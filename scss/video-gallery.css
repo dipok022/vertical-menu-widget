@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Sans-serif;
+}
+* a {
+  text-decoration: none;
+}
+* ul {
+  list-style: none;
+}
+
+.container {
+  width: 1140px;
+  margin: auto;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
+}/*# sourceMappingURL=video-gallery.css.map */
