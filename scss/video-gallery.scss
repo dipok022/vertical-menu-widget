@@ -26,7 +26,8 @@
 
 .thha-Video-gallerys {
   &.thha-presets-1,
-  &.thha-presets-2 {
+  &.thha-presets-2,
+  &.thha-presets-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
@@ -61,16 +62,30 @@
           width: 64px;
           height: 64px;
           border-radius: 50%;
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(255, 0, 0, 0.7);
           display: flex;
           align-items: center;
           justify-content: center;
+          z-index: 99;
 
           svg {
+            position: relative;
             width: 28px;
             height: 28px;
             fill: #fff;
+            z-index: 99;
           }
+        }
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.3);
+          z-index: 9;
         }
       }
 
@@ -91,9 +106,19 @@
             border-radius: 50%;
             animation: pulse 1.5s infinite;
             opacity: 0.6;
-            background: rgb(4 4 4 / 74%);
+            z-index: 99;
           }
         }
+      }
+    }
+  }
+  &.thha-presets-3 {
+    .thha-thumb-meta {
+      padding: 14px;
+      .thha-thumb-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 6px;
       }
     }
   }
@@ -101,12 +126,13 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
-    opacity: 0.6;
+    box-shadow: 0 0 0 0 rgb(255 0 0);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 0, 0, 0);
   }
   100% {
-    transform: scale(1.8);
-    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
 }
 
