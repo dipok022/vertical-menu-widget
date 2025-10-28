@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -24,12 +25,12 @@
   margin: 38px 0 50px 0;
 }
 
-.thha-Video-gallerys.thha-presets-1, .thha-Video-gallerys.thha-presets-2, .thha-Video-gallerys.thha-presets-3 {
+.thha-video-gallerys.thha-presets-1, .thha-video-gallerys.thha-presets-2, .thha-video-gallerys.thha-presets-3, .thha-video-gallerys.thha-presets-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card, .thha-Video-gallerys.thha-presets-2 .thha-video-card, .thha-Video-gallerys.thha-presets-3 .thha-video-card {
+.thha-video-gallerys.thha-presets-1 .thha-video-card, .thha-video-gallerys.thha-presets-2 .thha-video-card, .thha-video-gallerys.thha-presets-3 .thha-video-card, .thha-video-gallerys.thha-presets-4 .thha-video-card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -37,12 +38,12 @@
   box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb, .thha-Video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb {
+.thha-video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb, .thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb, .thha-video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb, .thha-video-gallerys.thha-presets-4 .thha-video-card .thha-video-thumb {
   position: relative;
   padding-top: 56.25%;
   background: #ddd;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb img, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb img, .thha-Video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb img {
+.thha-video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb img, .thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb img, .thha-video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb img, .thha-video-gallerys.thha-presets-4 .thha-video-card .thha-video-thumb img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -51,7 +52,7 @@
      object-fit: cover;
   display: block;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-Video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb .thha-play-btn {
+.thha-video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb .thha-play-btn, .thha-video-gallerys.thha-presets-4 .thha-video-card .thha-video-thumb .thha-play-btn {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -65,14 +66,14 @@
   justify-content: center;
   z-index: 99;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-Video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb .thha-play-btn svg {
+.thha-video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb .thha-play-btn svg, .thha-video-gallerys.thha-presets-4 .thha-video-card .thha-video-thumb .thha-play-btn svg {
   position: relative;
   width: 28px;
   height: 28px;
   fill: #fff;
   z-index: 99;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb::before, .thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb::before, .thha-Video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb::before {
+.thha-video-gallerys.thha-presets-1 .thha-video-card .thha-video-thumb::before, .thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb::before, .thha-video-gallerys.thha-presets-3 .thha-video-card .thha-video-thumb::before, .thha-video-gallerys.thha-presets-4 .thha-video-card .thha-video-thumb::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -83,10 +84,10 @@
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 9;
 }
-.thha-Video-gallerys.thha-presets-1 .thha-video-card:hover, .thha-Video-gallerys.thha-presets-2 .thha-video-card:hover, .thha-Video-gallerys.thha-presets-3 .thha-video-card:hover {
+.thha-video-gallerys.thha-presets-1 .thha-video-card:hover, .thha-video-gallerys.thha-presets-2 .thha-video-card:hover, .thha-video-gallerys.thha-presets-3 .thha-video-card:hover, .thha-video-gallerys.thha-presets-4 .thha-video-card:hover {
   transform: translateY(-6px);
 }
-.thha-Video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn:before {
+.thha-video-gallerys.thha-presets-2 .thha-video-card .thha-video-thumb .thha-play-btn:before {
   content: "";
   position: absolute;
   width: 60px;
@@ -96,15 +97,14 @@
   opacity: 0.6;
   z-index: 99;
 }
-.thha-Video-gallerys.thha-presets-3 .thha-thumb-meta {
+.thha-video-gallerys.thha-presets-3 .thha-thumb-meta {
   padding: 14px;
 }
-.thha-Video-gallerys.thha-presets-3 .thha-thumb-meta .thha-thumb-title {
+.thha-video-gallerys.thha-presets-3 .thha-thumb-meta .thha-thumb-title {
   font-size: 15px;
   font-weight: 600;
   margin: 0 0 6px;
 }
-
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgb(255, 0, 0);
@@ -116,6 +116,32 @@
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   }
 }
+
+.thha-filter-video-gallerys-wrapper .thha-video-gallery-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+.thha-filter-video-gallerys-wrapper .thha-video-gallery-filters .thha-filter-btn {
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 10px;
+  color: #555555;
+  border-radius: 5px;
+  padding: 14px 20px 12px 20px;
+  background: white;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.125);
+}
+.thha-filter-video-gallerys-wrapper .thha-video-gallery-filters .thha-filter-btn.active, .thha-filter-video-gallerys-wrapper .thha-video-gallery-filters .thha-filter-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
 /* Modal */
 .thha-Video-modal {
   position: fixed;

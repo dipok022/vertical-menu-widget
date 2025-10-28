@@ -1,3 +1,4 @@
+// video modal
 $(document).ready(function () {
   function createModal() {
     if ($("#thha-video-modal").length) return;
@@ -81,4 +82,63 @@ $(document).ready(function () {
     )
       closeModal();
   });
+});
+
+// video filters button
+
+// $(document).ready(function () {
+//   const filters = document.querySelectorAll(".thha-filter-btn");
+//   const videoCard = document.querySelectorAll(".thha-video-card");
+//   let activeFilter = "all";
+
+//   filters.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       filters.forEach((f) => f.classList.remove("active"));
+//       btn.classList.add("active");
+//       activeFilter = btn.dataset.filter;
+//       filterVideos();
+//     });
+//   });
+
+//   function filterVideos() {
+//     videoCard.forEach((card) => {
+//       const tags = card.dataset.tags.toLowerCase();
+//       if (activeFilter === "all" || tags.includes(activeFilter)) {
+//         card.style.display = "";
+//       } else {
+//         card.style.display = "none";
+//       }
+//     });
+//   }
+// });
+
+$(document).ready(function () {
+  const gallery = document.querySelector("#thha-filter-video-gallerys");
+
+  if (!gallery) return; // stop if gallery not found
+
+  const filters = gallery.querySelectorAll(".thha-filter-btn");
+  const videoCards = gallery.querySelectorAll(".thha-video-card");
+  let activeFilter = "all";
+
+  filters.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      filters.forEach((f) => f.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter || "all";
+      filterVideos();
+    });
+  });
+
+  function filterVideos() {
+    videoCards.forEach((card) => {
+      const tags = (card.dataset.tags || "").toLowerCase();
+      if (activeFilter === "all" || tags.includes(activeFilter)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
 });

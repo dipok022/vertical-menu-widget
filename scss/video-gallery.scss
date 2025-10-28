@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -24,12 +26,14 @@
   }
 }
 
-.thha-Video-gallerys {
+.thha-video-gallerys {
+  // common style
   &.thha-presets-1,
   &.thha-presets-2,
-  &.thha-presets-3 {
+  &.thha-presets-3,
+  &.thha-presets-4 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
     .thha-video-card {
@@ -94,6 +98,8 @@
       }
     }
   }
+
+  // Design 2
   &.thha-presets-2 {
     .thha-video-card {
       .thha-video-thumb {
@@ -112,6 +118,8 @@
       }
     }
   }
+
+  // Design 3
   &.thha-presets-3 {
     .thha-thumb-meta {
       padding: 14px;
@@ -122,17 +130,48 @@
       }
     }
   }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgb(255 0 0);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgb(255 0 0);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(255, 0, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+// Design 4
+.thha-filter-video-gallerys-wrapper {
+  .thha-video-gallery-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 38px;
+
+    .thha-filter-btn {
+      font-size: 14px;
+      font-family: "Ubuntu", sans-serif;
+      line-height: 10px;
+      color: #555555;
+      border-radius: 5px;
+      padding: 14px 20px 12px 20px;
+      background: white;
+      border: 1px solid #ddd;
+      transition: all 0.2s ease;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.125);
+
+      &.active,
+      &:hover {
+        background: #2563eb;
+        color: #fff;
+        border-color: #2563eb;
+      }
+    }
   }
 }
 
