@@ -35,7 +35,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
 
+  &.thha-presets-5 {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.6s ease;
+    .thha-video-card {
+      position: relative;
+      flex: 0 0 calc(33.333% - 10px);
+    }
+  }
+
+  &.thha-presets-1,
+  &.thha-presets-2,
+  &.thha-presets-3,
+  &.thha-presets-4,
+  &.thha-presets-5 {
     .thha-video-card {
       background: #fff;
       border-radius: 12px;
@@ -80,6 +96,7 @@
             z-index: 99;
           }
         }
+
         &::before {
           position: absolute;
           left: 0;
@@ -93,13 +110,22 @@
         }
       }
 
+      .thha-thumb-meta {
+        padding: 14px;
+        .thha-thumb-title {
+          font-size: 15px;
+          font-weight: 600;
+          margin: 0 0 6px;
+        }
+      }
+
       &:hover {
         transform: translateY(-6px);
       }
     }
   }
 
-  // Design 2
+  // Design 2 pulse animation
   &.thha-presets-2 {
     .thha-video-card {
       .thha-video-thumb {
@@ -119,18 +145,6 @@
     }
   }
 
-  // Design 3
-  &.thha-presets-3 {
-    .thha-thumb-meta {
-      padding: 14px;
-      .thha-thumb-title {
-        font-size: 15px;
-        font-weight: 600;
-        margin: 0 0 6px;
-      }
-    }
-  }
-
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgb(255 0 0);
@@ -144,7 +158,7 @@
   }
 }
 
-// Design 4
+// Design 4 - filters button
 .thha-filter-video-gallerys-wrapper {
   .thha-video-gallery-filters {
     display: flex;
@@ -170,6 +184,36 @@
         background: #2563eb;
         color: #fff;
         border-color: #2563eb;
+      }
+    }
+  }
+}
+
+// Design 5 - carousel bottom bullets
+.thha-video-gallerys-carousel {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .thha-video-carousel-list-bullets {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 25px;
+    z-index: 2;
+
+    button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: #000;
+        transform: scale(1.3);
       }
     }
   }

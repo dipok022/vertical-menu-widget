@@ -85,37 +85,10 @@ $(document).ready(function () {
 });
 
 // video filters button
-
-// $(document).ready(function () {
-//   const filters = document.querySelectorAll(".thha-filter-btn");
-//   const videoCard = document.querySelectorAll(".thha-video-card");
-//   let activeFilter = "all";
-
-//   filters.forEach((btn) => {
-//     btn.addEventListener("click", () => {
-//       filters.forEach((f) => f.classList.remove("active"));
-//       btn.classList.add("active");
-//       activeFilter = btn.dataset.filter;
-//       filterVideos();
-//     });
-//   });
-
-//   function filterVideos() {
-//     videoCard.forEach((card) => {
-//       const tags = card.dataset.tags.toLowerCase();
-//       if (activeFilter === "all" || tags.includes(activeFilter)) {
-//         card.style.display = "";
-//       } else {
-//         card.style.display = "none";
-//       }
-//     });
-//   }
-// });
-
 $(document).ready(function () {
   const gallery = document.querySelector("#thha-filter-video-gallerys");
 
-  if (!gallery) return; // stop if gallery not found
+  if (!gallery) return;
 
   const filters = gallery.querySelectorAll(".thha-filter-btn");
   const videoCards = gallery.querySelectorAll(".thha-video-card");
@@ -141,4 +114,87 @@ $(document).ready(function () {
       }
     });
   }
+});
+
+// video carousel
+$(document).ready(function () {
+  const $carousel = $("#thha-video-gallerys-carousel");
+  const $track = $carousel.find(".thha-video-gallerys");
+  const $slides = $track.find(".thha-video-card");
+  const $bulletsWrap = $carousel.find(".thha-video-carousel-list-bullets");
+
+  const total = $slides.length;
+
+  const itemsToShow = 3;
+  let current = 0;
+  let timer = null;
+  const delay = 3500;
+
+  let slideWidth = 0;
+  let gap = 15;
+
+  function getSlideWidth() {
+    const carouselWidth = $carousel.width();
+    return (carouselWidth - gap * (itemsToShow - 1)) / itemsToShow;
+  }
+
+  function updateSlideWidth() {
+    slideWidth = getSlideWidth();
+    $slides.css("width", slideWidth);
+  }
+
+  $slides.slice(0, itemsToShow).clone().appendTo($track);
+
+  for (let i = 0; i < total; i++) {
+    $bulletsWrap.append(`<button data-index="${i}"></button>`);
+  }
+  const $bullets = $bulletsWrap.find("button");
+
+  function goTo(index, animate = true) {
+    if (animate) {
+      $track.css("transition", "transform 0.6s ease");
+    } else {
+      $track.css("transition", "none");
+    }
+
+    $track.css("transform", `translateX(-${index * (slideWidth + gap)}px)`);
+    $bullets
+      .removeClass("active")
+      .eq(index % total)
+      .addClass("active");
+    current = index;
+  }
+
+  function nextSlide() {
+    goTo(current + 1);
+    if (current >= total) {
+      setTimeout(() => {
+        goTo(0, false);
+      }, 600);
+    }
+  }
+
+  function startAuto() {
+    timer = setInterval(nextSlide, delay);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  $bullets.on("click", function () {
+    const index = $(this).data("index");
+    goTo(index);
+    resetAuto();
+  });
+
+  $(window).resize(function () {
+    updateSlideWidth();
+    goTo(current, false);
+  });
+
+  updateSlideWidth();
+  goTo(0);
+  startAuto();
 });

@@ -1,4 +1,4 @@
-// design 3
+// design 3 - bubble
 $(document).ready(function () {
   $(".thha-presets-4")
     .find(".thha-woo-category-link")
@@ -25,7 +25,7 @@ $(document).ready(function () {
   });
 });
 
-// design 5
+// design 5 - carousel
 $(document).ready(function () {
   const $carousel = $("#thha-woo-category-carousel");
   const $track = $carousel.find(".thha-woo-category-list");
