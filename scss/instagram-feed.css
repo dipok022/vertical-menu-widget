@@ -29,22 +29,23 @@
     * Design - 1
     * Design - 2
     * Design - 3
+    * Design - 4
    */
   /* View on Instagram Button */
 }
-.thha-instagram-feed-wrapper.thha-presets-1, .thha-instagram-feed-wrapper.thha-presets-2, .thha-instagram-feed-wrapper.thha-presets-3 {
+.thha-instagram-feed-wrapper.thha-presets-1, .thha-instagram-feed-wrapper.thha-presets-2, .thha-instagram-feed-wrapper.thha-presets-3, .thha-instagram-feed-wrapper.thha-presets-4 {
   /* View on Instagram Button */
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds {
   display: grid;
   gap: 15px;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post img, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post img, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post img {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post img, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post img, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post img, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post img {
   width: 100%;
   height: 100%;
   display: block;
@@ -52,13 +53,13 @@
      object-fit: cover;
   transition: transform 0.4s ease;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post:hover img, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post:hover img, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post:hover img {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post:hover img, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post:hover img, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post:hover img, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post:hover img {
   transform: scale(1.05);
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap {
   opacity: 1;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a, .thha-instagram-feed-wrapper.thha-presets-4 .thha-view-instagram a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -72,17 +73,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a span, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a span, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a span {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a span, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a span, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a span, .thha-instagram-feed-wrapper.thha-presets-4 .thha-view-instagram a span {
   width: 16px;
   height: 16px;
   font-size: 16px;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a:hover, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a:hover, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a:hover {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram a:hover, .thha-instagram-feed-wrapper.thha-presets-2 .thha-view-instagram a:hover, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram a:hover, .thha-instagram-feed-wrapper.thha-presets-4 .thha-view-instagram a:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(221, 42, 123, 0.4);
-}
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds {
-  grid-template-columns: repeat(3, 1fr);
 }
 .thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap {
   position: absolute;
@@ -124,6 +122,66 @@
 .thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a:hover, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a:hover {
   text-decoration: underline;
 }
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  text-align: left;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  transition: all 0.4s ease;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-meta i {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 8px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  opacity: 0.9;
+  z-index: -1;
+}
+.thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post:hover .thha-instagram-meta-wrap {
+  bottom: 0;
+}
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds, .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds {
+  grid-template-columns: repeat(3, 1fr);
+}
 .thha-instagram-feed-wrapper.thha-presets-3 .thha-instagram-feeds {
   grid-template-columns: repeat(6, 1fr);
 }
@@ -160,7 +218,7 @@
   font-size: 14px;
   vertical-align: middle;
 }
-.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram {
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-view-instagram, .thha-instagram-feed-wrapper.thha-presets-3 .thha-view-instagram, .thha-instagram-feed-wrapper.thha-presets-4 .thha-view-instagram {
   display: flex;
   justify-content: center;
   margin-top: 25px;
