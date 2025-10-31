@@ -112,6 +112,11 @@
   margin-right: 5px;
   color: #fff;
 }
+.thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .thha-instagram-feed-wrapper.thha-presets-1 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a, .thha-instagram-feed-wrapper.thha-presets-2 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a {
   color: #fff;
   font-size: 16px;
@@ -154,6 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .thha-instagram-feed-wrapper.thha-presets-4 .thha-instagram-feeds .thha-instagram-post .thha-instagram-meta-wrap .thha-instagram-tags a {
   text-align: center;
