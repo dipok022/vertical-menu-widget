@@ -28,67 +28,27 @@
   /* common style
     * Design - 1
     * Design - 2
+    * Design - 3
    */
 
   &.thha-presets-1,
-  &.thha-presets-2 {
+  &.thha-presets-2,
+  &.thha-presets-3 {
     .thha-instagram-feeds {
       display: grid;
       gap: 15px;
 
       .thha-instagram-post {
         position: relative;
-        width: 100%;
-        height: 450px;
         overflow: hidden;
         border-radius: 10px;
 
         img {
           width: 100%;
-          height: auto;
+          height: 100%;
           display: block;
           object-fit: cover;
           transition: transform 0.4s ease;
-        }
-
-        .thha-instagram-meta-wrap {
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.55);
-          color: #fff;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-
-          .thha-instagram-meta {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 10px;
-            font-size: 16px;
-
-            i {
-              vertical-align: middle;
-              margin-right: 5px;
-              color: #ff4b81;
-            }
-          }
-
-          .thha-instagram-tags {
-            a {
-              color: #fff;
-              font-size: 16px;
-              margin: 0 4px;
-              text-decoration: none;
-              opacity: 0.9;
-
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-          }
         }
 
         &:hover {
@@ -138,11 +98,100 @@
   &.thha-presets-2 {
     .thha-instagram-feeds {
       grid-template-columns: repeat(3, 1fr);
+
+      .thha-instagram-post {
+        .thha-instagram-meta-wrap {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.55);
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+
+          .thha-instagram-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 16px;
+
+            .likes,
+            .comments {
+              cursor: pointer;
+              i {
+                vertical-align: middle;
+                margin-right: 5px;
+                color: #fff;
+              }
+            }
+          }
+
+          .thha-instagram-tags {
+            a {
+              color: #fff;
+              font-size: 16px;
+              margin: 0 4px;
+              text-decoration: none;
+              opacity: 0.9;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.thha-presets-3 {
+    .thha-instagram-feeds {
+      grid-template-columns: repeat(6, 1fr);
+
+      .thha-instagram-post {
+        .thha-instagram-meta-wrap {
+          position: absolute;
+          left: 10px;
+          bottom: 10px;
+        }
+
+        .thha-instagram-meta {
+          position: relative;
+          background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+          color: #fff;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+          .likes,
+          .comments {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+
+            i {
+              width: max-content;
+              height: max-content;
+              font-size: 14px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
     }
   }
 
   /* View on Instagram Button */
-  &.thha-presets-1 {
+  &.thha-presets-1,
+  &.thha-presets-3 {
     .thha-view-instagram {
       display: flex;
       justify-content: center;
