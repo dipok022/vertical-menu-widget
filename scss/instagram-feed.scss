@@ -25,11 +25,15 @@
 }
 
 .thha-instagram-feed-wrapper {
-  // Design - 1
-  &.thha-presets-1 {
+  /* common style
+    * Design - 1
+    * Design - 2
+   */
+
+  &.thha-presets-1,
+  &.thha-presets-2 {
     .thha-instagram-feeds {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
 
       .thha-instagram-post {
@@ -43,6 +47,7 @@
           width: 100%;
           height: auto;
           display: block;
+          object-fit: cover;
           transition: transform 0.4s ease;
         }
 
@@ -100,10 +105,6 @@
 
     /* View on Instagram Button */
     .thha-view-instagram {
-      display: flex;
-      justify-content: center;
-      margin-top: 25px;
-
       a {
         display: inline-flex;
         align-items: center;
@@ -129,6 +130,33 @@
           box-shadow: 0 4px 10px rgba(221, 42, 123, 0.4);
         }
       }
+    }
+  }
+
+  // grid presets 1,2
+  &.thha-presets-1,
+  &.thha-presets-2 {
+    .thha-instagram-feeds {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* View on Instagram Button */
+  &.thha-presets-1 {
+    .thha-view-instagram {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+    }
+  }
+
+  &.thha-presets-2 {
+    position: relative;
+    .thha-view-instagram {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
