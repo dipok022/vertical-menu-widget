@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", Sans-serif;
 }
 * a {
   text-decoration: none;
@@ -19,6 +18,7 @@
   line-height: 22px;
   margin: 38px 0;
   text-align: center;
+  font-family: "Roboto", Sans-serif;
 }
 
 .thha-interactive-links-wrapper.thha-presets-1 {
@@ -26,6 +26,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  font-family: "Roboto", Sans-serif;
 }
 .thha-interactive-links-wrapper.thha-presets-1 .thha-interactive-links {
   position: relative;
@@ -77,4 +78,74 @@
   opacity: 1;
   transform: scale(1);
   z-index: 2;
+}
+.thha-interactive-links-wrapper.thha-presets-2 {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  font-family: monospace;
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-interactive-links {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%, transparent);
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-interactive-links .thha-interactive-link-item {
+  width: 300px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 20px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: #303030;
+  text-decoration: none;
+  text-decoration: none;
+  background: #fff;
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-interactive-links .thha-interactive-link-item.active {
+  color: #fff;
+  background: transparent;
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-interactive-link-images .thha-interactive-link-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.6s ease, transform 1s ease;
+  z-index: 1;
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-interactive-link-images .thha-interactive-link-image img.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+.thha-interactive-links-wrapper.thha-presets-2 .thha-active-overlay-title {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+  z-index: 999;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%);
 }/*# sourceMappingURL=interactive-links.css.map */
