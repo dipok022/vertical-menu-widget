@@ -61,3 +61,34 @@ $(document).ready(function () {
     }
   });
 });
+
+// Design -3
+$(document).ready(function () {
+  const $preset = $(".thha-presets-3");
+
+  $preset.find(".thha-interactive-link-item").on("mouseenter", function (e) {
+    e.preventDefault();
+    const imageIndex = $(this).data("image");
+
+    $preset.find(".thha-interactive-link-item").removeClass("active");
+    $(this).addClass("active");
+
+    $preset.find(".thha-interactive-link-image").removeClass("active");
+    $preset
+      .find(".thha-interactive-link-image")
+      .eq(imageIndex)
+      .addClass("active");
+  });
+
+  $preset.find(".thha-interactive-link-item").on("click", function (e) {
+    e.preventDefault();
+    if (window.innerWidth <= 1024) {
+      $("html, body").animate(
+        {
+          scrollTop: $preset.find(".thha-interactive-link-images").offset().top,
+        },
+        600
+      );
+    }
+  });
+});
