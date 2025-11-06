@@ -92,3 +92,42 @@ $(document).ready(function () {
     }
   });
 });
+
+// Design -4
+$(document).ready(function () {
+  const $preset = $(".thha-presets-4");
+
+  const $bigImages = $preset.find(".thha-interactive-link-thumb-image");
+  const $thumbs = $preset.find(".thha-interactive-link-thumbs a");
+
+  $bigImages.removeClass("active").first().addClass("active");
+  $thumbs.removeClass("active-thumb").first().addClass("active-thumb");
+
+  function showIndex(index) {
+    $bigImages.removeClass("active").eq(index).addClass("active");
+    $thumbs.removeClass("active-thumb").eq(index).addClass("active-thumb");
+  }
+
+  $thumbs.each(function (i) {
+    $(this).on("click", function (e) {
+      e.preventDefault();
+      showIndex(i);
+    });
+
+    $(this).on("mouseenter", function () {
+      showIndex(i);
+    });
+  });
+
+  $(document).on("keydown", function (e) {
+    const $current = $bigImages.filter(".active");
+    let idx = $bigImages.index($current);
+
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft")
+      idx = Math.max(0, idx - 1);
+    if (e.key === "ArrowDown" || e.key === "ArrowRight")
+      idx = Math.min($bigImages.length - 1, idx + 1);
+
+    showIndex(idx);
+  });
+});
