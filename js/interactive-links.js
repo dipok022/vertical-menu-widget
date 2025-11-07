@@ -131,3 +131,17 @@ $(document).ready(function () {
     showIndex(idx);
   });
 });
+
+// Design -5
+$(document).ready(function ($) {
+  const $preset = $(".thha-presets-5");
+
+  $preset
+    .find(".thha-interactive-link-thumbs a")
+    .on("mouseenter click", function (e) {
+      e.preventDefault();
+
+      $(".thha-interactive-link-thumbs a").removeClass("active");
+      $(this).addClass("active");
+    });
+});
