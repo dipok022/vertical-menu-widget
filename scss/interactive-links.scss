@@ -439,24 +439,23 @@
 
   &.thha-presets-5 {
     .thha-interactive-link-thumbs {
-      display: inline-block;
-      white-space: nowrap;
+      display: flex;
+      gap: 20px;
+      background: #fff;
       border-radius: 18px;
       padding: 20px;
       overflow: hidden;
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
       a {
         position: relative;
-        display: inline-block;
-        vertical-align: top;
-        width: 90px;
+        display: block;
         height: 380px;
         border-radius: 20px;
         overflow: hidden;
         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
-        margin-right: 12px;
-        text-align: center;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
         img {
           position: absolute;
@@ -488,8 +487,7 @@
         }
 
         &.active {
-          width: 778px;
-          box-shadow: 0 20px 50px rgb(64 62 63 / 11%);
+          box-shadow: 0 20px 50px rgb(27 27 27 / 24%);
 
           img {
             filter: brightness(1);

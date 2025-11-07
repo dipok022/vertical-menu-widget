@@ -135,13 +135,37 @@ $(document).ready(function () {
 // Design -5
 $(document).ready(function ($) {
   const $preset = $(".thha-presets-5");
+  const $thumbs = $preset.find(".thha-interactive-link-thumbs");
+  const $items = $thumbs.find("a");
 
-  $preset
-    .find(".thha-interactive-link-thumbs a")
-    .on("mouseenter click", function (e) {
-      e.preventDefault();
+  function updateActiveWidth($active) {
+    const totalWidth = $thumbs.innerWidth();
+    const itemCount = $items.length;
+    const normalWidth = 100;
+    const gap = 20;
+    const activeWidth = totalWidth - (itemCount - 1) * (normalWidth + gap);
 
-      $(".thha-interactive-link-thumbs a").removeClass("active");
-      $(this).addClass("active");
-    });
+    $items.css("width", normalWidth + "px");
+    $active.css("width", activeWidth + "px");
+  }
+
+  const $initialActive = $items.filter(".active").length
+    ? $items.filter(".active")
+    : $items.first().addClass("active");
+
+  updateActiveWidth($initialActive);
+
+  $items.on("mouseenter click", function (e) {
+    e.preventDefault();
+    const $this = $(this);
+    if (!$this.hasClass("active")) {
+      $items.removeClass("active");
+      $this.addClass("active");
+      updateActiveWidth($this);
+    }
+  });
+
+  $(window).on("resize", function () {
+    updateActiveWidth($items.filter(".active"));
+  });
 });
