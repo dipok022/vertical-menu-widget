@@ -1,2 +1,11 @@
 // Design 1
-alert("Design 1: Simple Vertical Menu - No JavaScript needed");
+$(document).ready(function ($) {
+  $(".thha-menu-item").on("mouseenter", function () {
+    $(".thha-megamenu-panel").removeClass("active");
+    $(this).find(".thha-megamenu-panel").addClass("active");
+  });
+
+  $(".thha-vertical-menu-wrapper").on("mouseleave", function () {
+    $(".thha-megamenu-panel").removeClass("active");
+  });
+});

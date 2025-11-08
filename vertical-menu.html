@@ -5,239 +5,1055 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vertical Menu</title>
     <link rel="stylesheet" href="./scss/vertical-menu.css" />
-    <link rel="stylesheet" href="./css/dashicons.css">
+    <link rel="stylesheet" href="./css/dashicons.css" />
   </head>
   <body>
-    <section class="container">
-      <h2 class="header-title">Design 1</h2>
+    <!-- Design 1 -->
+    <section style="background-color: #fff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
 
-      <!-- Design 1 -->
-      <ul class="thha-vertical-menu style-1">
-        <li class="thha-menu-item">
-          <a href="#" class="thha-menu-nav-link">
-            Laptop Pro X
-            <span class="thha-menu-badge hot">Hot</span>
-            <i class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"></i>
-          </a>
-        </li>
-      </ul>
+        <div class="thha-vertical-menu-wrapper thha-presets-1">
+          <ul class="thha-vertical-menu">
+            <li class="thha-menu-item">
+              <a href="#" class="thha-menu-nav-link">
+                Starters & Appetizers
+                <i
+                  class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"
+                ></i>
+              </a>
 
-      <h2 class="header-title">Design 2</h2>
-      <!-- design 2 -->
-      <div class="vpro-1" aria-label="Vertical Toggle Menu">
-        <a
-          class="vpro-1__toggle"
-          aria-expanded="true"
-          aria-controls="vpro1-list"
-        >
-          <span class="vpro-1__burger" aria-hidden="true"></span>
-          <span class="vpro-1__label">Categories</span>
-        </a>
-
-        <ul id="vpro1-list" class="vpro-1__list">
-          <li class="active">
-            <a href="#">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M3 13h8V3H3v10zM13 21h8v-8h-8v8z" />
-              </svg>
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" />
-              </svg>
-              <span>Shop</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-              ><svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M3 6h18v2H3zM3 11h12v2H3zM3 16h18v2H3z" />
-              </svg>
-              <span>Collections</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-              ><svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
-              </svg>
-              <span>About</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path d="M12 12l8-5v10l-8-5zM4 7v10l8-5z" />
-              </svg>
-              <span>Contact</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- <nav class="vpro-2" aria-label="Vertical Mega Menu">
-        <ul>
-          <li class="has-mega">
-            <button class="label">Apparel<span class="caret">▸</span></button>
-            <div class="mega">
-              <div class="grid">
-                <a href="#">
-                  <img src="https://via.placeholder.com/120x80" alt="" />
-                  <div>
-                    <strong>Tops</strong><small>Shirts & tees</small>
-                  </div></a
-                >
-                <a href="#"
-                  ><img src="https://via.placeholder.com/120x80" alt="" />
-                  <div><strong>Outerwear</strong><small>Jackets</small></div></a
-                >
-                <a href="#">
-                  <img src="https://via.placeholder.com/120x80" alt="" />
-                  <div>
-                    <strong>Accessories</strong><small>Hats, belts</small>
+              <div class="thha-megamenu-panel">
+                <div class="thha-megamenu-panel-wrap">
+                  <div class="thha-megamenu-panel-items">
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Hot Appetizers</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Buffalo Wings
+                            <span class="thha-menu-item-badge spicy">
+                              Spicy
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Mozzarella Sticks</a>
+                        </li>
+                        <li>
+                          <a href="#">Onion Rings</a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Garlic Bread
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Fried Calamari</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Cold Appetizers</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Bruschetta
+                            <span class="thha-menu-item-badge new"> New </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Caprese Salad</a>
+                        </li>
+                        <li>
+                          <a href="#">Antipasto Platter</a>
+                        </li>
+                        <li>
+                          <a href="#"> Shrimp Cocktail </a>
+                        </li>
+                        <li>
+                          <a href="#">Cheese Board</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Soups</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Tomato Soup </a>
+                        </li>
+                        <li>
+                          <a href="#">Chicken Noodle</a>
+                        </li>
+                        <li>
+                          <a href="#">French Onion</a>
+                        </li>
+                        <li>
+                          <a href="#"> Minestrone </a>
+                        </li>
+                        <li>
+                          <a href="#">Clam Chowder</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </a>
+                  <div class="thha-megamenu-panel-items-thumb">
+                    <div class="thha-menu-card-wrapper">
+                      <div class="thha-menu-card group">
+                        <div class="thha-menu-card-image">
+                          <img
+                            src="https://images.unsplash.com/photo-1512654448383-47b2fe224e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHBldGl6ZXIlMjBwbGF0dGVyfGVufDF8fHx8MTc2MjU4MDM0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Crispy Calamari"
+                          />
+                          <div class="thha-menu-card-overlay"></div>
+                          <div class="thha-menu-card-badge">
+                            <span class="thha-menu-card-badge-text">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                                ></path>
+                              </svg>
+                              Featured
+                            </span>
+                          </div>
+                          <div class="thha-menu-card-price">$12.99</div>
+                        </div>
+
+                        <div class="thha-menu-card-content">
+                          <h4 class="thha-menu-card-title">
+                            Crispy Calamari
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon award"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                              ></path>
+                              <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                          </h4>
+                          <p class="thha-menu-card-desc">
+                            Fresh squid rings, lightly breaded and fried to
+                            perfection
+                          </p>
+                          <button class="thha-menu-card-btn">Order Now</button>
+                        </div>
+                      </div>
+
+                      <div class="thha-menu-card-info">
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M12 6v6l4 2"></path>
+                              <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span>Fast</span>
+                          </div>
+                          <p>Ready in 15min</p>
+                        </div>
+
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M16 7h6v6"></path>
+                              <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span>Popular</span>
+                          </div>
+                          <p>500+ orders</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="thha-megamenu-footer-wrao">
+                  <div class="thha-megamenu-footer">
+                    <div class="thha-megamenu-footer-left">
+                      <p>Can't decide?</p>
+                      <a href="#">View Full Menu →</a>
+                    </div>
+                    <a href="#" class="thha-megamenu-footer-right">
+                      <span>Need help choosing?</span>
+                      <span class="contact">Contact us</span>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </li>
-          <li><a href="#" class="simple">Electronics</a></li>
-          <li class="has-mega">
-            <button class="label">
-              Home & Living<span class="caret">▸</span>
-            </button>
-            <div class="mega">
-              <div class="grid">
-                <a href="#"
-                  ><img src="https://via.placeholder.com/120x80" alt="" />
-                  <div><strong>Kitchen</strong><small>Cookware</small></div></a
-                >
-                <a href="#"
-                  ><img src="https://via.placeholder.com/120x80" alt="" />
-                  <div><strong>Decor</strong><small>Lighting</small></div></a
-                >
+            </li>
+
+            <li class="thha-menu-item">
+              <a href="#" class="thha-menu-nav-link">
+                Main Courses
+                <span class="thha-menu-badge popular">Popular</span>
+                <i
+                  class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"
+                ></i>
+              </a>
+
+              <div class="thha-megamenu-panel">
+                <div class="thha-megamenu-panel-wrap">
+                  <div
+                    class="thha-megamenu-panel-items"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Burgers</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Classic Cheeseburger
+                            <span class="thha-menu-item-badge popular">
+                              Bestseller
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Bacon Burger</a>
+                        </li>
+                        <li>
+                          <a href="#">Mushroom Swiss</a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            BBQ Burger
+                            <span class="thha-menu-item-badge spicy">
+                              Spicy
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Veggie Burger</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Pasta</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Spaghetti Bolognese </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Fettuccine Alfredo
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Penne Arrabbiata</a>
+                        </li>
+                        <li>
+                          <a href="#"> Carbonara </a>
+                        </li>
+                        <li>
+                          <a href="#">Lasagna</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Pizza</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Margherita </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Pepperoni
+                            <span class="thha-menu-item-badge popular">
+                              Bestseller
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Hawaiian</a>
+                        </li>
+                        <li>
+                          <a href="#"> Veggie Supreme</a>
+                        </li>
+                        <li>
+                          <a href="#">BBQ Chicken</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Grills & Steaks</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Ribeye Steak
+                            <span class="thha-menu-item-badge premium"
+                              >Premium</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"> Grilled Chicken </a>
+                        </li>
+                        <li>
+                          <a href="#">Lamb Chops</a>
+                        </li>
+                        <li>
+                          <a href="#">BBQ Ribs</a>
+                        </li>
+                        <li>
+                          <a href="#">Mixed Grill</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="thha-megamenu-panel-items-thumb">
+                    <div class="thha-menu-card-wrapper">
+                      <div class="thha-menu-card group">
+                        <div class="thha-menu-card-image">
+                          <img
+                            src="https://images.unsplash.com/photo-1550547660-d9450f859349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwYnVyZ2VyfGVufDF8fHx8MTc2MjUwMDM1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Crispy Calamari"
+                          />
+                          <div class="thha-menu-card-overlay"></div>
+                          <div class="thha-menu-card-badge">
+                            <span class="thha-menu-card-badge-text">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                                ></path>
+                              </svg>
+                              Featured
+                            </span>
+                          </div>
+                          <div class="thha-menu-card-price">$15.99</div>
+                        </div>
+
+                        <div class="thha-menu-card-content">
+                          <h4 class="thha-menu-card-title">
+                            Signature Burger
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon award"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                              ></path>
+                              <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                          </h4>
+                          <p class="thha-menu-card-desc">
+                            Angus beef patty with special sauce, fresh veggies &
+                            crispy fries
+                          </p>
+                          <button class="thha-menu-card-btn">Order Now</button>
+                        </div>
+                      </div>
+
+                      <div class="thha-menu-card-info">
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M12 6v6l4 2"></path>
+                              <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span>Fast</span>
+                          </div>
+                          <p>Ready in 15min</p>
+                        </div>
+
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M16 7h6v6"></path>
+                              <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span>Popular</span>
+                          </div>
+                          <p>500+ orders</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="thha-megamenu-footer-wrao">
+                  <div class="thha-megamenu-footer">
+                    <div class="thha-megamenu-footer-left">
+                      <p>Can't decide?</p>
+                      <a href="#">View Full Menu →</a>
+                    </div>
+                    <a href="#" class="thha-megamenu-footer-right">
+                      <span class="choosing">Need help choosing?</span>
+                      <span>Contact us</span>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </li>
-          <li><a href="#" class="simple">Blog</a></li>
-        </ul>
-      </nav>
+            </li>
 
-      <nav class="vpro-3" aria-label="Neon Vertical Menu">
-        <ul>
-          <li data-index="0" class="active">
-            <a href="#"
-              ><span class="dot" aria-hidden></span
-              ><span class="txt">Discover</span></a
-            >
-          </li>
-          <li data-index="1">
-            <a href="#"
-              ><span class="dot"></span><span class="txt">Trending</span></a
-            >
-          </li>
-          <li data-index="2">
-            <a href="#"
-              ><span class="dot"></span><span class="txt">Genres</span></a
-            >
-          </li>
-          <li data-index="3">
-            <a href="#"
-              ><span class="dot"></span><span class="txt">Bookmarks</span></a
-            >
-          </li>
-        </ul>
-        <div class="vpro-3__glow" aria-hidden></div>
-      </nav>
+            <li class="thha-menu-item">
+              <a href="#" class="thha-menu-nav-link">
+                Salads & Bowls
+                <i
+                  class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"
+                ></i>
+              </a>
 
-      <nav class="vk-menu vk-sticky" aria-label="Sticky menu">
-        <ul>
-          <li><a href="#sec1">Overview</a></li>
-          <li><a href="#sec2">Features</a></li>
-          <li><a href="#sec3">Pricing</a></li>
-          <li><a href="#sec4">FAQ</a></li>
-        </ul>
-      </nav>
+              <div class="thha-megamenu-panel">
+                <div class="thha-megamenu-panel-wrap">
+                  <div
+                    class="thha-megamenu-panel-items"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Fresh Salads</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Caesar Salad
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Greek Salad</a>
+                        </li>
+                        <li>
+                          <a href="#">Garden Salad</a>
+                        </li>
+                        <li>
+                          <a href="#"> Cobb Salad </a>
+                        </li>
+                        <li>
+                          <a href="#">Spinach Salad</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Protein Bowls</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Chicken Bowl
+                            <span class="thha-menu-item-badge new">
+                              High Protein
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"> Tuna Poke Bowl </a>
+                        </li>
+                        <li>
+                          <a href="#">Quinoa Bowl</a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Buddha Bowl
+                            <span class="thha-menu-item-badge new">
+                              Vegan
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Rice Bowl</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Wraps</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Chicken Wrap </a>
+                        </li>
+                        <li>
+                          <a href="#"> Veggie Wrap </a>
+                        </li>
+                        <li>
+                          <a href="#">Falafel Wrap</a>
+                        </li>
+                        <li>
+                          <a href="#"> Caesar Wrap</a>
+                        </li>
+                        <li>
+                          <a href="#">Greek Wrap</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="thha-megamenu-panel-items-thumb">
+                    <div class="thha-menu-card-wrapper">
+                      <div class="thha-menu-card group">
+                        <div class="thha-menu-card-image">
+                          <img
+                            src="https://images.unsplash.com/photo-1677653805080-59c57727c84e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHNhbGFkfGVufDF8fHx8MTc2MjUxMTc1NXww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Crispy Calamari"
+                          />
+                          <div class="thha-menu-card-overlay"></div>
+                          <div class="thha-menu-card-badge">
+                            <span class="thha-menu-card-badge-text">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                                ></path>
+                              </svg>
+                              Featured
+                            </span>
+                          </div>
+                          <div class="thha-menu-card-price">$11.99</div>
+                        </div>
 
-      <section id="sec1" style="height: 500px"></section>
-      <section id="sec2" style="height: 500px"></section>
-      <section id="sec3" style="height: 500px"></section>
-      <section id="sec4" style="height: 500px"></section>
-    </section> -->
+                        <div class="thha-menu-card-content">
+                          <h4 class="thha-menu-card-title">
+                            Fresh Garden Bowl
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon award"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                              ></path>
+                              <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                          </h4>
+                          <p class="thha-menu-card-desc">
+                            Mixed greens, seasonal vegetables, and your choice
+                            of protein
+                          </p>
+                          <button class="thha-menu-card-btn">Order Now</button>
+                        </div>
+                      </div>
 
-    <script>
-      (function () {
-        const nav = document.querySelector(".vpro-1");
-        const toggle = nav.querySelector(".vpro-1__toggle");
-        toggle.addEventListener("click", () => {
-          const collapsed = nav.classList.toggle("collapsed");
-          toggle.setAttribute("aria-expanded", (!collapsed).toString());
-        });
-      })();
+                      <div class="thha-menu-card-info">
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M12 6v6l4 2"></path>
+                              <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span>Fast</span>
+                          </div>
+                          <p>Ready in 15min</p>
+                        </div>
 
-      (function () {
-        document.querySelectorAll(".vpro-2 .has-mega .label").forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            const li = btn.closest("li");
-            li.classList.toggle("open");
-            // close siblings
-            li.parentElement.querySelectorAll(":scope > li").forEach((s) => {
-              if (s !== li) s.classList.remove("open");
-            });
-          });
-        });
-        // close when clicking outside
-        document.addEventListener("click", (ev) => {
-          if (!ev.target.closest(".vpro-2")) {
-            document
-              .querySelectorAll(".vpro-2 li.open")
-              .forEach((n) => n.classList.remove("open"));
-          }
-        });
-      })();
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M16 7h6v6"></path>
+                              <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span>Popular</span>
+                          </div>
+                          <p>500+ orders</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="thha-megamenu-footer-wrao">
+                  <div class="thha-megamenu-footer">
+                    <div class="thha-megamenu-footer-left">
+                      <p>Can't decide?</p>
+                      <a href="#">View Full Menu →</a>
+                    </div>
+                    <a href="#" class="thha-megamenu-footer-right">
+                      <span class="choosing">Need help choosing?</span>
+                      <span>Contact us</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
 
-      (function () {
-        const nav = document.querySelector(".vpro-3");
-        const glow = nav.querySelector(".vpro-3__glow");
-        nav.addEventListener("mousemove", (e) => {
-          const r = nav.getBoundingClientRect();
-          const x = e.clientX - r.left - r.width / 2;
-          const y = e.clientY - r.top - r.height / 2;
-          // move glow slightly
-          glow.style.transform = `translate(${x * 0.06}px, ${y * 0.06}px)`;
-        });
-        nav.addEventListener("mouseleave", () => {
-          glow.style.transform = "translate(0,0)";
-        });
-        // click to set active
-        nav.querySelectorAll("li").forEach((li) => {
-          li.addEventListener("click", () => {
-            nav
-              .querySelectorAll("li")
-              .forEach((n) => n.classList.remove("active"));
-            li.classList.add("active");
-          });
-        });
-      })();
+            <li class="thha-menu-item">
+              <a href="#" class="thha-menu-nav-link">
+                Desserts
+                <span class="thha-menu-badge healthy">Healthy</span>
+                <i
+                  class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"
+                ></i>
+              </a>
 
-      // scrollspy simple
-      const items = Array.from(document.querySelectorAll(".vk-sticky a"));
-      const sections = items.map((a) =>
-        document.querySelector(a.getAttribute("href"))
-      );
-      function onScroll() {
-        const top = window.scrollY + window.innerHeight / 4;
-        let current = sections.findIndex(
-          (sec) =>
-            top >= sec.offsetTop && top < sec.offsetTop + sec.offsetHeight
-        );
-        if (current === -1) current = 0;
-        items.forEach((a, i) => a.classList.toggle("active", i === current));
-      }
-      window.addEventListener("scroll", onScroll);
-      onScroll();
-    </script>
+              <div class="thha-megamenu-panel">
+                <div class="thha-megamenu-panel-wrap">
+                  <div
+                    class="thha-megamenu-panel-items"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Cakes & Pastries</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Chocolate Cake
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Cheesecake</a>
+                        </li>
+                        <li>
+                          <a href="#">Tiramisu</a>
+                        </li>
+                        <li>
+                          <a href="#"> Red Velvet</a>
+                        </li>
+                        <li>
+                          <a href="#">Carrot Cake</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Ice Cream</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Vanilla </a>
+                        </li>
+                        <li>
+                          <a href="#"> Chocolate </a>
+                        </li>
+                        <li>
+                          <a href="#">Strawberry</a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Cookie Dough
+                            <span class="thha-menu-item-badge popular">
+                              Bestseller
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Mint Chocolate</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Special Desserts</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Brownie Sundae </a>
+                        </li>
+                        <li>
+                          <a href="#"> Apple Pie</a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Crème Brûlée
+                            <span class="thha-menu-item-badge premium">
+                              Premium
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"> Panna Cotta</a>
+                        </li>
+                        <li>
+                          <a href="#">Chocolate Mousse</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="thha-megamenu-panel-items-thumb">
+                    <div class="thha-menu-card-wrapper">
+                      <div class="thha-menu-card group">
+                        <div class="thha-menu-card-image">
+                          <img
+                            src="https://images.unsplash.com/photo-1673551490243-f29547426841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBkZXNzZXJ0fGVufDF8fHx8MTc2MjUyNDQ3OXww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Crispy Calamari"
+                          />
+                          <div class="thha-menu-card-overlay"></div>
+                          <div class="thha-menu-card-badge">
+                            <span class="thha-menu-card-badge-text">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                                ></path>
+                              </svg>
+                              Featured
+                            </span>
+                          </div>
+                          <div class="thha-menu-card-price">$8.99</div>
+                        </div>
+
+                        <div class="thha-menu-card-content">
+                          <h4 class="thha-menu-card-title">
+                            Chocolate Heaven
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon award"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                              ></path>
+                              <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                          </h4>
+                          <p class="thha-menu-card-desc">
+                            Rich chocolate cake with vanilla ice cream &
+                            chocolate sauce
+                          </p>
+                          <button class="thha-menu-card-btn">Order Now</button>
+                        </div>
+                      </div>
+
+                      <div class="thha-menu-card-info">
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M12 6v6l4 2"></path>
+                              <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span>Fast</span>
+                          </div>
+                          <p>Ready in 15min</p>
+                        </div>
+
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M16 7h6v6"></path>
+                              <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span>Popular</span>
+                          </div>
+                          <p>500+ orders</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="thha-megamenu-footer-wrao">
+                  <div class="thha-megamenu-footer">
+                    <div class="thha-megamenu-footer-left">
+                      <p>Can't decide?</p>
+                      <a href="#">View Full Menu →</a>
+                    </div>
+                    <a href="#" class="thha-megamenu-footer-right">
+                      <span class="choosing">Need help choosing?</span>
+                      <span>Contact us</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="thha-menu-item">
+              <a href="#" class="thha-menu-nav-link">
+                Beverages
+                <i
+                  class="thha-menu-nav-iocn dashicons dashicons-arrow-right-alt2"
+                ></i>
+              </a>
+
+              <div class="thha-megamenu-panel">
+                <div class="thha-megamenu-panel-wrap">
+                  <div
+                    class="thha-megamenu-panel-items"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Hot Drinks</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Espresso </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Cappuccino
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">Latte</a>
+                        </li>
+                        <li>
+                          <a href="#">Hot Chocolate</a>
+                        </li>
+                        <li>
+                          <a href="#">Tea Selection</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Cold Drinks</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#"> Iced Coffee </a>
+                        </li>
+                        <li>
+                          <a href="#"> Fresh Juice </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Smoothies
+                            <span class="thha-menu-item-badge new">
+                              Healthy
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"> Milkshakes </a>
+                        </li>
+                        <li>
+                          <a href="#">Soda</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="thha-megamenu-panel-item">
+                      <div class="thha-megamenu-panel-item-header">
+                        <h3>Specialty</h3>
+                      </div>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#">
+                            Frappuccino
+                            <span class="thha-menu-item-badge popular">
+                              Popular
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"> Mojito</a>
+                        </li>
+                        <li>
+                          <a href="#"> Lemonade </a>
+                        </li>
+                        <li>
+                          <a href="#"> Fresh Coconut</a>
+                        </li>
+                        <li>
+                          <a href="#">Energy Drinks</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="thha-megamenu-panel-items-thumb">
+                    <div class="thha-menu-card-wrapper">
+                      <div class="thha-menu-card group">
+                        <div class="thha-menu-card-image">
+                          <img
+                            src="https://images.unsplash.com/photo-1585494156145-1c60a4fe952b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBsYXR0ZXxlbnwxfHx8fDE3NjI1ODQ5MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Crispy Calamari"
+                          />
+                          <div class="thha-menu-card-overlay"></div>
+                          <div class="thha-menu-card-badge">
+                            <span class="thha-menu-card-badge-text">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                                ></path>
+                              </svg>
+                              Featured
+                            </span>
+                          </div>
+                          <div class="thha-menu-card-price">$8.99</div>
+                        </div>
+
+                        <div class="thha-menu-card-content">
+                          <h4 class="thha-menu-card-title">
+                            Artisan Coffee
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon award"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+                              ></path>
+                              <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                          </h4>
+                          <p class="thha-menu-card-desc">
+                            Freshly brewed from premium beans, served hot or
+                            cold
+                          </p>
+                          <button class="thha-menu-card-btn">Order Now</button>
+                        </div>
+                      </div>
+
+                      <div class="thha-menu-card-info">
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M12 6v6l4 2"></path>
+                              <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                            <span>Fast</span>
+                          </div>
+                          <p>Ready in 15min</p>
+                        </div>
+
+                        <div class="thha-info-box">
+                          <div class="thha-info-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                            >
+                              <path d="M16 7h6v6"></path>
+                              <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                            </svg>
+                            <span>Popular</span>
+                          </div>
+                          <p>500+ orders</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="thha-megamenu-footer-wrao">
+                  <div class="thha-megamenu-footer">
+                    <div class="thha-megamenu-footer-left">
+                      <p>Can't decide?</p>
+                      <a href="#">View Full Menu →</a>
+                    </div>
+                    <a href="#" class="thha-megamenu-footer-right">
+                      <span class="choosing">Need help choosing?</span>
+                      <span>Contact us</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/vertical-menu.js"></script>
   </body>
 </html>
