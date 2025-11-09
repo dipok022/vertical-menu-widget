@@ -1,4 +1,3 @@
-// Design 1
 function thhaVerticalMenu(presetClass) {
   const $preset = $(presetClass);
 
@@ -12,15 +11,33 @@ function thhaVerticalMenu(presetClass) {
   $preset.on("mouseleave", function () {
     $preset.find(".thha-megamenu-panel").removeClass("active");
   });
-
-  //  Toggle button
-  $preset.find(".thha-vertical-menu-tigger").on("click", function (e) {
-    e.preventDefault();
-    $preset.toggleClass("active-toggle");
-  });
 }
 
 $(document).ready(() => {
   thhaVerticalMenu(".thha-presets-1");
   thhaVerticalMenu(".thha-presets-2");
+  thhaVerticalMenu(".thha-presets-3");
+});
+
+//  yoggle button
+$(document).ready(($) => {
+  const $preset = $(".thha-vertical-menu-wrapper.thha-presets-2");
+  $preset.find(".thha-vertical-menu-tigger").on("click", function (e) {
+    e.preventDefault();
+    $preset.toggleClass("active-toggle");
+  });
+});
+
+// menu collapse
+$(document).ready(() => {
+  const $preset = $(".thha-presets-3");
+
+  $preset.find(".thha-vertical-menu-collapse-btn").on("click", function (e) {
+    e.preventDefault();
+
+    const $btn = $(this);
+    $preset.toggleClass("collapsed");
+
+    $btn.toggleClass("active");
+  });
 });

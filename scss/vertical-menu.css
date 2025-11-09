@@ -29,33 +29,49 @@
     Menu style
      * Design -1
      * Design -2
+     * Design -3
 
   */
 }
-.thha-vertical-menu-wrapper.thha-presets-1, .thha-vertical-menu-wrapper.thha-presets-2 {
+.thha-vertical-menu-wrapper.thha-presets-1, .thha-vertical-menu-wrapper.thha-presets-2, .thha-vertical-menu-wrapper.thha-presets-3 {
   width: 340px;
+  transition: all 0.4s ease-in;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger,
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-collapse, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger,
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-collapse, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-tigger,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse {
   display: inline-flex;
   align-items: center;
   font-family: Inter, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
-  color: #ffffff;
-  padding: 16px 24px 14px 24px;
-  background-color: #155dfc;
+  padding: 14px 24px 14px 24px;
   width: 100%;
+  white-space: nowrap;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i,
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-collapse i, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i,
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-collapse i, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-tigger i,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse i {
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i.arrow-up, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i.arrow-up {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i.arrow-up,
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-collapse i.arrow-up, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i.arrow-up,
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-collapse i.arrow-up, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-tigger i.arrow-up,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse i.arrow-up {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
   margin-left: auto;
   margin-right: 0px;
   transition: all 0.4s ease-in;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu {
   width: 100%;
   height: -moz-max-content;
   height: max-content;
@@ -63,11 +79,11 @@
   background-color: #fff;
   transition: all 0.4s ease-in;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item {
   position: relative;
   border-bottom: 1px solid #ededed;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link {
   display: flex;
   align-items: center;
   padding: 12px 24px;
@@ -77,8 +93,26 @@
   letter-spacing: inherit;
   color: #364153 !important;
   font-family: Inter, sans-serif;
+  white-space: nowrap;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-vertical-menu,
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-vertical-menu,
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-vertical-menu,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg {
+  min-width: 24px;
+  min-height: 24px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
   padding: 4px 8px;
   border-radius: 3px;
   font-size: 10px;
@@ -86,15 +120,15 @@
   margin-left: 10px;
   text-transform: uppercase;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular {
   background-color: #df0463;
   color: #fff;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy {
   background: #00a63e;
   color: #fff;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
   width: auto;
   height: auto;
   margin-left: auto;
@@ -102,12 +136,32 @@
   font-weight: 400;
   transition: transform 0.2s ease;
 }
-.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu-tigger .arrow-up, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu-tigger .arrow-up {
+.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu-tigger .arrow-up, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu-tigger .arrow-up, .thha-vertical-menu-wrapper.thha-presets-3.active-toggle .thha-vertical-menu-tigger .arrow-up {
   transform: rotateX(-180deg);
 }
-.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu {
+.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-3.active-toggle .thha-vertical-menu {
   opacity: 0;
   visibility: hidden;
+}
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed, .thha-vertical-menu-wrapper.thha-presets-2.collapsed, .thha-vertical-menu-wrapper.thha-presets-3.collapsed {
+  width: 80px;
+}
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed .thha-vertical-menu-collapse .thha-vertical-menu-tigger-title, .thha-vertical-menu-wrapper.thha-presets-2.collapsed .thha-vertical-menu-collapse .thha-vertical-menu-tigger-title, .thha-vertical-menu-wrapper.thha-presets-3.collapsed .thha-vertical-menu-collapse .thha-vertical-menu-tigger-title {
+  visibility: hidden;
+  opacity: 0;
+}
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed .thha-vertical-menu-collapse i, .thha-vertical-menu-wrapper.thha-presets-2.collapsed .thha-vertical-menu-collapse i, .thha-vertical-menu-wrapper.thha-presets-3.collapsed .thha-vertical-menu-collapse i {
+  margin-right: 0;
+}
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-link-title,
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-1.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-2.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-link-title,
+.thha-vertical-menu-wrapper.thha-presets-2.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-2.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-3.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-link-title,
+.thha-vertical-menu-wrapper.thha-presets-3.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
+.thha-vertical-menu-wrapper.thha-presets-3.collapsed .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
+  visibility: hidden;
+  opacity: 0;
 }
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link,
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover {
@@ -130,6 +184,11 @@
   visibility: visible;
   pointer-events: auto;
 }
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger {
+  color: #ffffff;
+  background-color: #155dfc;
+  border-radius: 0 8px 0 8px;
+}
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link,
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover {
   color: #155dfc !important;
@@ -139,6 +198,7 @@
   transform: translateX(0.25rem);
 }
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-megamenu-panel {
+  pointer-events: none;
   transform-origin: left center;
   transition-property: transform, opacity, visibility, filter;
   transition-duration: 0.4s;
@@ -151,6 +211,64 @@
   pointer-events: auto;
   transition-duration: 0.32s;
   transform: translateX(0);
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse {
+  color: #ffffff;
+  background-color: #00a63e;
+  border: 0;
+  border-radius: 8px 0 8px 0;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-tigger-title {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-collapse-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-collapse-btn i {
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-collapse-btn i.icon-close {
+  display: none;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-collapse-btn.active i.icon-close {
+  display: block;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu-collapse .thha-vertical-menu-collapse-btn.active i.icon-open {
+  display: none;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover {
+  color: #00a63e !important;
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link svg,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover svg {
+  transform: scale(0.9) rotate(0deg);
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link i,
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover i {
+  transform: translateX(0.25rem);
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-megamenu-panel {
+  pointer-events: none;
+  transform-origin: left center;
+  transition-property: transform, opacity, visibility, filter;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  transform: translateY(10px) scale(0.98);
+}
+.thha-vertical-menu-wrapper.thha-presets-3 .thha-megamenu-panel.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-duration: 0.32s;
+  transform: translateY(0) scale(1);
 }
 .thha-vertical-menu-wrapper .thha-megamenu-panel {
   position: absolute;
