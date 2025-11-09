@@ -26,13 +26,47 @@
 }
 
 .thha-vertical-menu-wrapper {
-  // Design 1
-  &.thha-presets-1 {
+  /* 
+    Menu style
+     * Design -1
+     * Design -2
+  
+  */
+
+  &.thha-presets-1,
+  &.thha-presets-2 {
+    width: 340px;
+
+    // menu tigger
+    .thha-vertical-menu-tigger {
+      display: inline-flex;
+      align-items: center;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      color: #ffffff;
+      padding: 16px 24px 14px 24px;
+      background-color: #155dfc;
+      width: 100%;
+
+      i {
+        margin-right: 8px;
+        &.arrow-up {
+          margin-left: auto;
+          margin-right: 0px;
+          transition: all 0.4s ease-in;
+        }
+      }
+    }
+
     .thha-vertical-menu {
-      width: 340px;
+      width: 100%;
       height: max-content;
       box-shadow: 0px 20px 30px 0px
         rgba(2.0000000000000058, 19.000000000000064, 67, 0.1);
+      background-color: #fff;
+      transition: all 0.4s ease-in;
 
       .thha-menu-item {
         position: relative;
@@ -77,6 +111,28 @@
             transition: transform 0.2s ease;
           }
         }
+      }
+    }
+
+    &.active-toggle {
+      .thha-vertical-menu-tigger {
+        .arrow-up {
+          -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+        }
+      }
+      .thha-vertical-menu {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  // megamenu panel effect and menu hover colors
+  &.thha-presets-1 {
+    // menu hover
+    .thha-vertical-menu {
+      .thha-menu-item {
         &:has(.active) {
           .thha-menu-nav-link,
           .thha-menu-nav-link:hover {
@@ -88,69 +144,54 @@
         }
       }
     }
+
+    // megamenu panel
+    .thha-megamenu-panel {
+      transform-origin: left center;
+      transition-property: transform, opacity, visibility, filter;
+      transition-duration: 0.4s;
+      transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+      transform: translateX(-6px) scale(0.98);
+
+      &.active {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
   }
 
-  // Design 2
   &.thha-presets-2 {
+    // menu hover
     .thha-vertical-menu {
-      width: 340px;
-      height: max-content;
-      box-shadow: 0px 20px 30px 0px
-        rgba(2.0000000000000058, 19.000000000000064, 67, 0.1);
-      background-color: #fff;
-
       .thha-menu-item {
-        position: relative;
-
-        .thha-menu-nav-link {
-          display: flex;
-          align-items: center;
-          padding: 16px 24px;
-          font: inherit;
-          font-feature-settings: inherit;
-          font-variation-settings: inherit;
-          letter-spacing: inherit;
-          color: #364153 !important;
-          font-family: Inter, sans-serif;
-
-          .thha-menu-badge {
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 10px;
-            line-height: 1;
-            margin-left: 10px;
-            text-transform: uppercase;
-
-            &.popular {
-              background-color: #df0463;
-              color: #fff;
-            }
-
-            &.healthy {
-              background: #00a63e;
-              color: #fff;
-            }
-          }
-
-          .thha-menu-nav-iocn {
-            width: auto;
-            height: auto;
-            margin-left: auto;
-            font-size: 16px;
-            font-weight: 400;
-            transition: transform 0.2s ease;
-          }
-        }
         &:has(.active) {
           .thha-menu-nav-link,
           .thha-menu-nav-link:hover {
-            background-color: #ff6900cc;
-            color: #fff !important;
+            color: #155dfc !important;
             i {
               transform: translateX(0.25rem);
             }
           }
         }
+      }
+    }
+
+    // megamenu panel
+    .thha-megamenu-panel {
+      transform-origin: left center;
+      transition-property: transform, opacity, visibility, filter;
+      transition-duration: 0.4s;
+      transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+      transform: translateX(-18px);
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition-duration: 0.32s;
+        transform: translateX(0);
       }
     }
   }
@@ -161,12 +202,8 @@
     left: 100%;
     top: 0;
     z-index: 100;
-    -webkit-transform: translateY(10px);
-    transform: translateY(10px);
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: transform 0.2s linear;
-    transition: all 0.2s linear;
     pointer-events: none;
     width: max-content;
     background-color: #fff;
@@ -494,8 +531,6 @@
     }
 
     &.active {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
       opacity: 1;
       visibility: visible;
       pointer-events: auto;

@@ -24,17 +24,50 @@
   text-align: center;
 }
 
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu {
+.thha-vertical-menu-wrapper {
+  /* 
+    Menu style
+     * Design -1
+     * Design -2
+
+  */
+}
+.thha-vertical-menu-wrapper.thha-presets-1, .thha-vertical-menu-wrapper.thha-presets-2 {
   width: 340px;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger {
+  display: inline-flex;
+  align-items: center;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+  padding: 16px 24px 14px 24px;
+  background-color: #155dfc;
+  width: 100%;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i {
+  margin-right: 8px;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu-tigger i.arrow-up, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu-tigger i.arrow-up {
+  margin-left: auto;
+  margin-right: 0px;
+  transition: all 0.4s ease-in;
+}
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu {
+  width: 100%;
   height: -moz-max-content;
   height: max-content;
   box-shadow: 0px 20px 30px 0px rgba(2, 19, 67, 0.1);
+  background-color: #fff;
+  transition: all 0.4s ease-in;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item {
   position: relative;
   border-bottom: 1px solid #ededed;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link {
   display: flex;
   align-items: center;
   padding: 12px 24px;
@@ -45,7 +78,7 @@
   color: #364153 !important;
   font-family: Inter, sans-serif;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
   padding: 4px 8px;
   border-radius: 3px;
   font-size: 10px;
@@ -53,21 +86,28 @@
   margin-left: 10px;
   text-transform: uppercase;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular {
   background-color: #df0463;
   color: #fff;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy {
   background: #00a63e;
   color: #fff;
 }
-.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
   width: auto;
   height: auto;
   margin-left: auto;
   font-size: 16px;
   font-weight: 400;
   transition: transform 0.2s ease;
+}
+.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu-tigger .arrow-up, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu-tigger .arrow-up {
+  transform: rotateX(-180deg);
+}
+.thha-vertical-menu-wrapper.thha-presets-1.active-toggle .thha-vertical-menu, .thha-vertical-menu-wrapper.thha-presets-2.active-toggle .thha-vertical-menu {
+  opacity: 0;
+  visibility: hidden;
 }
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link,
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover {
@@ -77,69 +117,48 @@
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover i {
   transform: translateX(0.25rem);
 }
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu {
-  width: 340px;
-  height: -moz-max-content;
-  height: max-content;
-  box-shadow: 0px 20px 30px 0px rgba(2, 19, 67, 0.1);
-  background-color: #fff;
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-megamenu-panel {
+  transform-origin: left center;
+  transition-property: transform, opacity, visibility, filter;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  transform: translateX(-6px) scale(0.98);
 }
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item {
-  position: relative;
-}
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link {
-  display: flex;
-  align-items: center;
-  padding: 16px 24px;
-  font: inherit;
-  font-feature-settings: inherit;
-  font-variation-settings: inherit;
-  letter-spacing: inherit;
-  color: #364153 !important;
-  font-family: Inter, sans-serif;
-}
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge {
-  padding: 4px 8px;
-  border-radius: 3px;
-  font-size: 10px;
-  line-height: 1;
-  margin-left: 10px;
-  text-transform: uppercase;
-}
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.popular {
-  background-color: #df0463;
-  color: #fff;
-}
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge.healthy {
-  background: #00a63e;
-  color: #fff;
-}
-.thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
-  width: auto;
-  height: auto;
-  margin-left: auto;
-  font-size: 16px;
-  font-weight: 400;
-  transition: transform 0.2s ease;
+.thha-vertical-menu-wrapper.thha-presets-1 .thha-megamenu-panel.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link,
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover {
-  background-color: rgba(255, 105, 0, 0.8);
-  color: #fff !important;
+  color: #155dfc !important;
 }
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link i,
 .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item:has(.active) .thha-menu-nav-link:hover i {
   transform: translateX(0.25rem);
+}
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-megamenu-panel {
+  transform-origin: left center;
+  transition-property: transform, opacity, visibility, filter;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  transform: translateX(-18px);
+}
+.thha-vertical-menu-wrapper.thha-presets-2 .thha-megamenu-panel.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-duration: 0.32s;
+  transform: translateX(0);
 }
 .thha-vertical-menu-wrapper .thha-megamenu-panel {
   position: absolute;
   left: 100%;
   top: 0;
   z-index: 100;
-  transform: translateY(10px);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s linear;
   pointer-events: none;
   width: -moz-max-content;
   width: max-content;
@@ -412,7 +431,6 @@
   color: #ea580c;
 }
 .thha-vertical-menu-wrapper .thha-megamenu-panel.active {
-  transform: translateY(0);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
