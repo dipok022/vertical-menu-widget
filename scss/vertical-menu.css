@@ -94,6 +94,7 @@
   color: #364153 !important;
   font-family: Inter, sans-serif;
   white-space: nowrap;
+  overflow: hidden;
 }
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-vertical-menu,
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-badge,
@@ -104,7 +105,7 @@
 .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link .thha-menu-nav-iocn {
   visibility: visible;
   opacity: 1;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 .thha-vertical-menu-wrapper.thha-presets-1 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg, .thha-vertical-menu-wrapper.thha-presets-2 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg, .thha-vertical-menu-wrapper.thha-presets-3 .thha-vertical-menu .thha-menu-item .thha-menu-nav-link svg {
   min-width: 24px;
