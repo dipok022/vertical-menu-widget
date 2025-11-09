@@ -17,6 +17,8 @@ $(document).ready(() => {
   thhaVerticalMenu(".thha-presets-1");
   thhaVerticalMenu(".thha-presets-2");
   thhaVerticalMenu(".thha-presets-3");
+  thhaVerticalMenu(".thha-presets-4");
+  thhaVerticalMenu(".thha-presets-5");
 });
 
 //  yoggle button
@@ -29,8 +31,8 @@ $(document).ready(($) => {
 });
 
 // menu collapse
-$(document).ready(() => {
-  const $preset = $(".thha-presets-3");
+function thhaCollapseMneu(presetClass) {
+  const $preset = $(presetClass);
 
   $preset.find(".thha-vertical-menu-collapse-btn").on("click", function (e) {
     e.preventDefault();
@@ -40,4 +42,9 @@ $(document).ready(() => {
 
     $btn.toggleClass("active");
   });
+}
+
+$(document).ready(() => {
+  thhaCollapseMneu(".thha-presets-3");
+  thhaCollapseMneu(".thha-presets-4");
 });
