@@ -2,4 +2,17 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.container {
+  width: 1320px;
+  margin: auto;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
 }/*# sourceMappingURL=changelog.css.map */
