@@ -16,3 +16,179 @@
     margin: 38px 0 50px 0;
   }
 }
+.thha-changlogs {
+  &.thha-presets-1 {
+    .thha-changlogs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 70px;
+      padding: 0 80px;
+
+      .thha-changlogs-tabs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        .thha-changlogs-tab {
+          font-size: 17.45px;
+          font-weight: 400;
+          line-height: 140%;
+          color: #0a0d11;
+          padding: 13.79px 18px;
+          background-color: #ffffff;
+          border-radius: 110.54px;
+          border: 1.94px solid #d9d9d9;
+          white-space: nowrap;
+          cursor: pointer;
+
+          &.thha-active-tab,
+          &:hover {
+            color: #ffffff;
+            border-color: #0960ec;
+            background-color: #0960ec;
+          }
+        }
+      }
+
+      .thha-changlogs-search {
+        position: relative;
+
+        .thha-changlogs-search-input {
+          padding: 11.76px 17.64px 11.76px 52.93px;
+          border: 1.47px solid #d9d9d9;
+          background-color: #ffffff;
+          border-radius: 73.52px;
+          height: 52.53px;
+          font-size: 20.59px;
+          font-weight: 400;
+          line-height: 140%;
+          outline: 0;
+        }
+
+        span {
+          position: absolute;
+          top: 14.5px;
+          left: 17.64px;
+        }
+      }
+    }
+
+    .thha-changlogs-item {
+      position: relative;
+      margin: 0 80px;
+      margin-top: 70px;
+      padding-top: 146px;
+      padding-bottom: 192px;
+      padding-left: 51px;
+      min-height: 940px;
+      border-radius: 19.3px;
+      background-color: #f8fbff;
+
+      .thha-changlogs-wrapper {
+        width: calc(100% - 353px);
+        margin-right: 80px;
+
+        h2 {
+          font-size: 52px;
+          font-weight: 700;
+          line-height: 100%;
+          color: #003077;
+        }
+
+        span {
+          display: block;
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 140%;
+          color: #5d5d5d;
+          margin-top: 12px;
+        }
+
+        .thha-changelog-content {
+          margin-top: 46px;
+
+          .thha-changlogs {
+            margin-bottom: 20px;
+            h3 {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              font-size: 30px;
+              font-weight: 600;
+              line-height: 120%;
+              color: #171717;
+            }
+
+            ul {
+              margin-top: 17px;
+
+              li {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 150%;
+                color: #5d5d5d;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .thha-changlogs-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 353px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+          position: absolute;
+          top: auto;
+          left: auto;
+          font-size: 93px;
+          font-weight: 700;
+          line-height: 100%;
+          color: #d7e0ff;
+          z-index: 9;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* idias for more changelog presets can be added below
+
+ - https://dribbble.com/tags/changelog?page=2
+ - https://dribbble.com/shots/15454683-Nullboard-Timeline
+ - https://frill.co/blog/posts/changelog-examples
+ - https://webflow.com/templates/search?query=Changelog
+ - https://webflow.com/templates/html/knowledgehub-x-help-center-website-template
+ - https://knowledgehubtemplate.webflow.io/changelog-pages/changelog-v1
+ - https://knowledgehubtemplate.webflow.io/changelog-pages/changelog-v2
+ - https://knowledgehubtemplate.webflow.io/changelog-pages/changelog-v3
+ - https://webflow.com/templates/html/documentise-website-template
+ - https://dribbble.com/tags/changelog
+ - https://www.figma.com/design/lwLY5BzqDD2MQC9bA5FHvN/%F0%9F%93%91-Design-Changelog--Community-?node-id=7-3032&p=f&t=MLihXwnMlE8kEaOo-0
+ - https://saaspo.com/pages/raycast-changelog-page
+ - https://staging.master-addons.com/changlogs/
+ -
+ -
+
+*/
