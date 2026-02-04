@@ -1,29 +1,31 @@
-$(document).ready(($) => {
-  $(".thha-changlogs-tab").on("click", function () {
-    const filterType = $(this).attr("data");
+function thha_changelog(wrapperSelector) {
+  const $wrapper = $(wrapperSelector);
+
+  // TAB CLICK
+  $wrapper.find(".thha-changlogs-tab").on("click", function () {
+    const filterType = $(this).attr("data"); // <-- matches your markup
 
     // Active tab
-    $(".thha-changlogs-tab").removeClass("thha-active-tab");
+    $wrapper.find(".thha-changlogs-tab").removeClass("thha-active-tab");
     $(this).addClass("thha-active-tab");
 
-    $(".thha-changlogs-item").each(function () {
+    $wrapper.find(".thha-changlogs-item").each(function () {
       const $item = $(this);
-      const $sections = $item.find(".thha-changlogs");
+      const $sections = $item.find(".thha-changelog-content > .thha-changlogs");
 
       let hasMatch = false;
 
-      if (filterType === "") {
+      if (!filterType) {
+        // All Release
         $sections.show();
         hasMatch = true;
       } else {
         $sections.hide();
 
-        const matchSection = $item.find(
-          `.thha-changlogs[data-changlogs="${filterType}"]`,
-        );
+        const $match = $sections.filter(`[data-changlogs="${filterType}"]`);
 
-        if (matchSection.length > 0) {
-          matchSection.show();
+        if ($match.length) {
+          $match.show();
           hasMatch = true;
         }
       }
@@ -34,20 +36,28 @@ $(document).ready(($) => {
     runSearchFilter();
   });
 
-  //  search
-
-  $(".thha-changlogs-search-input").on("keyup", function () {
+  // SEARCH
+  $wrapper.find(".thha-changlogs-search-input").on("keyup", function () {
     runSearchFilter();
   });
 
   function runSearchFilter() {
-    const q = $(".thha-changlogs-search-input").val().toLowerCase();
+    const q = $wrapper.find(".thha-changlogs-search-input").val().toLowerCase();
 
-    $(".thha-changlogs-item").each(function () {
-      const version = $(this).find("h2").text().toLowerCase();
-      const date = $(this).find("span").text().toLowerCase();
+    $wrapper.find(".thha-changlogs-item").each(function () {
+      const $item = $(this);
 
-      $(this).toggle(version.includes(q) || date.includes(q));
+      const version = $item.find("h2").text().toLowerCase();
+      const date = $item.find("span").first().text().toLowerCase();
+
+      const textMatch = version.includes(q) || date.includes(q);
+      const visibleSection = $item.find(".thha-changlogs:visible").length > 0;
+
+      $item.toggle(textMatch && visibleSection);
     });
   }
+}
+
+$(document).ready(function () {
+  thha_changelog(".thha-presets-1");
 });
