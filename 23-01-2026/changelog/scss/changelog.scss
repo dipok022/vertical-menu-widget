@@ -65,6 +65,14 @@
           font-weight: 400;
           line-height: 140%;
           outline: 0;
+          transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+
+          &:focus {
+            border-color: #0960ec;
+            box-shadow: 0 0 0 3px rgba(9, 96, 236, 0.25);
+          }
         }
 
         span {
@@ -170,6 +178,8 @@
         }
       }
     }
+  }
+  &.thha-presets-2 {
   }
 }
 

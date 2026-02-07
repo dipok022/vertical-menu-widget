@@ -60,6 +60,11 @@
   font-weight: 400;
   line-height: 140%;
   outline: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.thha-changlogs.thha-presets-1 .thha-changlogs-header .thha-changlogs-search .thha-changlogs-search-input:focus {
+  border-color: #0960ec;
+  box-shadow: 0 0 0 3px rgba(9, 96, 236, 0.25);
 }
 .thha-changlogs.thha-presets-1 .thha-changlogs-header .thha-changlogs-search span {
   position: absolute;
@@ -150,7 +155,6 @@
   height: auto;
   display: block;
 }
-
 /* idias for more changelog presets can be added below
 
  - https://dribbble.com/tags/changelog?page=2
