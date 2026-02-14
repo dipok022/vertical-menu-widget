@@ -9,9 +9,9 @@ function thha_changelog(wrapperSelector) {
     $wrapper.find(".thha-filter-btn").removeClass("active");
     $(this).addClass("active");
 
-    $wrapper.find(".thha-changlogs-item").each(function () {
+    $wrapper.find(".thha-entry").each(function () {
       const $item = $(this);
-      const $sections = $item.find(".thha-changelog-content > .thha-changlogs");
+      const $sections = $item.find(".thha-card > .thha-changes");
 
       let hasMatch = false;
 
@@ -22,7 +22,7 @@ function thha_changelog(wrapperSelector) {
       } else {
         $sections.hide();
 
-        const $match = $sections.filter(`[data-changlogs="${filterType}"]`);
+        const $match = $sections.filter(`[data-changes="${filterType}"]`);
 
         if ($match.length) {
           $match.show();
@@ -44,14 +44,14 @@ function thha_changelog(wrapperSelector) {
   function runSearchFilter() {
     const q = $wrapper.find(".thha-search-input").val().toLowerCase();
 
-    $wrapper.find(".thha-changlogs-item").each(function () {
+    $wrapper.find(".thha-entry").each(function () {
       const $item = $(this);
 
       const version = $item.find("h2").text().toLowerCase();
       const date = $item.find("span").first().text().toLowerCase();
 
       const textMatch = version.includes(q) || date.includes(q);
-      const visibleSection = $item.find(".thha-changlogs:visible").length > 0;
+      const visibleSection = $item.find(".thha-changes:visible").length > 0;
 
       $item.toggle(textMatch && visibleSection);
     });
@@ -60,4 +60,5 @@ function thha_changelog(wrapperSelector) {
 
 $(document).ready(function () {
   thha_changelog(".thha-presets-1");
+  thha_changelog(".thha-presets-2");
 });

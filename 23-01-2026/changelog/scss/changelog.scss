@@ -83,98 +83,99 @@
       }
     }
 
-    .thha-changlogs-item {
-      position: relative;
-      margin: 0 80px;
-      margin-top: 70px;
-      padding-top: 146px;
-      padding-bottom: 192px;
-      padding-left: 51px;
-      min-height: 940px;
-      border-radius: 19.3px;
-      background-color: #f8fbff;
+    .thha-timeline {
+      .thha-entry {
+        position: relative;
+        margin: 0 80px;
+        margin-top: 70px;
+        padding-top: 146px;
+        padding-bottom: 192px;
+        padding-left: 51px;
+        min-height: 940px;
+        border-radius: 19.3px;
+        background-color: #f8fbff;
 
-      .thha-changlogs-wrapper {
-        width: calc(100% - 353px);
-        margin-right: 80px;
+        .thha-entry-wrap {
+          width: calc(100% - 353px);
 
-        h2 {
-          font-size: 52px;
-          font-weight: 700;
-          line-height: 100%;
-          color: #003077;
-        }
+          h2 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 100%;
+            color: #003077;
+          }
 
-        span {
-          display: block;
-          font-size: 17px;
-          font-weight: 400;
-          line-height: 140%;
-          color: #5d5d5d;
-          margin-top: 12px;
-        }
+          span {
+            display: block;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 140%;
+            color: #5d5d5d;
+            margin-top: 12px;
+          }
 
-        .thha-changelog-content {
-          margin-top: 46px;
+          .thha-card {
+            margin-top: 46px;
 
-          .thha-changlogs {
-            margin-bottom: 20px;
-            h3 {
-              display: flex;
-              align-items: center;
-              gap: 15px;
-              font-size: 30px;
-              font-weight: 600;
-              line-height: 120%;
-              color: #171717;
-            }
-
-            ul {
-              margin-top: 17px;
-
-              li {
+            .thha-changes {
+              margin-bottom: 20px;
+              h3 {
                 display: flex;
                 align-items: center;
-                gap: 10px;
-                font-size: 18px;
-                font-weight: 400;
-                line-height: 150%;
-                color: #5d5d5d;
+                gap: 15px;
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 120%;
+                color: #171717;
               }
-            }
 
-            &:last-child {
-              margin-bottom: 0;
+              ul {
+                margin-top: 17px;
+
+                li {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  font-size: 18px;
+                  font-weight: 400;
+                  line-height: 150%;
+                  color: #5d5d5d;
+                }
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
             }
           }
         }
-      }
 
-      .thha-changlogs-img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        max-width: 353px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h3 {
+        .thha-entry-img {
           position: absolute;
-          top: auto;
-          left: auto;
-          font-size: 93px;
-          font-weight: 700;
-          line-height: 100%;
-          color: #d7e0ff;
-          z-index: 9;
-        }
-
-        img {
+          top: 0;
+          right: 0;
           width: 100%;
-          height: auto;
-          display: block;
+          max-width: 353px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            position: absolute;
+            top: auto;
+            left: auto;
+            font-size: 93px;
+            font-weight: 700;
+            line-height: 100%;
+            color: #d7e0ff;
+            z-index: 9;
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
         }
       }
     }
@@ -344,7 +345,7 @@
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
-        .thha-changes {
+        .thha-changes-wrap {
           list-style: none;
           display: flex;
           flex-direction: column;

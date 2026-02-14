@@ -514,8 +514,7 @@ body {
 }
 .thha-vertical-menu-wrapper .thha-megamenu-panel .thha-megamenu-panel-wrap .thha-megamenu-panel-items-thumb .thha-menu-card-wrapper .thha-menu-card .thha-menu-card-image .thha-menu-card-badge .thha-menu-card-badge-text {
   background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   color: #ea580c;
   font-size: 0.75rem;
   padding: 0.375rem 0.75rem;
