@@ -2,12 +2,12 @@ function thha_changelog(wrapperSelector) {
   const $wrapper = $(wrapperSelector);
 
   // TAB CLICK
-  $wrapper.find(".thha-changlogs-tab").on("click", function () {
+  $wrapper.find(".thha-filter-btn").on("click", function () {
     const filterType = $(this).attr("data"); // <-- matches your markup
 
     // Active tab
-    $wrapper.find(".thha-changlogs-tab").removeClass("thha-active-tab");
-    $(this).addClass("thha-active-tab");
+    $wrapper.find(".thha-filter-btn").removeClass("active");
+    $(this).addClass("active");
 
     $wrapper.find(".thha-changlogs-item").each(function () {
       const $item = $(this);
@@ -37,12 +37,12 @@ function thha_changelog(wrapperSelector) {
   });
 
   // SEARCH
-  $wrapper.find(".thha-changlogs-search-input").on("keyup", function () {
+  $wrapper.find(".thha-search-input").on("keyup", function () {
     runSearchFilter();
   });
 
   function runSearchFilter() {
-    const q = $wrapper.find(".thha-changlogs-search-input").val().toLowerCase();
+    const q = $wrapper.find(".thha-search-input").val().toLowerCase();
 
     $wrapper.find(".thha-changlogs-item").each(function () {
       const $item = $(this);

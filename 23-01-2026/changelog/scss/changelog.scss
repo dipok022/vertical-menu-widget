@@ -25,13 +25,13 @@
       margin-top: 70px;
       padding: 0 80px;
 
-      .thha-changlogs-tabs {
+      .thha-filters {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 15px;
 
-        .thha-changlogs-tab {
+        .thha-filter-btn {
           font-size: 17.45px;
           font-weight: 400;
           line-height: 140%;
@@ -43,7 +43,7 @@
           white-space: nowrap;
           cursor: pointer;
 
-          &.thha-active-tab,
+          &.active,
           &:hover {
             color: #ffffff;
             border-color: #0960ec;
@@ -52,10 +52,10 @@
         }
       }
 
-      .thha-changlogs-search {
+      .thha-search-wrap {
         position: relative;
 
-        .thha-changlogs-search-input {
+        .thha-search-input {
           padding: 11.76px 17.64px 11.76px 52.93px;
           border: 1.47px solid #d9d9d9;
           background-color: #ffffff;
