@@ -1,9 +1,11 @@
 function thha_changelog(wrapperSelector) {
   const $wrapper = $(wrapperSelector);
+  let currentFilterType = ""; // Track active filter
 
   // TAB CLICK
   $wrapper.find(".thha-filter-btn").on("click", function () {
     const filterType = $(this).attr("data"); // <-- matches your markup
+    currentFilterType = filterType; // Store active filter
 
     // Active tab
     $wrapper.find(".thha-filter-btn").removeClass("active");
@@ -11,7 +13,7 @@ function thha_changelog(wrapperSelector) {
 
     $wrapper.find(".thha-entry").each(function () {
       const $item = $(this);
-      const $sections = $item.find(".thha-card > .thha-changes");
+      const $sections = $item.find(".thha-card .thha-changes");
 
       let hasMatch = false;
 
@@ -49,11 +51,25 @@ function thha_changelog(wrapperSelector) {
 
       const version = $item.find("h2").text().toLowerCase();
       const date = $item.find("span").first().text().toLowerCase();
+      const content = $item.find(".thha-changes:visible").text().toLowerCase();
 
-      const textMatch = version.includes(q) || date.includes(q);
-      const visibleSection = $item.find(".thha-changes:visible").length > 0;
+      const textMatch =
+        version.includes(q) || date.includes(q) || content.includes(q);
 
-      $item.toggle(textMatch && visibleSection);
+      // Check if entry has matching filter
+      let passesFilter = false;
+      if (!currentFilterType) {
+        // All Release - show all
+        passesFilter = true;
+      } else {
+        // Check if entry has the selected filter type
+        passesFilter =
+          $item.find(`.thha-changes[data-changes="${currentFilterType}"]`)
+            .length > 0;
+      }
+
+      const shouldShow = q === "" ? passesFilter : textMatch && passesFilter;
+      $item.toggle(shouldShow);
     });
   }
 }
