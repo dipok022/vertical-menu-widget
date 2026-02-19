@@ -1,13 +1,12 @@
 function thha_changelog(wrapperSelector) {
   const $wrapper = $(wrapperSelector);
-  let currentFilterType = ""; // Track active filter
+  let currentFilterType = "";
 
-  // TAB CLICK
   $wrapper.find(".thha-filter-btn").on("click", function () {
-    const filterType = $(this).attr("data"); // <-- matches your markup
-    currentFilterType = filterType; // Store active filter
+    const filterType = $(this).attr("data");
+    currentFilterType = filterType;
 
-    // Active tab
+    // Active filter
     $wrapper.find(".thha-filter-btn").removeClass("active");
     $(this).addClass("active");
 
@@ -38,7 +37,7 @@ function thha_changelog(wrapperSelector) {
     runSearchFilter();
   });
 
-  // SEARCH
+  // search
   $wrapper.find(".thha-search-input").on("keyup", function () {
     runSearchFilter();
   });
@@ -49,20 +48,26 @@ function thha_changelog(wrapperSelector) {
     $wrapper.find(".thha-entry").each(function () {
       const $item = $(this);
 
-      const version = $item.find("h2").text().toLowerCase();
-      const date = $item.find("span").first().text().toLowerCase();
-      const content = $item.find(".thha-changes:visible").text().toLowerCase();
+      const version = $item.find(".thha-version").text().toLowerCase();
+      const date = $item.find(".thha-date").text().toLowerCase();
+
+      let content = "";
+      if (!currentFilterType) {
+        content = $item.find(".thha-card .thha-changes").text().toLowerCase();
+      } else {
+        content = $item
+          .find(`.thha-card .thha-changes[data-changes="${currentFilterType}"]`)
+          .text()
+          .toLowerCase();
+      }
 
       const textMatch =
         version.includes(q) || date.includes(q) || content.includes(q);
 
-      // Check if entry has matching filter
       let passesFilter = false;
       if (!currentFilterType) {
-        // All Release - show all
         passesFilter = true;
       } else {
-        // Check if entry has the selected filter type
         passesFilter =
           $item.find(`.thha-changes[data-changes="${currentFilterType}"]`)
             .length > 0;
