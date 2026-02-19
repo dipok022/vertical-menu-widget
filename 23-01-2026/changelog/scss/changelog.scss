@@ -25,6 +25,7 @@
       margin-top: 70px;
       padding: 0 80px;
 
+      // filters
       .thha-filters {
         display: flex;
         align-items: center;
@@ -52,6 +53,7 @@
         }
       }
 
+      // search
       .thha-search-wrap {
         position: relative;
 
@@ -83,6 +85,7 @@
       }
     }
 
+    // changeslog items
     .thha-timeline {
       .thha-entry {
         position: relative;
