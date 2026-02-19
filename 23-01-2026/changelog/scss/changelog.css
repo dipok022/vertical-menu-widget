@@ -344,6 +344,126 @@
   color: #ff0000;
   border: 1px solid rgba(255, 0, 0, 0.2);
 }
+.thha-changlogs.thha-presets-3 {
+  font-family: "Inter", sans-serif;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry {
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry:last-child {
+  margin-bottom: 0;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #f6f8fa;
+  border-bottom: 1px solid #d1d9e0;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-header .thha-version {
+  position: relative;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2328;
+  padding-left: 80px;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-header .thha-version::before {
+  position: absolute;
+  content: attr(data-version);
+  top: 0;
+  left: 0;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  background: #1f883d;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 100px;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-header .thha-date {
+  font-size: 13px;
+  color: #656d76;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card {
+  padding: 20px;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge svg {
+  width: 17.5px;
+  height: 17.5px;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-new {
+  border-color: #a7f3d0;
+  background-color: #d1fae5;
+  color: #047857;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-new svg {
+  color: #047857;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-new:first-child {
+  margin-top: 0;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-improvement {
+  border-color: #bfdbfe;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-improvement svg {
+  color: #1d4ed8;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-fixes {
+  border-color: #fecdd3;
+  background-color: #ffe4e6;
+  color: #be123c;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes .thha-badge.thha-fixes svg {
+  color: #be123c;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes ul {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  padding-left: 20px;
+  list-style: none;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes ul li {
+  position: relative;
+  font-size: 14px;
+  padding: 3px 0;
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  color: #656d76;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry .thha-card .thha-changes ul li::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #656d76;
+}
+.thha-changlogs.thha-presets-3 .thha-timeline .thha-entry:first-child .thha-version::before {
+  content: "Latest";
+}
 
 /* idias for more changelog presets can be added below
 
