@@ -464,6 +464,78 @@
 .thha-changlogs.thha-presets-3 .thha-timeline .thha-entry:first-child .thha-version::before {
   content: "Latest";
 }
+.thha-changlogs.thha-presets-4 .thha-timeline {
+  font-family: "Inter", sans-serif;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry {
+  border-bottom: 1px solid #e3e2e0;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header .thha-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #787774;
+  transition: 0.3s ease;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header .thha-meta {
+  font-size: 13px;
+  color: #787774;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header.open .thha-icon {
+  transform: rotate(180deg);
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-header:hover {
+  background: #fafafa;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner {
+  padding: 0 0 18px 32px;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes {
+  list-style: none;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes li {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  padding: 4px 0;
+  /* Tags */
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes li .thha-tag {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes li .thha-tag.thha-new {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes li .thha-tag.thha-improved {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+.thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .entry-body-inner .thha-changes li .thha-tag.thha-bugfix {
+  background: #fee2e2;
+  color: #dc2626;
+}
 
 /* idias for more changelog presets can be added below
 

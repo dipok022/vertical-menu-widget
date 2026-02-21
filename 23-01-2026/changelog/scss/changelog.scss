@@ -548,6 +548,98 @@
       }
     }
   }
+  &.thha-presets-4 {
+    .thha-timeline {
+      font-family: "Inter", sans-serif;
+      // changelog items
+      .thha-entry {
+        border-bottom: 1px solid #e3e2e0;
+
+        .thha-entry-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 0;
+          cursor: pointer;
+          transition: background 0.2s ease;
+
+          .thha-icon {
+            width: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #787774;
+            transition: 0.3s ease;
+          }
+
+          h3 {
+            font-size: 16px;
+            font-weight: 600;
+            flex: 1;
+          }
+
+          .thha-meta {
+            font-size: 13px;
+            color: #787774;
+          }
+
+          &.open {
+            .thha-icon {
+              transform: rotate(180deg);
+            }
+          }
+
+          &:hover {
+            background: #fafafa;
+          }
+        }
+
+        // entry body
+        .thha-entry-body {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+
+          .entry-body-inner {
+            padding: 0 0 18px 32px;
+
+            .thha-changes {
+              list-style: none;
+
+              li {
+                display: flex;
+                gap: 8px;
+                font-size: 14px;
+                padding: 4px 0;
+
+                /* Tags */
+                .thha-tag {
+                  font-size: 11px;
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-weight: 500;
+
+                  &.thha-new {
+                    background: #dbeafe;
+                    color: #1d4ed8;
+                  }
+
+                  &.thha-improved {
+                    background: #ede9fe;
+                    color: #7c3aed;
+                  }
+
+                  &.thha-bugfix {
+                    background: #fee2e2;
+                    color: #dc2626;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* idias for more changelog presets can be added below
