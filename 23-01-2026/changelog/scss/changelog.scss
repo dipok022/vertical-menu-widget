@@ -595,9 +595,9 @@
 
         // entry body
         .thha-entry-body {
-          max-height: 0;
           overflow: hidden;
-          transition: max-height 0.4s ease;
+          transition: max-height 0.35s ease;
+          max-height: 0;
 
           .thha-entry-body-inner {
             padding: 0 0 18px 32px;

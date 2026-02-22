@@ -501,9 +501,9 @@
   background: #fafafa;
 }
 .thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.35s ease;
+  max-height: 0;
 }
 .thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .thha-entry-body-inner {
   padding: 0 0 18px 32px;

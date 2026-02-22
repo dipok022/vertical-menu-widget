@@ -85,42 +85,56 @@ $(document).ready(function () {
 });
 
 // accordion changelog
-jQuery(document).ready(function ($) {
-  const $wrapper = ".thha-presets-4";
+jQuery(window).on("load", function () {
+  const $wrapper = jQuery(".thha-presets-4");
 
-  $($wrapper).each(function () {
-    const $thisWrapper = $(this);
+  $wrapper.each(function () {
+    const $thisWrapper = jQuery(this);
 
-    const $firstEntry = $thisWrapper.find(".thha-entry").first();
-    const $firstHeader = $firstEntry.find(".thha-entry-header");
-    const $firstBody = $firstEntry.find(".thha-entry-body");
-    const $firstIcon = $firstEntry.find(".thha-icon");
+    const $headers = $thisWrapper.find(".thha-entry-header");
+    const $bodies = $thisWrapper.find(".thha-entry-body");
+    const $icons = $thisWrapper.find(".thha-icon");
+
+    $headers.removeClass("open");
+    $bodies.css({
+      maxHeight: 0,
+      overflow: "hidden",
+    });
+    $icons.text("+");
+
+    const $firstHeader = $headers.first();
+    const $firstBody = $firstHeader.next(".thha-entry-body");
+    const $firstIcon = $firstHeader.find(".thha-icon");
 
     $firstHeader.addClass("open");
-    $firstBody.css("max-height", $firstBody.prop("scrollHeight") + "px");
     $firstIcon.text("−");
 
-    // Click event
-    $thisWrapper.on("click", ".thha-entry-header", function () {
-      const $currentHeader = $(this);
-      const $currentBody = $currentHeader.next(".thha-entry-body");
-      const $currentIcon = $currentHeader.find(".thha-icon");
+    $firstBody[0].offsetHeight;
 
-      if ($currentHeader.hasClass("open")) {
-        $currentHeader.removeClass("open");
-        $currentBody.css("max-height", 0);
-        $currentIcon.text("+");
+    $firstBody.css("max-height", $firstBody[0].scrollHeight + "px");
+
+    // Click Event
+    $thisWrapper.on("click", ".thha-entry-header", function () {
+      const $header = jQuery(this);
+      const $body = $header.next(".thha-entry-body");
+      const $icon = $header.find(".thha-icon");
+
+      if ($header.hasClass("open")) {
+        $header.removeClass("open");
+        $body.css("max-height", 0);
+        $icon.text("+");
         return;
       }
 
-      $thisWrapper.find(".thha-entry-header").removeClass("open");
-      $thisWrapper.find(".thha-entry-body").css("max-height", 0);
-      $thisWrapper.find(".thha-icon").text("+");
+      $headers.removeClass("open");
+      $bodies.css("max-height", 0);
+      $icons.text("+");
 
-      // Open current
-      $currentHeader.addClass("open");
-      $currentBody.css("max-height", $currentBody.prop("scrollHeight") + "px");
-      $currentIcon.text("−");
+      $body[0].offsetHeight;
+
+      $header.addClass("open");
+      $body.css("max-height", $body[0].scrollHeight + "px");
+      $icon.text("−");
     });
   });
 });
