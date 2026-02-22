@@ -88,11 +88,9 @@ $(document).ready(function () {
 jQuery(document).ready(function ($) {
   const $wrapper = ".thha-presets-4";
 
-  // Loop through each wrapper (important if multiple exist)
   $($wrapper).each(function () {
     const $thisWrapper = $(this);
 
-    // Open first item
     const $firstEntry = $thisWrapper.find(".thha-entry").first();
     const $firstHeader = $firstEntry.find(".thha-entry-header");
     const $firstBody = $firstEntry.find(".thha-entry-body");
@@ -102,13 +100,12 @@ jQuery(document).ready(function ($) {
     $firstBody.css("max-height", $firstBody.prop("scrollHeight") + "px");
     $firstIcon.text("−");
 
-    // Click event (scoped)
+    // Click event
     $thisWrapper.on("click", ".thha-entry-header", function () {
       const $currentHeader = $(this);
       const $currentBody = $currentHeader.next(".thha-entry-body");
       const $currentIcon = $currentHeader.find(".thha-icon");
 
-      // If already open → close
       if ($currentHeader.hasClass("open")) {
         $currentHeader.removeClass("open");
         $currentBody.css("max-height", 0);
@@ -116,7 +113,6 @@ jQuery(document).ready(function ($) {
         return;
       }
 
-      // Close all inside this wrapper only
       $thisWrapper.find(".thha-entry-header").removeClass("open");
       $thisWrapper.find(".thha-entry-body").css("max-height", 0);
       $thisWrapper.find(".thha-icon").text("+");
