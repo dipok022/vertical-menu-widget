@@ -523,6 +523,8 @@
   padding: 2px 6px;
   border-radius: 4px;
   font-weight: 500;
+  height: -moz-max-content;
+  height: max-content;
 }
 .thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .thha-entry-body-inner .thha-changes li .thha-tag.thha-new {
   background: #dbeafe;
@@ -535,6 +537,98 @@
 .thha-changlogs.thha-presets-4 .thha-timeline .thha-entry .thha-entry-body .thha-entry-body-inner .thha-changes li .thha-tag.thha-bugfix {
   background: #fee2e2;
   color: #dc2626;
+}
+.thha-changlogs.thha-presets-5 {
+  font-family: "JetBrains Mono", monospace;
+  overflow-x: auto;
+  padding: 20px 0 40px;
+  -webkit-overflow-scrolling: touch;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry {
+  width: 440px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 0.5s;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 30px -12px rgba(245, 158, 11, 0.15);
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry.thha-visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry:first-child {
+  border-color: #f59e0b;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-changes li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+  padding: 6px 0;
+  color: #374151;
+  list-style: none;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-changes li .thha-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 100px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-changes li .thha-tag.thha-new {
+  background: #fef3c7;
+  color: #d97706;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-changes li .thha-tag.thha-improved {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline .thha-entry .thha-changes li .thha-tag.thha-bugfix {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.thha-changlogs.thha-presets-5 .thha-timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 /* idias for more changelog presets can be added below
