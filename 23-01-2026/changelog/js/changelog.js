@@ -344,14 +344,6 @@ jQuery(window).on("load", function () {
       // Set new selection to full parent width
       selectedEntry = $entry;
 
-      $entry.css({
-        width: parentWidth + "px",
-        position: "absolute",
-        left: "0",
-        top: "0",
-        zIndex: 50,
-      });
-
       // Adjust timeline height to accommodate expanded entry
       const entryHeight = $entry.outerHeight();
       $timeline.css({ minHeight: entryHeight + "px" });
