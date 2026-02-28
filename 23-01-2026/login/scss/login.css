@@ -25,7 +25,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -35,8 +35,73 @@
 }
 .thha-login.thha-presets-1 .thha-lonin-wrapper .thha-testimonial {
   flex: 1;
-  max-width: 420px;
+  max-width: 589px;
   animation: fadeLeft 0.7s ease both;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-testimonial .thha-quote-icon {
+  font-size: 144px;
+  line-height: 0;
+  font-weight: 900;
+  color: #d7e0ff;
+  font-family: "Inter", sans-serif;
+  display: block;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-testimonial .thha-info {
+  font-size: 28px;
+  line-height: 1.7;
+  color: #000000;
+  font-weight: 400;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 80px 98px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  animation: fadeRight 0.7s ease both;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container {
+  position: relative;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel {
+  width: 100%;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-panel-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-panel-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #111827;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-field-group {
+  margin-top: 36px;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-field-group .thha-field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-field-group .thha-field-label-row .thha-field-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel .thha-field-group .thha-field-label-row .thha-field-link {
+  font-size: 12px;
+  color: #2563eb;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.thha-login.thha-presets-1 .thha-lonin-wrapper .thha-card .thha-panels-container .thha-panel.thha-hidden {
+  display: none;
 }
 .thha-login.thha-presets-1::before {
   content: "";
@@ -52,6 +117,16 @@
   from {
     opacity: 0;
     transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
