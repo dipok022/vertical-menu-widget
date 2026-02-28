@@ -2,4 +2,154 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: DM Sans, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
+}
+
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper {
+  padding: 80px 40px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  background: #0c2045;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 1s ease forwards;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content {
+  position: relative;
+  z-index: 2;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  animation: slideDown 1s ease forwards;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b8e3ff;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeIn 1.5s ease forwards;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content {
+  /* Buttons */
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeUp 1.5s ease forwards;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  /* Primary */
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn.btn-primary {
+  background: #1ea7ff;
+  color: #fff;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn.btn-primary:hover :hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(30, 167, 255, 0.5);
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn {
+  /* Secondary */
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn.btn-secondary {
+  background: #fff;
+  color: #1078ff;
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper .thha-cta-content .thha-cta-buttons .thha-btn.btn-secondary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+.thha-call-to-action.thha-presets-1 .thha-cta-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 8s linear infinite;
+  opacity: 0.4;
+}
+.thha-call-to-action.thha-presets-1 {
+  /* Animations */
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moveGrid {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 40px 40px, 40px 40px;
+  }
+}
+.thha-call-to-action.thha-presets-1 {
+  /* Responsive */
+}
+@media (max-width: 768px) {
+  .thha-call-to-action.thha-presets-1 .thha-cta-title {
+    font-size: 28px;
+  }
+  .thha-call-to-action.thha-presets-1 .thha-cta-wrapper {
+    padding: 60px 20px;
+  }
 }/*# sourceMappingURL=call-to-action.css.map */
