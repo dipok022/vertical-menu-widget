@@ -11,7 +11,8 @@
   margin: auto;
   padding: 0 20px;
 }
-.container .header-title {
+
+.header-title {
   color: #df0463;
   font-size: 28px;
   font-weight: 900;
@@ -151,5 +152,158 @@
   }
   .thha-call-to-action.thha-presets-1 .thha-cta-wrapper {
     padding: 60px 20px;
+  }
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 100px 10%;
+  overflow: hidden;
+  border-radius: 18px;
+  /* Animated Corner Lines */
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-corner {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: #111;
+  opacity: 0;
+  animation: cornerReveal 1.5s ease forwards;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-corner.top-left {
+  top: 40px;
+  left: 40px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-corner.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  animation-delay: 0.5s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper {
+  /* CONTENT */
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  color: #111;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 0.6s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content h1 em {
+  font-style: italic;
+  font-weight: 600;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-tag {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 0.3s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 0.9s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content {
+  /* CTA LINK */
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-link {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #111;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 1.2s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-link .arrow {
+  width: 36px;
+  height: 1px;
+  background: #0a0a0a;
+  position: relative;
+  transition: width 0.3s;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-link .arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  border: 4px solid transparent;
+  border-left: 8px solid #0a0a0a;
+  border-right: 0;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content .thha-cta-link:hover .arrow {
+  width: 56px;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 243, 239, 0.75);
+  backdrop-filter: blur(2px);
+  border-radius: 18px;
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper {
+  /* Animations */
+}
+@keyframes cornerReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.thha-call-to-action.thha-presets-2 .thha-cta-wrapper {
+  /* Responsive */
+}
+@media (max-width: 768px) {
+  .thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-wrapper {
+    padding: 80px 8%;
+  }
+  .thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content h1 {
+    font-size: 36px;
+  }
+  .thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-description {
+    font-size: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content {
+    text-align: center;
   }
 }/*# sourceMappingURL=call-to-action.css.map */

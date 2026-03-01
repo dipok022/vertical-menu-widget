@@ -12,15 +12,15 @@
   max-width: 1320px;
   margin: auto;
   padding: 0 20px;
+}
 
-  .header-title {
-    color: #df0463;
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 22px;
-    text-align: center;
-    margin: 38px 0 50px 0;
-  }
+.header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
 }
 
 .thha-call-to-action {
@@ -171,6 +171,172 @@
       }
       .thha-cta-wrapper {
         padding: 60px 20px;
+      }
+    }
+  }
+
+  &.thha-presets-2 {
+    .thha-cta-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 100px 10%;
+      overflow: hidden;
+      border-radius: 18px;
+
+      /* Animated Corner Lines */
+      .thha-corner {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-color: #111;
+        opacity: 0;
+        animation: cornerReveal 1.5s ease forwards;
+
+        &.top-left {
+          top: 40px;
+          left: 40px;
+          border-top: 2px solid;
+          border-left: 2px solid;
+        }
+
+        &.bottom-right {
+          bottom: 40px;
+          right: 40px;
+          border-bottom: 2px solid;
+          border-right: 2px solid;
+          animation-delay: 0.5s;
+        }
+      }
+
+      /* CONTENT */
+      .thha-cta-content {
+        position: relative;
+        max-width: 700px;
+        z-index: 2;
+
+        h1 {
+          font-family: "Playfair Display", serif;
+          font-size: 56px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 30px;
+          color: #111;
+          opacity: 0;
+          animation: fadeUp 1s ease forwards 0.6s;
+
+          em {
+            font-style: italic;
+            font-weight: 600;
+          }
+        }
+
+        .thha-cta-tag {
+          letter-spacing: 4px;
+          font-size: 12px;
+          color: #777;
+          margin-bottom: 30px;
+          opacity: 0;
+          animation: fadeUp 1s ease forwards 0.3s;
+        }
+
+        .thha-cta-description {
+          font-size: 18px;
+          color: #555;
+          line-height: 1.7;
+          margin-bottom: 40px;
+          opacity: 0;
+          animation: fadeUp 1s ease forwards 0.9s;
+        }
+
+        /* CTA LINK */
+        .thha-cta-link {
+          font-size: 14px;
+          letter-spacing: 2px;
+          text-decoration: none;
+          color: #111;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 15px;
+          opacity: 0;
+          animation: fadeUp 1s ease forwards 1.2s;
+
+          .arrow {
+            width: 36px;
+            height: 1px;
+            background: #0a0a0a;
+            position: relative;
+            transition: width 0.3s;
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: -4px;
+              border: 4px solid transparent;
+              border-left: 8px solid #0a0a0a;
+              border-right: 0;
+            }
+          }
+
+          &:hover {
+            .arrow {
+              width: 56px;
+            }
+          }
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(245, 243, 239, 0.75);
+        backdrop-filter: blur(2px);
+        border-radius: 18px;
+      }
+
+      /* Animations */
+      @keyframes cornerReveal {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .thha-cta-wrapper {
+          padding: 80px 8%;
+        }
+        .thha-cta-content h1 {
+          font-size: 36px;
+        }
+        .thha-cta-description {
+          font-size: 16px;
+        }
+      }
+      @media (max-width: 425px) {
+        .thha-cta-content {
+          text-align: center;
+        }
       }
     }
   }
