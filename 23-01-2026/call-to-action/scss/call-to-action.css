@@ -306,4 +306,153 @@
   .thha-call-to-action.thha-presets-2 .thha-cta-wrapper .thha-cta-content {
     text-align: center;
   }
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper {
+  background: linear-gradient(135deg, #fff5f0 0%, #ffeef8 50%, #eef5ff 100%);
+  border-radius: 28px;
+  padding: 52px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-corner {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(3px);
+  pointer-events: none;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-corner.top-right {
+  width: 280px;
+  height: 280px;
+  top: -60px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(255, 100, 100, 0.25), transparent);
+  animation: float 7s ease-in-out infinite;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-corner.bottom-left {
+  width: 220px;
+  height: 220px;
+  bottom: -50px;
+  left: -50px;
+  background: radial-gradient(circle, rgba(100, 130, 255, 0.2), transparent);
+  animation: float 9s ease-in-out infinite reverse;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content {
+  position: relative;
+  z-index: 2;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-stars {
+  font-size: 14px;
+  color: #f59e0b;
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+  animation: fadeInUp 1s ease forwards;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content h2 {
+  font-size: 44px;
+  color: #1a1a2e;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 15px 36px;
+  background: linear-gradient(135deg, #ff6b6b, #c44dff);
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(196, 77, 255, 0.3);
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 45px rgba(196, 77, 255, 0.45);
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link {
+  /* Shine Effect */
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link:hover::before {
+  left: 125%;
+}
+.thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-required {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #999;
+}
+.thha-call-to-action.thha-presets-3 {
+  /* Animations */
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 991px) {
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper {
+    padding: 40px 30px;
+  }
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 576px) {
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper {
+    padding: 32px 20px;
+    border-radius: 20px;
+  }
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content h2 {
+    font-size: 26px;
+  }
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content p {
+    font-size: 14px;
+  }
+  .thha-call-to-action.thha-presets-3 .thha-cta-wrapper .thha-content .thha-cta-link {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=call-to-action.css.map */
