@@ -157,7 +157,6 @@
     flex-direction: column;
     gap: 50px;
     padding: 70px 30px;
-    text-align: center;
   }
   .thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-header h2 {
     font-size: 26px;
@@ -187,6 +186,222 @@
   }
   .thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input,
   .thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  background: #ffffff;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap {
+  width: 492px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #0a0d11;
+  margin-bottom: 40px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #0a0d11;
+  margin-top: 40px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-support-img {
+  position: relative;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-support-img .thha-tag {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  padding: 8px 10px 8px 28px;
+  background: #ffffff;
+  width: calc(100% - 110px);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0a0d11;
+  border-radius: 50px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-support-img .thha-tag .mini-logo {
+  padding: 11.5px 10px;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(18, 26, 43, 0.05), 0 2px 4px rgba(18, 26, 43, 0.08), 0 4px 8px rgba(18, 26, 43, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-support-img .thha-tag .mini-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(18, 26, 43, 0.1), 0 4px 8px rgba(18, 26, 43, 0.15), 0 6px 12px rgba(18, 26, 43, 0.2);
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap {
+  width: 650px;
+  padding: 40px;
+  background: #fcfbff;
+  border-radius: 32px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group {
+  margin-top: 16px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group:first-child {
+  margin-top: 0;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #0a0d11;
+  margin-bottom: 8px;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input,
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1.5px solid #e7e7e7;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #4b4757;
+  transition: all 0.35s ease;
+  outline: none;
+  backdrop-filter: blur(6px);
+  box-shadow: 0px 1px 2px rgba(18, 26, 43, 0.05);
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input::-moz-placeholder, .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea::-moz-placeholder {
+  color: #4b4757;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input::placeholder,
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea::placeholder {
+  color: #4b4757;
+  transition: 0.3s;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input:focus,
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea:focus {
+  border-color: #1e73be;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(30, 115, 190, 0.15), 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea {
+  min-height: 140px;
+  resize: none;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  background: #0a0d11;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  margin-top: 38px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn span {
+  position: relative;
+  z-index: 1;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #14181c, #0a0d11);
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(14, 15, 17, 0.4);
+}
+.thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover::before {
+  left: 0;
+}
+@media (max-width: 1400px) {
+  .thha-support-system.thha-presets-2 .thha-support-wrapper {
+    gap: 100px;
+    padding: 90px 60px 100px 40px;
+  }
+}
+@media (max-width: 1200px) {
+  .thha-support-system.thha-presets-2 .thha-support-wrapper {
+    gap: 60px;
+    padding: 80px 40px 90px 40px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 992px) {
+  .thha-support-system.thha-presets-2 .thha-support-wrapper {
+    flex-direction: column;
+    gap: 50px;
+    padding: 70px 30px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap {
+    width: 100%;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-support-img > img {
+    width: 100%;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap h2 {
+    font-size: 26px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap p {
+    font-size: 14px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media (max-width: 576px) {
+  .thha-support-system.thha-presets-2 .thha-support-wrapper {
+    padding: 50px 20px;
+    gap: 40px;
+    border-radius: 15px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap p {
+    font-size: 13px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-img-wrap .thha-tag {
+    width: calc(100% - 48px) !important;
+    flex-direction: column;
+    padding: 20px !important;
+    gap: 10px !important;
+    text-align: center;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group label {
+    font-size: 14px;
+  }
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group input,
+  .thha-support-system.thha-presets-2 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .form-group textarea {
     padding: 14px 16px;
     font-size: 14px;
   }
