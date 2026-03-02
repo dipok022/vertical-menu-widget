@@ -98,6 +98,45 @@
   min-height: 140px;
   resize: none;
 }
+.thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  background: #0853ff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  margin-top: 38px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+.thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn span {
+  position: relative;
+  z-index: 1;
+}
+.thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #4f8cff, #002bff);
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+.thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(8, 83, 255, 0.4);
+}
+.thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover::before {
+  left: 0;
+}
 @media (max-width: 1400px) {
   .thha-support-system.thha-presets-1 .thha-support-wrapper {
     gap: 100px;
