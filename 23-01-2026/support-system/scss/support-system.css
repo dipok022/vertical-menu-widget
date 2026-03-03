@@ -502,4 +502,156 @@
 }
 .thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-btn-submit:hover {
   background: #4f46e5;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 850px;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #f9f3f4;
+  animation: fadeIn 1s ease forwards;
+  margin: auto;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-support-header {
+  grid-column: span 2;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-support-header h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-support-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-support-header:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support {
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  animation: floatCard 4s ease-in-out infinite;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support svg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support p {
+  font-size: 14px;
+  color: #e0e7ff;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -30px;
+  right: -30px;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-fast-support:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-form-group:not(.thha-message-card .thha-form-group),
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-message-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid #f9f3f4;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-form-group:not(.thha-message-card .thha-form-group):hover,
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-message-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper input,
+.thha-support-system.thha-presets-4 .thha-support-wrapper textarea {
+  width: 100%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper input:focus,
+.thha-support-system.thha-presets-4 .thha-support-wrapper textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-message-card {
+  grid-column: span 2;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-message-card .thha-btn-submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  background: #0f172a;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.thha-support-system.thha-presets-4 .thha-support-wrapper .thha-message-card .thha-btn-submit:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 768px) {
+  .thha-support-system.thha-presets-4 .thha-support-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=support-system.css.map */
