@@ -21,6 +21,17 @@
   margin: 38px 0 50px 0;
 }
 
+.drawer {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background: #f8fafc;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .thha-support-system.thha-presets-1 .thha-support-wrapper {
   display: flex;
   justify-content: center;
@@ -654,4 +665,130 @@
     display: flex;
     flex-direction: column;
   }
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-open-btn {
+  background: #ffffff;
+  padding: 16px 30px;
+  border-radius: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-open-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #615fff;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-open-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  display: none;
+  z-index: 10;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  height: 100%;
+  width: 320px;
+  background: #ffffff;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease;
+  z-index: 20;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-header .thha-close {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 18px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field {
+  margin-bottom: 20px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field input,
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field textarea {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field input:focus,
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-field textarea {
+  resize: none;
+  height: 90px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-issue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-issue-grid .thha-issue {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-issue-grid .thha-issue.active, .thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-issue-grid .thha-issue:hover {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-send-btn {
+  background: #0f172a;
+  color: #fff;
+  padding: 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer .thha-send-btn:hover {
+  background: #000;
+}
+.thha-support-system.thha-presets-5 .thha-support-wrapper .thha-drawer.active {
+  right: 0;
 }/*# sourceMappingURL=support-system.css.map */
