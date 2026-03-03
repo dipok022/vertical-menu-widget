@@ -871,15 +871,6 @@
         .thha-field {
           margin-bottom: 20px;
 
-          label {
-            font-size: 11px;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 6px;
-          }
-
           input,
           textarea {
             width: 100%;
@@ -901,6 +892,15 @@
             resize: none;
             height: 90px;
           }
+        }
+
+        label {
+          font-size: 11px;
+          font-weight: 600;
+          color: #94a3b8;
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 6px;
         }
 
         // Issue Buttons
