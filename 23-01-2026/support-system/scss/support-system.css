@@ -405,4 +405,101 @@
     padding: 14px 16px;
     font-size: 14px;
   }
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 5px;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-header h2 span {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-header h2 span svg {
+  stroke: #615fff;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap {
+  margin-top: 25px;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group {
+  margin-bottom: 20px;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-form-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  display: block;
+  transition: 0.3s ease;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper {
+  position: relative;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper svg {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  stroke: #90a1b9;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper .thha-form-input,
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper .thha-form-textarea {
+  width: 100%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px 12px 40px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper .thha-form-input:focus,
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper .thha-form-textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper .thha-form-textarea {
+  resize: none;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-form-group .thha-input-wrapper:focus-within svg {
+  stroke: #6366f1;
+  width: 17px;
+  height: 17px;
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-btn-submit {
+  width: 100%;
+  background: #6366f1;
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+.thha-support-system.thha-presets-3 .thha-support-wrapper .thha-support-form-wrap form .thha-btn-submit:hover {
+  background: #4f46e5;
 }/*# sourceMappingURL=support-system.css.map */
