@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/news-ticker.css" />
+    <link rel="stylesheet" href="../../css/dashicons.css" />
     <title>News Ticker</title>
   </head>
   <body>
     <!-- Design 1 -->
     <section style="background-color: #fff; padding: 100px 0">
       <div class="container">
-        <h2 class="header-title">Design 1</h2>
+        <h2 class="header-title">Design 1 ( Classic Marquee )</h2>
 
         <div class="thha-news-ticke thha-presets-1">
           <div class="thha-trending-wrapper">
@@ -76,6 +77,58 @@
                 Inflation Data Beats Expectations
                 <span class="thha-separator">•</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 -->
+    <section style="background-color: #fff; padding: 100px 0">
+      <div class="container" style="width: 100%; max-width: 800px">
+        <h2 class="header-title">Design 2 ( Vertical Slide )</h2>
+
+        <div class="thha-news-ticke thha-presets-2">
+          <div class="thha-trending-wrapper">
+            <div class="thha-label">
+              <span class="thha-live"></span> Live Updates
+            </div>
+
+            <div class="thha-slider">
+              <div class="thha-slides">
+                <div class="thha-slide">
+                  <span class="thha-time">5h</span>
+                  <span
+                    >Breakthrough Cancer Therapy Shows 90% Remission Rate</span
+                  >
+                </div>
+
+                <div class="thha-slide">
+                  <span class="thha-time">3h</span>
+                  <span>AI Startup Raises $50M in Series B Funding</span>
+                </div>
+
+                <div class="thha-slide">
+                  <span class="thha-time">1h</span>
+                  <span>Global Markets Rally After Inflation Data Drops</span>
+                </div>
+
+                <div class="thha-slide">
+                  <span class="thha-time">30m</span>
+                  <span
+                    >SpaceX Successfully Launches New Satellite Mission</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="thha-controls">
+              <button id="prev" class="thha-control-btn">
+                <span class="dashicons dashicons-arrow-left-alt2"></span>
+              </button>
+              <button id="next" class="thha-control-btn">
+                <span class="dashicons dashicons-arrow-right-alt2"></span>
+              </button>
             </div>
           </div>
         </div>
