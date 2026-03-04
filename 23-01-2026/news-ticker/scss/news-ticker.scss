@@ -351,4 +351,55 @@
       }
     }
   }
+
+  &.thha-presets-5 {
+    .thha-ticker-terminal {
+      width: 100%;
+      max-width: 900px;
+      background: #050505;
+      color: #4ade80;
+      font-family: "JetBrains Mono", "Courier New", monospace;
+      padding: 15px 20px;
+      border-left: 4px solid #22c55e;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+      margin: auto;
+
+      .thha-terminal-header {
+        .thha-terminal-prefix {
+          color: rgba(74, 222, 128, 0.5);
+          font-size: 14px;
+          white-space: nowrap;
+        }
+      }
+
+      .thha-terminal-body {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        overflow: hidden;
+        .thha-typing-text {
+          .thha-cursor {
+            display: inline-block;
+            width: 8px;
+            background-color: #4ade80;
+            margin-left: 4px;
+            animation: blink 0.8s infinite;
+          }
+        }
+      }
+
+      // Animation
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    }
+  }
 }

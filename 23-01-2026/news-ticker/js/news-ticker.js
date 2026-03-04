@@ -156,3 +156,54 @@ $(document).ready(function () {
     startAuto();
   });
 });
+
+// presets 5
+$(document).ready(function () {
+  const $wrapper = $(".thha-presets-5");
+  const $items = $wrapper.find(".thha-typing-item");
+  const $textElement = $wrapper.find("#typing-text");
+
+  let newsItems = [];
+
+  $items.each(function () {
+    newsItems.push($(this).text().trim());
+  });
+
+  $wrapper.find(".thha-typing-items").hide();
+
+  let itemIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typingSpeed = 80;
+  const deletingSpeed = 40;
+  const pauseTime = 2000;
+
+  function typeEffect() {
+    const currentText = newsItems[itemIndex];
+
+    if (!isDeleting) {
+      $textElement.text(currentText.substring(0, charIndex + 1));
+      charIndex++;
+
+      if (charIndex === currentText.length) {
+        setTimeout(() => (isDeleting = true), pauseTime);
+      }
+    } else {
+      $textElement.text(currentText.substring(0, charIndex - 1));
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        itemIndex = (itemIndex + 1) % newsItems.length;
+      }
+    }
+
+    const delay = isDeleting ? deletingSpeed : typingSpeed;
+    setTimeout(typeEffect, delay);
+  }
+
+  if (newsItems.length) {
+    typeEffect();
+  }
+});
