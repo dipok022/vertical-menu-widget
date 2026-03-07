@@ -37,10 +37,10 @@
               <div class="thha-panels-container">
                 <!-- LOGIN PANEL -->
                 <div class="thha-panel" id="thha-login-panel">
-                  <div class="thha-panel-title">Login to Your Account</div>
-                  <div class="thha-panel-subtitle">
+                  <h1 class="thha-panel-title">Login to Your Account</h1>
+                  <p class="thha-panel-subtitle">
                     Enter your Credentials to access your account
-                  </div>
+                  </p>
 
                   <div class="thha-field-groups">
                     <label class="thha-field-group">
@@ -107,48 +107,48 @@
 
                 <!-- SIGNUP PANEL -->
                 <div class="thha-panel thha-hidden" id="thha-signup-panel">
-                  <div class="thha-panel-title">Sign Up To your Account</div>
-                  <div class="thha-panel-subtitle">
+                  <h1 class="thha-panel-title">Sign Up To your Account</h1>
+                  <p class="thha-panel-subtitle">
                     Enter your Credentials to access your account
-                  </div>
+                  </p>
 
-                  <div class="thha-field-group">
-                    <div class="thha-field-label-row">
-                      <label class="thha-field-label">Name*</label>
+                  <div class="thha-field-groups">
+                    <div class="thha-field-group">
+                      <div class="thha-field-label-row">
+                        <label class="thha-field-label">Name*</label>
+                      </div>
+                      <input type="text" placeholder="Enter your Name" />
                     </div>
-                    <input type="text" placeholder="Enter your Name" />
-                  </div>
 
-                  <div class="thha-field-group">
-                    <div class="thha-field-label-row">
-                      <label class="thha-field-label">Email Address*</label>
-                      <a href="#" class="thha-field-link">forgot password</a>
+                    <div class="thha-field-group">
+                      <div class="thha-field-label-row">
+                        <label class="thha-field-label">Email Address*</label>
+                      </div>
+                      <input type="email" placeholder="Enter your Email" />
                     </div>
-                    <input type="email" placeholder="Enter your Email" />
-                  </div>
 
-                  <div class="thha-field-group">
-                    <div class="thha-field-label-row">
-                      <label class="thha-field-label">Password*</label>
-                      <a href="#" class="thha-field-link">forgot password</a>
+                    <div class="thha-field-group">
+                      <div class="thha-field-label-row">
+                        <label class="thha-field-label">Password*</label>
+                      </div>
+                      <input type="password" placeholder="Password" />
                     </div>
-                    <input type="password" placeholder="••••••••••" />
                   </div>
 
                   <div class="thha-check-row">
-                    <input type="checkbox" id="thha-terms" />
-                    <label for="thha-terms"
-                      >I agree to the <a href="#">terms &amp; policy</a></label
-                    >
+                    <input type="checkbox" id="thha-remember" />
+                    <label for="thha-remember"
+                      >I agree to the <a href="#">terms & policy</a>
+                    </label>
                   </div>
 
-                  <button class="thha-btn-primary">Signup</button>
+                  <button type="submit" class="thha-btn-primary">Login</button>
 
                   <div class="thha-divider">Or</div>
 
                   <button class="thha-btn-google">
                     <svg
-                      class="thha-google-icon"
+                      class="google-icon"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -173,7 +173,8 @@
                   </button>
 
                   <div class="thha-switch-row">
-                    Have an account? <a id="thha-go-login">Sign in</a>
+                    Have an account?
+                    <a id="thha-go-login">Sign in</a>
                   </div>
                 </div>
               </div>
@@ -182,5 +183,8 @@
         </div>
       </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

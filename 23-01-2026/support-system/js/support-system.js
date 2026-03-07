@@ -1,23 +1,40 @@
 // presets 5
 jQuery(document).ready(function ($) {
-  const $wrapper = $(".thha-presets-5");
+  const $wrapper = $(".thha-presets-1");
 
-  $wrapper.each(function () {
-    const $this = $(this);
+  var $loginPanel = $wrapper.find("#thha-login-panel");
+  var $signupPanel = $wrapper.find("#thha-signup-panel");
+  var isAnimating = false;
 
-    $this.find(".thha-open-btn").on("click", function () {
-      $this.find(".thha-overlay").fadeIn(200);
-      $this.find(".thha-drawer").addClass("active");
-    });
+  function thhaSwitch(hidePanel, showPanel, direction) {
+    if (isAnimating) return;
+    isAnimating = true;
 
-    $this.find(".thha-close, .thha-overlay").on("click", function () {
-      $this.find(".thha-overlay").fadeOut(200);
-      $this.find(".thha-drawer").removeClass("active");
-    });
+    var outClass =
+      direction === "left" ? "thha-slide-out-left" : "thha-slide-out-right";
+    var inClass =
+      direction === "left" ? "thha-slide-in-right" : "thha-slide-in-left";
 
-    $this.find(".thha-issue").on("click", function () {
-      $this.find(".thha-issue").removeClass("active");
-      $(this).addClass("active");
-    });
+    hidePanel.addClass(outClass);
+
+    setTimeout(function () {
+      hidePanel.addClass("thha-hidden").removeClass(outClass);
+      showPanel.removeClass("thha-hidden").addClass(inClass);
+
+      setTimeout(function () {
+        showPanel.removeClass(inClass);
+        isAnimating = false;
+      }, 420);
+    }, 400);
+  }
+
+  $wrapper.find("#thha-go-signup").on("click", function (e) {
+    e.preventDefault();
+    thhaSwitch($loginPanel, $signupPanel, "left");
+  });
+
+  $wrapper.find("#thha-go-login").on("click", function (e) {
+    e.preventDefault();
+    thhaSwitch($signupPanel, $loginPanel, "right");
   });
 });
