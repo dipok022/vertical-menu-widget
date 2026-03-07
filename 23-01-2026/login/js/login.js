@@ -35,3 +35,19 @@ jQuery(document).ready(function ($) {
     thhaSwitch($signupPanel, $loginPanel, "right");
   });
 });
+
+// presets 2
+jQuery(document).ready(function ($) {
+  const $wrapper = $(".thha-presets-2");
+  const $container = $wrapper.find(".thha-lonin-wrapper");
+  const $signup = $wrapper.find("#thha-signup-btn");
+  const $signin = $wrapper.find("#thha-signin-btn");
+
+  $signup.on("click", function () {
+    $container.addClass("thha-right-active");
+  });
+
+  $signin.on("click", function () {
+    $container.removeClass("thha-right-active");
+  });
+});
