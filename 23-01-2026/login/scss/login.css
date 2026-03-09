@@ -387,7 +387,50 @@
   overflow: hidden;
   min-height: 550px;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  /* form containers */
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap {
+  display: none;
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap .thha-mobile-switch {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 45px;
+  background: #f1f5f9;
+  border-radius: 25px;
+  display: flex;
+  padding: 4px;
+  z-index: 20;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap .thha-mobile-switch .thha-switch-bg {
+  position: absolute;
+  width: 106px;
+  height: 37px;
+  background: linear-gradient(to right, #6366f1, #a855f7);
+  border-radius: 20px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap .thha-mobile-switch .thha-switch-bg.thha-switch-right {
+  transform: translateX(106px);
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap .thha-mobile-switch .thha-switch-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap .thha-mobile-switch .thha-switch-btn.active {
+  color: #ffffff;
 }
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container {
   position: absolute;
@@ -398,7 +441,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* form */
 }
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container .thha-form {
   width: 100%;
@@ -417,9 +459,6 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1e293b;
-}
-.thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container .thha-form {
-  /* social */
 }
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container .thha-form .thha-social {
   margin: 20px 0;
@@ -507,6 +546,9 @@
   color: #94a3b8;
   transition: color 0.2s ease;
   border: 0;
+  background: transparent;
+  width: 18px;
+  height: 18px;
 }
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container .thha-form .thha-field-groups .thha-field-group .thha-show-pass .thha-pass-hidden {
   width: 0;
@@ -578,9 +620,6 @@
 .thha-login.thha-presets-2 .thha-lonin-wrapper.thha-right-active .thha-overlay {
   transform: translateX(50%);
 }
-.thha-login.thha-presets-2 .thha-lonin-wrapper {
-  /* overlay */
-}
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-overlay-container {
   position: absolute;
   top: 0;
@@ -645,26 +684,30 @@
 .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-overlay-container .thha-overlay .thha-overlay-panel .thha-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.thha-login.thha-presets-2 {
-  /* responsive */
-}
 @media (max-width: 768px) {
   .thha-login.thha-presets-2 .thha-lonin-wrapper {
-    width: 100%;
-    height: auto;
-    min-height: 600px;
+    min-height: 612px;
   }
-  .thha-login.thha-presets-2 .thha-form-container {
-    width: 100%;
-    position: relative;
+  .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-mobile-switch-wrap {
+    display: block;
   }
-  .thha-login.thha-presets-2 .thha-signin,
-  .thha-login.thha-presets-2 .thha-signup {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-  .thha-login.thha-presets-2 .thha-overlay-container {
+  .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-overlay-container {
     display: none;
+  }
+  .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-form-container {
+    width: 100%;
+  }
+  .thha-login.thha-presets-2 .thha-lonin-wrapper.thha-right-active .thha-signup {
+    transform: translateX(0%);
+  }
+  .thha-login.thha-presets-2 .thha-lonin-wrapper.thha-right-active .thha-signin {
+    transform: translateX(-100%);
+  }
+  .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-signup {
+    transform: translateX(100%);
+  }
+  .thha-login.thha-presets-2 .thha-lonin-wrapper .thha-signin {
+    transform: translateX(0%);
   }
 }
 

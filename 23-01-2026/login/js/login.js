@@ -37,11 +37,92 @@ jQuery(document).ready(function ($) {
 });
 
 // presets 2
+// jQuery(document).ready(function ($) {
+//   const $wrapper = $(".thha-presets-2");
+//   const $container = $wrapper.find(".thha-lonin-wrapper");
+//   const $signup = $wrapper.find("#thha-signup-btn");
+//   const $signin = $wrapper.find("#thha-signin-btn");
+
+//   $signup.on("click", function () {
+//     $container.addClass("thha-right-active");
+//   });
+
+//   $signin.on("click", function () {
+//     $container.removeClass("thha-right-active");
+//   });
+// });
+
+// jQuery(document).ready(function ($) {
+//   const $wrapper = $(".thha-presets-2");
+//   const $container = $wrapper.find(".thha-lonin-wrapper");
+
+//   const $signup = $wrapper.find("#thha-signup-btn");
+//   const $signin = $wrapper.find("#thha-signin-btn");
+
+//   const $mobileBtns = $wrapper.find(".thha-mobile-switch .thha-switch-btn");
+//   const $switchBg = $wrapper.find(".thha-switch-bg");
+
+//   const $btnIn = $mobileBtns.find(0);
+//   const $btnUp = $mobileBtns.eq(1);
+
+//   /* Desktop overlay switch */
+//   $signup.on("click", function () {
+//     $container.addClass("thha-right-active");
+//   });
+
+//   $signin.on("click", function () {
+//     $container.removeClass("thha-right-active");
+//   });
+
+//   /* Mobile switch */
+
+//   $btnIn.on("click", function () {
+//     $mobileBtns.removeClass("active");
+//     $(this).addClass("active");
+
+//     $container.removeClass("thha-right-active");
+//     $switchBg.removeClass("thha-switch-right");
+//   });
+
+//   $btnUp.on("click", function () {
+//     $mobileBtns.removeClass("active");
+//     $(this).addClass("active");
+
+//     $container.addClass("thha-right-active");
+//     $switchBg.addClass("thha-switch-right");
+//   });
+
+//   /* Password show/hide */
+
+//   $wrapper.find(".thha-show-pass").on("click", function () {
+//     const $btn = $(this);
+//     const $input = $btn.closest(".thha-field-group").find("input");
+
+//     if ($input.attr("type") === "password") {
+//       $input.attr("type", "text");
+//       $btn.addClass("showing");
+//     } else {
+//       $input.attr("type", "password");
+//       $btn.removeClass("showing");
+//     }
+//   });
+// });
+
 jQuery(document).ready(function ($) {
   const $wrapper = $(".thha-presets-2");
   const $container = $wrapper.find(".thha-lonin-wrapper");
+
   const $signup = $wrapper.find("#thha-signup-btn");
   const $signin = $wrapper.find("#thha-signin-btn");
+
+  const $mobileSwitch = $wrapper.find(".thha-mobile-switch");
+  const $mobileBtns = $mobileSwitch.find(".thha-switch-btn");
+  const $switchBg = $mobileSwitch.find(".thha-switch-bg");
+
+  const $btnIn = $mobileSwitch.find(".thha-signin-btn");
+  const $btnUp = $mobileSwitch.find(".thha-signup-btn");
+
+  // Desktop overlay
 
   $signup.on("click", function () {
     $container.addClass("thha-right-active");
@@ -49,5 +130,36 @@ jQuery(document).ready(function ($) {
 
   $signin.on("click", function () {
     $container.removeClass("thha-right-active");
+  });
+
+  // Mobile switch
+  $btnIn.on("click", function () {
+    $mobileBtns.removeClass("active");
+    $(this).addClass("active");
+
+    $container.removeClass("thha-right-active");
+    $switchBg.removeClass("thha-switch-right");
+  });
+
+  $btnUp.on("click", function () {
+    $mobileBtns.removeClass("active");
+    $(this).addClass("active");
+
+    $container.addClass("thha-right-active");
+    $switchBg.addClass("thha-switch-right");
+  });
+
+  // Password toggle
+  $wrapper.find(".thha-show-pass").on("click", function () {
+    const $btn = $(this);
+    const $input = $btn.closest(".thha-field-group").find("input");
+
+    if ($input.attr("type") === "password") {
+      $input.attr("type", "text");
+      $btn.addClass("showing");
+    } else {
+      $input.attr("type", "password");
+      $btn.removeClass("showing");
+    }
   });
 });
