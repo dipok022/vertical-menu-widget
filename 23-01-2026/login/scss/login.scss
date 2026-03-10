@@ -1143,4 +1143,254 @@
       }
     }
   }
+
+  &.thha-presets-4 {
+    .thha-auth-wrapper {
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+
+      .thha-auth-card {
+        background: #fff;
+        border-radius: 28px;
+        border: 1px solid #edf0ff;
+        box-shadow: 0 25px 60px rgba(80, 90, 200, 0.15);
+        overflow: hidden;
+
+        // header
+        .thha-header {
+          padding: 40px 32px 20px;
+          text-align: center;
+
+          .thha-logo {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            border-radius: 16px;
+            background: #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+
+            svg {
+              stroke: #fff;
+              width: 24px;
+            }
+          }
+
+          .thha-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 16px;
+            color: #0f172a;
+          }
+
+          .thha-sub {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 6px;
+          }
+
+          // tabs
+          .thha-tabs {
+            margin-top: 28px;
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 4px;
+            display: flex;
+            position: relative;
+
+            .thha-tab-indicator {
+              position: absolute;
+              left: 4px;
+              top: 4px;
+              width: 49%;
+              height: calc(100% - 8px);
+              background: #fff;
+              border-radius: 12px;
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+              transition: 0.35s;
+            }
+
+            .thha-tab {
+              flex: 1;
+              border: none;
+              background: none;
+              padding: 12px;
+              font-size: 14px;
+              font-weight: 600;
+              cursor: pointer;
+              color: #64748b;
+              position: relative;
+              z-index: 2;
+
+              &.thha-active {
+                color: #4f46e5;
+              }
+            }
+          }
+        }
+
+        // form area
+        .thha-form-area {
+          padding: 0 32px 32px;
+
+          .thha-form {
+            display: none;
+
+            .thha-field {
+              margin-top: 18px;
+
+              .thha-label {
+                font-size: 12px;
+                font-weight: 700;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-left: 4px;
+                margin-left: 4px;
+                margin-bottom: 4px;
+                display: block;
+              }
+
+              .thha-input {
+                width: 100%;
+                padding: 14px 16px;
+                border-radius: 14px;
+                border: 1px solid #e2e8f0;
+                background: #fcf9fa;
+                outline: none;
+                font-size: 15px;
+                line-height: 1.5;
+                font-weight: 600;
+
+                &::placeholder {
+                  color: #90a1b9;
+                }
+
+                &:focus {
+                  border-color: #4f46e5;
+                  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+                  background: #fff;
+                }
+              }
+            }
+
+            .thha-btn {
+              margin-top: 22px;
+              width: 100%;
+              padding: 15px;
+              border: none;
+              background: #4f46e5;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 16px;
+              cursor: pointer;
+              transition: 0.25s;
+
+              &:hover {
+                background: #4338ca;
+              }
+            }
+
+            &.thha-active {
+              display: block;
+              animation: thhaFade 0.4s;
+            }
+          }
+
+          // divider
+          .thha-divider {
+            margin: 28px 0;
+            text-align: center;
+            position: relative;
+
+            span {
+              background: #fff;
+              padding: 0 10px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.15em;
+              color: #94a3b8;
+              position: relative;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 100%;
+              height: 1px;
+              background: #eee;
+            }
+          }
+
+          // social
+          .thha-social {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+
+            .thha-social-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              padding: 12px 16px;
+              border-radius: 14px;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              cursor: pointer;
+              font-weight: 600;
+              color: #314158;
+
+              svg {
+                width: 20px;
+                height: 20px;
+                stroke: #314158;
+              }
+
+              &:hover {
+                background: #f9fafb;
+              }
+            }
+          }
+        }
+      }
+
+      // footer
+      .thha-footer {
+        background: #f8fafc;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #edf2f7;
+        font-size: 14px;
+
+        .thha-link {
+          color: #4f46e5;
+          font-weight: 700;
+          cursor: pointer;
+          background: none;
+          border: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // key frames
+    @keyframes thhaFade {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
 }

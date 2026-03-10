@@ -151,3 +151,58 @@ jQuery(document).ready(function ($) {
     }
   });
 });
+
+// presets 4
+jQuery(document).ready(function ($) {
+  /* run script only if auth UI exists */
+  if (!$(".thha-auth-wrapper").length) {
+    return;
+  }
+
+  function thhaSwitch(tab) {
+    /* tab active */
+    $(".thha-tab").removeClass("thha-active");
+    $('.thha-tab[data-tab="' + tab + '"]').addClass("thha-active");
+
+    /* indicator move */
+    if (tab === "signup") {
+      $(".thha-tab-indicator").css("transform", "translateX(100%)");
+    } else {
+      $(".thha-tab-indicator").css("transform", "translateX(0)");
+    }
+
+    /* form switch */
+    $(".thha-form").removeClass("thha-active");
+    $("#" + tab).addClass("thha-active");
+
+    /* footer text toggle */
+    if (tab === "signup") {
+      $(".thha-open-signup").hide();
+      $(".thha-open-signin").show();
+    } else {
+      $(".thha-open-signup").show();
+      $(".thha-open-signin").hide();
+    }
+  }
+
+  /* top tabs */
+  $(".thha-tab").on("click", function (e) {
+    e.preventDefault();
+    const tab = $(this).data("tab");
+    thhaSwitch(tab);
+  });
+
+  /* footer buttons */
+  $(".thha-open-signup").on("click", function (e) {
+    e.preventDefault();
+    thhaSwitch("signup");
+  });
+
+  $(".thha-open-signin").on("click", function (e) {
+    e.preventDefault();
+    thhaSwitch("signin");
+  });
+
+  /* default state */
+  $(".thha-open-signin").hide();
+});
