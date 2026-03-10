@@ -5,8 +5,10 @@
 }
 
 .container {
-  width: 1320px;
+  width: 100%;
+  max-width: 1320px;
   margin: auto;
+  padding: 0 20px;
   .header-title {
     color: #df0463;
     font-size: 28px;
@@ -25,6 +27,8 @@
       justify-content: space-between;
       margin-top: 70px;
       padding: 0 80px;
+      flex-wrap: wrap;
+      gap: 20px;
 
       // filters
       .thha-filters {
@@ -92,10 +96,9 @@
         position: relative;
         margin: 0 80px;
         margin-top: 70px;
-        padding-top: 146px;
-        padding-bottom: 192px;
+        padding-top: 96px;
+        padding-bottom: 96px;
         padding-left: 51px;
-        min-height: 940px;
         border-radius: 19.3px;
         background-color: #f8fbff;
 
@@ -139,11 +142,16 @@
                 li {
                   display: flex;
                   align-items: center;
-                  gap: 10px;
+                  gap: 12px;
                   font-size: 18px;
                   font-weight: 400;
                   line-height: 150%;
                   color: #5d5d5d;
+                  margin-bottom: 12px;
+
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
                 }
               }
 
@@ -159,10 +167,16 @@
           top: 0;
           right: 0;
           width: 100%;
+          height: 100%;
           max-width: 353px;
           display: flex;
           justify-content: center;
           align-items: center;
+          background-image: url("../img/changlogs.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          border-radius: 0 19.3px 19.3px 0;
 
           h3 {
             position: absolute;
@@ -174,16 +188,55 @@
             color: #d7e0ff;
             z-index: 9;
           }
+        }
+      }
+    }
 
-          img {
+    // see more
+    .thha-see-more-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .thha-see-more {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.3;
+        color: #fff;
+        border: 0;
+        background: #0960ec;
+        cursor: pointer;
+      }
+    }
+
+    // Responsive
+    @media (max-width: 1024px) {
+      .thha-changlogs-header {
+        padding: 0 40px;
+      }
+
+      .thha-timeline {
+        .thha-entry {
+          margin-left: 0;
+          margin-right: 0;
+
+          .thha-entry-wrap {
             width: 100%;
-            height: auto;
-            display: block;
+          }
+
+          .thha-entry-img {
+            display: none;
           }
         }
       }
     }
   }
+
   &.thha-presets-2 {
     // search
     .thha-search-wrap {
@@ -402,6 +455,7 @@
       }
     }
   }
+
   &.thha-presets-3 {
     font-family: "Inter", sans-serif;
     .thha-timeline {
