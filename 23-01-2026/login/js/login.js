@@ -154,55 +154,96 @@ jQuery(document).ready(function ($) {
 
 // presets 4
 jQuery(document).ready(function ($) {
-  /* run script only if auth UI exists */
-  if (!$(".thha-auth-wrapper").length) {
-    return;
-  }
+  $(".thha-presets-4").each(function () {
+    const $wrapper = $(this);
 
-  function thhaSwitch(tab) {
-    /* tab active */
-    $(".thha-tab").removeClass("thha-active");
-    $('.thha-tab[data-tab="' + tab + '"]').addClass("thha-active");
-
-    /* indicator move */
-    if (tab === "signup") {
-      $(".thha-tab-indicator").css("transform", "translateX(100%)");
-    } else {
-      $(".thha-tab-indicator").css("transform", "translateX(0)");
+    if (!$wrapper.find(".thha-auth-wrapper").length) {
+      return;
     }
 
-    /* form switch */
-    $(".thha-form").removeClass("thha-active");
-    $("#" + tab).addClass("thha-active");
+    function thhaSwitch(tab) {
+      $wrapper.find(".thha-tab").removeClass("thha-active");
+      $wrapper
+        .find('.thha-tab[data-tab="' + tab + '"]')
+        .addClass("thha-active");
 
-    /* footer text toggle */
-    if (tab === "signup") {
-      $(".thha-open-signup").hide();
-      $(".thha-open-signin").show();
-    } else {
-      $(".thha-open-signup").show();
-      $(".thha-open-signin").hide();
+      if (tab === "signup") {
+        $wrapper
+          .find(".thha-tab-indicator")
+          .css("transform", "translateX(100%)");
+      } else {
+        $wrapper.find(".thha-tab-indicator").css("transform", "translateX(0)");
+      }
+
+      $wrapper.find(".thha-form").removeClass("thha-active");
+      $wrapper.find("#" + tab).addClass("thha-active");
+
+      if (tab === "signup") {
+        $wrapper.find(".thha-open-signup").hide();
+        $wrapper.find(".thha-open-signin").show();
+      } else {
+        $wrapper.find(".thha-open-signup").show();
+        $wrapper.find(".thha-open-signin").hide();
+      }
     }
+
+    $wrapper.find(".thha-tab").on("click", function (e) {
+      e.preventDefault();
+      const tab = $(this).data("tab");
+      thhaSwitch(tab);
+    });
+
+    $wrapper.find(".thha-open-signup").on("click", function (e) {
+      e.preventDefault();
+      thhaSwitch("signup");
+    });
+
+    $wrapper.find(".thha-open-signin").on("click", function (e) {
+      e.preventDefault();
+      thhaSwitch("signin");
+    });
+
+    $wrapper.find(".thha-open-signin").hide();
+  });
+});
+
+// presets 5
+jQuery(document).ready(function ($) {
+  const $wrapper = $(".thha-presets-5");
+
+  const $auth = $wrapper.find(".thha-auth-wrapper");
+
+  function thhaUpdateHeight() {
+    const $active = $wrapper.find(".thha-panel:visible");
+    const height = $active.outerHeight(true);
+
+    $auth.stop().animate(
+      {
+        height: height,
+      },
+      400,
+    );
   }
 
-  /* top tabs */
-  $(".thha-tab").on("click", function (e) {
-    e.preventDefault();
-    const tab = $(this).data("tab");
-    thhaSwitch(tab);
+  setTimeout(thhaUpdateHeight, 100);
+
+  $wrapper.find(".thha-open-signup").click(function () {
+    $auth.addClass("thha-flip");
+
+    setTimeout(function () {
+      $wrapper.find(".thha-signin").hide();
+      $wrapper.find(".thha-signup").show();
+      thhaUpdateHeight();
+    }, 350);
   });
 
-  /* footer buttons */
-  $(".thha-open-signup").on("click", function (e) {
-    e.preventDefault();
-    thhaSwitch("signup");
-  });
+  $wrapper.find(".thha-open-signin").click(function () {
+    $auth.removeClass("thha-flip");
 
-  $(".thha-open-signin").on("click", function (e) {
-    e.preventDefault();
-    thhaSwitch("signin");
+    setTimeout(function () {
+      $wrapper.find(".thha-signup").hide();
+      $wrapper.find(".thha-signin").show();
+      thhaUpdateHeight();
+    }, 350);
   });
-
-  /* default state */
-  $(".thha-open-signin").hide();
 });

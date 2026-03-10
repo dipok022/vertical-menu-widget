@@ -142,8 +142,8 @@
   z-index: 0;
 }
 .thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(8, 83, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 25px rgba(8, 83, 255, 0.24);
 }
 .thha-support-system.thha-presets-1 .thha-support-wrapper .thha-support-form-wrap .thha-support-form .thha-support-btn:hover::before {
   left: 0;

@@ -606,29 +606,21 @@
   margin-bottom: 16px;
 }
 .thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-avatars .thha-avatar {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 2px solid #1e293b;
-  margin-left: -10px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  margin-left: -15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: #fff;
-  font-weight: 700;
   flex-shrink: 0;
+  border: 2px solid #fff;
 }
-.thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-avatars .thha-avatar:first-child {
-  margin-left: 0;
-  background: linear-gradient(135deg, #ec4899, #f43f5e);
-}
-.thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-avatars .thha-avatar:nth-child(2) {
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
-}
-.thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-avatars .thha-avatar:nth-child(3) {
-  background: linear-gradient(135deg, #10b981, #3b82f6);
+.thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-avatars .thha-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 .thha-call-to-action.thha-presets-5 .thha-cta-wrapper .thha-social-text {
   font-size: 13px;

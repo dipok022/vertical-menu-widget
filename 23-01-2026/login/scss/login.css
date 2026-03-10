@@ -1039,7 +1039,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-left: 4px;
-  margin-left: 4px;
   margin-bottom: 4px;
   display: block;
 }
@@ -1159,4 +1158,177 @@
     opacity: 1;
     transform: none;
   }
+}
+.thha-login.thha-presets-5 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper {
+  position: relative;
+  transition: height 0.45s ease;
+  perspective: 1200px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  backface-visibility: hidden;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-sub {
+  font-size: 14px;
+  color: #71717a;
+  margin-bottom: 25px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field {
+  margin-bottom: 18px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-pass-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-pass-wrapper .forgot {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4f46e5;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+  border: 0;
+  background: transparent;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-pass-wrapper .forgot:hover {
+  color: #4338ca;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  display: block;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #fcf9fa;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-input::-moz-placeholder {
+  color: #90a1b9;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-input::placeholder {
+  color: #90a1b9;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-field .thha-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #18181b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-btn:hover {
+  background: #27272a;
+  transform: translateY(-2px);
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-divider {
+  margin: 28px 0;
+  text-align: center;
+  position: relative;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-divider span {
+  background: #fff;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #94a3b8;
+  position: relative;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-btn-google {
+  width: 100%;
+  padding: 11px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  color: #111827;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-btn-google .google-icon {
+  width: 18px;
+  height: 18px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-btn-google:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1215686275);
+  transform: translateY(-1px);
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 14px;
+  color: #71717a;
+  margin-top: 28px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-footer .thha-switch {
+  border: none;
+  background: none;
+  color: #6366f1;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel .thha-footer .thha-switch:hover {
+  text-decoration: underline;
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper .thha-card .thha-panel.thha-signup {
+  display: none;
+  transform: rotateY(180deg);
+}
+.thha-login.thha-presets-5 .thha-auth-wrapper.thha-flip .thha-card {
+  transform: rotateY(180deg);
 }/*# sourceMappingURL=login.css.map */

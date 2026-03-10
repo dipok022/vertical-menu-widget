@@ -154,8 +154,8 @@
             }
 
             &:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 12px 25px rgba(8, 83, 255, 0.4);
+              transform: translateY(-2px);
+              box-shadow: 0 4px 25px rgb(8 83 255 / 24%);
 
               &::before {
                 left: 0;

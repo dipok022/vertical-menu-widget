@@ -1248,7 +1248,6 @@
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
                 margin-left: 4px;
-                margin-left: 4px;
                 margin-bottom: 4px;
                 display: block;
               }
@@ -1390,6 +1389,210 @@
       to {
         opacity: 1;
         transform: none;
+      }
+    }
+  }
+
+  &.thha-presets-5 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    .thha-auth-wrapper {
+      position: relative;
+      transition: height 0.45s ease;
+      perspective: 1200px;
+
+      .thha-card {
+        position: relative;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+
+        // panel
+        .thha-panel {
+          background: #fff;
+          padding: 40px;
+          border-radius: 20px;
+          box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+          width: 100%;
+          backface-visibility: hidden;
+
+          h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+          }
+
+          .thha-sub {
+            font-size: 14px;
+            color: #71717a;
+            margin-bottom: 25px;
+          }
+
+          // input
+          .thha-field {
+            margin-bottom: 18px;
+
+            .thha-pass-wrapper {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .forgot {
+                font-size: 10px;
+                font-weight: 700;
+                color: #4f46e5;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                transition: color 0.2s ease;
+                border: 0;
+                background: transparent;
+                &:hover {
+                  color: #4338ca;
+                }
+              }
+            }
+
+            .thha-label {
+              font-size: 12px;
+              font-weight: 700;
+              color: #64748b;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              margin-left: 4px;
+              margin-bottom: 4px;
+              display: block;
+            }
+
+            .thha-input {
+              width: 100%;
+              padding: 14px 16px;
+              border-radius: 14px;
+              border: 1px solid #e2e8f0;
+              background: #fcf9fa;
+              outline: none;
+              font-size: 15px;
+              line-height: 1.5;
+              font-weight: 600;
+
+              &::placeholder {
+                color: #90a1b9;
+              }
+
+              &:focus {
+                border-color: #6366f1;
+                box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+              }
+            }
+          }
+
+          // button
+          .thha-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #18181b;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+
+            &:hover {
+              background: #27272a;
+              transform: translateY(-2px);
+            }
+          }
+
+          .thha-divider {
+            margin: 28px 0;
+            text-align: center;
+            position: relative;
+
+            span {
+              background: #fff;
+              padding: 0 10px;
+              font-size: 11px;
+              font-weight: 700;
+              letter-spacing: 0.15em;
+              color: #94a3b8;
+              position: relative;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 100%;
+              height: 1px;
+              background: #eee;
+            }
+          }
+
+          .thha-btn-google {
+            width: 100%;
+            padding: 11px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            background: white;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "DM Sans", sans-serif;
+            color: #111827;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition:
+              border-color 0.2s,
+              box-shadow 0.2s,
+              transform 0.15s;
+
+            .google-icon {
+              width: 18px;
+              height: 18px;
+            }
+
+            &:hover {
+              border-color: #6366f1;
+              box-shadow: 0 4px 12px #2563eb1f;
+              transform: translateY(-1px);
+            }
+          }
+
+          .thha-footer {
+            margin-top: auto;
+            text-align: center;
+            font-size: 14px;
+            color: #71717a;
+            margin-top: 28px;
+
+            .thha-switch {
+              border: none;
+              background: none;
+              color: #6366f1;
+              font-weight: 700;
+              cursor: pointer;
+              margin-left: 6px;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          &.thha-signup {
+            display: none;
+            transform: rotateY(180deg);
+          }
+        }
+      }
+
+      &.thha-flip {
+        .thha-card {
+          transform: rotateY(180deg);
+        }
       }
     }
   }
