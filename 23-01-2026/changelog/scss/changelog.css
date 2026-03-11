@@ -89,6 +89,7 @@
   width: calc(100% - 353px);
 }
 .thha-changlogs.thha-presets-1 .thha-timeline .thha-entry .thha-entry-wrap h2 {
+  font-family: "Montserrat", sans-serif;
   font-size: 52px;
   font-weight: 700;
   line-height: 100%;
@@ -157,6 +158,7 @@
   top: auto;
   left: auto;
   font-size: 93px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   line-height: 100%;
   color: #d7e0ff;

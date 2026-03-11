@@ -360,8 +360,22 @@
       right: 0;
       width: 42%;
       height: 100%;
-      background: #f4f6f7;
       z-index: 0;
+      background-image: url("../img/Group1000007076.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42%;
+      height: 100%;
+      z-index: 0;
+      background: rgb(244 246 247 / 80%);
     }
 
     // key frames
