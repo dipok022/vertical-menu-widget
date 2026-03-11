@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
 .container {
   width: 100%;
   max-width: 1320px;
@@ -21,6 +23,7 @@
 
 .thha-changlogs {
   &.thha-presets-1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
     .thha-changlogs-header {
       display: flex;
       align-items: center;
@@ -106,7 +109,6 @@
           width: calc(100% - 353px);
 
           h2 {
-            font-family: "Montserrat", sans-serif;
             font-size: 52px;
             font-weight: 700;
             line-height: 100%;

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -19,6 +20,9 @@
   margin: 38px 0 50px 0;
 }
 
+.thha-changlogs.thha-presets-1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 .thha-changlogs.thha-presets-1 .thha-changlogs-header {
   display: flex;
   align-items: center;
@@ -89,7 +93,6 @@
   width: calc(100% - 353px);
 }
 .thha-changlogs.thha-presets-1 .thha-timeline .thha-entry .thha-entry-wrap h2 {
-  font-family: "Montserrat", sans-serif;
   font-size: 52px;
   font-weight: 700;
   line-height: 100%;
