@@ -84,4 +84,50 @@
   width: 14px;
   height: 14px;
   stroke: #90a1b9;
+}
+.thha-breadcumbs.thha-presets-3 nav {
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+}
+.thha-breadcumbs.thha-presets-3 nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 8px 20px;
+  font-family: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  background: #f1f5f9;
+  color: #000000;
+  text-decoration: none;
+  width: -moz-max-content;
+  width: max-content;
+  transition: all 0.2s ease;
+}
+.thha-breadcumbs.thha-presets-3 nav a:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.thha-breadcumbs.thha-presets-3 nav a.thha-active {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 8px 20px 8px 24px;
+  color: #fff;
+  background-color: #4258d7;
+}
+.thha-breadcumbs.thha-presets-3 nav a.thha-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 15px solid #f1f5f9;
+  z-index: 2;
+}
+.thha-breadcumbs.thha-presets-3 nav a:hover:not(.thha-active) {
+  background: #e8eaed;
 }/*# sourceMappingURL=breadcumbs.css.map */
