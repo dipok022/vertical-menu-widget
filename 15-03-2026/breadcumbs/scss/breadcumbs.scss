@@ -131,7 +131,8 @@
         color: #000000;
         text-decoration: none;
         width: max-content;
-        transition: all 0.2s ease;
+        transform: none;
+        transition: all 0.15s ease;
 
         &:first-child {
           border-top-left-radius: 8px;
@@ -156,11 +157,17 @@
             border-bottom: 18px solid transparent;
             border-left: 15px solid #f1f5f9;
             z-index: 2;
+            transform: scale(1.2);
+          }
+
+          &:hover {
+            transform: scale(1.02);
           }
         }
 
         &:hover:not(.thha-active) {
           background: #e8eaed;
+          transform: scale(1.02);
         }
       }
     }

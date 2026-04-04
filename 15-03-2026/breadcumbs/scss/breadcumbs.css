@@ -103,7 +103,8 @@
   text-decoration: none;
   width: -moz-max-content;
   width: max-content;
-  transition: all 0.2s ease;
+  transform: none;
+  transition: all 0.15s ease;
 }
 .thha-breadcumbs.thha-presets-3 nav a:first-child {
   border-top-left-radius: 8px;
@@ -127,7 +128,12 @@
   border-bottom: 18px solid transparent;
   border-left: 15px solid #f1f5f9;
   z-index: 2;
+  transform: scale(1.2);
+}
+.thha-breadcumbs.thha-presets-3 nav a.thha-active:hover {
+  transform: scale(1.02);
 }
 .thha-breadcumbs.thha-presets-3 nav a:hover:not(.thha-active) {
   background: #e8eaed;
+  transform: scale(1.02);
 }/*# sourceMappingURL=breadcumbs.css.map */
