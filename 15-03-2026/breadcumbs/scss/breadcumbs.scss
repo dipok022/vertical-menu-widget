@@ -25,7 +25,8 @@
 }
 
 .thha-breadcumbs {
-  &.thha-presets-1 {
+  &.thha-presets-1,
+  &.thha-presets-2 {
     nav {
       display: flex;
       align-items: center;
@@ -40,7 +41,7 @@
         font-family: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
         color: #64748b;
         text-decoration: none;
-        transform: translateX(0);
+
         transition: all 0.3s ease;
 
         .thha-icon {
@@ -50,25 +51,64 @@
           fill: none;
           stroke-width: 2;
         }
+      }
+    }
 
-        &.thha-active {
-          color: #155dfc;
+    &.thha-presets-1 {
+      nav {
+        a {
+          transform: translateX(0);
+
+          &.thha-active {
+            color: #155dfc;
+          }
+
+          &:hover:not(.thha-active) {
+            color: #0f172a;
+          }
+
+          &:hover {
+            transform: translateX(2px);
+          }
         }
 
-        &:hover:not(.thha-active) {
-          color: #0f172a;
-        }
-
-        &:hover {
-          transform: translateX(2px);
+        .thha-divider {
+          margin: 0 8px;
+          color: #cbd5e1;
+          transform: rotate(12deg);
+          font-weight: bold;
         }
       }
+    }
 
-      .thha-divider {
-        margin: 0 8px;
-        color: #cbd5e1;
-        transform: rotate(12deg);
-        font-weight: bold;
+    &.thha-presets-2 {
+      nav {
+        a {
+          padding: 4px 8px;
+          border-radius: 4px;
+
+          &.thha-active {
+            background-color: #eff6ff;
+            color: #155dfc;
+          }
+
+          &:hover:not(.thha-active) {
+            background: #f3f3f3;
+          }
+        }
+
+        .thha-divider {
+          display: flex;
+          align-items: center;
+          padding-right: 4px;
+
+          svg {
+            width: 14px;
+            height: 14px;
+
+            stroke: #90a1b9;
+          }
+        }
       }
     }
   }

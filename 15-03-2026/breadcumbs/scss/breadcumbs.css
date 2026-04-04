@@ -23,12 +23,12 @@
   background-color: red;
 }
 
-.thha-breadcumbs.thha-presets-1 nav {
+.thha-breadcumbs.thha-presets-1 nav, .thha-breadcumbs.thha-presets-2 nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-.thha-breadcumbs.thha-presets-1 nav a {
+.thha-breadcumbs.thha-presets-1 nav a, .thha-breadcumbs.thha-presets-2 nav a {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -37,28 +37,51 @@
   font-family: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   color: #64748b;
   text-decoration: none;
-  transform: translateX(0);
   transition: all 0.3s ease;
 }
-.thha-breadcumbs.thha-presets-1 nav a .thha-icon {
+.thha-breadcumbs.thha-presets-1 nav a .thha-icon, .thha-breadcumbs.thha-presets-2 nav a .thha-icon {
   width: 14px;
   height: 14px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
 }
-.thha-breadcumbs.thha-presets-1 nav a.thha-active {
+.thha-breadcumbs.thha-presets-1.thha-presets-1 nav a, .thha-breadcumbs.thha-presets-2.thha-presets-1 nav a {
+  transform: translateX(0);
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-1 nav a.thha-active, .thha-breadcumbs.thha-presets-2.thha-presets-1 nav a.thha-active {
   color: #155dfc;
 }
-.thha-breadcumbs.thha-presets-1 nav a:hover:not(.thha-active) {
+.thha-breadcumbs.thha-presets-1.thha-presets-1 nav a:hover:not(.thha-active), .thha-breadcumbs.thha-presets-2.thha-presets-1 nav a:hover:not(.thha-active) {
   color: #0f172a;
 }
-.thha-breadcumbs.thha-presets-1 nav a:hover {
+.thha-breadcumbs.thha-presets-1.thha-presets-1 nav a:hover, .thha-breadcumbs.thha-presets-2.thha-presets-1 nav a:hover {
   transform: translateX(2px);
 }
-.thha-breadcumbs.thha-presets-1 nav .thha-divider {
+.thha-breadcumbs.thha-presets-1.thha-presets-1 nav .thha-divider, .thha-breadcumbs.thha-presets-2.thha-presets-1 nav .thha-divider {
   margin: 0 8px;
   color: #cbd5e1;
   transform: rotate(12deg);
   font-weight: bold;
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-2 nav a, .thha-breadcumbs.thha-presets-2.thha-presets-2 nav a {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-2 nav a.thha-active, .thha-breadcumbs.thha-presets-2.thha-presets-2 nav a.thha-active {
+  background-color: #eff6ff;
+  color: #155dfc;
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-2 nav a:hover:not(.thha-active), .thha-breadcumbs.thha-presets-2.thha-presets-2 nav a:hover:not(.thha-active) {
+  background: #f3f3f3;
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-2 nav .thha-divider, .thha-breadcumbs.thha-presets-2.thha-presets-2 nav .thha-divider {
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+}
+.thha-breadcumbs.thha-presets-1.thha-presets-2 nav .thha-divider svg, .thha-breadcumbs.thha-presets-2.thha-presets-2 nav .thha-divider svg {
+  width: 14px;
+  height: 14px;
+  stroke: #90a1b9;
 }/*# sourceMappingURL=breadcumbs.css.map */
