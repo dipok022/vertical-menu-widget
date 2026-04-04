@@ -1,1 +1,64 @@
-/*# sourceMappingURL=breadcumbs.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
+}
+
+.thha-off-canvas.thha-presets-1 {
+  background-color: red;
+}
+
+.thha-breadcumbs.thha-presets-1 nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.thha-breadcumbs.thha-presets-1 nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: #64748b;
+  text-decoration: none;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+.thha-breadcumbs.thha-presets-1 nav a .thha-icon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+.thha-breadcumbs.thha-presets-1 nav a.thha-active {
+  color: #155dfc;
+}
+.thha-breadcumbs.thha-presets-1 nav a:hover:not(.thha-active) {
+  color: #0f172a;
+}
+.thha-breadcumbs.thha-presets-1 nav a:hover {
+  transform: translateX(2px);
+}
+.thha-breadcumbs.thha-presets-1 nav .thha-divider {
+  margin: 0 8px;
+  color: #cbd5e1;
+  transform: rotate(12deg);
+  font-weight: bold;
+}/*# sourceMappingURL=breadcumbs.css.map */
