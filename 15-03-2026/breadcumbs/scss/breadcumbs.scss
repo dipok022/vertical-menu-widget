@@ -31,6 +31,7 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      row-gap: 10px;
 
       a {
         display: flex;
@@ -117,6 +118,8 @@
     nav {
       display: flex;
       align-items: stretch;
+      flex-wrap: wrap;
+      row-gap: 10px;
       width: fit-content;
 
       .thha-breadcumb-item {
@@ -178,7 +181,8 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 0;
+      flex-wrap: wrap;
+      row-gap: 10px;
       width: fit-content;
 
       .thha-breadcumb-item {
@@ -260,6 +264,8 @@
       align-items: stretch;
       width: fit-content;
       gap: 4px;
+      flex-wrap: wrap;
+      row-gap: 10px;
 
       .thha-breadcumb-item {
         position: relative;

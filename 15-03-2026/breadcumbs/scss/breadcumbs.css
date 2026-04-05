@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 10px;
 }
 .thha-breadcumbs.thha-presets-1 nav a, .thha-breadcumbs.thha-presets-2 nav a {
   display: flex;
@@ -88,6 +89,8 @@
 .thha-breadcumbs.thha-presets-3 nav {
   display: flex;
   align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 10px;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -130,7 +133,8 @@
 .thha-breadcumbs.thha-presets-4 nav {
   display: flex;
   align-items: center;
-  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 10px;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -198,6 +202,8 @@
   width: -moz-fit-content;
   width: fit-content;
   gap: 4px;
+  flex-wrap: wrap;
+  row-gap: 10px;
 }
 .thha-breadcumbs.thha-presets-5 nav .thha-breadcumb-item {
   position: relative;
