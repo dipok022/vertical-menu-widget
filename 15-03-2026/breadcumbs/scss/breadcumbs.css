@@ -88,52 +88,48 @@
 .thha-breadcumbs.thha-presets-3 nav {
   display: flex;
   align-items: stretch;
-  border-radius: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.thha-breadcumbs.thha-presets-3 nav a {
+.thha-breadcumbs.thha-presets-3 nav .thha-breadcumb-item {
   position: relative;
+  height: 48px;
   display: flex;
   align-items: center;
-  padding: 8px 24px 8px 20px;
-  font-family: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  background: #f1f5f9;
-  color: #000000;
+  padding: 0 24px 0 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #555;
+  font-family: "Rajdhani", sans-serif;
+  background: #ffffff;
+  border: 1px solid #e3e6ed;
+  cursor: pointer;
   text-decoration: none;
-  width: -moz-max-content;
-  width: max-content;
-  transform: none;
-  transition: all 0.15s ease;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+  margin-left: -10px;
 }
-.thha-breadcumbs.thha-presets-3 nav a:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-.thha-breadcumbs.thha-presets-3 nav a.thha-active {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding: 8px 20px 8px 24px;
+.thha-breadcumbs.thha-presets-3 nav .thha-breadcumb-item.thha-active {
+  background: #155dfc;
   color: #fff;
-  background-color: #4258d7;
+  border-color: #155dfc;
+  z-index: 5;
 }
-.thha-breadcumbs.thha-presets-3 nav a.thha-active::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-left: 15px solid #f1f5f9;
-  z-index: 2;
-  transform: scale(1.2);
+.thha-breadcumbs.thha-presets-3 nav .thha-breadcumb-item:first-child {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  border-radius: 8px 0 0 8px;
+  margin-left: 0;
+  padding-left: 22px;
 }
-.thha-breadcumbs.thha-presets-3 nav a.thha-active:hover {
-  transform: scale(1.02);
+.thha-breadcumbs.thha-presets-3 nav .thha-breadcumb-item:hover:not(.thha-active) {
+  background: #f5f7fb;
 }
-.thha-breadcumbs.thha-presets-3 nav a:hover:not(.thha-active) {
-  background: #e8eaed;
-  transform: scale(1.02);
-}/*# sourceMappingURL=breadcumbs.css.map */
+
+/* Design deom 
+ - https://www.frontendplanet.com/css-breadcrumb-examples/,
+ - https://www.figma.com/design/EAKPp9ahN3BwYX08GYrGBr/Breadcrumb-Design-Components--Community-?node-id=0-1&p=f&t=PLhpf50TKq5YUU2m-0
+
+*//*# sourceMappingURL=breadcumbs.css.map */
