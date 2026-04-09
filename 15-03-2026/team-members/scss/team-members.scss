@@ -18,3 +18,143 @@
     margin: 38px 0 50px 0;
   }
 }
+
+.thha-team-members {
+  &.thha-presets-1 {
+    font-family: "Poppins", sans-serif;
+
+    .thha-team-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+
+      .thha-team-card {
+        perspective: 1000px;
+        height: 420px;
+        cursor: pointer;
+
+        .thha-team-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transform-style: preserve-3d;
+
+          .thha-team-img,
+          .thha-inner-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+
+            &.thha-team-img {
+              background: #1a1a2e;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+              }
+
+              .thha-team-info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 30px 20px 20px;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                color: #fff;
+
+                h3 {
+                  font-size: 20px;
+                  font-weight: 600;
+                  margin-bottom: 4px;
+                }
+
+                span {
+                  font-size: 13px;
+                  color: rgba(255, 255, 255, 0.7);
+                }
+              }
+            }
+
+            &.thha-inner-back {
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              transform: rotateY(180deg);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .thha-back-content {
+                text-align: center;
+                color: #fff;
+                padding: 30px;
+
+                h3 {
+                  font-size: 24px;
+                  font-weight: 700;
+                  margin-bottom: 6px;
+                }
+
+                .thha-team-role {
+                  font-size: 14px;
+                  opacity: 0.8;
+                  margin-bottom: 16px;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                }
+
+                .thha-team-bio {
+                  font-size: 14px;
+                  line-height: 1.7;
+                  opacity: 0.9;
+                  margin-bottom: 24px;
+                }
+
+                .thha-team-social {
+                  display: flex;
+                  justify-content: center;
+                  gap: 14px;
+
+                  a {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    border: 2px solid rgba(255, 255, 255, 0.4);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                    color: #fff;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                      background: #fff;
+                      color: #764ba2;
+                      border-color: #fff;
+                      transform: translateY(-3px);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .thha-team-inner {
+            transform: rotateY(180deg);
+          }
+
+          .thha-team-img img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
