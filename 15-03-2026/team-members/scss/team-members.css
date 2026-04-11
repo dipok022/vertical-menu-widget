@@ -19,7 +19,7 @@
   margin: 38px 0 50px 0;
 }
 
-.thha-team-members.thha-presets-1 {
+.thha-team-members {
   font-family: "Poppins", sans-serif;
 }
 .thha-team-members.thha-presets-1 .thha-team-wrapper {
@@ -149,9 +149,6 @@
 .thha-team-members.thha-presets-1 .thha-team-wrapper .thha-team-card:hover .thha-team-img img {
   transform: scale(1.1);
 }
-.thha-team-members.thha-presets-2 {
-  font-family: "Poppins", sans-serif;
-}
 .thha-team-members.thha-presets-2 .thha-team-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -271,4 +268,104 @@
 }
 .thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-name {
   opacity: 0 !important;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card {
+  text-align: center;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  cursor: pointer;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.92);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay .thha-team-info {
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease 0.2s;
+  padding: 20px;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay .thha-team-info p {
+  font-size: 13px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay .thha-team-info .thha-team-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay .thha-team-info .thha-team-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-img .thha-team-overlay .thha-team-info .thha-team-social a:hover {
+  background: #fff;
+  color: #667eea;
+  border-color: #fff;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-details h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card .thha-team-details span {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6196078431);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card:hover .thha-team-img {
+  transform: scale(1.15);
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card:hover .thha-team-img .thha-team-overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.thha-team-members.thha-presets-3 .thha-team-wrapper .thha-team-card:hover .thha-team-img .thha-team-overlay .thha-team-info {
+  opacity: 1;
+  transform: scale(1);
 }/*# sourceMappingURL=team-members.css.map */
