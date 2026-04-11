@@ -530,4 +530,133 @@
   .thha-team-members.thha-presets-4 .thha-team-wrapper {
     grid-template-columns: 1fr;
   }
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-morph {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 24px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-morph img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-morph .thha-team-morph-bg {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea);
+  background-size: 300% 300%;
+  animation: thha-morph-gradient 4s ease infinite;
+  transition: border-radius 1s ease;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #12161c;
+  margin-bottom: 6px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info p {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info .thha-team-role {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info .thha-team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info .thha-team-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card .thha-team-info .thha-team-social a:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+.thha-team-members.thha-presets-5 .thha-team-wrapper .thha-team-card:hover .thha-team-morph-bg {
+  animation: thha-morph-shape 4s ease infinite, thha-morph-gradient 4s ease infinite;
+}
+.thha-team-members.thha-presets-5 {
+  /* Animations */
+}
+@keyframes thha-morph-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes thha-morph-shape {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    border-radius: 60% 40% 55% 45%/55% 45% 60% 40%;
+  }
+  50% {
+    border-radius: 45% 55% 40% 60%/60% 40% 55% 45%;
+  }
+  75% {
+    border-radius: 55% 45% 60% 40%/45% 55% 40% 60%;
+  }
+  100% {
+    border-radius: 50%;
+  }
+}
+.thha-team-members.thha-presets-5 {
+  /* RESPONSIVE */
+}
+@media (max-width: 1024px) {
+  .thha-team-members.thha-presets-5 .thha-team-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .thha-team-members.thha-presets-5 .thha-team-wrapper {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=team-members.css.map */
