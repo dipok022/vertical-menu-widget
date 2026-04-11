@@ -148,4 +148,127 @@
 }
 .thha-team-members.thha-presets-1 .thha-team-wrapper .thha-team-card:hover .thha-team-img img {
   transform: scale(1.1);
+}
+.thha-team-members.thha-presets-2 {
+  font-family: "Poppins", sans-serif;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 450px;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-name h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-name span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-img {
+  width: 100%;
+  height: 100%;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+  transition: height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info {
+  padding: 30px;
+  color: #fff;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.4s ease 0.2s;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info .thha-team-role {
+  font-size: 14px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info .thha-team-bio {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info .thha-team-social {
+  display: flex;
+  gap: 12px;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info .thha-team-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card .thha-team-overlay .thha-team-info .thha-team-social a:hover {
+  background: #fff;
+  color: #764ba2;
+  border-color: #fff;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-img img {
+  transform: scale(1.08);
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-overlay {
+  height: 100%;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-overlay .thha-team-info {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-social a {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+.thha-team-members.thha-presets-2 .thha-team-wrapper .thha-team-card:hover .thha-team-name {
+  opacity: 0 !important;
 }/*# sourceMappingURL=team-members.css.map */
