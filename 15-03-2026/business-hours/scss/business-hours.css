@@ -1,0 +1,725 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
+}
+
+/* ================================================================== */
+/* Shared keyframes                                                   */
+/* ================================================================== */
+@keyframes thha-bh-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes thha-bh-row-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes thha-bh-pulse-pink {
+  0%, 100% {
+    color: #df0463;
+  }
+  50% {
+    color: #ff4e9c;
+  }
+}
+@keyframes thha-bh-pill-glow {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(255, 255, 255, 0.45);
+  }
+}
+@keyframes thha-bh-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes thha-bh-neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(217, 70, 239, 0.7), 0 0 22px rgba(217, 70, 239, 0.4);
+  }
+  20%, 24%, 55% {
+    opacity: 0.55;
+    text-shadow: none;
+  }
+}
+@keyframes thha-bh-neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(217, 70, 239, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(217, 70, 239, 0.9), 0 0 32px rgba(217, 70, 239, 0.45);
+  }
+}
+@keyframes thha-bh-bullet-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 4px #ffffff, 0 0 0 7px rgba(59, 130, 246, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 4px #ffffff, 0 0 0 13px rgba(59, 130, 246, 0.08);
+  }
+}
+@keyframes thha-bh-bullet-fill {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes thha-bh-orb-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -16px) scale(1.06);
+  }
+}
+@keyframes thha-bh-orb-float-alt {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-22px, 18px) scale(1.05);
+  }
+}
+@keyframes thha-bh-card-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes thha-bh-shimmer {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+/* ================================================================== */
+/* Widget root                                                        */
+/* ================================================================== */
+.thha-business-hours {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.thha-business-hours .thha-bh-card {
+  animation: thha-bh-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day {
+  animation: thha-bh-row-in 0.5s ease both;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(1) {
+  animation-delay: 0.18s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(2) {
+  animation-delay: 0.24s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(4) {
+  animation-delay: 0.36s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(5) {
+  animation-delay: 0.42s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(6) {
+  animation-delay: 0.48s;
+}
+.thha-business-hours .thha-bh-list .thha-bh-day:nth-child(7) {
+  animation-delay: 0.54s;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Design 1 — Minimal Clean                                         */
+  /* ---------------------------------------------------------------- */
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  margin-bottom: 6px;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-header .thha-bh-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a2e;
+  font-size: 18px;
+  transition: transform 0.5s ease;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.01em;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card:hover .thha-bh-header .thha-bh-icon {
+  transform: rotate(20deg);
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list {
+  list-style: none;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 12px;
+  margin: 0 -12px;
+  border-bottom: 1px solid #eef0f4;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2a2f3a;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day:last-child {
+  border-bottom: none;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day:hover {
+  background: #f6f8fb;
+  transform: translateX(4px);
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-name {
+  font-weight: 500;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-time {
+  font-weight: 400;
+  color: #5b6573;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-name {
+  animation: thha-bh-pulse-pink 2.6s ease-in-out infinite;
+  font-weight: 600;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-time {
+  color: #df0463;
+  font-weight: 600;
+}
+.thha-business-hours.thha-presets-1 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-time {
+  color: #ef4444;
+  font-weight: 600;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Design 2 — Gradient Hero                                         */
+  /* ---------------------------------------------------------------- */
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card {
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(140deg, #6366f1 0%, #8b5cf6 35%, #a78bfa 70%, #6366f1 100%);
+  background-size: 220% 220%;
+  animation: thha-bh-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both, thha-bh-gradient-shift 14s ease-in-out infinite;
+  border-radius: 22px;
+  padding: 36px 32px 32px;
+  color: #ffffff;
+  box-shadow: 0 24px 60px rgba(99, 102, 241, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card:hover {
+  box-shadow: 0 30px 70px rgba(99, 102, 241, 0.45);
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 26px;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-header .thha-bh-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.5s ease;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card:hover .thha-bh-header .thha-bh-icon {
+  transform: rotate(360deg);
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list {
+  list-style: none;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.92);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(4px);
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-name {
+  font-weight: 500;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-time {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78);
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today {
+  background: rgba(255, 255, 255, 0.95);
+  color: #4f46e5;
+  animation: thha-bh-pill-glow 2.6s ease-in-out infinite;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today:hover {
+  background: #ffffff;
+  transform: translateX(0) scale(1.02);
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-name {
+  color: #1e1b4b;
+  font-weight: 600;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-time {
+  color: #4f46e5;
+  font-weight: 600;
+}
+.thha-business-hours.thha-presets-2 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-time {
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Design 3 — Neon Dark                                             */
+  /* ---------------------------------------------------------------- */
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card {
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(160deg, #1a1235 0%, #1f1647 100%);
+  border-radius: 20px;
+  padding: 34px 32px 30px;
+  color: #f5f3ff;
+  box-shadow: 0 0 0 1px rgba(217, 70, 239, 0.18), 0 30px 70px rgba(192, 38, 211, 0.25), 0 0 80px rgba(168, 85, 247, 0.18);
+  transition: box-shadow 0.4s ease;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card:hover {
+  box-shadow: 0 0 0 1px rgba(217, 70, 239, 0.35), 0 30px 70px rgba(192, 38, 211, 0.4), 0 0 100px rgba(168, 85, 247, 0.3);
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-header .thha-bh-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d946ef;
+  margin-bottom: 10px;
+  animation: thha-bh-neon-flicker 4.5s linear infinite;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list {
+  list-style: none;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  margin: 0 -8px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+  border-radius: 8px;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day:last-child {
+  border-bottom: none;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day:hover {
+  background: rgba(217, 70, 239, 0.08);
+  box-shadow: inset 2px 0 0 #d946ef;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-name {
+  font-weight: 500;
+  color: rgba(245, 243, 255, 0.78);
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-time {
+  font-weight: 400;
+  color: rgba(245, 243, 255, 0.92);
+  font-family: "Courier New", monospace;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today {
+  background: rgba(217, 70, 239, 0.06);
+  box-shadow: inset 2px 0 0 #d946ef;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-name {
+  color: #d946ef;
+  font-weight: 600;
+  animation: thha-bh-neon-pulse 2.4s ease-in-out infinite;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-time {
+  color: #ffffff;
+}
+.thha-business-hours.thha-presets-3 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-time {
+  color: #f87171;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Design 4 — Timeline Stepper                                      */
+  /* ---------------------------------------------------------------- */
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-header {
+  margin-bottom: 22px;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.01em;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list {
+  list-style: none;
+  position: relative;
+  padding-left: 6px;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: #eef0f4;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 6px;
+  margin: 0 -6px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #2a2f3a;
+  position: relative;
+  transition: background 0.25s ease;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:hover {
+  background: #f6f8fb;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:hover .thha-bh-bullet {
+  transform: scale(1.2);
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  margin-left: 1px;
+  box-shadow: 0 0 0 4px #ffffff;
+  z-index: 1;
+  transform-origin: center;
+  animation: thha-bh-bullet-fill 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: transform 0.25s ease;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(1) .thha-bh-bullet {
+  animation-delay: 0.35s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(2) .thha-bh-bullet {
+  animation-delay: 0.41s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(3) .thha-bh-bullet {
+  animation-delay: 0.47s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(4) .thha-bh-bullet {
+  animation-delay: 0.53s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(5) .thha-bh-bullet {
+  animation-delay: 0.59s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(6) .thha-bh-bullet {
+  animation-delay: 0.65s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day:nth-child(7) .thha-bh-bullet {
+  animation-delay: 0.71s;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-name {
+  font-weight: 500;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-time {
+  font-weight: 400;
+  color: #5b6573;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-bullet {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  animation: thha-bh-bullet-fill 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both, thha-bh-bullet-ring 2.2s ease-in-out 0.8s infinite;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-name,
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-time {
+  color: #2563eb;
+  font-weight: 600;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-bullet {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+.thha-business-hours.thha-presets-4 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-time {
+  color: #ef4444;
+  font-weight: 600;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Design 5 — Glassmorphism (on a normal solid section bg)          */
+  /* Decorative blur orbs behind the card give the glass blur         */
+  /* something to refract without coloring the section itself.        */
+  /* ---------------------------------------------------------------- */
+}
+.thha-business-hours.thha-presets-5 {
+  position: relative;
+  padding: 30px 0;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-orb-1 {
+  width: 240px;
+  height: 240px;
+  top: -30px;
+  left: calc(50% - 340px);
+  background: radial-gradient(circle at 30% 30%, #818cf8, #c084fc);
+  animation: thha-bh-orb-float 9s ease-in-out infinite;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-orb-2 {
+  width: 220px;
+  height: 220px;
+  bottom: -30px;
+  left: calc(50% + 130px);
+  background: radial-gradient(circle at 70% 70%, #f0abfc, #fbcfe8);
+  animation: thha-bh-orb-float-alt 10s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 20px 50px rgba(99, 102, 241, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  animation: thha-bh-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both, thha-bh-card-float 7s ease-in-out 0.7s infinite;
+  transition: box-shadow 0.4s ease;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card:hover {
+  box-shadow: 0 28px 60px rgba(99, 102, 241, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-header h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.01em;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-header .thha-bh-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  font-size: 16px;
+  transition: transform 0.5s ease;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card:hover .thha-bh-header .thha-bh-icon {
+  transform: rotate(20deg) scale(1.05);
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list {
+  list-style: none;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #1f2937;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateX(4px);
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-name {
+  font-weight: 500;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day .thha-bh-time {
+  font-weight: 400;
+  color: #475569;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today {
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  overflow: hidden;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.7) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: thha-bh-shimmer 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-name,
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day.thha-today .thha-bh-time {
+  color: #4f46e5;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+.thha-business-hours.thha-presets-5 .thha-bh-card .thha-bh-list .thha-bh-day.thha-closed .thha-bh-time {
+  color: #ef4444;
+  font-weight: 600;
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Reduced motion                                                   */
+  /* ---------------------------------------------------------------- */
+}
+@media (prefers-reduced-motion: reduce) {
+  .thha-business-hours .thha-bh-card,
+  .thha-business-hours .thha-bh-day,
+  .thha-business-hours .thha-bh-bullet,
+  .thha-business-hours .thha-bh-tag,
+  .thha-business-hours .thha-bh-orb {
+    animation: none !important;
+  }
+}
+.thha-business-hours {
+  /* ---------------------------------------------------------------- */
+  /* Responsive                                                       */
+  /* ---------------------------------------------------------------- */
+}
+@media (max-width: 600px) {
+  .thha-business-hours.thha-presets-1 .thha-bh-card, .thha-business-hours.thha-presets-2 .thha-bh-card, .thha-business-hours.thha-presets-3 .thha-bh-card, .thha-business-hours.thha-presets-4 .thha-bh-card, .thha-business-hours.thha-presets-5 .thha-bh-card {
+    padding: 26px 22px 22px;
+  }
+  .thha-business-hours.thha-presets-5 .thha-bh-orb-1 {
+    width: 180px;
+    height: 180px;
+    left: calc(50% - 180px);
+  }
+  .thha-business-hours.thha-presets-5 .thha-bh-orb-2 {
+    width: 170px;
+    height: 170px;
+    left: calc(50% + 30px);
+  }
+}
+
+/*# sourceMappingURL=business-hours.css.map */
