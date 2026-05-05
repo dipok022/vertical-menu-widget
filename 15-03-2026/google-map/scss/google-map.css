@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -20,66 +19,6 @@
   margin: 38px 0 50px 0;
 }
 
-/* ================================================================== */
-/* Shared keyframes                                                   */
-/* ================================================================== */
-@keyframes thha-gm-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes thha-gm-pin-bounce {
-  0%, 100% {
-    transform: translate(-50%, -100%);
-  }
-  50% {
-    transform: translate(-50%, -110%);
-  }
-}
-@keyframes thha-gm-pin-pulse {
-  0% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.4);
-  }
-}
-@keyframes thha-gm-dot-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
-  }
-}
-@keyframes thha-gm-pane-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes thha-gm-cursor-blink {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-/* ================================================================== */
-/* Widget root                                                        */
-/* ================================================================== */
 .thha-google-map {
   font-family: "Poppins", sans-serif;
 }
@@ -105,11 +44,6 @@
 }
 .thha-google-map .thha-gm-btn:hover i {
   transform: translateX(4px);
-}
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Design 1 — Floating Info Card                                    */
-  /* ---------------------------------------------------------------- */
 }
 .thha-google-map.thha-presets-1 {
   animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -202,11 +136,6 @@
   background: #1e293b;
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.25);
-}
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Design 2 — Split Card                                            */
-  /* ---------------------------------------------------------------- */
 }
 .thha-google-map.thha-presets-2 {
   animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -311,11 +240,6 @@
 .thha-google-map.thha-presets-2 .thha-gm-frame {
   position: relative;
   min-height: 480px;
-}
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Design 3 — Map with Animated Pin + Stats                         */
-  /* ---------------------------------------------------------------- */
 }
 .thha-google-map.thha-presets-3 {
   max-width: 980px;
@@ -444,11 +368,6 @@
   background: #4f46e5;
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(99, 102, 241, 0.45);
-}
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Design 4 — Multi-Location Tabs                                   */
-  /* ---------------------------------------------------------------- */
 }
 .thha-google-map.thha-presets-4 {
   animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -589,11 +508,6 @@
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(99, 102, 241, 0.45);
 }
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Design 5 — Dark / Neon Console                                   */
-  /* ---------------------------------------------------------------- */
-}
 .thha-google-map.thha-presets-5 {
   animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -703,10 +617,59 @@
 .thha-google-map.thha-presets-5 .thha-gm-info .thha-gm-btn:hover .thha-gm-btn-tick {
   color: #0b0d12;
 }
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Reduced motion                                                   */
-  /* ---------------------------------------------------------------- */
+@keyframes thha-gm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes thha-gm-pin-bounce {
+  0%, 100% {
+    transform: translate(-50%, -100%);
+  }
+  50% {
+    transform: translate(-50%, -110%);
+  }
+}
+@keyframes thha-gm-pin-pulse {
+  0% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.4);
+  }
+}
+@keyframes thha-gm-dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+@keyframes thha-gm-pane-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes thha-gm-cursor-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .thha-google-map,
@@ -716,11 +679,6 @@
   .thha-google-map .thha-gm-title::after {
     animation: none !important;
   }
-}
-.thha-google-map {
-  /* ---------------------------------------------------------------- */
-  /* Responsive                                                       */
-  /* ---------------------------------------------------------------- */
 }
 @media (max-width: 900px) {
   .thha-google-map.thha-presets-2 .thha-gm-card, .thha-google-map.thha-presets-5 .thha-gm-card {
@@ -767,6 +725,4 @@
   .thha-google-map.thha-presets-4 .thha-gm-tab.active::after {
     transform: scaleY(1);
   }
-}
-
-/*# sourceMappingURL=google-map.css.map */
+}/*# sourceMappingURL=google-map.css.map */

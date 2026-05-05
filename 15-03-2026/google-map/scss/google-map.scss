@@ -20,80 +20,9 @@
   }
 }
 
-/* ================================================================== */
-/* Shared keyframes                                                   */
-/* ================================================================== */
-@keyframes thha-gm-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes thha-gm-pin-bounce {
-  0%,
-  100% {
-    transform: translate(-50%, -100%);
-  }
-  50% {
-    transform: translate(-50%, -110%);
-  }
-}
-
-@keyframes thha-gm-pin-pulse {
-  0% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.4);
-  }
-}
-
-@keyframes thha-gm-dot-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
-  }
-}
-
-@keyframes thha-gm-pane-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes thha-gm-cursor-blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* ================================================================== */
-/* Widget root                                                        */
-/* ================================================================== */
 .thha-google-map {
   font-family: "Poppins", sans-serif;
 
-  // Reset iframe
   iframe {
     display: block;
     width: 100%;
@@ -101,7 +30,6 @@
     border: 0;
   }
 
-  // Shared button base; each preset re-skins it.
   .thha-gm-btn {
     display: inline-flex;
     align-items: center;
@@ -126,9 +54,6 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Design 1 — Floating Info Card                                    */
-  /* ---------------------------------------------------------------- */
   &.thha-presets-1 {
     animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -239,9 +164,6 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Design 2 — Split Card                                            */
-  /* ---------------------------------------------------------------- */
   &.thha-presets-2 {
     animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -367,9 +289,6 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Design 3 — Map with Animated Pin + Stats                         */
-  /* ---------------------------------------------------------------- */
   &.thha-presets-3 {
     max-width: 980px;
     margin: 0 auto;
@@ -425,7 +344,6 @@
         transform: translateX(-50%);
       }
 
-      // Pulse halo behind the pin head
       &::before {
         content: "";
         position: absolute;
@@ -517,9 +435,6 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Design 4 — Multi-Location Tabs                                   */
-  /* ---------------------------------------------------------------- */
   &.thha-presets-4 {
     animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -552,7 +467,6 @@
         background 0.25s ease,
         color 0.25s ease;
 
-      // Active underline indicator
       &::after {
         content: "";
         position: absolute;
@@ -689,9 +603,6 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Design 5 — Dark / Neon Console                                   */
-  /* ---------------------------------------------------------------- */
   &.thha-presets-5 {
     animation: thha-gm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -721,22 +632,16 @@
       min-height: 460px;
 
       iframe {
-        // Render Google's light map as a dark/neon-tinted version
         filter: invert(1) hue-rotate(180deg) saturate(0.85) brightness(0.95)
           contrast(1.05);
       }
 
-      // Subtle scanline grid overlay for the cyberpunk feel
       .thha-gm-grid {
         position: absolute;
         inset: 0;
         background-image:
           linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
-          linear-gradient(
-            90deg,
-            rgba(34, 211, 238, 0.06) 1px,
-            transparent 1px
-          );
+          linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
         background-size: 32px 32px;
         pointer-events: none;
         mix-blend-mode: screen;
@@ -767,7 +672,6 @@
         letter-spacing: -0.01em;
         margin-bottom: 26px;
 
-        // Blinking caret
         &::after {
           content: "_";
           color: #22d3ee;
@@ -841,9 +745,72 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Reduced motion                                                   */
-  /* ---------------------------------------------------------------- */
+  // keyframes
+  @keyframes thha-gm-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes thha-gm-pin-bounce {
+    0%,
+    100% {
+      transform: translate(-50%, -100%);
+    }
+    50% {
+      transform: translate(-50%, -110%);
+    }
+  }
+
+  @keyframes thha-gm-pin-pulse {
+    0% {
+      opacity: 0.55;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(2.4);
+    }
+  }
+
+  @keyframes thha-gm-dot-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    }
+  }
+
+  @keyframes thha-gm-pane-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes thha-gm-cursor-blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  // Reduced motion
   @media (prefers-reduced-motion: reduce) {
     &,
     .thha-gm-pin,
@@ -854,9 +821,7 @@
     }
   }
 
-  /* ---------------------------------------------------------------- */
-  /* Responsive                                                       */
-  /* ---------------------------------------------------------------- */
+  // Responsive
   @media (max-width: 900px) {
     &.thha-presets-2 .thha-gm-card,
     &.thha-presets-5 .thha-gm-card {
