@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Map</title>
+    <link rel="stylesheet" href="./scss/google-map.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 — Floating Info Card (full-bleed map + glass overlay) -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
+
+        <div class="thha-google-map thha-presets-1">
+          <div class="thha-gm-stage">
+            <div class="thha-gm-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=San+Francisco+City+Hall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="thha-gm-info">
+              <span class="thha-gm-eyebrow">Visit Us</span>
+              <h3 class="thha-gm-title">Our Headquarters</h3>
+              <ul class="thha-gm-meta">
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Address</span>
+                    <p>1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Phone</span>
+                    <p>+1 (415) 555-0142</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-regular fa-clock"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Hours</span>
+                    <p>Mon – Fri · 9:00 AM – 6:00 PM</p>
+                  </div>
+                </li>
+              </ul>
+              <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                Get Directions
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 — Split Card (info left, map right) -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 2</h2>
+
+        <div class="thha-google-map thha-presets-2">
+          <div class="thha-gm-card">
+            <div class="thha-gm-info">
+              <span class="thha-gm-eyebrow">Find Us</span>
+              <h3 class="thha-gm-title">Drop By Anytime</h3>
+              <p class="thha-gm-lead">
+                We're located in the heart of the city. Coffee's always brewing
+                and the door's always open.
+              </p>
+              <ul class="thha-gm-meta">
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Address</span>
+                    <p>1 Dr Carlton B Goodlett Pl, San Francisco, CA</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Email</span>
+                    <p>hello@example.com</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <div class="thha-gm-meta-body">
+                    <span class="thha-gm-meta-label">Phone</span>
+                    <p>+1 (415) 555-0142</p>
+                  </div>
+                </li>
+              </ul>
+              <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                Get Directions
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="thha-gm-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=San+Francisco+City+Hall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 — Map with Animated Pin + Stats Bar -->
+    <section style="background-color: #f8f9fc; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 3</h2>
+
+        <div class="thha-google-map thha-presets-3">
+          <div class="thha-gm-card">
+            <div class="thha-gm-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=San+Francisco+City+Hall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <div class="thha-gm-pin" aria-hidden="true">
+                <span class="thha-gm-pin-head">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span class="thha-gm-pin-shadow"></span>
+              </div>
+            </div>
+            <div class="thha-gm-info">
+              <div class="thha-gm-info-head">
+                <span class="thha-gm-status">
+                  <span class="thha-gm-dot"></span> Open Now
+                </span>
+                <h3 class="thha-gm-title">San Francisco City Hall</h3>
+                <p class="thha-gm-address">
+                  1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102
+                </p>
+              </div>
+              <div class="thha-gm-stats">
+                <span>
+                  <i class="fa-solid fa-phone"></i> +1 (415) 555-0142
+                </span>
+                <span>
+                  <i class="fa-regular fa-clock"></i> Mon–Fri · 9–6
+                </span>
+                <span>
+                  <i class="fa-solid fa-star"></i> 4.8 · 2,341 reviews
+                </span>
+              </div>
+              <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                <i class="fa-solid fa-diamond-turn-right"></i>
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 — Multi-Location Tabs -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 4</h2>
+
+        <div class="thha-google-map thha-presets-4">
+          <div class="thha-gm-card">
+            <div class="thha-gm-tabs" role="tablist">
+              <button
+                class="thha-gm-tab active"
+                data-index="0"
+                role="tab"
+                aria-selected="true"
+                type="button"
+              >
+                <span class="thha-gm-tab-icon">
+                  <i class="fa-solid fa-building"></i>
+                </span>
+                <span class="thha-gm-tab-body">
+                  <span class="thha-gm-tab-name">San Francisco</span>
+                  <span class="thha-gm-tab-sub">Headquarters</span>
+                </span>
+              </button>
+              <button
+                class="thha-gm-tab"
+                data-index="1"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                <span class="thha-gm-tab-icon">
+                  <i class="fa-solid fa-city"></i>
+                </span>
+                <span class="thha-gm-tab-body">
+                  <span class="thha-gm-tab-name">New York</span>
+                  <span class="thha-gm-tab-sub">East Office</span>
+                </span>
+              </button>
+              <button
+                class="thha-gm-tab"
+                data-index="2"
+                role="tab"
+                aria-selected="false"
+                type="button"
+              >
+                <span class="thha-gm-tab-icon">
+                  <i class="fa-solid fa-globe"></i>
+                </span>
+                <span class="thha-gm-tab-body">
+                  <span class="thha-gm-tab-name">London</span>
+                  <span class="thha-gm-tab-sub">EU Office</span>
+                </span>
+              </button>
+            </div>
+
+            <div class="thha-gm-panes">
+              <div class="thha-gm-pane active" data-index="0" role="tabpanel">
+                <div class="thha-gm-frame">
+                  <iframe
+                    src="https://maps.google.com/maps?q=San+Francisco+City+Hall&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="San Francisco map"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="thha-gm-info">
+                  <h3 class="thha-gm-title">San Francisco</h3>
+                  <ul class="thha-gm-meta">
+                    <li>
+                      <i class="fa-solid fa-location-dot"></i>
+                      1 Dr Carlton B Goodlett Pl, SF, CA 94102
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-phone"></i> +1 (415) 555-0142
+                    </li>
+                    <li>
+                      <i class="fa-regular fa-clock"></i> Mon–Fri · 9 AM – 6 PM
+                    </li>
+                  </ul>
+                  <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                    Get Directions <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="thha-gm-pane" data-index="1" role="tabpanel">
+                <div class="thha-gm-frame">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Times+Square+New+York&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="New York map"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="thha-gm-info">
+                  <h3 class="thha-gm-title">New York</h3>
+                  <ul class="thha-gm-meta">
+                    <li>
+                      <i class="fa-solid fa-location-dot"></i>
+                      350 5th Ave, New York, NY 10118
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-phone"></i> +1 (212) 555-0184
+                    </li>
+                    <li>
+                      <i class="fa-regular fa-clock"></i> Mon–Fri · 9 AM – 7 PM
+                    </li>
+                  </ul>
+                  <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                    Get Directions <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="thha-gm-pane" data-index="2" role="tabpanel">
+                <div class="thha-gm-frame">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Big+Ben+London&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="London map"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="thha-gm-info">
+                  <h3 class="thha-gm-title">London</h3>
+                  <ul class="thha-gm-meta">
+                    <li>
+                      <i class="fa-solid fa-location-dot"></i>
+                      Big Ben, London SW1A 0AA, UK
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-phone"></i> +44 20 7946 0958
+                    </li>
+                    <li>
+                      <i class="fa-regular fa-clock"></i> Mon–Fri · 9 AM – 6 PM
+                    </li>
+                  </ul>
+                  <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                    Get Directions <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 — Dark / Neon Console (cyberpunk) -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 5</h2>
+
+        <div class="thha-google-map thha-presets-5">
+          <div class="thha-gm-card">
+            <div class="thha-gm-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=San+Francisco+City+Hall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <span class="thha-gm-grid" aria-hidden="true"></span>
+            </div>
+            <div class="thha-gm-info">
+              <span class="thha-gm-eyebrow">// Location_001</span>
+              <h3 class="thha-gm-title">HQ_SF.001</h3>
+              <ul class="thha-gm-meta">
+                <li>
+                  <span class="thha-gm-meta-key">addr</span>
+                  <span class="thha-gm-meta-val">
+                    1 Dr Carlton B Goodlett Pl, SF, CA
+                  </span>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-key">tel</span>
+                  <span class="thha-gm-meta-val">+1 415 555 0142</span>
+                </li>
+                <li>
+                  <span class="thha-gm-meta-key">hrs</span>
+                  <span class="thha-gm-meta-val">09:00 – 18:00 / Mon-Fri</span>
+                </li>
+              </ul>
+              <a class="thha-gm-btn" href="#" target="_blank" rel="noopener">
+                <span class="thha-gm-btn-tick">&gt;</span>
+                Navigate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/google-map.js"></script>
+  </body>
+</html>
