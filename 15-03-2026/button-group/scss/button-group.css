@@ -130,6 +130,47 @@ ul {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm {
+  position: relative;
+  height: 56px;
+  width: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e5cff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 0 12px 12px 0;
+  margin-left: 4px;
+  transition: background 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm i {
+  position: absolute;
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm i.fa-cart-shopping {
+  opacity: 1;
+  transform: scale(1);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm i.fa-check {
+  opacity: 0;
+  transform: scale(0.4);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm:hover {
+  background: #1a4ee0;
+  transform: translateX(2px);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm.is-confirmed {
+  background: #16a34a;
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm.is-confirmed i.fa-cart-shopping {
+  opacity: 0;
+  transform: scale(1.4);
+}
+.thha-button-group.thha-presets-1 .thha-bg-cart .thha-bg-confirm.is-confirmed i.fa-check {
+  opacity: 1;
+  transform: scale(1);
+}
 .thha-button-group.thha-presets-1 .thha-bg-cart[data-state=qty] {
   background: #f1f5fb;
   color: #0f172a;

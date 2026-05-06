@@ -27,6 +27,18 @@
       $cart.find(".thha-bg-qty").text(qty);
     });
 
+    $cart.on("click", ".thha-bg-confirm", function (e) {
+      e.stopPropagation();
+      var $confirm = $(this);
+      $confirm.addClass("is-confirmed");
+      setTimeout(function () {
+        $confirm.removeClass("is-confirmed");
+        $cart.attr("data-state", "idle");
+        qty = 1;
+        $cart.find(".thha-bg-qty").text(qty);
+      }, 1100);
+    });
+
     /* --- Like with counter --- */
     var $like = $root.find(".thha-bg-like");
     var $likeLabel = $like.find(".thha-bg-like__label");
