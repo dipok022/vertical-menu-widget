@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Group</title>
+    <link rel="stylesheet" href="./scss/button-group.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 : Action Suite (Add to Cart / Like / Play) -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
+
+        <div class="thha-button-group thha-presets-1">
+          <div class="thha-bg-row">
+            <div class="thha-bg-cell">
+              <div class="thha-bg-cart" data-state="idle">
+                <button
+                  type="button"
+                  class="thha-bg-cart__face thha-bg-cart__face--idle"
+                  aria-label="Add to cart"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <span>ADD TO CART</span>
+                </button>
+                <span class="thha-bg-cart__face thha-bg-cart__face--qty">
+                  <button type="button" class="thha-bg-step" data-step="-1" aria-label="Decrease">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <span class="thha-bg-qty" aria-live="polite">1</span>
+                  <button type="button" class="thha-bg-step" data-step="1" aria-label="Increase">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+
+            <div class="thha-bg-cell">
+              <button
+                type="button"
+                class="thha-bg-like"
+                aria-pressed="false"
+              >
+                <span class="thha-bg-like__main">
+                  <span class="thha-bg-heart" aria-hidden="true">
+                    <i class="fa-regular fa-heart thha-bg-heart--outline"></i>
+                    <i class="fa-solid fa-heart thha-bg-heart--solid"></i>
+                  </span>
+                  <span class="thha-bg-like__label">LIKE</span>
+                </span>
+                <span class="thha-bg-like__count" data-count="492">492</span>
+              </button>
+            </div>
+
+            <div class="thha-bg-cell">
+              <button
+                type="button"
+                class="thha-bg-play"
+                data-state="paused"
+                aria-label="Play"
+              >
+                <span class="thha-bg-play__icon" aria-hidden="true">
+                  <i class="fa-solid fa-play"></i>
+                  <i class="fa-solid fa-pause"></i>
+                </span>
+                <span class="thha-bg-play__label">PLAY</span>
+                <span class="thha-bg-play__time">
+                  <span class="thha-bg-play__current">0:00</span>
+                  <span class="thha-bg-play__sep"> / </span>
+                  <span class="thha-bg-play__total">5:23</span>
+                </span>
+                <span class="thha-bg-play__progress" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 : View Switcher (Segmented) -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 2</h2>
+
+        <div class="thha-button-group thha-presets-2">
+          <div class="thha-bg-segmented" role="tablist" aria-label="View mode">
+            <span class="thha-bg-indicator" aria-hidden="true"></span>
+            <button
+              type="button"
+              class="thha-bg-seg is-active"
+              role="tab"
+              aria-selected="true"
+              data-view="grid"
+            >
+              <i class="fa-solid fa-table-cells-large"></i>
+              <span>Grid</span>
+            </button>
+            <button
+              type="button"
+              class="thha-bg-seg"
+              role="tab"
+              aria-selected="false"
+              data-view="feed"
+            >
+              <i class="fa-regular fa-newspaper"></i>
+              <span>Feed</span>
+            </button>
+            <button
+              type="button"
+              class="thha-bg-seg"
+              role="tab"
+              aria-selected="false"
+              data-view="stack"
+            >
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Stack</span>
+            </button>
+            <button
+              type="button"
+              class="thha-bg-seg"
+              role="tab"
+              aria-selected="false"
+              data-view="list"
+            >
+              <i class="fa-solid fa-list"></i>
+              <span>List</span>
+            </button>
+          </div>
+
+          <div class="thha-bg-tablist" role="tablist" aria-label="Mailbox">
+            <button type="button" class="thha-bg-tab is-active">
+              <i class="fa-regular fa-envelope-open"></i>
+              <span>Inbox</span>
+            </button>
+            <button type="button" class="thha-bg-tab">
+              <i class="fa-regular fa-paper-plane"></i>
+              <span>Sent</span>
+            </button>
+            <button type="button" class="thha-bg-tab">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Archived</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 : Split Action Buttons -->
+    <section style="background-color: #f8fafc; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 3</h2>
+
+        <div class="thha-button-group thha-presets-3">
+          <div class="thha-bg-split-row">
+            <!-- Save -->
+            <div class="thha-bg-split" data-split="save">
+              <button type="button" class="thha-bg-split__main">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Save</span>
+                <span class="thha-bg-split__badge thha-bg-split__badge--violet" data-count="36">36</span>
+              </button>
+              <button type="button" class="thha-bg-split__more" aria-label="More save options">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <ul class="thha-bg-split__menu">
+                <li><i class="fa-regular fa-folder-open"></i>Save to collection</li>
+                <li><i class="fa-regular fa-clock"></i>Save for later</li>
+                <li><i class="fa-solid fa-share-nodes"></i>Save &amp; share</li>
+              </ul>
+            </div>
+
+            <!-- Fork -->
+            <div class="thha-bg-split" data-split="fork">
+              <button type="button" class="thha-bg-split__main">
+                <i class="fa-solid fa-code-branch"></i>
+                <span>Fork</span>
+                <span class="thha-bg-split__badge thha-bg-split__badge--blue" data-count="12">12</span>
+              </button>
+              <button type="button" class="thha-bg-split__more" aria-label="More fork options">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <ul class="thha-bg-split__menu">
+                <li><i class="fa-solid fa-code-branch"></i>Fork to your account</li>
+                <li><i class="fa-solid fa-users"></i>Fork to organization</li>
+                <li><i class="fa-solid fa-eye"></i>View all forks</li>
+              </ul>
+            </div>
+
+            <!-- Star -->
+            <div class="thha-bg-split" data-split="star">
+              <button type="button" class="thha-bg-split__main">
+                <i class="fa-solid fa-star"></i>
+                <span>Star</span>
+                <span class="thha-bg-split__badge thha-bg-split__badge--amber" data-count="148">148</span>
+              </button>
+              <button type="button" class="thha-bg-split__more" aria-label="More star options">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <ul class="thha-bg-split__menu">
+                <li><i class="fa-regular fa-star"></i>Star this project</li>
+                <li><i class="fa-solid fa-list-check"></i>Add to lists</li>
+                <li><i class="fa-solid fa-bell"></i>Watch releases</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Launch project (loading split) -->
+          <div class="thha-bg-launch-row">
+            <div class="thha-bg-launch" data-state="idle">
+              <button type="button" class="thha-bg-launch__main">
+                <span class="thha-bg-launch__label">Launch Project</span>
+                <span class="thha-bg-launch__spinner" aria-hidden="true">
+                  <i class="fa-solid fa-rocket"></i>
+                  <i class="fa-solid fa-circle-notch fa-spin"></i>
+                  <i class="fa-solid fa-check"></i>
+                </span>
+              </button>
+              <button type="button" class="thha-bg-launch__more" aria-label="More launch options">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 : Toggle / Rating Groups -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 4</h2>
+
+        <div class="thha-button-group thha-presets-4">
+          <div class="thha-bg-toolset">
+            <!-- Alignment vertical group -->
+            <div class="thha-bg-align" role="group" aria-label="Text alignment">
+              <button type="button" class="thha-bg-align__btn" data-align="left" aria-label="Align left">
+                <i class="fa-solid fa-align-left"></i>
+              </button>
+              <button type="button" class="thha-bg-align__btn is-active" data-align="center" aria-label="Align center">
+                <i class="fa-solid fa-align-center"></i>
+              </button>
+              <button type="button" class="thha-bg-align__btn" data-align="right" aria-label="Align right">
+                <i class="fa-solid fa-align-right"></i>
+              </button>
+              <button type="button" class="thha-bg-align__btn" data-align="justify" aria-label="Align justify">
+                <i class="fa-solid fa-align-justify"></i>
+              </button>
+            </div>
+
+            <!-- Emoji rating -->
+            <div class="thha-bg-rating" role="radiogroup" aria-label="Mood rating">
+              <button type="button" class="thha-bg-rating__btn" data-mood="happy" aria-label="Happy">
+                <i class="fa-regular fa-face-smile"></i>
+              </button>
+              <button type="button" class="thha-bg-rating__btn" data-mood="meh" aria-label="Neutral">
+                <i class="fa-regular fa-face-meh"></i>
+              </button>
+              <button type="button" class="thha-bg-rating__btn" data-mood="sad" aria-label="Sad">
+                <i class="fa-regular fa-face-frown"></i>
+              </button>
+            </div>
+
+            <!-- Edit / Duplicate / Delete -->
+            <div class="thha-bg-actions" role="group" aria-label="Item actions">
+              <button type="button" class="thha-bg-actions__btn" data-action="edit">
+                <i class="fa-solid fa-pen"></i>
+                <span>Edit</span>
+              </button>
+              <button type="button" class="thha-bg-actions__btn" data-action="duplicate">
+                <i class="fa-regular fa-clone"></i>
+                <span>Duplicate</span>
+              </button>
+              <button type="button" class="thha-bg-actions__btn is-disabled" data-action="delete" disabled>
+                <i class="fa-regular fa-trash-can"></i>
+                <span>Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 : Pricing Toggle (Sliding Pill) -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 5</h2>
+
+        <div class="thha-button-group thha-presets-5">
+          <div class="thha-bg-pricing">
+            <div class="thha-bg-pill" role="tablist" aria-label="Billing period">
+              <span class="thha-bg-pill__indicator" aria-hidden="true"></span>
+              <button
+                type="button"
+                class="thha-bg-pill__btn is-active"
+                role="tab"
+                data-plan="monthly"
+                aria-selected="true"
+              >
+                <i class="fa-regular fa-calendar"></i>
+                <span>Monthly</span>
+              </button>
+              <button
+                type="button"
+                class="thha-bg-pill__btn"
+                role="tab"
+                data-plan="yearly"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Yearly</span>
+                <span class="thha-bg-pill__chip">−20%</span>
+              </button>
+              <button
+                type="button"
+                class="thha-bg-pill__btn"
+                role="tab"
+                data-plan="lifetime"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-infinity"></i>
+                <span>Lifetime</span>
+              </button>
+            </div>
+
+            <div class="thha-bg-price" data-plan="monthly">
+              <div class="thha-bg-price__item is-active" data-plan="monthly">
+                <span class="thha-bg-price__currency">$</span>
+                <span class="thha-bg-price__amount">19</span>
+                <span class="thha-bg-price__period">/month</span>
+                <p class="thha-bg-price__note">Billed every month, cancel any time.</p>
+              </div>
+              <div class="thha-bg-price__item" data-plan="yearly">
+                <span class="thha-bg-price__currency">$</span>
+                <span class="thha-bg-price__amount">182</span>
+                <span class="thha-bg-price__period">/year</span>
+                <p class="thha-bg-price__note">Save 20% — equivalent to $15.20/month.</p>
+              </div>
+              <div class="thha-bg-price__item" data-plan="lifetime">
+                <span class="thha-bg-price__currency">$</span>
+                <span class="thha-bg-price__amount">499</span>
+                <span class="thha-bg-price__period">once</span>
+                <p class="thha-bg-price__note">Pay once, own it forever. Lifetime updates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/button-group.js"></script>
+  </body>
+</html>
