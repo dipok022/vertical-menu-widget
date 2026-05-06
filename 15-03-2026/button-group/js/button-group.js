@@ -1,9 +1,6 @@
 (function ($) {
   "use strict";
 
-  /* =========================================================
-     Design 1 — Add to Cart -> Quantity selector
-     ========================================================= */
   function thhaBgPreset1(scope) {
     var $root = $(scope);
     if (!$root.length) return;
@@ -13,7 +10,6 @@
     var qty = 1;
 
     $cart.on("click", function (e) {
-      // Ignore clicks on inner controls (steppers, confirm).
       if ($(e.target).closest(".thha-bg-step, .thha-bg-confirm").length) return;
       if ($cart.attr("data-state") === "bg_group") {
         $cart.attr("data-state", "qty");
@@ -40,9 +36,6 @@
     });
   }
 
-  /* =========================================================
-     Design 2 — Like with counter
-     ========================================================= */
   function thhaBgPreset2(scope) {
     var $root = $(scope);
     if (!$root.length) return;
@@ -50,8 +43,8 @@
     var $like = $root.find(".thha-bg-like");
     if (!$like.length) return;
 
-    var $likeLabel = $like.find(".thha-bg-like__label");
-    var $likeCount = $like.find(".thha-bg-like__count");
+    var $likeLabel = $like.find(".thha-bg-like-label");
+    var $likeCount = $like.find(".thha-bg-like-count");
     var likeBase = parseInt($likeCount.attr("data-count"), 10) || 0;
     var liked = false;
 
@@ -70,9 +63,6 @@
     });
   }
 
-  /* =========================================================
-     Design 3 — Play / Pause with progress
-     ========================================================= */
   function thhaBgPreset3(scope) {
     var $root = $(scope);
     if (!$root.length) return;
@@ -80,9 +70,9 @@
     var $play = $root.find(".thha-bg-play");
     if (!$play.length) return;
 
-    var $progress = $play.find(".thha-bg-play__progress");
-    var $current = $play.find(".thha-bg-play__current");
-    var $total = $play.find(".thha-bg-play__total");
+    var $progress = $play.find(".thha-bg-play-progress");
+    var $current = $play.find(".thha-bg-play-current");
+    var $total = $play.find(".thha-bg-play-total");
     var totalSeconds = parseTime($total.text() || "5:23");
     var elapsed = 0;
     var ticker = null;
@@ -118,9 +108,6 @@
     }
   }
 
-  /* =========================================================
-     Design 4 — Split button (Save) with dropdown + count bump
-     ========================================================= */
   function thhaBgPreset4(scope) {
     var $root = $(scope);
     if (!$root.length) return;
@@ -128,36 +115,88 @@
     var $splits = $root.find(".thha-bg-split");
     if (!$splits.length) return;
 
-    /* Toggle dropdown via the chevron */
-    $root.on("click", ".thha-bg-split__more", function (e) {
+    $root.on("click", ".thha-bg-split-more", function (e) {
       e.stopPropagation();
       var $split = $(this).closest(".thha-bg-split");
       $root.find(".thha-bg-split").not($split).removeClass("is-open");
       $split.toggleClass("is-open");
     });
 
-    /* Bump badge counter when the main side is clicked */
-    $root.on("click", ".thha-bg-split__main", function () {
+    $root.on("click", ".thha-bg-split-main", function () {
       var $split = $(this).closest(".thha-bg-split");
-      var $badge = $split.find(".thha-bg-split__badge");
+      var $badge = $split.find(".thha-bg-split-badge");
       var current = parseInt($badge.attr("data-count"), 10) || 0;
       var next = current + 1;
       $badge.attr("data-count", next).text(next);
       $split.removeClass("is-bumped");
-      void $split[0].offsetWidth; // restart animation
+      void $split[0].offsetWidth;
       $split.addClass("is-bumped");
     });
 
-    /* Selecting a menu item closes the dropdown */
-    $root.on("click", ".thha-bg-split__menu li", function () {
+    $root.on("click", ".thha-bg-split-menu li", function () {
       $(this).closest(".thha-bg-split").removeClass("is-open");
     });
 
-    /* Click outside closes any open dropdown */
     $(document).on("click.thhaBgPreset4", function (e) {
       if (!$(e.target).closest(".thha-bg-split").length) {
         $root.find(".thha-bg-split").removeClass("is-open");
       }
+    });
+  }
+
+  function thhaBgPreset5(scope) {
+    var $root = $(scope);
+    if (!$root.length) return;
+
+    var $share = $root.find(".thha-bg-share");
+    if (!$share.length) return;
+
+    var $btn = $share.find(".thha-bg-share-btn");
+
+    function setOpen(open) {
+      $share.attr("data-state", open ? "open" : "bg_group");
+      $btn.attr("aria-expanded", open);
+      $share.find(".thha-bg-share-list").attr("aria-hidden", !open);
+    }
+
+    $btn.on("click", function (e) {
+      e.stopPropagation();
+      setOpen($share.attr("data-state") !== "open");
+    });
+
+    $(document).on("click.thhaBgPreset5", function (e) {
+      if (!$(e.target).closest(".thha-bg-share").length) {
+        setOpen(false);
+      }
+    });
+
+    $(document).on("keydown.thhaBgPreset5", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+
+    $share.on("click", '.thha-bg-share-item[data-net="copy"]', function () {
+      var $item = $(this);
+      var $icon = $item.find("i");
+      var originalClass = $icon.attr("class");
+      var originalTip = $item.attr("data-tip");
+
+      $icon.attr("class", "fa-solid fa-check");
+      $item.attr("data-tip", "Copied!").addClass("is-copied");
+
+      if (navigator.clipboard && window.location) {
+        navigator.clipboard
+          .writeText(window.location.href)
+          .catch(function () {});
+      }
+
+      setTimeout(function () {
+        $icon.attr("class", originalClass);
+        $item.attr("data-tip", originalTip).removeClass("is-copied");
+      }, 1400);
+    });
+
+    $share.on("click", ".thha-bg-share-item", function (e) {
+      e.stopPropagation();
     });
   }
 
@@ -166,5 +205,6 @@
     thhaBgPreset2(".thha-button-group.thha-presets-2");
     thhaBgPreset3(".thha-button-group.thha-presets-3");
     thhaBgPreset4(".thha-button-group.thha-presets-4");
+    thhaBgPreset5(".thha-button-group.thha-presets-5");
   });
 })(jQuery);

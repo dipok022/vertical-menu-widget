@@ -24,13 +24,13 @@
           <div class="thha-bg-cart" data-state="bg_group">
             <button
               type="button"
-              class="thha-bg-cart__face thha-bg-cart__face--idle"
+              class="thha-bg-cart-face thha-bg-cart-face--idle"
               aria-label="Add to cart"
             >
               <i class="fa-solid fa-cart-shopping"></i>
               <span>ADD TO CART</span>
             </button>
-            <span class="thha-bg-cart__face thha-bg-cart__face--qty">
+            <span class="thha-bg-cart-face thha-bg-cart-face--qty">
               <button
                 type="button"
                 class="thha-bg-step"
@@ -73,14 +73,14 @@
 
         <div class="thha-button-group thha-presets-2">
           <button type="button" class="thha-bg-like" aria-pressed="false">
-            <span class="thha-bg-like__main">
+            <span class="thha-bg-like-main">
               <span class="thha-bg-heart" aria-hidden="true">
                 <i class="fa-regular fa-heart thha-bg-heart--outline"></i>
                 <i class="fa-solid fa-heart thha-bg-heart--solid"></i>
               </span>
-              <span class="thha-bg-like__label">LIKE</span>
+              <span class="thha-bg-like-label">LIKE</span>
             </span>
-            <span class="thha-bg-like__count" data-count="492">492</span>
+            <span class="thha-bg-like-count" data-count="492">492</span>
           </button>
         </div>
       </div>
@@ -98,17 +98,17 @@
             data-state="paused"
             aria-label="Play"
           >
-            <span class="thha-bg-play__icon" aria-hidden="true">
+            <span class="thha-bg-play-icon" aria-hidden="true">
               <i class="fa-solid fa-play"></i>
               <i class="fa-solid fa-pause"></i>
             </span>
-            <span class="thha-bg-play__label">PLAY</span>
-            <span class="thha-bg-play__time">
-              <span class="thha-bg-play__current">0:00</span>
-              <span class="thha-bg-play__sep"> / </span>
-              <span class="thha-bg-play__total">5:23</span>
+            <span class="thha-bg-play-label">PLAY</span>
+            <span class="thha-bg-play-time">
+              <span class="thha-bg-play-current">0:00</span>
+              <span class="thha-bg-play-sep"> / </span>
+              <span class="thha-bg-play-total">5:23</span>
             </span>
-            <span class="thha-bg-play__progress" aria-hidden="true"></span>
+            <span class="thha-bg-play-progress" aria-hidden="true"></span>
           </button>
         </div>
       </div>
@@ -121,23 +121,23 @@
 
         <div class="thha-button-group thha-presets-4">
           <div class="thha-bg-split" data-split="save">
-            <button type="button" class="thha-bg-split__main">
+            <button type="button" class="thha-bg-split-main">
               <i class="fa-solid fa-bookmark"></i>
               <span>Save</span>
               <span
-                class="thha-bg-split__badge thha-bg-split__badge--violet"
+                class="thha-bg-split-badge thha-bg-split-badge--violet"
                 data-count="36"
                 >36</span
               >
             </button>
             <button
               type="button"
-              class="thha-bg-split__more"
+              class="thha-bg-split-more"
               aria-label="More save options"
             >
               <i class="fa-solid fa-chevron-down"></i>
             </button>
-            <ul class="thha-bg-split__menu">
+            <ul class="thha-bg-split-menu">
               <li>
                 <i class="fa-regular fa-folder-open"></i>Save to collection
               </li>
@@ -154,7 +154,91 @@
       <div class="container">
         <h2 class="header-title">Design 5</h2>
 
-        <div class="thha-button-group thha-presets-5"></div>
+        <div class="thha-button-group thha-presets-5">
+          <div class="thha-bg-share" data-state="bg_group">
+            <button
+              type="button"
+              class="thha-bg-share-btn"
+              aria-expanded="false"
+              aria-label="Share"
+            >
+              <span class="thha-bg-share-icon" aria-hidden="true">
+                <i class="fa-solid fa-share-nodes"></i>
+                <i class="fa-solid fa-xmark"></i>
+              </span>
+              <span class="thha-bg-share-label">Share</span>
+            </button>
+
+            <ul class="thha-bg-share-list" aria-hidden="true">
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="facebook"
+                  data-tip="Facebook"
+                  aria-label="Share on Facebook"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="twitter"
+                  data-tip="X / Twitter"
+                  aria-label="Share on X"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="instagram"
+                  data-tip="Instagram"
+                  aria-label="Share on Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="linkedin"
+                  data-tip="LinkedIn"
+                  aria-label="Share on LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="whatsapp"
+                  data-tip="WhatsApp"
+                  aria-label="Share on WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="thha-bg-share-item"
+                  data-net="copy"
+                  data-tip="Copy link"
+                  aria-label="Copy link"
+                >
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
