@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Before After Slider</title>
+    <link rel="stylesheet" href="./scss/before-after-slider.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 : Classic horizontal drag with a self-demonstrating nudge -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
+
+        <div class="thha-before-after-slider thha-presets-1">
+          <figure
+            class="thha-bas-frame"
+            data-thha-drag
+            data-thha-hint
+            data-orientation="horizontal"
+          >
+            <img
+              class="thha-bas-img"
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop"
+              alt="Modern glass-fronted house lit at dusk"
+              loading="lazy"
+            />
+
+            <div class="thha-bas-clip" aria-hidden="true">
+              <img
+                class="thha-bas-img thha-bas-img--raw"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <span class="thha-bas-tag thha-bas-tag--before" aria-hidden="true"
+              >Before</span
+            >
+            <span class="thha-bas-tag thha-bas-tag--after" aria-hidden="true"
+              >After</span
+            >
+
+            <button
+              type="button"
+              class="thha-bas-handle"
+              role="slider"
+              aria-label="Reveal the graded image"
+              aria-orientation="horizontal"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="50"
+              aria-valuetext="50% revealed"
+            >
+              <span class="thha-bas-handle-line" aria-hidden="true"></span>
+              <span class="thha-bas-handle-grip" aria-hidden="true">
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+              </span>
+            </button>
+          </figure>
+
+          <p class="thha-bas-note">
+            Drag the handle, or focus it and use the arrow keys.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 : Vertical orientation with a live percentage readout -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 2</h2>
+
+        <div class="thha-before-after-slider thha-presets-2">
+          <figure
+            class="thha-bas-frame"
+            data-thha-drag
+            data-orientation="vertical"
+          >
+            <img
+              class="thha-bas-img"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80&auto=format&fit=crop"
+              alt="Portrait of a woman photographed at golden hour"
+              loading="lazy"
+            />
+
+            <div class="thha-bas-clip" aria-hidden="true">
+              <img
+                class="thha-bas-img thha-bas-img--raw"
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80&auto=format&fit=crop"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <span class="thha-bas-readout" aria-hidden="true">
+              <em class="thha-bas-readout-n">50</em>%
+            </span>
+
+            <button
+              type="button"
+              class="thha-bas-handle"
+              role="slider"
+              aria-label="Reveal the retouched portrait"
+              aria-orientation="vertical"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="50"
+              aria-valuetext="50% revealed"
+            >
+              <span class="thha-bas-handle-line" aria-hidden="true"></span>
+              <span class="thha-bas-handle-grip" aria-hidden="true">
+                <i class="fa-solid fa-chevron-up"></i>
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+          </figure>
+
+          <p class="thha-bas-note">
+            Drag up and down — the readout tracks the split.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 : Spotlight lens that carries the graded frame with it -->
+    <section style="background-color: #f8f9fc; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 3</h2>
+
+        <div class="thha-before-after-slider thha-presets-3">
+          <figure class="thha-bas-lens" data-thha-lens>
+            <img
+              class="thha-bas-img thha-bas-img--raw"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=80&auto=format&fit=crop"
+              alt="Snow-covered peaks under the Milky Way"
+              loading="lazy"
+            />
+
+            <div class="thha-bas-lens-clip" aria-hidden="true">
+              <img
+                class="thha-bas-img"
+                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=80&auto=format&fit=crop"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <span class="thha-bas-lens-ring" aria-hidden="true"></span>
+            <span class="thha-bas-lens-hint" aria-hidden="true">
+              <i class="fa-solid fa-arrows-up-down-left-right"></i>
+              Move to inspect
+            </span>
+          </figure>
+
+          <p class="thha-bas-note">
+            The lens follows the pointer; on touch, drag across the frame.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 : Full-bleed day/night hero, copy tied to each side -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 4</h2>
+
+        <div class="thha-before-after-slider thha-presets-4">
+          <figure
+            class="thha-bas-hero"
+            data-thha-drag
+            data-thha-hint
+            data-thha-from="100"
+            data-thha-unit="daylight"
+            data-orientation="horizontal"
+          >
+            <!-- base layer: the night grade and the copy that belongs to it -->
+            <img
+              class="thha-bas-img thha-bas-img--night"
+              src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&q=80&auto=format&fit=crop"
+              alt="Wide avenue between high-rise buildings"
+              loading="lazy"
+            />
+            <span class="thha-bas-hero-scrim" aria-hidden="true"></span>
+
+            <div class="thha-bas-hero-copy thha-bas-hero-copy--night">
+              <span class="thha-bas-hero-time">21:15 — After dark</span>
+              <p class="thha-bas-hero-line">And it doesn&rsquo;t sleep</p>
+              <p class="thha-bas-hero-sub">
+                Same street, colder light, a different city entirely.
+              </p>
+            </div>
+
+            <!-- day layer: clipped to the left of the divider, carrying its
+                 own copy so the words change as the divider crosses them -->
+            <div class="thha-bas-hero-day" aria-hidden="true">
+              <img
+                class="thha-bas-img"
+                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1600&q=80&auto=format&fit=crop"
+                alt=""
+                loading="lazy"
+              />
+              <span class="thha-bas-hero-scrim"></span>
+
+              <div class="thha-bas-hero-copy thha-bas-hero-copy--day">
+                <span class="thha-bas-hero-time">06:40 — Daybreak</span>
+                <p class="thha-bas-hero-line">The city wakes</p>
+                <p class="thha-bas-hero-sub">
+                  Glass, steel and a low sun. Everything reads warm.
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="thha-bas-handle"
+              role="slider"
+              aria-label="Wipe between daybreak and after dark"
+              aria-orientation="horizontal"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="50"
+              aria-valuetext="50% daylight"
+            >
+              <span class="thha-bas-handle-line" aria-hidden="true"></span>
+              <span class="thha-bas-handle-grip" aria-hidden="true">
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+              </span>
+            </button>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 : Product set, click anywhere on the frame to compare -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 5</h2>
+
+        <div class="thha-before-after-slider thha-presets-5">
+          <div class="thha-bas-shop">
+            <figure
+              class="thha-bas-stage"
+              data-thha-stage
+              role="slider"
+              tabindex="0"
+              aria-label="Compare the retouched product shot"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="50"
+              aria-valuetext="50% retouched"
+            >
+              <img
+                class="thha-bas-img thha-bas-stage-after"
+                src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=1000&q=80&auto=format&fit=crop"
+                alt="Teal leather top-handle handbag"
+                loading="lazy"
+              />
+
+              <div class="thha-bas-clip" aria-hidden="true">
+                <img
+                  class="thha-bas-img thha-bas-img--raw thha-bas-stage-before"
+                  src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=1000&q=80&auto=format&fit=crop"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+
+              <span class="thha-bas-tag thha-bas-tag--before" aria-hidden="true"
+                >Raw</span
+              >
+              <span class="thha-bas-tag thha-bas-tag--after" aria-hidden="true"
+                >Retouched</span
+              >
+
+              <span class="thha-bas-stage-marker" aria-hidden="true"></span>
+
+              <span class="thha-bas-stage-hint" aria-hidden="true">
+                <i class="fa-solid fa-hand-pointer"></i>
+                Click anywhere to compare
+              </span>
+            </figure>
+
+            <div class="thha-bas-shop-bar">
+              <p class="thha-bas-shop-name">Marlow Top Handle</p>
+              <p class="thha-bas-shop-meta">Studio retouch &middot; 1 of 4</p>
+            </div>
+
+            <div
+              class="thha-bas-thumbs"
+              role="group"
+              aria-label="Choose a product to compare"
+            >
+              <button
+                type="button"
+                class="thha-bas-thumb"
+                aria-pressed="true"
+                data-name="Marlow Top Handle"
+                data-alt="Teal leather top-handle handbag"
+                data-src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=1000&q=80&auto=format&fit=crop"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=220&q=70&auto=format&fit=crop"
+                  alt=""
+                  loading="lazy"
+                />
+                <span>Handbag</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-bas-thumb"
+                aria-pressed="false"
+                data-name="Lumen Over-Ear"
+                data-alt="Copper and silver over-ear headphones"
+                data-src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=1000&q=80&auto=format&fit=crop"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=220&q=70&auto=format&fit=crop"
+                  alt=""
+                  loading="lazy"
+                />
+                <span>Headphones</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-bas-thumb"
+                aria-pressed="false"
+                data-name="Verde Derby"
+                data-alt="Teal suede derby shoe on a pale plinth"
+                data-src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=1000&q=80&auto=format&fit=crop"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=220&q=70&auto=format&fit=crop"
+                  alt=""
+                  loading="lazy"
+                />
+                <span>Derby</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-bas-thumb"
+                aria-pressed="false"
+                data-name="Meridian Chrono"
+                data-alt="Steel chronograph watch with a navy dial"
+                data-src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1000&q=80&auto=format&fit=crop"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=220&q=70&auto=format&fit=crop"
+                  alt=""
+                  loading="lazy"
+                />
+                <span>Watch</span>
+              </button>
+            </div>
+
+            <span class="thha-bas-sr" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/before-after-slider.js"></script>
+  </body>
+</html>

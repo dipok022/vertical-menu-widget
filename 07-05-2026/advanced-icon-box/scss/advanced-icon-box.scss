@@ -1,0 +1,948 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+
+  .header-title {
+    color: #df0463;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 22px;
+    text-align: center;
+    margin: 38px 0 50px 0;
+  }
+}
+
+.thha-advanced-icon-box {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #10131a;
+  -webkit-font-smoothing: antialiased;
+
+  /* One shared entrance for every preset: the JS adds .is-inview to the
+     preset wrapper once it scrolls into view, and the direct children —
+     the cards or rows — stagger up from below. */
+  &[data-thha-reveal] > * {
+    opacity: 0;
+    translate: 0 22px;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      translate 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &[data-thha-reveal].is-inview > * {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  &[data-thha-reveal].is-inview > *:nth-child(2) {
+    transition-delay: 0.09s;
+  }
+
+  &[data-thha-reveal].is-inview > *:nth-child(3) {
+    transition-delay: 0.18s;
+  }
+
+  /* =====================================================================
+     Design 1 — Aurora Spotlight
+     Dark cards, gradient hairline border, and a light source that follows
+     the pointer across the card face.
+     ===================================================================== */
+  &.thha-presets-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 22px;
+
+    .thha-aib-spot-card {
+      position: relative;
+      isolation: isolate;
+      padding: 34px 30px 30px;
+      border-radius: 20px;
+      background: #0f131c;
+      color: #fff;
+      overflow: hidden;
+      transition:
+        translate 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+      /* gradient hairline, drawn as a masked border ring */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.28),
+          rgba(255, 255, 255, 0.04) 42%,
+          rgba(124, 92, 255, 0.5)
+        );
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      &:hover,
+      &:focus-within {
+        translate: 0 -6px;
+        box-shadow: 0 26px 50px -28px rgba(90, 120, 255, 0.8);
+
+        .thha-aib-spot-glow {
+          opacity: 1;
+        }
+      }
+
+      &:hover .thha-aib-spot-icon {
+        transform: translateY(-2px) rotate(-6deg);
+        color: #fff;
+      }
+    }
+
+    /* The travelling light. It is a real element rather than a pseudo so the
+       script can write the whole radial-gradient straight onto its inline
+       style — a pseudo-element has no node for style to reach. The card sets
+       isolation: isolate, so z-index -1 lands above the card's own background
+       but still behind the copy. */
+    .thha-aib-spot-glow {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .thha-aib-spot-badge {
+      display: inline-block;
+      margin-bottom: 26px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b8c6ff;
+    }
+
+    .thha-aib-spot-icon {
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(
+        150deg,
+        rgba(124, 92, 255, 0.3),
+        rgba(255, 255, 255, 0.04)
+      );
+      color: #cdd7ff;
+      transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .thha-aib-spot-title {
+      margin: 0 0 10px;
+      font-family:
+        "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+        sans-serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .thha-aib-spot-text {
+      margin: 0 0 24px;
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    .thha-aib-spot-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #9db2ff;
+
+      svg {
+        width: 15px;
+        height: 15px;
+        transition: translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      &:hover svg {
+        translate: 4px 0;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #9db2ff;
+        outline-offset: 4px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 2 — Editorial Split
+     Wide rows hinged by a rule, serif display, oversized index numeral.
+     The row itself indents on hover instead of lifting.
+
+     Each artwork is a CSS-generated gradient stack written straight into
+     its modifier, so the widget folder ships with no binary assets and
+     renders offline. To use real photography, swap a background-image for
+     url("../img/your-file.jpg").
+     ===================================================================== */
+  &.thha-presets-2 {
+    display: grid;
+    gap: 0;
+
+    .thha-aib-edit-row {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(16, 19, 26, 0.16);
+      transition: padding-left 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:first-child {
+        border-top: 1px solid rgba(16, 19, 26, 0.16);
+      }
+
+      &:hover {
+        padding-left: 14px;
+
+        .thha-aib-edit-media {
+          box-shadow: 0 20px 38px -20px rgba(16, 19, 26, 0.6);
+        }
+
+        /* the photograph moves; the frame around it stays put */
+        .thha-aib-edit-img {
+          transform: scale(1.09);
+          filter: saturate(1.06) brightness(1.03);
+        }
+
+        .thha-aib-edit-media::after {
+          animation: thha-aib-edit-sheen 0.95s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+
+    /* The frame clips the zoom. Its background is the paper stock showing
+       through, so a photo that has not decoded yet leaves a warm plate
+       rather than a white hole. */
+    .thha-aib-edit-media {
+      position: relative;
+      height: 178px;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #e7ded0;
+      box-shadow: 0 0 0 0 rgba(16, 19, 26, 0);
+      transition: box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+      /* a narrow light band raked across the frame once per hover */
+      &::after {
+        content: "";
+        position: absolute;
+        top: -60%;
+        left: 0;
+        width: 36%;
+        height: 220%;
+        pointer-events: none;
+        opacity: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.42) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-200%) rotate(16deg);
+      }
+    }
+
+    /* Held slightly flat at rest so the hover reads as the picture waking
+       up rather than merely growing. The zoom runs longer than the tone
+       shift, which is what keeps it feeling like a slow push-in. */
+    .thha-aib-edit-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      filter: saturate(0.82) brightness(0.96);
+      transition:
+        transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .thha-aib-edit-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .thha-aib-edit-index {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(16, 19, 26, 0.38);
+    }
+
+    .thha-aib-edit-badge {
+      padding: 4px 10px;
+      border: 1px solid rgba(16, 19, 26, 0.28);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .thha-aib-edit-title {
+      margin: 0 0 12px;
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 3.4vw, 38px);
+      font-weight: 400;
+      font-variation-settings:
+        "SOFT" 40,
+        "WONK" 1;
+      letter-spacing: -0.02em;
+      line-height: 1.06;
+    }
+
+    .thha-aib-edit-text {
+      margin: 0 0 20px;
+      max-width: 46ch;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(16, 19, 26, 0.66);
+    }
+
+    /* the rule under the link retracts to the right on hover */
+    .thha-aib-edit-cta {
+      position: relative;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #10131a;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        height: 1px;
+        background: currentColor;
+        transform-origin: left;
+        scale: 1 1;
+        transition: scale 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      &:hover::after {
+        scale: 0 1;
+        transform-origin: right;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #10131a;
+        outline-offset: 4px;
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 3 — Neo-Brutalist Pop
+     Flat colour, 2px ink border, hard offset shadow. On hover the card
+     travels exactly the shadow's offset, so it snaps flat against it.
+
+     #ffd93d is the default face; the other two cards override it with an
+     inline background in the markup.
+     ===================================================================== */
+  &.thha-presets-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+    gap: 30px;
+
+    .thha-aib-pop-card {
+      position: relative;
+      padding: 32px 26px 28px;
+      border: 2px solid #10131a;
+      border-radius: 4px;
+      background: #ffd93d;
+      box-shadow: 8px 8px 0 #10131a;
+      transition:
+        translate 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:hover,
+      &:focus-within {
+        translate: 8px 8px;
+        box-shadow: 0 0 0 #10131a;
+      }
+
+      &:hover .thha-aib-pop-icon {
+        rotate: -8deg;
+      }
+    }
+
+    .thha-aib-pop-badge {
+      position: absolute;
+      top: -13px;
+      right: 18px;
+      padding: 5px 12px;
+      border: 2px solid #10131a;
+      border-radius: 3px;
+      background: #10131a;
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      rotate: -3deg;
+    }
+
+    .thha-aib-pop-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 20px;
+      border: 2px solid #10131a;
+      border-radius: 3px;
+      background: #fff;
+      color: #10131a;
+      transition: rotate 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .thha-aib-pop-title {
+      margin: 0 0 12px;
+      font-family:
+        "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+        sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .thha-aib-pop-text {
+      margin: 0 0 22px;
+      font-size: 13.5px;
+      line-height: 1.68;
+      color: rgba(16, 19, 26, 0.78);
+    }
+
+    .thha-aib-pop-cta {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 2px solid #10131a;
+      border-radius: 3px;
+      background: #10131a;
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition:
+        background 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:hover {
+        background: #fff;
+        color: #10131a;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #10131a;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 4 — Glass Aurora
+     Frosted panels over a mesh gradient. The resting transform is written
+     here; the script overwrites the element's inline transform while the
+     pointer is inside the card and restores this value on the way out.
+     ===================================================================== */
+  &.thha-presets-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: 24px;
+
+    .thha-aib-glass-card {
+      position: relative;
+      padding: 30px 28px 28px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.09);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      backdrop-filter: blur(22px) saturate(150%);
+      box-shadow:
+        0 30px 60px -30px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      color: #fff;
+      transform: rotateX(0deg) rotateY(0deg);
+      transform-style: preserve-3d;
+      transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.14);
+
+        .thha-aib-glass-ring {
+          opacity: 1;
+          animation: thha-aib-glass-spin 9s linear infinite;
+        }
+      }
+    }
+
+    .thha-aib-glass-badge {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .thha-aib-glass-icon {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    /* dashed halo that only orbits while the card is hovered */
+    .thha-aib-glass-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.4);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .thha-aib-glass-title {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .thha-aib-glass-text {
+      margin: 0 0 22px;
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .thha-aib-glass-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #16113a;
+      font-size: 12.5px;
+      font-weight: 600;
+      transition:
+        gap 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      &:hover {
+        gap: 13px;
+        background: #fff;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 5 — Cinematic Reveal
+     Full-bleed tiles. The title is always legible; the copy and CTA unfold
+     via grid-template-rows 0fr → 1fr, which animates an auto height without
+     pinning a magic pixel value. Artwork is CSS-generated, as in Design 2.
+     ===================================================================== */
+  &.thha-presets-5 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+
+    .thha-aib-cine-card {
+      position: relative;
+      display: block;
+      min-height: 420px;
+      border-radius: 6px;
+      overflow: hidden;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      transition: background-size 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+      &--cliff {
+        background-image: radial-gradient(
+            80% 44% at 50% 8%,
+            #ffd6a5 0 20%,
+            #e0839a 46%,
+            transparent 72%
+          ),
+          linear-gradient(180deg, #6d5a8a 0 40%, #3d4a63 40% 62%, #1c2432 62%);
+      }
+
+      &--kiln {
+        background-image: radial-gradient(
+            60% 40% at 26% 20%,
+            rgba(255, 196, 124, 0.7),
+            transparent 64%
+          ),
+          linear-gradient(155deg, #8a4a34, #5c3226 52%, #2a1a16);
+      }
+
+      &--atrium {
+        background-image: radial-gradient(
+            50% 46% at 72% 24%,
+            rgba(255, 250, 220, 0.92),
+            transparent 62%
+          ),
+          linear-gradient(150deg, #cfd8c6, #8fa088 48%, #3f4c42);
+      }
+
+      /* readability gradient — deepens as the copy arrives */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(6, 8, 12, 0.1) 20%,
+          rgba(6, 8, 12, 0.82) 92%
+        );
+        transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-size: 112%;
+
+        &::before {
+          opacity: 0.92;
+        }
+
+        .thha-aib-cine-icon {
+          background: rgba(255, 255, 255, 0.16);
+          translate: 0 -2px;
+        }
+
+        .thha-aib-cine-reveal {
+          grid-template-rows: 1fr;
+          opacity: 1;
+        }
+      }
+
+      &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+    }
+
+    .thha-aib-cine-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    .thha-aib-cine-inner {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 26px 24px 28px;
+    }
+
+    .thha-aib-cine-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition:
+        translate 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .thha-aib-cine-title {
+      margin: 0;
+      font-family:
+        "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+        sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    /* folded away until hover or keyboard focus */
+    .thha-aib-cine-reveal {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition:
+        grid-template-rows 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* a single child row, so 0fr → 1fr collapses the whole block cleanly */
+    .thha-aib-cine-reveal-inner {
+      overflow: hidden;
+    }
+
+    .thha-aib-cine-text {
+      margin: 12px 0 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .thha-aib-cine-cta {
+      display: inline-block;
+      margin-top: 16px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+  }
+}
+
+/* ===== Keyframes ===== */
+@keyframes thha-aib-glass-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Design 2 — light band travelling across the photo frame on hover */
+@keyframes thha-aib-edit-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%) rotate(16deg);
+  }
+  16% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(430%) rotate(16deg);
+  }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 860px) {
+  .thha-advanced-icon-box {
+    &.thha-presets-1,
+    &.thha-presets-3,
+    &.thha-presets-4 {
+      padding: 36px 26px;
+    }
+
+    &.thha-presets-2 {
+      padding: 4px 26px 26px;
+    }
+
+    &.thha-presets-5 {
+      padding: 26px;
+    }
+
+    &.thha-presets-2 .thha-aib-edit-row {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    &.thha-presets-2 .thha-aib-edit-media {
+      height: 210px;
+    }
+  }
+}
+
+/* ===== Phone ===== */
+@media (max-width: 575px) {
+  .thha-advanced-icon-box {
+    &.thha-presets-1,
+    &.thha-presets-3,
+    &.thha-presets-4 {
+      padding: 26px 18px;
+      border-radius: 22px;
+    }
+
+    &.thha-presets-2 {
+      padding: 2px 18px 18px;
+      border-radius: 22px;
+    }
+
+    &.thha-presets-5 {
+      padding: 18px;
+      border-radius: 22px;
+    }
+
+    /* the offset shadow needs room once the card is this narrow */
+    &.thha-presets-3 {
+      gap: 24px;
+    }
+
+    &.thha-presets-3 .thha-aib-pop-card {
+      box-shadow: 5px 5px 0 #10131a;
+    }
+
+    &.thha-presets-3 .thha-aib-pop-card:hover,
+    &.thha-presets-3 .thha-aib-pop-card:focus-within {
+      translate: 5px 5px;
+    }
+
+    &.thha-presets-5 .thha-aib-cine-card {
+      min-height: 360px;
+    }
+  }
+}
+
+/* ===== Respect reduced-motion preferences =====
+   The pointer spotlight and tilt are already skipped in JS. What is left is
+   the ambient orbit, the scroll entrance and the hover travel — the entrance
+   resolves to its finished state rather than never arriving. */
+@media (prefers-reduced-motion: reduce) {
+  .thha-advanced-icon-box {
+    &[data-thha-reveal] > * {
+      opacity: 1 !important;
+      translate: 0 0 !important;
+      transition-delay: 0ms !important;
+    }
+
+    .thha-aib-glass-ring,
+    .thha-aib-edit-media::after {
+      animation: none !important;
+    }
+
+    /* the tone lift survives; only the push-in is dropped */
+    .thha-aib-edit-row:hover .thha-aib-edit-img {
+      transform: none !important;
+    }
+
+    .thha-aib-spot-card,
+    .thha-aib-spot-glow,
+    .thha-aib-spot-icon,
+    .thha-aib-spot-cta svg,
+    .thha-aib-edit-row,
+    .thha-aib-edit-media,
+    .thha-aib-edit-img,
+    .thha-aib-edit-cta::after,
+    .thha-aib-pop-card,
+    .thha-aib-pop-icon,
+    .thha-aib-glass-card,
+    .thha-aib-glass-cta,
+    .thha-aib-cine-card,
+    .thha-aib-cine-card::before,
+    .thha-aib-cine-icon,
+    .thha-aib-cine-reveal {
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+
+    .thha-aib-spot-card:hover,
+    .thha-aib-spot-card:focus-within,
+    .thha-aib-pop-card:hover,
+    .thha-aib-pop-card:focus-within {
+      translate: 0 0 !important;
+    }
+  }
+}

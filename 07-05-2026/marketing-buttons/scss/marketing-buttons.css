@@ -40,191 +40,280 @@ a {
   justify-content: center;
   gap: 26px;
   color: #0f172a;
+  /* Visually hidden live region — announces Design 5 state changes. */
+}
+.thha-marketing-buttons .thha-mb-sr-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.thha-marketing-buttons {
   /* =====================================================================
-     Design 1 — Animated gradient "shimmer" pill with shine sweep
+     Design 1 — Cursor-tracked spotlight border
+     A soft coloured light rides the pill's rim, following the pointer.
+     The border is a real gradient layer; the body sits on top of it.
      ===================================================================== */
 }
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine {
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot {
+  /* pointer position, written by JS; falls back to centre */
+  --thha-mx: 50%;
+  --thha-my: 50%;
+  --thha-spot-a: #6a5cff;
+  --thha-spot-b: #00c2ff;
   position: relative;
   display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 17px 34px;
+  padding: 2px;
   border-radius: 999px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #e6eaf2, #d3dae6);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(120deg, #6a5cff, #4f8bff, #00c2ff, #4f8bff, #6a5cff);
-  background-size: 200% 100%;
-  animation: thha-mb-flow 6s ease-in-out infinite;
-  box-shadow: 0 10px 26px rgba(79, 139, 255, 0.45);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-  /* diagonal shine that sweeps across on hover */
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+  /* the travelling spotlight, clipped to the pill */
 }
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine::before {
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -120%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.8s ease;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(200px circle at var(--thha-mx) var(--thha-my), var(--thha-spot-a), var(--thha-spot-b) 42%, transparent 72%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot .thha-mb-spot-body {
+  position: relative;
   z-index: 1;
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine .thha-mb-shine-text,
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine .thha-mb-shine-icon {
-  position: relative;
-  z-index: 2;
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine .thha-mb-shine-icon {
-  display: inline-flex;
-  font-size: 15px;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(79, 139, 255, 0.55);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine:hover::before {
-  left: 130%;
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine:hover .thha-mb-shine-icon {
-  transform: translateX(5px);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine:active {
-  transform: translateY(-1px) scale(0.99);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine--sunset {
-  background-image: linear-gradient(120deg, #ff5e62, #ff9966, #ff5e8a, #ff9966, #ff5e62);
-  box-shadow: 0 10px 26px rgba(255, 94, 98, 0.45);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine--sunset:hover {
-  box-shadow: 0 18px 40px rgba(255, 94, 98, 0.55);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine--emerald {
-  background-image: linear-gradient(120deg, #0fbf9f, #14e8b0, #2bd4ff, #14e8b0, #0fbf9f);
-  box-shadow: 0 10px 26px rgba(15, 191, 159, 0.45);
-}
-.thha-marketing-buttons.thha-presets-1 .thha-mb-shine--emerald:hover {
-  box-shadow: 0 18px 40px rgba(15, 191, 159, 0.55);
-}
-.thha-marketing-buttons {
-  /* =====================================================================
-     Design 2 — Liquid expanding-circle fill (ghost → solid)
-     ===================================================================== */
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 16px 36px;
-  border-radius: 14px;
+  gap: 16px;
+  padding: 12px 12px 12px 30px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0f172a;
   font-weight: 700;
   font-size: 16px;
-  color: #1e5cff;
-  background: #fff;
-  border: 2px solid #1e5cff;
-  overflow: hidden;
-  isolation: isolate;
-  transition: color 0.45s ease, border-color 0.45s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  letter-spacing: 0.01em;
+  transition: background 0.4s ease;
 }
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill .thha-mb-fill-bg {
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 50%;
-  width: 135%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background: #1e5cff;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot {
+  /* arrow capsule: first glyph exits right, second arrives from left.
+     Travel is one full capsule width so a glyph always clears the clip
+     completely — a percentage of the glyph's own width would leave a
+     sliver behind whenever the icon font or size changed. */
 }
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill .thha-mb-fill-label {
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot .thha-mb-spot-icon {
+  --thha-travel: 40px;
   position: relative;
-  z-index: 1;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
   display: inline-flex;
-  align-items: center;
-  gap: 11px;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill .thha-mb-fill-label i {
-  font-size: 17px;
-  transition: transform 0.4s ease;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill:hover {
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(30, 92, 255, 0.3);
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill:hover .thha-mb-fill-bg {
-  transform: translate(-50%, -50%) scale(1);
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill:hover .thha-mb-fill-label i {
-  transform: scale(1.12);
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill:active {
-  transform: translateY(-1px);
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--pink {
-  color: #ff2d75;
-  border-color: #ff2d75;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--pink .thha-mb-fill-bg {
-  background: #ff2d75;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--pink:hover {
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(255, 45, 117, 0.32);
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--dark {
-  color: #0f172a;
-  border-color: #0f172a;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--dark .thha-mb-fill-bg {
   background: #0f172a;
-}
-.thha-marketing-buttons.thha-presets-2 .thha-mb-fill--dark:hover {
   color: #fff;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.32);
+  transition: background 0.45s ease, color 0.45s ease;
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot .thha-mb-spot-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot .thha-mb-spot-icon i:nth-child(1) {
+  transform: translate(-50%, -50%);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot .thha-mb-spot-icon i:nth-child(2) {
+  transform: translate(calc(-50% - var(--thha-travel)), -50%);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:hover, .thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:hover::before, .thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible::before {
+  opacity: 1;
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:hover .thha-mb-spot-icon, .thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible .thha-mb-spot-icon {
+  background: var(--thha-spot-a);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:hover .thha-mb-spot-icon i:nth-child(1), .thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible .thha-mb-spot-icon i:nth-child(1) {
+  transform: translate(calc(-50% + var(--thha-travel)), -50%);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:hover .thha-mb-spot-icon i:nth-child(2), .thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible .thha-mb-spot-icon i:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:focus-visible {
+  outline: 3px solid var(--thha-spot-a);
+  outline-offset: 4px;
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot:active {
+  transform: translateY(-1px) scale(0.99);
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot--sunset {
+  --thha-spot-a: #ff5e62;
+  --thha-spot-b: #ff9966;
+}
+.thha-marketing-buttons.thha-presets-1 .thha-mb-spot--emerald {
+  --thha-spot-a: #0fbf9f;
+  --thha-spot-b: #2bd4ff;
 }
 .thha-marketing-buttons {
   /* =====================================================================
-     Design 3 — Rotating conic-gradient glow border (dark)
+     Design 2 — Per-letter roll with a rising fill
+     Each character is swapped for its twin on a staggered delay while a
+     solid panel wipes up from the bottom edge.
+     ===================================================================== */
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll {
+  --thha-roll-ink: #0f172a;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: 2px solid var(--thha-roll-ink);
+  background: #fff;
+  color: var(--thha-roll-ink);
+  font-weight: 700;
+  font-size: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  /* the rising panel */
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--thha-roll-ink);
+  transform: translateY(101%);
+  transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-icon,
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-text {
+  position: relative;
+  z-index: 1;
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-icon {
+  display: inline-flex;
+  font-size: 17px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll {
+  /* one clipped window per character */
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-char {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-char-in {
+  display: block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: calc(var(--thha-i, 0) * 22ms);
+  /* the twin waiting one line below */
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll .thha-mb-roll-char-in::after {
+  content: attr(data-char);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:hover, .thha-marketing-buttons.thha-presets-2 .thha-mb-roll:focus-visible {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:hover::before, .thha-marketing-buttons.thha-presets-2 .thha-mb-roll:focus-visible::before {
+  transform: translateY(0);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:hover .thha-mb-roll-icon, .thha-marketing-buttons.thha-presets-2 .thha-mb-roll:focus-visible .thha-mb-roll-icon {
+  transform: translateX(-3px) scale(1.1);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:hover .thha-mb-roll-char-in, .thha-marketing-buttons.thha-presets-2 .thha-mb-roll:focus-visible .thha-mb-roll-char-in {
+  transform: translateY(-100%);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:focus-visible {
+  outline: 3px solid var(--thha-roll-ink);
+  outline-offset: 4px;
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll:active {
+  transform: translateY(-1px);
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll--pink {
+  --thha-roll-ink: #ff2d75;
+}
+.thha-marketing-buttons.thha-presets-2 .thha-mb-roll--blue {
+  --thha-roll-ink: #1e5cff;
+}
+.thha-marketing-buttons {
+  /* =====================================================================
+     Design 3 — Aurora glass
+     Three blurred colour blobs drift behind a frosted pill, so the rim
+     light never repeats the same way twice.
      ===================================================================== */
 }
 .thha-marketing-buttons.thha-presets-3 {
   gap: 30px;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora {
+  --thha-a1: #7c3aed;
+  --thha-a2: #ff5e8a;
+  --thha-a3: #4f8bff;
   position: relative;
   display: inline-flex;
   padding: 2px;
   border-radius: 999px;
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 0 30px rgba(176, 107, 255, 0.35);
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
-  /* spinning multicolour ring (clipped to the pill, center hidden by inner) */
+  box-shadow: 0 0 34px rgba(124, 58, 237, 0.32);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow::before {
-  content: "";
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-field {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 250%;
-  aspect-ratio: 1/1;
-  transform: translate(-50%, -50%);
-  background: conic-gradient(from 0deg, #ff5e8a, #b06bff, #4f8bff, #00e0c6, #ff5e8a);
-  animation: thha-mb-spin 4.5s linear infinite;
+  inset: -60%;
   z-index: 0;
+  filter: blur(22px);
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow .thha-mb-glow-inner {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-field span {
+  position: absolute;
+  width: 55%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-field span:nth-child(1) {
+  background: var(--thha-a1);
+  top: 6%;
+  left: 2%;
+  animation: thha-mb-drift-a 7s ease-in-out infinite;
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-field span:nth-child(2) {
+  background: var(--thha-a2);
+  top: 30%;
+  left: 40%;
+  animation: thha-mb-drift-b 9s ease-in-out infinite;
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-field span:nth-child(3) {
+  background: var(--thha-a3);
+  top: 4%;
+  left: 66%;
+  animation: thha-mb-drift-c 8s ease-in-out infinite;
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-body {
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -232,47 +321,63 @@ a {
   gap: 12px;
   padding: 16px 36px;
   border-radius: 999px;
-  background: #0b1020;
+  background: rgba(11, 16, 32, 0.74);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: #fff;
   font-weight: 700;
   font-size: 16px;
-  transition: background 0.4s ease;
+  transition: background 0.45s ease;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow .thha-mb-glow-inner i {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora .thha-mb-aurora-body i {
   font-size: 16px;
   color: #ffd479;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow:hover {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:hover, .thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:focus-visible {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 0 52px rgba(176, 107, 255, 0.65);
+  box-shadow: 0 0 58px rgba(124, 58, 237, 0.6);
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow:hover .thha-mb-glow-inner {
-  background: #11182e;
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:hover .thha-mb-aurora-field, .thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:focus-visible .thha-mb-aurora-field {
+  opacity: 1;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow:active {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:hover .thha-mb-aurora-body, .thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:focus-visible .thha-mb-aurora-body {
+  background: rgba(11, 16, 32, 0.58);
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:hover .thha-mb-aurora-body i, .thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:focus-visible .thha-mb-aurora-body i {
+  transform: rotate(-12deg) scale(1.14);
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+}
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora:active {
   transform: translateY(-1px) scale(0.99);
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow--cyan {
-  box-shadow: 0 0 30px rgba(43, 212, 255, 0.35);
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora--cyan {
+  --thha-a1: #00e0c6;
+  --thha-a2: #2bd4ff;
+  --thha-a3: #4f8bff;
+  box-shadow: 0 0 34px rgba(43, 212, 255, 0.32);
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow--cyan::before {
-  background: conic-gradient(from 0deg, #00e0c6, #2bd4ff, #4f8bff, #2bd4ff, #00e0c6);
-}
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow--cyan .thha-mb-glow-inner i {
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora--cyan .thha-mb-aurora-body i {
   color: #5ef0ff;
 }
-.thha-marketing-buttons.thha-presets-3 .thha-mb-glow--cyan:hover {
-  box-shadow: 0 0 52px rgba(43, 212, 255, 0.65);
+.thha-marketing-buttons.thha-presets-3 .thha-mb-aurora--cyan:hover, .thha-marketing-buttons.thha-presets-3 .thha-mb-aurora--cyan:focus-visible {
+  box-shadow: 0 0 58px rgba(43, 212, 255, 0.6);
 }
 .thha-marketing-buttons {
   /* =====================================================================
-     Design 4 — Magnetic button with sliding-arrow circle (JS-assisted)
+     Design 4 — Proximity magnet
+     The button leans toward the cursor before it is even hovered, and the
+     label rides at a shallower depth than the shell for a parallax feel.
      ===================================================================== */
 }
 .thha-marketing-buttons.thha-presets-4 {
-  gap: 30px;
+  gap: 40px;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet {
   position: relative;
   display: inline-flex;
   border-radius: 999px;
@@ -280,20 +385,26 @@ a {
   background: transparent;
   color: #0f172a;
   will-change: transform;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  /* JS clears this during drag so tracking stays 1:1; the transition
+     only has to make the spring-back feel elastic. */
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-inner {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-inner {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  padding: 9px 9px 9px 28px;
+  padding: 9px 9px 9px 30px;
+  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-label {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-label {
   font-weight: 700;
   font-size: 16px;
-  transition: transform 0.4s ease;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-circle {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-arrow {
+  /* one full capsule width of travel — see the note on
+     .thha-mb-spot-icon for why this is not a percentage */
+  --thha-travel: 46px;
   position: relative;
   flex: none;
   width: 46px;
@@ -303,89 +414,142 @@ a {
   color: #fff;
   overflow: hidden;
   display: inline-flex;
-  transition: background 0.4s ease;
+  transition: background 0.4s ease, color 0.4s ease;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-circle i {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-arrow i {
   position: absolute;
   top: 50%;
   left: 50%;
   font-size: 15px;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-circle {
-  /* visible arrow centred, second arrow waiting off to the left */
-}
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-circle i:nth-child(1) {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-arrow i:nth-child(1) {
   transform: translate(-50%, -50%);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic .thha-mb-magnetic-circle i:nth-child(2) {
-  transform: translate(-260%, -50%);
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet .thha-mb-magnet-arrow i:nth-child(2) {
+  transform: translate(calc(-50% - var(--thha-travel)), -50%);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:hover {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet {
+  /* .is-near is added by JS while the pointer is inside the magnet
+     radius — the visual state starts before true hover. */
+}
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet.is-near, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:hover, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:focus-visible {
   background: #0f172a;
   color: #fff;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:hover .thha-mb-magnetic-label {
-  transform: translateX(4px);
-}
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:hover .thha-mb-magnetic-circle {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet.is-near .thha-mb-magnet-arrow, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:hover .thha-mb-magnet-arrow, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:focus-visible .thha-mb-magnet-arrow {
   background: #fff;
   color: #0f172a;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:hover .thha-mb-magnetic-circle i:nth-child(1) {
-  transform: translate(160%, -50%);
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet.is-near .thha-mb-magnet-arrow i:nth-child(1), .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:hover .thha-mb-magnet-arrow i:nth-child(1), .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:focus-visible .thha-mb-magnet-arrow i:nth-child(1) {
+  transform: translate(calc(-50% + var(--thha-travel)), -50%);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:hover .thha-mb-magnetic-circle i:nth-child(2) {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet.is-near .thha-mb-magnet-arrow i:nth-child(2), .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:hover .thha-mb-magnet-arrow i:nth-child(2), .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:focus-visible .thha-mb-magnet-arrow i:nth-child(2) {
   transform: translate(-50%, -50%);
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic:active {
-  filter: brightness(0.95);
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:focus-visible {
+  outline: 3px solid #1e5cff;
+  outline-offset: 5px;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic--solid {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet:active {
+  filter: brightness(0.94);
+}
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid {
   background: #1e5cff;
   border-color: #1e5cff;
   color: #fff;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic--solid .thha-mb-magnetic-circle {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid .thha-mb-magnet-arrow {
   background: #fff;
   color: #1e5cff;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic--solid:hover {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid.is-near, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid:hover, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid:focus-visible {
   background: #1a4ee0;
   border-color: #1a4ee0;
   color: #fff;
 }
-.thha-marketing-buttons.thha-presets-4 .thha-mb-magnetic--solid:hover .thha-mb-magnetic-circle {
+.thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid.is-near .thha-mb-magnet-arrow, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid:hover .thha-mb-magnet-arrow, .thha-marketing-buttons.thha-presets-4 .thha-mb-magnet--solid:focus-visible .thha-mb-magnet-arrow {
   background: #fff;
   color: #1e5cff;
 }
 .thha-marketing-buttons {
   /* =====================================================================
-     Design 5 — Morphing state button: idle → loading → success (JS)
+     Design 5 — Progress-ring morph
+     idle → busy (real determinate ring) → done (drawn check) → idle.
      ===================================================================== */
 }
 .thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  --thha-morph-bg: #1e5cff;
+  --thha-morph-shadow: rgba(30, 92, 255, 0.35);
   position: relative;
-  height: 56px;
-  min-width: 210px;
-  padding: 0 30px;
+  height: 58px;
+  min-width: 220px;
+  padding: 0 32px;
   border-radius: 14px;
-  background: #1e5cff;
+  background: var(--thha-morph-bg);
   color: #fff;
   font-weight: 700;
   font-size: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 26px rgba(30, 92, 255, 0.35);
-  transition: min-width 0.5s cubic-bezier(0.65, 0, 0.35, 1), border-radius 0.5s ease, padding 0.5s ease, background 0.4s ease, transform 0.35s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 26px var(--thha-morph-shadow);
+  transition: min-width 0.55s cubic-bezier(0.65, 0, 0.35, 1), padding 0.55s cubic-bezier(0.65, 0, 0.35, 1), border-radius 0.5s ease, background 0.45s ease, transform 0.35s ease, box-shadow 0.45s ease;
+  /* Sheen: a narrow light band raked along the launch axis. It sits in
+     ::before so the faces, which come later in the box tree, always
+     paint over it and the label stays crisp. */
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(30, 92, 255, 0.45);
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 42%;
+  height: 220%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: translateX(-180%) rotate(18deg);
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph:active {
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* Hover is scoped to the idle state on purpose: once the button is
+     busy or done it has collapsed to a disc and is no longer a target,
+     so a lift there would fight the morph rather than invite a click. */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 20px 40px var(--thha-morph-shadow);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover .thha-mb-morph-icon, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible .thha-mb-morph-icon {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.14);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible {
+  /* the resting glyph launches out of the port… */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover .thha-mb-morph-icon i:nth-of-type(1), .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible .thha-mb-morph-icon i:nth-of-type(1) {
+  transform: translate(calc(-50% + var(--thha-launch)), calc(-50% - var(--thha-launch))) rotate(16deg);
+  opacity: 0;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible {
+  /* …and its relief climbs in along the same diagonal */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover .thha-mb-morph-icon i:nth-of-type(2), .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible .thha-mb-morph-icon i:nth-of-type(2) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover::before, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible::before {
+  animation: thha-mb-morph-sheen 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:hover .thha-mb-morph-trail, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:focus-visible .thha-mb-morph-trail {
+  animation: thha-mb-morph-trail 0.62s ease-out;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph:focus-visible {
+  outline: 3px solid var(--thha-morph-bg);
+  outline-offset: 4px;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle]:active {
   transform: translateY(-1px) scale(0.99);
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-state {
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-face {
   position: absolute;
   inset: 0;
   display: flex;
@@ -394,82 +558,270 @@ a {
   gap: 11px;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(120%);
-  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-state i {
-  font-size: 17px;
+  transform: translateY(115%);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
-  /* active state slides into view */
+  /* Launch port: a round window the glyph takes off from. Travel is a
+     flat 30px on each axis — one full port width — so the departing
+     glyph always clears the clip completely, whatever the icon font
+     renders at. A percentage of the glyph's own box would leave a
+     sliver behind at some sizes. */
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle] .thha-mb-morph-state--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=loading] .thha-mb-morph-state--loading, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-state--done {
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon {
+  --thha-launch: 30px;
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.16);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.34s ease;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon {
+  /* resting on the pad */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon i:nth-of-type(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon {
+  /* the relief waits below-left, out of frame */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-icon i:nth-of-type(2) {
+  transform: translate(calc(-50% - var(--thha-launch)), calc(-50% + var(--thha-launch))) rotate(-16deg);
+  opacity: 0;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* exhaust streak, laid along the same 45° diagonal as the launch */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-trail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0) 100%);
+  transform: translate(-50%, -50%) rotate(45deg) scaleY(0.2);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* the live face slides into place */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=idle] .thha-mb-morph-face--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=busy] .thha-mb-morph-face--busy, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-face--done {
   opacity: 1;
   transform: translateY(0);
 }
 .thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
-  /* states already passed slide up and out */
+  /* spent faces clear upward rather than dropping back down */
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=loading] .thha-mb-morph-state--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-state--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-state--loading {
-  transform: translateY(-120%);
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=busy] .thha-mb-morph-face--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-face--idle, .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-face--busy {
+  transform: translateY(-115%);
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=loading] {
-  min-width: 56px;
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* collapse to a disc while working */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=busy], .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] {
+  min-width: 58px;
   padding: 0;
   border-radius: 50%;
+  cursor: default;
 }
 .thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] {
-  background: #16b364;
-  box-shadow: 0 10px 26px rgba(22, 179, 100, 0.4);
+  --thha-morph-bg: #16b364;
+  --thha-morph-shadow: rgba(22, 179, 100, 0.42);
 }
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-spinner {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.35);
-  border-top-color: #fff;
-  animation: thha-mb-rotate 0.7s linear infinite;
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* determinate progress ring, driven by JS via stroke-dashoffset */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-ring {
+  width: 40px;
+  height: 40px;
+  transform: rotate(-90deg);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-ring circle {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-ring .thha-mb-morph-ring-track {
+  stroke: rgba(255, 255, 255, 0.28);
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-ring .thha-mb-morph-ring-bar {
+  stroke: #fff;
+  /* r=19 → circumference ≈ 119.38 */
+  stroke-dasharray: 119.38;
+  stroke-dashoffset: 119.38;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph {
+  /* check mark draws itself in on arrival */
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-check {
+  width: 40px;
+  height: 40px;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph .thha-mb-morph-check path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+}
+.thha-marketing-buttons.thha-presets-5 .thha-mb-morph[data-state=done] .thha-mb-morph-check path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.45s ease 0.12s;
 }
 .thha-marketing-buttons.thha-presets-5 .thha-mb-morph--violet {
-  background: #7c3aed;
-  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.4);
-}
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph--violet:hover {
-  box-shadow: 0 16px 34px rgba(124, 58, 237, 0.5);
-}
-.thha-marketing-buttons.thha-presets-5 .thha-mb-morph--violet[data-state=done] {
-  background: #16b364;
-  box-shadow: 0 10px 26px rgba(22, 179, 100, 0.4);
+  --thha-morph-bg: #7c3aed;
+  --thha-morph-shadow: rgba(124, 58, 237, 0.4);
 }
 
 /* ===== Keyframes ===== */
-@keyframes thha-mb-flow {
+/* Design 5 — light band rakes across the shell once per hover */
+@keyframes thha-mb-morph-sheen {
   0% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: translateX(-180%) rotate(18deg);
   }
-  50% {
-    background-position: 100% 50%;
+  18% {
+    opacity: 1;
   }
   100% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: translateX(420%) rotate(18deg);
   }
 }
-@keyframes thha-mb-spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
+/* Design 5 — exhaust streak flares as the glyph leaves, then burns off */
+@keyframes thha-mb-morph-trail {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scaleY(0.2);
+  }
+  35% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) rotate(45deg) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-30%, -70%) rotate(45deg) scaleY(1);
   }
 }
-@keyframes thha-mb-rotate {
-  to {
-    transform: rotate(360deg);
+@keyframes thha-mb-drift-a {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(38%, 22%) scale(1.25);
   }
 }
-/* ===== Respect reduced-motion preferences ===== */
+@keyframes thha-mb-drift-b {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate(-32%, -26%) scale(0.85);
+  }
+}
+@keyframes thha-mb-drift-c {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate(-26%, 30%) scale(1.2);
+  }
+}
+/* ===== Small screens: keep tap targets full width and comfortable ===== */
+@media (max-width: 575px) {
+  .thha-marketing-buttons {
+    gap: 18px;
+  }
+  .thha-marketing-buttons .thha-mb-spot,
+  .thha-marketing-buttons .thha-mb-roll,
+  .thha-marketing-buttons .thha-mb-aurora,
+  .thha-marketing-buttons .thha-mb-magnet {
+    width: 100%;
+    justify-content: center;
+  }
+  .thha-marketing-buttons .thha-mb-spot .thha-mb-spot-body,
+  .thha-marketing-buttons .thha-mb-aurora .thha-mb-aurora-body {
+    width: 100%;
+    justify-content: center;
+  }
+  .thha-marketing-buttons .thha-mb-roll {
+    justify-content: center;
+  }
+  .thha-marketing-buttons .thha-mb-magnet .thha-mb-magnet-inner {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+/* ===== Respect reduced-motion preferences =====
+   Ambient/idle motion is removed entirely; intent-driven feedback is kept
+   but shortened, so the buttons still confirm what they are doing. */
 @media (prefers-reduced-motion: reduce) {
-  .thha-marketing-buttons .thha-mb-shine,
-  .thha-marketing-buttons .thha-mb-glow::before,
-  .thha-marketing-buttons .thha-mb-morph-spinner {
+  .thha-marketing-buttons .thha-mb-aurora-field span {
     animation: none !important;
+  }
+  .thha-marketing-buttons {
+    /* Design 5: the sheen sweep and exhaust streak are decoration, not
+       feedback — drop them outright. The glyph swap is kept but becomes an
+       instant cut, so the button still reads as responding to hover. */
+  }
+  .thha-marketing-buttons .thha-mb-morph::before,
+  .thha-marketing-buttons .thha-mb-morph-trail {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+  .thha-marketing-buttons .thha-mb-morph-icon,
+  .thha-marketing-buttons .thha-mb-morph-icon i {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .thha-marketing-buttons .thha-mb-spot,
+  .thha-marketing-buttons .thha-mb-spot::before,
+  .thha-marketing-buttons .thha-mb-spot-icon i,
+  .thha-marketing-buttons .thha-mb-roll,
+  .thha-marketing-buttons .thha-mb-roll::before,
+  .thha-marketing-buttons .thha-mb-roll-char-in,
+  .thha-marketing-buttons .thha-mb-roll-icon,
+  .thha-marketing-buttons .thha-mb-aurora,
+  .thha-marketing-buttons .thha-mb-aurora-body,
+  .thha-marketing-buttons .thha-mb-magnet,
+  .thha-marketing-buttons .thha-mb-magnet-inner,
+  .thha-marketing-buttons .thha-mb-magnet-arrow i,
+  .thha-marketing-buttons .thha-mb-morph,
+  .thha-marketing-buttons .thha-mb-morph-face,
+  .thha-marketing-buttons .thha-mb-morph-check path {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .thha-marketing-buttons {
+    /* no lift/scale travel */
+    /* !important is load-bearing here, not decoration: every hover rule
+       above is scoped through a .thha-presets-N class and so outranks these
+       selectors on specificity. Without it the lift survives the
+       reduced-motion preference. */
+  }
+  .thha-marketing-buttons .thha-mb-spot:hover,
+  .thha-marketing-buttons .thha-mb-spot:focus-visible,
+  .thha-marketing-buttons .thha-mb-roll:hover,
+  .thha-marketing-buttons .thha-mb-roll:focus-visible,
+  .thha-marketing-buttons .thha-mb-aurora:hover,
+  .thha-marketing-buttons .thha-mb-aurora:focus-visible,
+  .thha-marketing-buttons .thha-mb-morph:hover,
+  .thha-marketing-buttons .thha-mb-morph:focus-visible {
+    transform: none !important;
   }
 }
 

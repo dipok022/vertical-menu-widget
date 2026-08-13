@@ -1,0 +1,450 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+}
+.container .header-title {
+  color: #df0463;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 22px;
+  text-align: center;
+  margin: 38px 0 50px 0;
+}
+
+.thha-heading-widget {
+  font-family: "Poppins", sans-serif;
+  color: #0f172a;
+  /* Shared: text carried for assistive tech only. Designs 3 and 4 animate
+     their headline, so the readable sentence lives here instead. */
+}
+.thha-heading-widget .thha-hw-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.thha-heading-widget {
+  /* =====================================================================
+     Design 1 — Editorial stack
+     Each word sits in its own clipped window and rises into place on a
+     stagger when the heading scrolls in. The mask is what sells it: the
+     words arrive from behind a hard edge rather than fading.
+     ===================================================================== */
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-editorial {
+  max-width: 900px;
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-display {
+  /* two lines held open: the phrases differ in length, and without
+     the reservation the block jumps every time one swaps */
+  min-height: 2.2em;
+  font-size: clamp(32px, 5.4vw, 62px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+.thha-heading-widget.thha-presets-1 {
+  /* one clipped window per word, written by JS */
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-word-in {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+  transition-delay: calc(var(--thha-i, 0) * 65ms);
+  opacity: 0;
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-editorial.is-in .thha-hw-word-in {
+  transform: none;
+  opacity: 1;
+}
+.thha-heading-widget.thha-presets-1 {
+  /* the outgoing phrase clears upward through the same mask, on a
+     tighter stagger so the exit reads faster than the entrance */
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-editorial.is-out .thha-hw-word-in {
+  transform: translateY(-105%);
+  opacity: 0;
+  transition-delay: calc(var(--thha-i, 0) * 38ms);
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-editorial.is-armed .thha-hw-rule {
+  width: 0;
+}
+.thha-heading-widget.thha-presets-1 .thha-hw-editorial.is-armed.is-in .thha-hw-rule {
+  width: 96px;
+}
+.thha-heading-widget {
+  /* =====================================================================
+     Design 2 — Marker highlight
+     The stroke is a real SVG path drawn with pathLength="1", so the same
+     dash values work whatever shape the path is. Drawing beats fading
+     because the eye follows the pen.
+     ===================================================================== */
+}
+.thha-heading-widget.thha-presets-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+  align-items: center;
+  text-align: center;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-marked {
+  max-width: 860px;
+}
+.thha-heading-widget.thha-presets-2 {
+  /* Leading has to clear the circle marker: at narrow widths the marked
+     word wraps onto its own line and a tighter line-height let the top
+     of the ellipse read as an underline on the line above. */
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark-title {
+  font-size: clamp(28px, 4.4vw, 50px);
+  font-weight: 800;
+  line-height: 1.42;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark-word {
+  position: relative;
+  z-index: 1;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+  /* drawn by default; undrawn only once JS arms it */
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark-svg path {
+  fill: none;
+  stroke: #df0463;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark-svg path:nth-child(2) {
+  transition-delay: 0.18s;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-marked.is-armed .thha-hw-mark-svg path {
+  stroke-dashoffset: 1;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-marked.is-armed.is-drawn .thha-hw-mark-svg path {
+  stroke-dashoffset: 0;
+}
+.thha-heading-widget.thha-presets-2 {
+  /* underline sits low and slightly wider than the word */
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--underline .thha-hw-mark-svg {
+  width: 112%;
+  height: 0.42em;
+  bottom: -0.18em;
+}
+.thha-heading-widget.thha-presets-2 {
+  /* The circle has to clear the whole word box, so the mark carries
+     enough side padding for the overshoot to land on empty space
+     instead of striking through the neighbouring words. */
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--circle {
+  padding: 0 0.5em;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--circle .thha-hw-mark-svg {
+  width: 116%;
+  height: 1.5em;
+  top: -0.24em;
+  stroke-width: 4;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--circle path {
+  stroke: #0f172a;
+  stroke-width: 4;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--strike .thha-hw-mark-svg {
+  width: 108%;
+  height: 0.5em;
+  bottom: -0.22em;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--strike .thha-hw-mark-svg path {
+  stroke-width: 4;
+}
+.thha-heading-widget.thha-presets-2 .thha-hw-mark--strike .thha-hw-mark-svg path:nth-child(2) {
+  stroke: #ff7aa8;
+  stroke-width: 3;
+}
+.thha-heading-widget {
+  /* =====================================================================
+     Design 3 — Rotating word slot
+     The slot is width-animated to the live word so the line re-flows
+     smoothly instead of snapping; words leave upward and arrive from
+     below, which reads as a single physical reel.
+     ===================================================================== */
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-rotate {
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-rotate-side {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 0.7em;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #df0463;
+  white-space: nowrap;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-rotate-rule {
+  display: block;
+  width: 62px;
+  height: 2px;
+  background: #e2e8f0;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-rotate-main {
+  flex: 1;
+  min-width: 0;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-rotate-title {
+  font-size: clamp(30px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-slot {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  height: 1.16em;
+  overflow: hidden;
+  /* auto until JS measures the live word, so an unenhanced page never
+     clips the first word to an arbitrary guess */
+  width: auto;
+  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-slot.is-armed {
+  width: var(--thha-w, auto);
+}
+.thha-heading-widget.thha-presets-3 {
+  /* each word carries its own --thha-c inline, so the colour rotates
+     with the reel rather than staying on one accent */
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  color: var(--thha-c, #df0463);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+  /* The live word stays in normal flow so the slot has a real width
+     before JS measures anything — every other word is taken out of
+     flow and stacked behind it. */
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-word.is-live {
+  position: relative;
+  opacity: 1;
+  transform: none;
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-word {
+  /* the word being replaced clears upward */
+}
+.thha-heading-widget.thha-presets-3 .thha-hw-word.is-out {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+@media (max-width: 767px) {
+  .thha-heading-widget.thha-presets-3 .thha-hw-rotate {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .thha-heading-widget.thha-presets-3 .thha-hw-rotate-side {
+    padding-top: 0;
+  }
+}
+.thha-heading-widget {
+  /* =====================================================================
+     Design 4 — Console card, typed headline
+     The card is dark against a light section so the register changes
+     without breaking the page's alternating backgrounds. The title
+     reserves its height so typing never reflows the block below.
+     ===================================================================== */
+}
+.thha-heading-widget.thha-presets-4 {
+  /* The console card is gone, so the headline sits directly on the
+     section's light background — the previous white-on-dark palette
+     would have rendered invisible here. */
+}
+.thha-heading-widget.thha-presets-4 .thha-hw-console-title {
+  /* two lines' worth of room so a long phrase cannot shift the block */
+  min-height: 2.3em;
+  font-size: clamp(28px, 4.6vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+.thha-heading-widget.thha-presets-4 {
+  /* --thha-c is published on the title by JS as each phrase starts, so
+     the gradient and the caret shift colour together */
+}
+.thha-heading-widget.thha-presets-4 .thha-hw-type {
+  background: linear-gradient(96deg, #0f172a 45%, var(--thha-c, #df0463));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.thha-heading-widget.thha-presets-4 .thha-hw-caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.92em;
+  margin-left: 4px;
+  vertical-align: -0.08em;
+  border-radius: 2px;
+  background: var(--thha-c, #df0463);
+  transition: background 0.4s ease;
+  animation: thha-hw-blink 1s steps(1, end) infinite;
+}
+.thha-heading-widget {
+  /* =====================================================================
+     Design 5 — Spotlight display type
+     Two stacked copies of the same line: an outlined base, and a
+     gradient-filled copy masked to a soft circle that follows the
+     pointer. Only the lit copy is masked, so the outline always reads.
+     ===================================================================== */
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot {
+  --thha-mx: 50%;
+  --thha-my: 50%;
+  text-align: center;
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot-title {
+  font-size: clamp(40px, 10vw, 132px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot-line {
+  position: relative;
+  display: block;
+}
+.thha-heading-widget.thha-presets-5 {
+  /* The outline is the resting state of a heading, so it has to stay
+     readable on its own — a paler stroke disappeared against the
+     section background wherever the light was not falling. */
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot-base {
+  color: transparent;
+  -webkit-text-stroke: 2px #94a3b8;
+}
+.thha-heading-widget.thha-presets-5 {
+  /* the lit copy sits exactly on top of the base */
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot-lit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(92deg, #df0463, #ff7aa8 42%, #0f172a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-mask-image: radial-gradient(190px circle at var(--thha-mx) var(--thha-my), #000 0%, rgba(0, 0, 0, 0.65) 45%, transparent 72%);
+  mask-image: radial-gradient(190px circle at var(--thha-mx) var(--thha-my), #000 0%, rgba(0, 0, 0, 0.65) 45%, transparent 72%);
+  pointer-events: none;
+}
+.thha-heading-widget.thha-presets-5 {
+  /* Without a fine pointer there is nothing to track, so show the fill
+     outright rather than leaving an empty outline. */
+}
+.thha-heading-widget.thha-presets-5 .thha-hw-spot:not(.is-tracking) .thha-hw-spot-lit {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+@media (max-width: 575px) {
+  .thha-heading-widget.thha-presets-5 .thha-hw-spot-base {
+    -webkit-text-stroke-width: 1.4px;
+  }
+}
+
+/* ===== Keyframes ===== */
+@keyframes thha-hw-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+/* ===== Respect reduced-motion preferences =====
+   Every design keeps its finished state; only the travel is removed. */
+@media (prefers-reduced-motion: reduce) {
+  .thha-heading-widget .thha-hw-word-in,
+  .thha-heading-widget .thha-hw-rule,
+  .thha-heading-widget .thha-hw-slot,
+  .thha-heading-widget .thha-hw-word,
+  .thha-heading-widget .thha-hw-mark-svg path {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .thha-heading-widget .thha-hw-caret {
+    animation: none !important;
+  }
+  .thha-heading-widget {
+    /* nothing should be left mid-reveal if the observer never runs */
+  }
+  .thha-heading-widget .thha-hw-word-in {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .thha-heading-widget .thha-hw-mark-svg path {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=heading-widget.css.map */

@@ -1,0 +1,922 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+
+  .header-title {
+    color: #df0463;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 22px;
+    text-align: center;
+    margin: 38px 0 50px 0;
+  }
+}
+
+.thha-before-after-slider {
+  font-family: "Poppins", sans-serif;
+  color: #0f172a;
+
+  /* Both halves are the same photograph — the "before" copy carries a
+     flat, ungraded look so the two sides register pixel-for-pixel. A
+     comparison built from two different frames never lines up. */
+  .thha-bas-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .thha-bas-img--raw {
+    filter: saturate(0.32) contrast(0.86) brightness(1.07);
+  }
+
+  .thha-bas-note {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #64748b;
+    text-align: center;
+  }
+
+  .thha-bas-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =====================================================================
+     Design 1 — Horizontal drag
+     The divider position lives in --thha-pos; the clip and the handle
+     both read it, so JS only ever publishes one number. On first view
+     the handle nudges itself once to advertise that it is draggable.
+     ===================================================================== */
+  &.thha-presets-1 {
+    .thha-bas-frame {
+      --thha-pos: 50%;
+
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #e2e8f0;
+      box-shadow:
+        0 2px 4px rgba(15, 23, 42, 0.05),
+        0 24px 50px rgba(15, 23, 42, 0.14);
+      cursor: ew-resize;
+      touch-action: pan-y;
+    }
+
+    /* the ungraded copy is clipped to the left of the divider */
+    .thha-bas-clip {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 calc(100% - var(--thha-pos)) 0 0);
+    }
+
+    .thha-bas-tag {
+      position: absolute;
+      top: 18px;
+      z-index: 3;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: opacity 0.35s ease;
+    }
+
+    .thha-bas-tag--before {
+      left: 18px;
+    }
+
+    .thha-bas-tag--after {
+      right: 18px;
+      background: rgba(223, 4, 99, 0.82);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* a tag would sit on the wrong side of the divider at the extremes */
+    .thha-bas-frame.is-near-start .thha-bas-tag--before,
+    .thha-bas-frame.is-near-end .thha-bas-tag--after {
+      opacity: 0;
+    }
+
+    .thha-bas-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--thha-pos);
+      z-index: 4;
+      width: 56px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: ew-resize;
+      touch-action: none;
+
+      &:focus-visible {
+        outline: none;
+
+        .thha-bas-handle-grip {
+          box-shadow:
+            0 0 0 4px #fff,
+            0 0 0 8px #df0463;
+        }
+      }
+    }
+
+    .thha-bas-handle-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      transform: translateX(-50%);
+      background: #fff;
+      box-shadow: 0 0 14px rgba(15, 23, 42, 0.4);
+    }
+
+    .thha-bas-handle-grip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fff;
+      color: #0f172a;
+      font-size: 13px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.3);
+      transition:
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease;
+    }
+
+    .thha-bas-frame:hover .thha-bas-handle-grip {
+      transform: scale(1.08);
+    }
+
+    .thha-bas-frame.is-dragging {
+      cursor: grabbing;
+
+      .thha-bas-handle-grip {
+        transform: scale(0.94);
+      }
+    }
+
+    /* only while the introductory nudge plays, or the divider would lag
+       the pointer during a real drag */
+    .thha-bas-frame.is-hinting {
+      .thha-bas-clip {
+        transition: clip-path 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+
+      .thha-bas-handle {
+        transition: left 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 2 — Vertical orientation
+     Same single-number model rotated: the clip is inset from the bottom
+     and the handle rides the Y axis. A portrait crop suits the axis.
+     ===================================================================== */
+  &.thha-presets-2 {
+    .thha-bas-frame {
+      --thha-pos: 50%;
+
+      position: relative;
+      max-width: 520px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #e2e8f0;
+      box-shadow:
+        0 2px 4px rgba(15, 23, 42, 0.05),
+        0 24px 50px rgba(15, 23, 42, 0.16);
+      cursor: ns-resize;
+      touch-action: pan-x;
+    }
+
+    .thha-bas-img--raw {
+      filter: saturate(0.4) contrast(0.88) sepia(0.16);
+    }
+
+    .thha-bas-clip {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 0 calc(100% - var(--thha-pos)) 0);
+    }
+
+    .thha-bas-readout {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 3;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      em {
+        font-style: normal;
+      }
+    }
+
+    .thha-bas-handle {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: var(--thha-pos);
+      z-index: 4;
+      height: 56px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: ns-resize;
+      touch-action: none;
+
+      &:focus-visible {
+        outline: none;
+
+        .thha-bas-handle-grip {
+          box-shadow:
+            0 0 0 4px #fff,
+            0 0 0 8px #df0463;
+        }
+      }
+    }
+
+    .thha-bas-handle-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 3px;
+      transform: translateY(-50%);
+      background: #fff;
+      box-shadow: 0 0 14px rgba(15, 23, 42, 0.4);
+    }
+
+    .thha-bas-handle-grip {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fff;
+      color: #0f172a;
+      font-size: 12px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.3);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .thha-bas-frame:hover .thha-bas-handle-grip {
+      transform: scale(1.08);
+    }
+
+    .thha-bas-frame.is-dragging .thha-bas-handle-grip {
+      transform: scale(0.94);
+    }
+  }
+
+  /* =====================================================================
+     Design 3 — Spotlight lens
+     The base frame stays ungraded and a masked copy of the graded frame
+     rides the pointer, so the comparison happens under the cursor rather
+     than at a fixed edge.
+     ===================================================================== */
+  &.thha-presets-3 {
+    .thha-bas-lens {
+      --thha-mx: 50%;
+      --thha-my: 50%;
+      --thha-r: 130px;
+
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0b1120;
+      box-shadow: 0 24px 54px rgba(11, 17, 32, 0.3);
+      cursor: none;
+      touch-action: pan-y;
+    }
+
+    .thha-bas-img--raw {
+      filter: grayscale(1) contrast(0.92) brightness(0.96);
+    }
+
+    .thha-bas-lens-clip {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: radial-gradient(
+        circle var(--thha-r) at var(--thha-mx) var(--thha-my),
+        #000 62%,
+        transparent 74%
+      );
+      mask-image: radial-gradient(
+        circle var(--thha-r) at var(--thha-mx) var(--thha-my),
+        #000 62%,
+        transparent 74%
+      );
+    }
+
+    .thha-bas-lens-ring {
+      position: absolute;
+      left: var(--thha-mx);
+      top: var(--thha-my);
+      z-index: 3;
+      width: calc(var(--thha-r) * 1.34);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 0 26px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .thha-bas-lens.is-active .thha-bas-lens-ring {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .thha-bas-lens-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      z-index: 4;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 17px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    /* the hint has done its job once the lens is moving */
+    .thha-bas-lens.is-active .thha-bas-lens-hint {
+      opacity: 0;
+    }
+
+    @media (max-width: 575px) {
+      .thha-bas-lens {
+        --thha-r: 84px;
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 4 — Day/night hero
+     The copy belongs to the image, not to the page: each side carries its
+     own words inside the same clipped layer, so dragging the divider
+     rewrites the headline as it wipes the light.
+     ===================================================================== */
+  &.thha-presets-4 {
+    .thha-bas-hero {
+      --thha-pos: 50%;
+
+      position: relative;
+      aspect-ratio: 16 / 7;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0b1120;
+      box-shadow:
+        0 2px 4px rgba(11, 17, 32, 0.08),
+        0 30px 64px rgba(11, 17, 32, 0.26);
+      cursor: ew-resize;
+      touch-action: pan-y;
+    }
+
+    /* the night grade is the base layer */
+    .thha-bas-img--night {
+      filter: brightness(0.42) saturate(0.72) contrast(1.16)
+        hue-rotate(196deg);
+    }
+
+    /* Two layers: one lifts the bottom of the frame where the copy sits,
+       the other darkens the outer edges. The copy is bottom-anchored, so
+       without the vertical pass the day headline lands on bright road. */
+    .thha-bas-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          0deg,
+          rgba(8, 12, 24, 0.78) 0%,
+          rgba(8, 12, 24, 0.16) 46%,
+          transparent 68%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(8, 12, 24, 0.5) 0%,
+          transparent 40%,
+          transparent 60%,
+          rgba(8, 12, 24, 0.58) 100%
+        );
+      pointer-events: none;
+    }
+
+    /* the daylight layer sits above and is clipped to the left */
+    .thha-bas-hero-day {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      clip-path: inset(0 calc(100% - var(--thha-pos)) 0 0);
+
+      .thha-bas-hero-scrim {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(10, 8, 4, 0.8) 0%,
+            rgba(10, 8, 4, 0.2) 46%,
+            transparent 70%
+          ),
+          linear-gradient(90deg, rgba(10, 8, 4, 0.42) 0%, transparent 52%);
+      }
+    }
+
+    .thha-bas-hero-copy {
+      position: absolute;
+      z-index: 3;
+      bottom: clamp(26px, 5vw, 62px);
+      max-width: min(42%, 460px);
+      color: #fff;
+    }
+
+    .thha-bas-hero-copy--day {
+      left: clamp(22px, 4vw, 54px);
+    }
+
+    .thha-bas-hero-copy--night {
+      right: clamp(22px, 4vw, 54px);
+      text-align: right;
+    }
+
+    .thha-bas-hero-time {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .thha-bas-hero-line {
+      font-size: clamp(26px, 4.4vw, 58px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .thha-bas-hero-sub {
+      margin-top: 10px;
+      font-size: clamp(13px, 1.3vw, 16px);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .thha-bas-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--thha-pos);
+      z-index: 4;
+      width: 60px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: ew-resize;
+      touch-action: none;
+
+      &:focus-visible {
+        outline: none;
+
+        .thha-bas-handle-grip {
+          box-shadow:
+            0 0 0 4px rgba(255, 255, 255, 0.9),
+            0 0 0 8px #df0463;
+        }
+      }
+    }
+
+    .thha-bas-handle-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+    }
+
+    .thha-bas-handle-grip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 13px;
+      color: #0f172a;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.34);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      .fa-sun {
+        color: #f59e0b;
+      }
+
+      .fa-moon {
+        color: #64748b;
+      }
+    }
+
+    .thha-bas-hero:hover .thha-bas-handle-grip {
+      transform: scale(1.07);
+    }
+
+    .thha-bas-hero.is-dragging .thha-bas-handle-grip {
+      transform: scale(0.94);
+    }
+
+    /* only while the cinematic opening plays */
+    .thha-bas-hero.is-hinting {
+      .thha-bas-hero-day {
+        transition: clip-path 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+
+      .thha-bas-handle {
+        transition: left 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .thha-bas-hero {
+        aspect-ratio: 4 / 5;
+      }
+
+      .thha-bas-hero-copy {
+        max-width: 78%;
+      }
+
+      .thha-bas-hero-copy--night {
+        bottom: auto;
+        top: clamp(22px, 6vw, 40px);
+      }
+    }
+  }
+
+  /* =====================================================================
+     Design 5 — Product set with click-to-compare
+     Clicking anywhere on the frame walks the divider to that point rather
+     than requiring a grab, and the thumbnail row swaps which product is
+     on the stage without leaving the section.
+     ===================================================================== */
+  &.thha-presets-5 {
+    .thha-bas-shop {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    .thha-bas-stage {
+      --thha-pos: 50%;
+
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #e9edf3;
+      box-shadow:
+        0 2px 4px rgba(15, 23, 42, 0.05),
+        0 24px 50px rgba(15, 23, 42, 0.13);
+      cursor: crosshair;
+
+      &:focus-visible {
+        outline: 3px solid #df0463;
+        outline-offset: 4px;
+      }
+    }
+
+    .thha-bas-img--raw {
+      filter: saturate(0.3) contrast(0.82) brightness(1.1);
+    }
+
+    /* Click-driven, so the wipe always animates to where you clicked —
+       a drag slider would have to track the pointer instead. */
+    .thha-bas-clip {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 calc(100% - var(--thha-pos)) 0 0);
+      transition: clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .thha-bas-stage.is-swapping .thha-bas-clip {
+      transition: none;
+    }
+
+    /* the images crossfade while a new product loads */
+    .thha-bas-img {
+      transition: opacity 0.3s ease;
+    }
+
+    .thha-bas-stage.is-swapping .thha-bas-img {
+      opacity: 0;
+    }
+
+    .thha-bas-tag {
+      position: absolute;
+      top: 16px;
+      z-index: 3;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: opacity 0.35s ease;
+    }
+
+    .thha-bas-tag--before {
+      left: 16px;
+    }
+
+    .thha-bas-tag--after {
+      right: 16px;
+      background: rgba(223, 4, 99, 0.82);
+    }
+
+    .thha-bas-stage.is-near-start .thha-bas-tag--before,
+    .thha-bas-stage.is-near-end .thha-bas-tag--after {
+      opacity: 0;
+    }
+
+    /* There is no grab handle — the marker is a readout of where the last
+       click landed, so it eases to its new position instead of tracking. */
+    .thha-bas-stage-marker {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--thha-pos);
+      z-index: 4;
+      width: 2px;
+      transform: translateX(-50%);
+      background: #fff;
+      box-shadow: 0 0 16px rgba(15, 23, 42, 0.45);
+      transition: left 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.4);
+      }
+    }
+
+    .thha-bas-stage.is-swapping .thha-bas-stage-marker {
+      transition: none;
+    }
+
+    .thha-bas-stage-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      z-index: 5;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 17px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    /* the prompt retires once the visitor has clicked once */
+    .thha-bas-stage.is-used .thha-bas-stage-hint {
+      opacity: 0;
+    }
+
+    .thha-bas-shop-bar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .thha-bas-shop-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+    }
+
+    .thha-bas-shop-meta {
+      font-size: 13px;
+      color: #94a3b8;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .thha-bas-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .thha-bas-thumb {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #e6eaf0;
+      text-align: left;
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+      img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 9px;
+        background: #eef1f5;
+      }
+
+      span {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #64748b;
+        padding-left: 2px;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+      }
+
+      &:focus-visible {
+        outline: 3px solid #df0463;
+        outline-offset: 3px;
+      }
+
+      &[aria-pressed="true"] {
+        border-color: #df0463;
+        box-shadow: 0 0 0 1px #df0463;
+
+        span {
+          color: #df0463;
+        }
+      }
+    }
+
+    @media (max-width: 575px) {
+      .thha-bas-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .thha-bas-shop-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+    }
+  }
+}
+
+
+/* ===== Respect reduced-motion preferences =====
+   Every comparison still works; only the easing and the self-playing
+   openings are dropped. */
+@media (prefers-reduced-motion: reduce) {
+  .thha-before-after-slider {
+    .thha-bas-frame.is-hinting,
+    .thha-bas-hero.is-hinting {
+      .thha-bas-clip,
+      .thha-bas-hero-day,
+      .thha-bas-handle {
+        transition: none !important;
+      }
+    }
+
+    .thha-bas-handle-grip,
+    .thha-bas-lens-ring,
+    .thha-bas-thumb,
+    .thha-bas-img {
+      transition-duration: 0.01ms !important;
+    }
+
+    /* the click comparison jumps straight to where you clicked */
+    .thha-bas-stage-marker,
+    .thha-presets-5 .thha-bas-clip {
+      transition: none !important;
+    }
+
+    .thha-bas-thumb:hover {
+      transform: none;
+    }
+  }
+}

@@ -13,6 +13,10 @@ button {
   font: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -33,745 +37,824 @@ img {
   margin: 38px 0 50px 0;
 }
 
+/* Design 2 sits on a dark mesh rather than a flat fill. */
+.thha-atc-dark {
+  position: relative;
+  background: radial-gradient(60% 55% at 18% 12%, rgba(124, 58, 237, 0.34), transparent 60%), radial-gradient(50% 50% at 82% 20%, rgba(14, 165, 233, 0.3), transparent 62%), radial-gradient(55% 60% at 60% 92%, rgba(236, 72, 153, 0.22), transparent 60%), #080d1a;
+  overflow: hidden;
+}
+
 .thha-add-to-cart {
   font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  color: #0f172a;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+  color: #1c1917;
+  /* Screen-reader announcements for every add action. */
+}
+.thha-add-to-cart .thha-atc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.thha-add-to-cart {
+  /* Scroll reveal. The hidden state is only applied once JS has marked the
+     container ready, so the cards stay visible if JS never runs. */
+}
+.thha-add-to-cart.is-reveal-ready [data-thha-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--thha-d, 0) * 90ms);
+}
+.thha-add-to-cart.is-reveal-ready [data-thha-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+.thha-add-to-cart {
   /* =====================================================================
-     Shared product-card shell — wraps the add-to-cart control of
-     designs 1, 2 and 4 so each reads as a full product, not a bare
-     button. (Designs 3 and 5 carry their own card/tile markup.)
+     Design 1 — Editorial card. Warm paper surface, oversized product
+     image, and an add button that morphs idle → busy → added.
      ===================================================================== */
 }
-.thha-add-to-cart .thha-atc-prod {
-  width: 320px;
-  max-width: 100%;
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed {
   display: flex;
   flex-direction: column;
   background: #fff;
-  border-radius: 20px;
+  border: 1px solid #eae5dd;
+  border-radius: 26px;
   overflow: hidden;
-  border: 1px solid #eef1f6;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 12px 28px rgba(28, 25, 23, 0.06);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease, border-color 0.4s ease;
 }
-.thha-add-to-cart .thha-atc-prod:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 50px rgba(15, 23, 42, 0.14);
-}
-.thha-add-to-cart .thha-atc-prod-media {
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-media {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
-  background: #f1f4f9;
+  background: #f4f1ec;
 }
-.thha-add-to-cart .thha-atc-prod-media img {
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-add-to-cart .thha-atc-prod:hover .thha-atc-prod-media img {
-  transform: scale(1.08);
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-media {
+  /* soft scrim so the chips stay readable on any photo */
 }
-.thha-add-to-cart .thha-atc-prod-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 2;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  background: #ef4444;
-  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.35);
-}
-.thha-add-to-cart .thha-atc-prod-badge--new {
-  background: #2563eb;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
-}
-.thha-add-to-cart .thha-atc-prod-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px 22px 24px;
-}
-.thha-add-to-cart .thha-atc-prod-cat {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-.thha-add-to-cart .thha-atc-prod-title {
-  font-size: 19px;
-  font-weight: 700;
-  color: #0f172a;
-}
-.thha-add-to-cart .thha-atc-prod-stars {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-size: 13px;
-  color: #f5a623;
-}
-.thha-add-to-cart .thha-atc-prod-stars .thha-atc-prod-count {
-  margin-left: 6px;
-  color: #94a3b8;
-  font-weight: 500;
-}
-.thha-add-to-cart .thha-atc-prod-price {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-}
-.thha-add-to-cart .thha-atc-prod-price .thha-atc-prod-was {
-  font-size: 15px;
-  font-weight: 600;
-  color: #cbd5e1;
-  text-decoration: line-through;
-  margin-right: 4px;
-}
-.thha-add-to-cart .thha-atc-prod-price .thha-atc-prod-unit {
-  font-size: 13px;
-  font-weight: 500;
-  color: #94a3b8;
-}
-.thha-add-to-cart {
-  /* control always sits at the bottom so equal-height cards line up */
-}
-.thha-add-to-cart .thha-atc-prod-control {
-  margin-top: auto;
-  padding-top: 16px;
-}
-.thha-add-to-cart {
-  /* =====================================================================
-     Design 1 — Morphing button: cart rolls across, fills green → "Added"
-     ===================================================================== */
-}
-.thha-add-to-cart.thha-presets-1 {
-  align-items: stretch;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll {
-  --atc-c1: #2563eb;
-  --atc-c2: #1d4ed8;
-  position: relative;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 16px 30px;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #fff;
-  background: var(--atc-c1);
-  overflow: hidden;
-  isolation: isolate;
-  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.32);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background 0.4s ease;
-  /* green wash that sweeps in left→right on success */
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll::before {
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: linear-gradient(120deg, #16b364, #0fae7a);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0.28) 0%, transparent 42%);
+  pointer-events: none;
 }
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-icon,
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-text {
-  position: relative;
-  z-index: 1;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-icon {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-icon i {
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-chip,
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-badge {
   position: absolute;
-  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.35s ease;
+  top: 16px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 7px 13px;
+  border-radius: 999px;
 }
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-icon .thha-atc-roll-cart {
-  transform: translateX(0) rotate(0);
-  opacity: 1;
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-chip {
+  left: 16px;
+  color: #fff;
+  background: rgba(28, 25, 23, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-icon .thha-atc-roll-check {
-  transform: scale(0);
-  opacity: 0;
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-badge {
+  right: 16px;
+  color: #fff;
+  background: #be123c;
 }
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-text {
-  position: relative;
-  display: inline-grid;
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-badge--new {
+  background: #15803d;
 }
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-text .thha-atc-roll-word {
-  grid-area: 1/1;
-  white-space: nowrap;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-text .thha-atc-roll-word--idle {
-  transform: translateY(0);
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll .thha-atc-roll-text .thha-atc-roll-word--done {
-  transform: translateY(120%);
-  opacity: 0;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.42);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll:active {
-  transform: translateY(-1px) scale(0.99);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll {
-  /* busy: little cart-roll wiggle while "processing" */
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=loading] .thha-atc-roll-cart {
-  animation: thha-atc-cart-roll 0.7s ease both;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done] {
-  box-shadow: 0 12px 26px rgba(22, 179, 100, 0.4);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done]::before {
-  transform: scaleX(1);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done] .thha-atc-roll-cart {
-  transform: translateX(220%) rotate(20deg);
-  opacity: 0;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done] .thha-atc-roll-check {
-  transform: scale(1);
-  opacity: 1;
-  animation: thha-atc-pop 0.45s cubic-bezier(0.22, 1.4, 0.4, 1) 0.1s both;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done] .thha-atc-roll-word--idle {
-  transform: translateY(-120%);
-  opacity: 0;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll[data-state=done] .thha-atc-roll-word--done {
-  transform: translateY(0);
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll--violet {
-  --atc-c1: #7c3aed;
-  --atc-c2: #6d28d9;
-  background: var(--atc-c1);
-  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.32);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll--violet:hover {
-  box-shadow: 0 18px 38px rgba(124, 58, 237, 0.42);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll--amber {
-  --atc-c1: #f59e0b;
-  --atc-c2: #d97706;
-  background: var(--atc-c1);
-  box-shadow: 0 12px 26px rgba(245, 158, 11, 0.32);
-}
-.thha-add-to-cart.thha-presets-1 .thha-atc-roll--amber:hover {
-  box-shadow: 0 18px 38px rgba(245, 158, 11, 0.42);
-}
-.thha-add-to-cart {
-  /* =====================================================================
-     Design 2 — All-in-one bar: quantity stepper + live total + add
-     ===================================================================== */
-}
-.thha-add-to-cart.thha-presets-2 {
-  gap: 34px;
-  align-items: stretch;
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar {
-  --atc-accent: #2563eb;
-  --atc-accent-dark: #1d4ed8;
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-body {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 12px;
-  width: 100%;
+  flex: 1;
+  padding: 22px 22px 24px;
 }
-.thha-add-to-cart.thha-presets-2 .thha-atc-stepper {
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1c1917;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-desc {
+  margin-top: 7px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #78716c;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-meta .thha-atc-ed-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f59e0b;
+  font-size: 12.5px;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-meta .thha-atc-ed-count {
+  font-size: 12.5px;
+  color: #a8a29e;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-price {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #1c1917;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed-price .thha-atc-ed-was {
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a8a29e;
+  text-decoration: line-through;
+}
+.thha-add-to-cart.thha-presets-1 {
+  /* morphing add button */
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph {
+  position: relative;
+  flex: none;
+  height: 46px;
+  min-width: 150px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #1c1917;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  transition: min-width 0.5s cubic-bezier(0.65, 0, 0.35, 1), padding 0.5s cubic-bezier(0.65, 0, 0.35, 1), background 0.4s ease, transform 0.3s ease;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph:hover {
+  transform: translateY(-2px);
+  background: #292524;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph:focus-visible {
+  outline: 3px solid #1c1917;
+  outline-offset: 3px;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph:active {
+  transform: translateY(0) scale(0.98);
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph .thha-atc-morph-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(115%);
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph .thha-atc-morph-face i {
+  font-size: 14px;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=idle] .thha-atc-morph-face--idle, .thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=busy] .thha-atc-morph-face--busy, .thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=done] .thha-atc-morph-face--done {
+  opacity: 1;
+  transform: translateY(0);
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=busy] .thha-atc-morph-face--idle, .thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=done] .thha-atc-morph-face--idle, .thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=done] .thha-atc-morph-face--busy {
+  transform: translateY(-115%);
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=busy] {
+  min-width: 46px;
+  padding: 0;
+  cursor: default;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph[data-state=done] {
+  min-width: 128px;
+  background: #15803d;
+  cursor: default;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-morph .thha-atc-morph-spin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.32);
+  border-top-color: #fff;
+  animation: thha-atc-rotate 0.7s linear infinite;
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed:hover {
+  transform: translateY(-6px);
+  border-color: #ded7cc;
+  box-shadow: 0 2px 4px rgba(28, 25, 23, 0.05), 0 26px 50px rgba(28, 25, 23, 0.13);
+}
+.thha-add-to-cart.thha-presets-1 .thha-atc-ed:hover .thha-atc-ed-media img {
+  transform: scale(1.07);
+}
+.thha-add-to-cart {
+  /* =====================================================================
+     Design 2 — Frosted glass over the dark mesh. Quantity stepper with a
+     live total that recomputes from the unit price.
+     ===================================================================== */
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass {
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 22px 50px rgba(3, 7, 18, 0.45);
+  color: #fff;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease, background 0.45s ease;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass:hover .thha-atc-glass-media img {
+  transform: scale(1.07);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-media {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-chip {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(8, 13, 26, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-meta .thha-atc-glass-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #fbbf24;
+  font-size: 12.5px;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-glass-meta .thha-atc-glass-unit {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+  font-variant-numeric: tabular-nums;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-stepper {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
   padding: 4px;
-  border-radius: 12px;
-  background: #f1f4f9;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-step {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: #0f172a;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
-  transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease;
+  font-size: 11px;
+  color: #fff;
+  transition: background 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-step:hover {
-  background: var(--atc-accent);
-  color: #fff;
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-step:active {
-  transform: scale(0.92);
+  transform: scale(0.9);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-step:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-step.is-disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   pointer-events: none;
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-qty {
-  min-width: 40px;
+  min-width: 30px;
   text-align: center;
+  font-size: 15px;
   font-weight: 700;
-  font-size: 17px;
   font-variant-numeric: tabular-nums;
 }
 .thha-add-to-cart.thha-presets-2 .thha-atc-qty.is-bump {
-  animation: thha-atc-bump 0.3s ease;
+  animation: thha-atc-bump 0.34s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn {
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd {
   position: relative;
-  display: flex;
-  width: 100%;
+  flex: 1;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  height: 56px;
-  padding: 0 26px;
-  border-radius: 12px;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 16px;
-  color: #fff;
-  background: var(--atc-accent);
+  color: #08111f;
+  background: linear-gradient(120deg, #a7f3d0, #7dd3fc, #c4b5fd);
+  background-size: 200% 100%;
   overflow: hidden;
   isolation: isolate;
-  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.3);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, background 0.3s ease;
+  animation: thha-atc-flow 7s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn::after {
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd:hover {
+  transform: translateY(-2px);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd:active {
+  transform: translateY(0) scale(0.99);
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd .thha-atc-qadd-total {
+  font-variant-numeric: tabular-nums;
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd {
+  /* success wash sweeps across on click */
+}
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--atc-accent-dark);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background: #22c55e;
+  transform: translateX(-101%);
 }
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn .thha-atc-bar-icon {
-  display: inline-flex;
-  font-size: 17px;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd.is-added {
+  color: #fff;
 }
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn .thha-atc-bar-price {
-  padding-left: 12px;
-  margin-left: 2px;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  border-left: 1px solid rgba(255, 255, 255, 0.32);
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.4);
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn:hover::after {
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn:hover .thha-atc-bar-icon {
-  transform: translateY(-2px) rotate(-8deg);
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn:active {
-  transform: translateY(0) scale(0.99);
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn {
-  /* success flash on add */
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar-btn.is-added {
-  animation: thha-atc-flash 0.6s ease;
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar--mint {
-  --atc-accent: #0fae7a;
-  --atc-accent-dark: #0c9466;
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar--mint .thha-atc-bar-btn {
-  box-shadow: 0 10px 22px rgba(15, 174, 122, 0.3);
-}
-.thha-add-to-cart.thha-presets-2 .thha-atc-bar--mint .thha-atc-bar-btn:hover {
-  box-shadow: 0 16px 30px rgba(15, 174, 122, 0.4);
+.thha-add-to-cart.thha-presets-2 .thha-atc-qadd.is-added::after {
+  animation: thha-atc-wash 0.95s cubic-bezier(0.65, 0, 0.35, 1);
 }
 .thha-add-to-cart {
   /* =====================================================================
-     Design 3 — Product cards with hover-reveal add + quick actions
+     Design 3 — Minimal marketplace tile. Quick-add slides up over the
+     image on hover; colour swatches and a wishlist toggle stay reachable.
      ===================================================================== */
 }
-.thha-add-to-cart.thha-presets-3 {
-  align-items: stretch;
-  gap: 30px;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card {
-  width: 320px;
-  max-width: 100%;
+.thha-add-to-cart.thha-presets-3 .thha-atc-min {
   display: flex;
   flex-direction: column;
   background: #fff;
-  border-radius: 20px;
+  border: 1px solid #edf0f3;
+  border-radius: 22px;
   overflow: hidden;
-  border: 1px solid #eef1f6;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  transition: border-color 0.4s ease, box-shadow 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 50px rgba(15, 23, 42, 0.14);
+.thha-add-to-cart.thha-presets-3 .thha-atc-min:hover, .thha-add-to-cart.thha-presets-3 .thha-atc-min:focus-within {
+  transform: translateY(-5px);
+  border-color: #e2e8f0;
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.1);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-media {
+.thha-add-to-cart.thha-presets-3 .thha-atc-min:hover .thha-atc-min-media img, .thha-add-to-cart.thha-presets-3 .thha-atc-min:focus-within .thha-atc-min-media img {
+  transform: scale(1.06);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min:hover .thha-atc-min-rail, .thha-add-to-cart.thha-presets-3 .thha-atc-min:focus-within .thha-atc-min-rail {
+  opacity: 1;
+  transform: translateX(0);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min:hover .thha-atc-min-quick, .thha-add-to-cart.thha-presets-3 .thha-atc-min:focus-within .thha-atc-min-quick {
+  transform: translateY(0);
+  opacity: 1;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-media {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   overflow: hidden;
-  background: #f1f4f9;
+  background: #f6f8fa;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-media img {
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card:hover .thha-atc-card-media img {
-  transform: scale(1.08);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 2;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  background: #ef4444;
-  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.35);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-badge--new {
-  background: #2563eb;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-actions {
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-rail {
   position: absolute;
   top: 14px;
   right: 14px;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(14px);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-icon {
-  width: 42px;
-  height: 42px;
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-icon {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 14px;
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.16);
-  opacity: 0;
-  transform: translateX(18px);
-  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, color 0.25s ease;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.14);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-icon:hover {
-  background: #ef4444;
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-icon:hover {
+  transform: scale(1.08);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-icon:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 2px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-icon[aria-pressed=true] {
+  background: #e11d48;
   color: #fff;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-icon:nth-child(2) {
-  transition-delay: 0.06s;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-icon:nth-child(2):hover {
-  background: #2563eb;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card:hover .thha-atc-card-icon {
-  opacity: 1;
-  transform: translateX(0);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px 22px 24px;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-cat {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #94a3b8;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-title {
-  font-size: 19px;
-  font-weight: 700;
-  color: #0f172a;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-stars {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-size: 13px;
-  color: #f5a623;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-stars .thha-atc-card-count {
-  margin-left: 6px;
-  color: #94a3b8;
-  font-weight: 500;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-top: 8px;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-price {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-price .thha-atc-card-was {
-  font-size: 15px;
-  font-weight: 600;
-  color: #cbd5e1;
-  text-decoration: line-through;
-  margin-right: 4px;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add {
-  position: relative;
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  height: 44px;
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 46px;
-  padding: 0 20px;
-  border-radius: 12px;
-  font-weight: 700;
+  overflow: hidden;
   font-size: 14px;
+  font-weight: 600;
   color: #fff;
   background: #0f172a;
-  overflow: hidden;
-  isolation: isolate;
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.22);
-  transition: transform 0.3s ease, background 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(120%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, background 0.35s ease;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add span[class*=add-] {
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+  outline: 3px solid #0f172a;
+  outline-offset: 3px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick:active {
+  transform: translateY(0) scale(0.98);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick span {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add .thha-atc-card-add-idle {
-  transform: translateY(0);
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add .thha-atc-card-add-done {
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick .thha-atc-min-quick-done {
   position: absolute;
-  transform: translateY(150%);
+  inset: 0;
+  justify-content: center;
   opacity: 0;
+  transform: translateY(110%);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.34);
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick.is-added {
+  background: #15803d;
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add:active {
-  transform: translateY(0) scale(0.97);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add[data-state=done] {
-  background: #16b364;
-  box-shadow: 0 8px 18px rgba(22, 179, 100, 0.34);
-}
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add[data-state=done] .thha-atc-card-add-idle {
-  transform: translateY(-150%);
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick.is-added .thha-atc-min-quick-idle {
   opacity: 0;
+  transform: translateY(-110%);
 }
-.thha-add-to-cart.thha-presets-3 .thha-atc-card-add[data-state=done] .thha-atc-card-add-done {
-  transform: translateY(0);
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-quick.is-added .thha-atc-min-quick-done {
   opacity: 1;
+  transform: translateY(0);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-body {
+  padding: 18px 18px 20px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-top .thha-atc-min-cat {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-top .thha-atc-min-price {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-title {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-sws {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-sw {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--thha-sw, #0f172a);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-sw:hover {
+  transform: scale(1.12);
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-sw:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 3px;
+}
+.thha-add-to-cart.thha-presets-3 .thha-atc-min-sw[aria-pressed=true] {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--thha-sw, #0f172a);
 }
 .thha-add-to-cart {
   /* =====================================================================
-     Design 4 — Slide-to-confirm track (drag thumb to add)
+     Design 4 — Ink card with a slide-to-confirm gesture. Deliberate,
+     hard to trigger by accident, and it reads as a physical control.
      ===================================================================== */
 }
-.thha-add-to-cart.thha-presets-4 {
-  align-items: stretch;
-  gap: 30px;
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink {
+  display: flex;
+  flex-direction: column;
+  background: #14100e;
+  border-radius: 26px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 20px 44px rgba(20, 16, 14, 0.24);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(20, 16, 14, 0.32);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink:hover .thha-atc-ink-media img {
+  transform: scale(1.06);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-media {
+  aspect-ratio: 5/4;
+  overflow: hidden;
+  background: #1f1a17;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-cat {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d3f26a;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-title {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-ink-price {
+  margin: 6px 0 20px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 .thha-add-to-cart.thha-presets-4 .thha-atc-slide {
-  --atc-from: #2563eb;
-  --atc-to: #4f8bff;
   position: relative;
-  width: 100%;
-  height: 68px;
+  height: 58px;
+  margin-top: auto;
   border-radius: 999px;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  box-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.06), 0 10px 26px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
   user-select: none;
-  touch-action: pan-y;
+  touch-action: none;
+}
+.thha-add-to-cart.thha-presets-4 {
+  /* Inset to the thumb's own bounds so that at rest the fill hides
+     exactly behind the thumb and only appears as a trail once dragged. */
 }
 .thha-add-to-cart.thha-presets-4 .thha-atc-slide-fill {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 68px;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  width: 46px;
   border-radius: 999px;
-  background: linear-gradient(120deg, var(--atc-from), var(--atc-to));
-  transition: width 0.05s linear;
+  background: linear-gradient(90deg, #a3e635, #d3f26a);
+  z-index: 0;
 }
 .thha-add-to-cart.thha-presets-4 .thha-atc-slide-label {
   position: absolute;
   inset: 0;
   z-index: 1;
-  display: grid;
-  place-items: center;
-  pointer-events: none;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label > span {
-  grid-area: 1/1;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 16px;
-  transition: opacity 0.35s ease;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label .thha-atc-slide-label--idle {
-  color: #475569;
-  padding-left: 56px;
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label .thha-atc-slide-label--idle i {
-  color: var(--atc-from);
-  animation: thha-atc-nudge 1.4s ease-in-out infinite;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label .thha-atc-slide-label--done {
-  color: #fff;
-  opacity: 0;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb {
-  position: absolute;
-  z-index: 2;
-  top: 6px;
-  left: 6px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  background: linear-gradient(120deg, var(--atc-from), var(--atc-to));
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
-  cursor: grab;
-  touch-action: none;
-  transition: box-shadow 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
 }
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb i {
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label span {
   position: absolute;
-  transition: transform 0.35s ease, opacity 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: opacity 0.35s ease, transform 0.4s ease;
 }
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb .fa-check {
-  transform: scale(0);
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label .thha-atc-slide-label--idle {
+  color: rgba(255, 255, 255, 0.72);
+  padding-left: 34px;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-label .thha-atc-slide-label--done {
+  color: #14100e;
   opacity: 0;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb:active {
-  cursor: grabbing;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide.is-dragging .thha-atc-slide-thumb {
-  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.55);
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-fill {
-  width: 100% !important;
+  transform: translateY(10px);
 }
 .thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-label--idle {
   opacity: 0;
+  transform: translateY(-10px);
 }
 .thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-label--done {
   opacity: 1;
+  transform: translateY(0);
 }
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb .fa-cart-shopping,
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb .fa-bag-shopping {
-  transform: scale(0);
-  opacity: 0;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb .fa-check {
-  transform: scale(1);
-  opacity: 1;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide--coral {
-  --atc-from: #f43f5e;
-  --atc-to: #fb7185;
-}
-.thha-add-to-cart.thha-presets-4 .thha-atc-slide--coral .thha-atc-slide-thumb {
-  box-shadow: 0 8px 18px rgba(244, 63, 94, 0.4);
-}
-.thha-add-to-cart {
-  /* =====================================================================
-     Design 5 — Mini shop: fly-to-cart with floating badge counter
-     ===================================================================== */
-}
-.thha-add-to-cart.thha-presets-5 .thha-atc-shop {
-  position: relative;
-  width: 100%;
-  max-width: 980px;
-  padding: 30px;
-  border-radius: 24px;
-  background: #f8fafc;
-  border: 1px solid #eef1f6;
-}
-.thha-add-to-cart.thha-presets-5 .thha-atc-cart {
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb {
   position: absolute;
-  top: -26px;
-  right: 28px;
-  z-index: 5;
-  width: 60px;
-  height: 60px;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  background: #14100e;
+  color: #d3f26a;
+  cursor: grab;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.34);
+  touch-action: none;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb i {
+  position: absolute;
+  font-size: 15px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb .fa-check {
+  opacity: 0;
+  transform: scale(0.4);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide-thumb:focus-visible {
+  outline: 3px solid #d3f26a;
+  outline-offset: 3px;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide.is-dragging .thha-atc-slide-thumb {
+  cursor: grabbing;
+  transform: scale(1.04);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb {
+  background: #14100e;
+  cursor: default;
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb .fa-cart-shopping {
+  opacity: 0;
+  transform: scale(0.4);
+}
+.thha-add-to-cart.thha-presets-4 .thha-atc-slide[data-state=done] .thha-atc-slide-thumb .fa-check {
+  opacity: 1;
+  transform: scale(1);
+}
+.thha-add-to-cart {
+  /* =====================================================================
+     Design 5 — Mini shop. A floating cart counts arrivals while product
+     images physically fly into it.
+     ===================================================================== */
+}
+.thha-add-to-cart.thha-presets-5 {
+  display: block;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-shop {
+  position: relative;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-cart {
+  position: sticky;
+  top: 24px;
+  z-index: 5;
+  float: right;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
   color: #fff;
   background: #0f172a;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.28);
   transition: transform 0.3s ease;
 }
-.thha-add-to-cart.thha-presets-5 .thha-atc-cart.is-bcounting {
-  animation: thha-atc-cart-bounce 0.55s cubic-bezier(0.22, 1.4, 0.4, 1);
+.thha-add-to-cart.thha-presets-5 .thha-atc-cart:hover {
+  transform: scale(1.06);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-cart:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 4px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-cart.is-counting {
+  animation: thha-atc-cart-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-cart-badge {
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: -4px;
+  right: -4px;
   min-width: 24px;
   height: 24px;
   padding: 0 6px;
@@ -780,102 +863,437 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   color: #fff;
-  background: #ef4444;
+  background: #e11d48;
   border: 2px solid #fff;
-  transform: scale(0);
   opacity: 0;
-  transition: transform 0.3s cubic-bezier(0.22, 1.4, 0.4, 1), opacity 0.2s ease;
+  transform: scale(0.4);
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-cart-badge.is-visible {
-  transform: scale(1);
   opacity: 1;
+  transform: scale(1);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-cart-badge.is-bump {
-  animation: thha-atc-pop 0.4s cubic-bezier(0.22, 1.4, 0.4, 1);
+  animation: thha-atc-bump 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  clear: both;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 18px 16px 20px;
-  border-radius: 18px;
   background: #fff;
-  border: 1px solid #eef1f6;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  border: 1px solid #eef1f5;
+  border-radius: 22px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.1);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-tile:hover .thha-atc-tile-img img {
+  transform: scale(1.07);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 12px;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
   overflow: hidden;
-  background: #f1f4f9;
-  margin-bottom: 10px;
+  background: #f6f8fa;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.thha-add-to-cart.thha-presets-5 .thha-atc-tile:hover .thha-atc-tile-img img {
-  transform: scale(1.07);
+.thha-add-to-cart.thha-presets-5 .thha-atc-tile-info {
+  margin-top: 14px;
+  padding-right: 46px;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-name {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #0f172a;
-  text-align: center;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-tile-cat {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #94a3b8;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-price {
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-5 {
+  /* ---------------------------------------------------------------
+     Off-canvas cart
+     `visibility` carries the open/close state because it also pulls
+     the panel's controls out of the tab order while closed — a
+     translated-but-visible panel would still be keyboard reachable.
+     The 0s delay keeps it visible for the length of the exit slide.
+     --------------------------------------------------------------- */
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  visibility: hidden;
+  transition: visibility 0s linear 0.45s;
+  /* Open-state rules live here, under the drawer itself. Writing them
+     as `.thha-atc-drawer.is-open &` from inside the child blocks would
+     expand `&` to the whole ancestor chain and demand the drawer be its
+     own ancestor — a selector that never matches. */
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-open {
+  visibility: visible;
+  transition-delay: 0s;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-open .thha-atc-drawer-scrim {
+  opacity: 1;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-open .thha-atc-drawer-panel {
+  transform: none;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(400px, 100%);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: -20px 0 60px rgba(15, 23, 42, 0.22);
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex: none;
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid #eef1f5;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-title {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 18px;
   font-weight: 700;
-  color: #2563eb;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-title .thha-atc-drawer-count {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-x {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #0f172a;
+  background: #f1f5f9;
+  transition: background 0.3s ease, transform 0.25s ease;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-x:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-x:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 2px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 22px;
+  -webkit-overflow-scrolling: touch;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 62px 10px;
+  text-align: center;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-empty i {
+  font-size: 30px;
+  color: #cbd5e1;
+  margin-bottom: 4px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-empty span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-empty small {
+  font-size: 12.5px;
+  color: #94a3b8;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-empty .thha-atc-drawer-empty {
+  display: flex;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-lines {
+  list-style: none;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+  /* new rows ease in rather than snapping into the list */
+  animation: thha-atc-line-in 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line.is-leaving {
+  animation: thha-atc-line-out 0.32s ease forwards;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line:last-child {
+  border-bottom: 0;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-img {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-main {
+  flex: 1;
+  min-width: 0;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-unit {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 9px;
+  padding: 3px;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #0f172a;
+  transition: background 0.25s ease, opacity 0.25s ease;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty button:hover {
+  background: #fff;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty button:focus-visible {
+  outline: 2px solid #0f172a;
+  outline-offset: 1px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty button[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-qty .thha-atc-line-n {
+  min-width: 24px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-right {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-total {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-x {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #94a3b8;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-x:hover {
+  background: #fef2f2;
+  color: #e11d48;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-line-x:focus-visible {
+  outline: 2px solid #e11d48;
+  outline-offset: 1px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-foot {
+  flex: none;
+  padding: 18px 22px 22px;
+  border-top: 1px solid #eef1f5;
+  background: #fff;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-sum {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-sum .thha-atc-sum-total {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-sum-note {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-clear,
+.thha-add-to-cart.thha-presets-5 .thha-atc-checkout {
+  height: 48px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease, transform 0.25s ease;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-clear:active,
+.thha-add-to-cart.thha-presets-5 .thha-atc-checkout:active {
+  transform: scale(0.98);
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-clear {
+  flex: none;
+  padding: 0 16px;
+  color: #64748b;
+  background: #f1f5f9;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-clear:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-clear:focus-visible {
+  outline: 3px solid #64748b;
+  outline-offset: 2px;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-checkout {
+  flex: 1;
+  color: #fff;
+  background: #0f172a;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-checkout:hover {
+  background: #1e293b;
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-checkout:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 2px;
+}
+.thha-add-to-cart.thha-presets-5 {
+  /* both footer actions are meaningless with nothing in the cart */
+}
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-empty .thha-atc-clear,
+.thha-add-to-cart.thha-presets-5 .thha-atc-drawer.is-empty .thha-atc-checkout {
+  opacity: 0.45;
+  pointer-events: none;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-add {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
-  width: 40px;
-  height: 40px;
+  right: 16px;
+  bottom: 18px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   color: #fff;
-  background: #2563eb;
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
-  transition: transform 0.25s cubic-bezier(0.22, 1.4, 0.4, 1), background 0.25s ease;
+  background: #0f172a;
+  transition: background 0.35s ease, transform 0.25s ease;
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-add:hover {
-  transform: scale(1.12) rotate(90deg);
-  background: #1d4ed8;
+  transform: scale(1.09);
 }
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-add:active {
   transform: scale(0.94);
 }
+.thha-add-to-cart.thha-presets-5 .thha-atc-tile-add:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 3px;
+}
 .thha-add-to-cart.thha-presets-5 .thha-atc-tile-add.is-added {
-  background: #16b364;
-  pointer-events: none;
+  background: #15803d;
 }
-.thha-add-to-cart.thha-presets-5 {
-  /* the little image that arcs from product → cart */
+
+/* Hold the page still while the off-canvas cart is open. */
+body.thha-atc-locked {
+  overflow: hidden;
 }
-.thha-add-to-cart.thha-presets-5 .thha-atc-flyer {
+
+/* The flying product image lives on <body> so it can cross card bounds. */
+.thha-atc-flyer {
   position: fixed;
   z-index: 9999;
   width: 56px;
@@ -883,102 +1301,154 @@ img {
   border-radius: 14px;
   object-fit: cover;
   pointer-events: none;
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
-  will-change: transform, opacity;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.28);
 }
 
 /* ===== Keyframes ===== */
-@keyframes thha-atc-pop {
-  0% {
-    transform: scale(0.6);
-  }
-  60% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
+@keyframes thha-atc-rotate {
+  to {
+    transform: rotate(360deg);
   }
 }
 @keyframes thha-atc-bump {
   0% {
-    transform: translateY(0);
+    transform: scale(1);
   }
-  40% {
-    transform: translateY(-6px) scale(1.18);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes thha-atc-flash {
-  0% {
-    filter: brightness(1);
-  }
-  35% {
-    filter: brightness(1.5);
+  45% {
+    transform: scale(1.32);
   }
   100% {
-    filter: brightness(1);
+    transform: scale(1);
   }
 }
-@keyframes thha-atc-cart-roll {
-  0% {
-    transform: translateX(0) rotate(0);
+@keyframes thha-atc-flow {
+  0%, 100% {
+    background-position: 0% 50%;
   }
   50% {
-    transform: translateX(3px) rotate(-12deg);
-  }
-  100% {
-    transform: translateX(0) rotate(0);
+    background-position: 100% 50%;
   }
 }
-@keyframes thha-atc-cart-bounce {
+@keyframes thha-atc-wash {
   0% {
-    transform: scale(1);
+    transform: translateX(-101%);
   }
-  40% {
-    transform: scale(1.18) rotate(-6deg);
-  }
-  70% {
-    transform: scale(0.94) rotate(4deg);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes thha-atc-nudge {
-  0%, 100% {
+  40%, 70% {
     transform: translateX(0);
   }
-  50% {
-    transform: translateX(4px);
+  100% {
+    transform: translateX(101%);
+  }
+}
+@keyframes thha-atc-line-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes thha-atc-line-out {
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+@keyframes thha-atc-cart-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.16) rotate(-7deg);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 /* ===== Responsive ===== */
-@media (max-width: 860px) {
+@media (max-width: 991px) {
+  .thha-add-to-cart {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
   .thha-add-to-cart.thha-presets-5 .thha-atc-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
   }
 }
-@media (max-width: 560px) {
-  .thha-add-to-cart.thha-presets-2 .thha-atc-bar {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 340px;
+@media (max-width: 640px) {
+  .thha-add-to-cart,
+  .thha-add-to-cart.thha-presets-5 .thha-atc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
   }
-  .thha-add-to-cart.thha-presets-2 .thha-atc-bar .thha-atc-stepper {
-    justify-content: space-between;
+  /* the price/button row needs the full width once the card narrows */
+  .thha-add-to-cart.thha-presets-1 .thha-atc-ed-foot {
+    flex-wrap: wrap;
   }
-  .thha-add-to-cart.thha-presets-2 .thha-atc-bar .thha-atc-bar-btn {
-    justify-content: center;
+  .thha-add-to-cart.thha-presets-1 .thha-atc-ed-foot .thha-atc-morph {
+    flex: 1;
+  }
+  /* quick-add is hover-only on desktop; pin it open on touch layouts */
+  .thha-add-to-cart.thha-presets-3 .thha-atc-min-quick {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .thha-add-to-cart.thha-presets-3 .thha-atc-min-rail {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-/* ===== Respect reduced-motion preferences ===== */
+/* ===== Respect reduced-motion preferences =====
+   Ambient motion is dropped; state feedback is kept but shortened so the
+   controls still confirm what they did. */
 @media (prefers-reduced-motion: reduce) {
-  .thha-add-to-cart * {
+  .thha-add-to-cart .thha-atc-qadd,
+  .thha-add-to-cart .thha-atc-morph-spin,
+  .thha-add-to-cart .thha-atc-cart.is-counting,
+  .thha-add-to-cart .thha-atc-cart-badge.is-bump,
+  .thha-add-to-cart .thha-atc-qty.is-bump,
+  .thha-add-to-cart .thha-atc-line {
     animation: none !important;
+  }
+  .thha-add-to-cart {
+    /* the drawer still opens and closes, just without the slide — and
+       without the delay that exists only to cover the exit animation */
+  }
+  .thha-add-to-cart .thha-atc-drawer,
+  .thha-add-to-cart .thha-atc-drawer-scrim,
+  .thha-add-to-cart .thha-atc-drawer-panel {
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .thha-add-to-cart.is-reveal-ready [data-thha-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .thha-add-to-cart .thha-atc-ed,
+  .thha-add-to-cart .thha-atc-glass,
+  .thha-add-to-cart .thha-atc-min,
+  .thha-add-to-cart .thha-atc-ink,
+  .thha-add-to-cart .thha-atc-tile {
+    transition-duration: 0.01ms !important;
+  }
+  .thha-add-to-cart .thha-atc-ed:hover,
+  .thha-add-to-cart .thha-atc-glass:hover,
+  .thha-add-to-cart .thha-atc-min:hover,
+  .thha-add-to-cart .thha-atc-ink:hover,
+  .thha-add-to-cart .thha-atc-tile:hover {
+    transform: none;
+  }
+  .thha-add-to-cart .thha-atc-ed-media img,
+  .thha-add-to-cart .thha-atc-glass-media img,
+  .thha-add-to-cart .thha-atc-min-media img,
+  .thha-add-to-cart .thha-atc-ink-media img,
+  .thha-add-to-cart .thha-atc-tile-img img {
+    transition: none !important;
+    transform: none !important;
   }
 }
 

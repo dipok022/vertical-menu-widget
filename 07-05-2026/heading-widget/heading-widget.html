@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heading Widget</title>
+    <link rel="stylesheet" href="./scss/heading-widget.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 : Editorial stack, words rising out of a mask on scroll -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
+
+        <div class="thha-heading-widget thha-presets-1">
+          <div class="thha-hw-editorial">
+            <!-- one heading; the phrases slide through it, each replaying
+                 the per-word mask reveal. The first is also the markup
+                 fallback if the script never runs. -->
+            <h3
+              class="thha-hw-display"
+              data-thha-words
+              data-phrases="Design systems that scale with the product|Built once, reused everywhere|Tokens, components and the last focus ring"
+            >
+              Design systems that scale with the product
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 : Hand-drawn marker that draws itself around a word -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 2</h2>
+
+        <div class="thha-heading-widget thha-presets-2">
+          <div class="thha-hw-marked" data-thha-mark>
+            <h3 class="thha-hw-mark-title">
+              Ship work that feels
+              <span class="thha-hw-mark thha-hw-mark--underline">
+                <span class="thha-hw-mark-word">deliberate</span>
+                <svg
+                  class="thha-hw-mark-svg"
+                  viewBox="0 0 240 48"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path pathLength="1" d="M6 34 C 62 20, 150 18, 234 28" />
+                </svg>
+              </span>
+            </h3>
+          </div>
+
+          <div class="thha-hw-marked" data-thha-mark>
+            <h3 class="thha-hw-mark-title">
+              Put the emphasis
+              <span class="thha-hw-mark thha-hw-mark--circle">
+                <span class="thha-hw-mark-word">exactly</span>
+                <svg
+                  class="thha-hw-mark-svg"
+                  viewBox="0 0 240 72"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    pathLength="1"
+                    d="M126 8 C 44 4, 8 22, 10 40 C 12 60, 92 70, 154 66 C 210 62, 236 46, 228 30 C 220 14, 168 6, 118 9"
+                  />
+                </svg>
+              </span>
+              where you mean it
+            </h3>
+          </div>
+
+          <div class="thha-hw-marked" data-thha-mark>
+            <h3 class="thha-hw-mark-title">
+              Built to read
+              <span class="thha-hw-mark thha-hw-mark--strike">
+                <span class="thha-hw-mark-word">at a glance</span>
+                <svg
+                  class="thha-hw-mark-svg"
+                  viewBox="0 0 240 48"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path pathLength="1" d="M4 30 C 70 22, 156 20, 236 26" />
+                  <path pathLength="1" d="M10 40 C 80 34, 160 32, 230 37" />
+                </svg>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 : Rotating word slot on a split rule layout -->
+    <section style="background-color: #f8f9fc; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 3</h2>
+
+        <div class="thha-heading-widget thha-presets-3">
+          <div class="thha-hw-rotate">
+            <div class="thha-hw-rotate-side">
+              <span class="thha-hw-kicker">Agency OS</span>
+              <span class="thha-hw-rotate-rule" aria-hidden="true"></span>
+            </div>
+
+            <div class="thha-hw-rotate-main">
+              <!-- the animated slot is decorative; the sentence below carries
+                   the full text for assistive tech -->
+              <h3 class="thha-hw-rotate-title" aria-hidden="true">
+                We build
+                <span class="thha-hw-slot" data-thha-rotate>
+                  <span class="thha-hw-word is-live" style="--thha-c: #df0463"
+                    >brands</span
+                  >
+                  <span class="thha-hw-word" style="--thha-c: #7c3aed"
+                    >design systems</span
+                  >
+                  <span class="thha-hw-word" style="--thha-c: #0ea5e9"
+                    >interfaces</span
+                  >
+                  <span class="thha-hw-word" style="--thha-c: #f59e0b"
+                    >momentum</span
+                  >
+                </span>
+              </h3>
+              <span class="thha-hw-sr">
+                We build brands, design systems, interfaces and momentum.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 : Dark card, typewriter headline with a live caret -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 4</h2>
+
+        <div class="thha-heading-widget thha-presets-4">
+          <h3 class="thha-hw-console-title" aria-hidden="true">
+            <span
+              class="thha-hw-type"
+              data-thha-type
+              data-phrases="Faster builds|Cleaner tokens|Zero layout shift|Real accessibility"
+              data-colors="#df0463|#7c3aed|#0ea5e9|#f59e0b"
+              >Faster builds</span
+            ><span class="thha-hw-caret"></span>
+          </h3>
+          <span class="thha-hw-sr">
+            Faster builds, cleaner tokens, zero layout shift and real
+            accessibility.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 : Outlined display type lit by a cursor-tracked gradient -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 5</h2>
+
+        <div class="thha-heading-widget thha-presets-5">
+          <div class="thha-hw-spot" data-thha-spotlight>
+            <h3 class="thha-hw-spot-title">
+              <span class="thha-hw-spot-line">
+                <span class="thha-hw-spot-base">Make it</span>
+                <span class="thha-hw-spot-lit" aria-hidden="true">Make it</span>
+              </span>
+              <span class="thha-hw-spot-line">
+                <span class="thha-hw-spot-base">unmistakable</span>
+                <span class="thha-hw-spot-lit" aria-hidden="true"
+                  >unmistakable</span
+                >
+              </span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/heading-widget.js"></script>
+  </body>
+</html>

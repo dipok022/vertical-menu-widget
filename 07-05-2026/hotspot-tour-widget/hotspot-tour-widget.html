@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotspot Tour Widget</title>
+    <link rel="stylesheet" href="./scss/hotspot-tour-widget.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 : Ripple pins with flip-placement tooltips (hover / focus, CSS only)
+         Marker coordinates ride on --thha-x / --thha-y so a pin is positioned by
+         data, exactly like the X/Y fields in the reference widgets. -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 1</h2>
+
+        <div class="thha-hotspot-tour-widget thha-presets-1">
+          <figure class="thha-htw-stage">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80"
+              alt="A bright living room with a yellow accent armchair, a brass arc floor lamp, a framed abstract print and a white media sideboard"
+            />
+
+            <span class="thha-htw-spot" style="--thha-x: 39%; --thha-y: 14%">
+              <button
+                type="button"
+                class="thha-htw-pin"
+                aria-describedby="thha-htw-tip-1a"
+              >
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                <span class="thha-htw-sr">Brass arc floor lamp</span>
+              </button>
+              <span
+                class="thha-htw-tip"
+                id="thha-htw-tip-1a"
+                role="tooltip"
+                data-place="right"
+              >
+                <span class="thha-htw-tip-eyebrow">Lighting</span>
+                <span class="thha-htw-tip-title">Brass Arc Floor Lamp</span>
+                <span class="thha-htw-tip-text"
+                  >A weighted disc base and a long brushed stem, so the shade
+                  reaches over a chair without a table under it.</span
+                >
+                <span class="thha-htw-tip-meta">
+                  <span class="thha-htw-tip-price">$480</span>
+                  <span class="thha-htw-tip-stock">2 left</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="thha-htw-spot" style="--thha-x: 55%; --thha-y: 25%">
+              <button
+                type="button"
+                class="thha-htw-pin"
+                aria-describedby="thha-htw-tip-1b"
+              >
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                <span class="thha-htw-sr">Framed abstract print</span>
+              </button>
+              <span
+                class="thha-htw-tip"
+                id="thha-htw-tip-1b"
+                role="tooltip"
+                data-place="bottom"
+              >
+                <span class="thha-htw-tip-eyebrow">Wall art</span>
+                <span class="thha-htw-tip-title">Framed Abstract Print</span>
+                <span class="thha-htw-tip-text"
+                  >Giclee on cotton rag, float-mounted behind museum glass in a
+                  deep black ayous frame.</span
+                >
+                <span class="thha-htw-tip-meta">
+                  <span class="thha-htw-tip-price">$310</span>
+                  <span class="thha-htw-tip-stock">In stock</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="thha-htw-spot" style="--thha-x: 50%; --thha-y: 64%">
+              <button
+                type="button"
+                class="thha-htw-pin"
+                aria-describedby="thha-htw-tip-1c"
+              >
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                <span class="thha-htw-sr">Yellow accent armchair</span>
+              </button>
+              <span
+                class="thha-htw-tip"
+                id="thha-htw-tip-1c"
+                role="tooltip"
+                data-place="top"
+              >
+                <span class="thha-htw-tip-eyebrow">Seating</span>
+                <span class="thha-htw-tip-title">Ochre Accent Armchair</span>
+                <span class="thha-htw-tip-text"
+                  >Solid ash legs under a tight-upholstered shell, in a wool
+                  weave rated for thirty thousand rubs.</span
+                >
+                <span class="thha-htw-tip-meta">
+                  <span class="thha-htw-tip-price">$1,240</span>
+                  <span class="thha-htw-tip-stock">In stock</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="thha-htw-spot" style="--thha-x: 89%; --thha-y: 72%">
+              <button
+                type="button"
+                class="thha-htw-pin"
+                aria-describedby="thha-htw-tip-1d"
+              >
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                <span class="thha-htw-sr">White media sideboard</span>
+              </button>
+              <span
+                class="thha-htw-tip"
+                id="thha-htw-tip-1d"
+                role="tooltip"
+                data-place="left"
+              >
+                <span class="thha-htw-tip-eyebrow">Storage</span>
+                <span class="thha-htw-tip-title">Low Media Sideboard</span>
+                <span class="thha-htw-tip-text"
+                  >Matte lacquer carcass on a pale oak plinth, with a cable
+                  gate cut through the back panel.</span
+                >
+                <span class="thha-htw-tip-meta">
+                  <span class="thha-htw-tip-price">$690</span>
+                  <span class="thha-htw-tip-stock">In stock</span>
+                </span>
+              </span>
+            </span>
+          </figure>
+
+          <p class="thha-htw-hint">
+            <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+            Hover or tab to a marker to open its tooltip
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 : Guided tour — a radial spotlight follows the active step
+         while the veil dims everything else. Prev / play / next plus autoplay. -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 2</h2>
+
+        <div class="thha-hotspot-tour-widget thha-presets-2">
+          <div class="thha-htw-tour" data-thha-tour data-autoplay="4200">
+            <figure class="thha-htw-tour-stage">
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
+                alt="A glass-walled office corridor with meeting rooms on one side, pendant lights overhead and a polished concrete floor"
+              />
+              <span class="thha-htw-tour-veil" aria-hidden="true"></span>
+
+              <button
+                type="button"
+                class="thha-htw-tour-pin"
+                style="--thha-x: 28%; --thha-y: 55%"
+                data-thha-step
+                data-title="Meeting rooms keep their glass"
+                data-text="Full-height glazing on the room line, so the floor plate still reads as one space from the entrance. Acoustic laminate does the work the walls would have done."
+              >
+                <span aria-hidden="true">1</span>
+                <span class="thha-htw-sr">Step 1: meeting rooms keep their glass</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-tour-pin"
+                style="--thha-x: 72%; --thha-y: 16%"
+                data-thha-step
+                data-title="Pendants on the circulation line"
+                data-text="The lighting run follows the walkway rather than the ceiling grid, which is what stops a long corridor from reading as a tunnel."
+              >
+                <span aria-hidden="true">2</span>
+                <span class="thha-htw-sr">Step 2: pendants on the circulation line</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-tour-pin"
+                style="--thha-x: 55%; --thha-y: 82%"
+                data-thha-step
+                data-title="Polished concrete, sealed once"
+                data-text="The existing slab was ground back and sealed instead of covered. It bounces the daylight deeper into the plan and there is nothing left to wear out."
+              >
+                <span aria-hidden="true">3</span>
+                <span class="thha-htw-sr">Step 3: polished concrete, sealed once</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-tour-pin"
+                style="--thha-x: 90%; --thha-y: 42%"
+                data-thha-step
+                data-title="A timber wall to close the view"
+                data-text="Every corridor needs somewhere to land. Stained oak boards at the far end give the eye a warm stop and hide the riser doors behind them."
+              >
+                <span aria-hidden="true">4</span>
+                <span class="thha-htw-sr">Step 4: a timber wall to close the view</span>
+              </button>
+            </figure>
+
+            <div class="thha-htw-tour-panel">
+              <p class="thha-htw-tour-eyebrow">
+                <span class="thha-htw-tour-badge">Guided tour</span>
+                Step <span data-thha-index>1</span> of
+                <span data-thha-total>4</span>
+              </p>
+
+              <h3 class="thha-htw-tour-title" data-thha-title>
+                Meeting rooms keep their glass
+              </h3>
+              <p class="thha-htw-tour-text" data-thha-text>
+                Full-height glazing on the room line, so the floor plate still
+                reads as one space from the entrance.
+              </p>
+
+              <div
+                class="thha-htw-tour-bar"
+                role="progressbar"
+                aria-label="Tour progress"
+                aria-valuemin="1"
+                aria-valuemax="4"
+                aria-valuenow="1"
+                data-thha-bar
+              >
+                <span data-thha-fill></span>
+              </div>
+
+              <div class="thha-htw-tour-nav">
+                <button
+                  type="button"
+                  class="thha-htw-tour-btn"
+                  data-thha-prev
+                  aria-label="Previous step"
+                >
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button
+                  type="button"
+                  class="thha-htw-tour-btn thha-htw-tour-btn--play"
+                  data-thha-play
+                  aria-label="Pause the tour"
+                  aria-pressed="true"
+                >
+                  <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                </button>
+                <button
+                  type="button"
+                  class="thha-htw-tour-btn"
+                  data-thha-next
+                  aria-label="Next step"
+                >
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <span class="thha-htw-sr-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 : Split explorer — numbered chips on the image drive a detail
+         panel beside it. Click or arrow-key between markers. -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 3</h2>
+
+        <div class="thha-hotspot-tour-widget thha-presets-3">
+          <div class="thha-htw-split" data-thha-explorer>
+            <figure class="thha-htw-split-stage">
+              <img
+                src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1400&q=80"
+                alt="A white farmhouse kitchen with open walnut shelving, a window above the sink, and a gas cooktop set into the island"
+              />
+
+              <button
+                type="button"
+                class="thha-htw-chip is-active"
+                style="--thha-x: 13%; --thha-y: 24%"
+                data-thha-marker
+                data-eyebrow="Storage"
+                data-title="Open walnut shelving"
+                data-text="Two runs of solid walnut on concealed steel pins, deep enough for a stack of plates but shallow enough to keep the tile visible behind."
+                data-thumb="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=400&q=70"
+              >
+                <span aria-hidden="true">01</span>
+                <span class="thha-htw-sr">Open walnut shelving</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-chip"
+                style="--thha-x: 49%; --thha-y: 38%"
+                data-thha-marker
+                data-eyebrow="Daylight"
+                data-title="Window over the sink"
+                data-text="The wet run was pushed to the external wall so washing up happens in daylight. The tap sits low enough to clear the sash on its way up."
+                data-thumb="https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=400&q=70"
+              >
+                <span aria-hidden="true">02</span>
+                <span class="thha-htw-sr">Window over the sink</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-chip"
+                style="--thha-x: 67%; --thha-y: 79%"
+                data-thha-marker
+                data-eyebrow="Cooking"
+                data-title="Cooktop in the island"
+                data-text="Five burners dropped into the stone with a downdraft behind them, so nothing hangs over the island and the sightline across the room survives."
+                data-thumb="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=400&q=70"
+              >
+                <span aria-hidden="true">03</span>
+                <span class="thha-htw-sr">Cooktop in the island</span>
+              </button>
+
+              <button
+                type="button"
+                class="thha-htw-chip"
+                style="--thha-x: 78%; --thha-y: 65%"
+                data-thha-marker
+                data-eyebrow="Cabinetry"
+                data-title="Shaker base runs"
+                data-text="Painted shaker doors on soft-close hinges, with drawers rather than cupboards everywhere below the counter so nothing gets lost at the back."
+                data-thumb="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=400&q=70"
+              >
+                <span aria-hidden="true">04</span>
+                <span class="thha-htw-sr">Shaker base runs</span>
+              </button>
+            </figure>
+
+            <aside class="thha-htw-detail" data-thha-detail>
+              <img
+                class="thha-htw-detail-thumb"
+                data-thha-thumb
+                src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=400&q=70"
+                alt=""
+              />
+              <p class="thha-htw-detail-eyebrow" data-thha-eyebrow>Storage</p>
+              <h3 class="thha-htw-detail-title" data-thha-title>
+                Open walnut shelving
+              </h3>
+              <p class="thha-htw-detail-text" data-thha-text>
+                Two runs of solid walnut on concealed steel pins, deep enough
+                for a stack of plates but shallow enough to keep the tile
+                visible behind.
+              </p>
+              <a class="thha-htw-detail-link" href="#">
+                See the spec
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+
+              <p class="thha-htw-detail-count">
+                <span data-thha-index>1</span> / <span data-thha-total>4</span>
+              </p>
+            </aside>
+
+            <span class="thha-htw-sr-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 : Leader-line spec callouts on a dark frame. Labels sit at rest
+         under a thin arm; hovering one brightens it and drops in the detail. -->
+    <section style="background-color: #ffffff; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 4</h2>
+
+        <div class="thha-hotspot-tour-widget thha-presets-4">
+          <figure class="thha-htw-dark">
+            <img
+              src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=1400&q=80"
+              alt="A desk setup photographed in a dark room, with a wide monitor, a low-profile keyboard, a docked phone and a magenta bias light washing the wall behind"
+            />
+
+            <span
+              class="thha-htw-lead"
+              style="--thha-x: 47%; --thha-y: 28%"
+              data-dir="right"
+            >
+              <span class="thha-htw-lead-dot" aria-hidden="true"></span>
+              <span class="thha-htw-lead-arm" aria-hidden="true"></span>
+              <span class="thha-htw-lead-card" tabindex="0">
+                <span class="thha-htw-lead-label">Display</span>
+                <span class="thha-htw-lead-value">27&Prime; 5K retina panel</span>
+                <span class="thha-htw-lead-note"
+                  >218 ppi, P3 gamut, white point matched to the room</span
+                >
+              </span>
+            </span>
+
+            <span
+              class="thha-htw-lead"
+              style="--thha-x: 80%; --thha-y: 44%"
+              data-dir="left"
+            >
+              <span class="thha-htw-lead-dot" aria-hidden="true"></span>
+              <span class="thha-htw-lead-arm" aria-hidden="true"></span>
+              <span class="thha-htw-lead-card" tabindex="0">
+                <span class="thha-htw-lead-label">Dock</span>
+                <span class="thha-htw-lead-value">Qi2 charge stand</span>
+                <span class="thha-htw-lead-note"
+                  >15 W, angled so notifications stay readable</span
+                >
+              </span>
+            </span>
+
+            <span
+              class="thha-htw-lead"
+              style="--thha-x: 10%; --thha-y: 52%"
+              data-dir="right"
+            >
+              <span class="thha-htw-lead-dot" aria-hidden="true"></span>
+              <span class="thha-htw-lead-arm" aria-hidden="true"></span>
+              <span class="thha-htw-lead-card" tabindex="0">
+                <span class="thha-htw-lead-label">Bias light</span>
+                <span class="thha-htw-lead-value">Wall-washed LED strip</span>
+                <span class="thha-htw-lead-note"
+                  >Lifts the contrast floor so the panel stops straining</span
+                >
+              </span>
+            </span>
+
+            <span
+              class="thha-htw-lead"
+              style="--thha-x: 46%; --thha-y: 84%"
+              data-dir="left"
+            >
+              <span class="thha-htw-lead-dot" aria-hidden="true"></span>
+              <span class="thha-htw-lead-arm" aria-hidden="true"></span>
+              <span class="thha-htw-lead-card" tabindex="0">
+                <span class="thha-htw-lead-label">Input</span>
+                <span class="thha-htw-lead-value">Low-profile mechanical</span>
+                <span class="thha-htw-lead-note"
+                  >Silent tactile switches, 1.2 mm actuation</span
+                >
+              </span>
+            </span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 : Filterable site map — markers carry a category, the legend
+         chips below filter them, and a marker opens an inline card in place. -->
+    <section style="background-color: #f4f6fa; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title">Design 5</h2>
+
+        <div class="thha-hotspot-tour-widget thha-presets-5">
+          <div class="thha-htw-map" data-thha-map>
+            <figure class="thha-htw-map-stage">
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80"
+                alt="An open-plan office floor with a long meeting table, a wall-mounted screen, pendant lights over a credenza and full-height glazing"
+              />
+              <span class="thha-htw-map-grid" aria-hidden="true"></span>
+
+              <div
+                class="thha-htw-node thha-htw-node--studio"
+                style="--thha-x: 44%; --thha-y: 56%"
+                data-category="studio"
+              >
+                <button
+                  type="button"
+                  class="thha-htw-node-pin"
+                  data-thha-node
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-users" aria-hidden="true"></i>
+                  <span class="thha-htw-sr">The long table</span>
+                </button>
+                <span class="thha-htw-node-card">
+                  <span class="thha-htw-node-cat">Studio</span>
+                  <span class="thha-htw-node-title">The long table</span>
+                  <span class="thha-htw-node-text"
+                    >Four metres of solid oak that works as a stand-up, a
+                    workshop surface, and lunch for twelve.</span
+                  >
+                </span>
+              </div>
+
+              <div
+                class="thha-htw-node thha-htw-node--studio"
+                style="--thha-x: 56%; --thha-y: 42%"
+                data-category="studio"
+              >
+                <button
+                  type="button"
+                  class="thha-htw-node-pin"
+                  data-thha-node
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-display" aria-hidden="true"></i>
+                  <span class="thha-htw-sr">Presentation wall</span>
+                </button>
+                <span class="thha-htw-node-card">
+                  <span class="thha-htw-node-cat">Studio</span>
+                  <span class="thha-htw-node-title">Presentation wall</span>
+                  <span class="thha-htw-node-text"
+                    >A 75-inch panel wired for both rooms, with the conferencing
+                    kit hidden in the joinery below it.</span
+                  >
+                </span>
+              </div>
+
+              <div
+                class="thha-htw-node thha-htw-node--amenity"
+                style="--thha-x: 62%; --thha-y: 53%"
+                data-category="amenity"
+              >
+                <button
+                  type="button"
+                  class="thha-htw-node-pin"
+                  data-thha-node
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+                  <span class="thha-htw-sr">Coffee bar under the pendants</span>
+                </button>
+                <span class="thha-htw-node-card">
+                  <span class="thha-htw-node-cat">Amenity</span>
+                  <span class="thha-htw-node-title">Coffee bar</span>
+                  <span class="thha-htw-node-text"
+                    >Filtered water, a proper espresso machine, and enough bench
+                    that the morning queue never reaches the table.</span
+                  >
+                </span>
+              </div>
+
+              <div
+                class="thha-htw-node thha-htw-node--amenity"
+                style="--thha-x: 12%; --thha-y: 47%"
+                data-category="amenity"
+                data-align="start"
+              >
+                <button
+                  type="button"
+                  class="thha-htw-node-pin"
+                  data-thha-node
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                  <span class="thha-htw-sr">Window line and perch seating</span>
+                </button>
+                <span class="thha-htw-node-card">
+                  <span class="thha-htw-node-cat">Amenity</span>
+                  <span class="thha-htw-node-title">The window line</span>
+                  <span class="thha-htw-node-text"
+                    >Full-height glazing on two elevations, with a perch bench
+                    for the calls that do not need a room.</span
+                  >
+                </span>
+              </div>
+
+              <div
+                class="thha-htw-node thha-htw-node--access"
+                style="--thha-x: 85%; --thha-y: 48%"
+                data-category="access"
+                data-align="end"
+              >
+                <button
+                  type="button"
+                  class="thha-htw-node-pin"
+                  data-thha-node
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+                  <span class="thha-htw-sr">Glass entry doors and lift lobby</span>
+                </button>
+                <span class="thha-htw-node-card">
+                  <span class="thha-htw-node-cat">Access</span>
+                  <span class="thha-htw-node-title">Entry &amp; lifts</span>
+                  <span class="thha-htw-node-text"
+                    >Step-free from the street. Two lifts and the stair core all
+                    open onto this corner of the floor.</span
+                  >
+                </span>
+              </div>
+            </figure>
+
+            <div class="thha-htw-legend" role="group" aria-label="Filter markers by category">
+              <button
+                type="button"
+                class="thha-htw-legend-chip is-on"
+                data-thha-filter="all"
+                aria-pressed="true"
+              >
+                All markers
+                <span class="thha-htw-legend-count">5</span>
+              </button>
+              <button
+                type="button"
+                class="thha-htw-legend-chip thha-htw-legend-chip--studio is-on"
+                data-thha-filter="studio"
+                aria-pressed="true"
+              >
+                <span class="thha-htw-legend-swatch" aria-hidden="true"></span>
+                Studios
+                <span class="thha-htw-legend-count">2</span>
+              </button>
+              <button
+                type="button"
+                class="thha-htw-legend-chip thha-htw-legend-chip--amenity is-on"
+                data-thha-filter="amenity"
+                aria-pressed="true"
+              >
+                <span class="thha-htw-legend-swatch" aria-hidden="true"></span>
+                Amenities
+                <span class="thha-htw-legend-count">2</span>
+              </button>
+              <button
+                type="button"
+                class="thha-htw-legend-chip thha-htw-legend-chip--access is-on"
+                data-thha-filter="access"
+                aria-pressed="true"
+              >
+                <span class="thha-htw-legend-swatch" aria-hidden="true"></span>
+                Access
+                <span class="thha-htw-legend-count">1</span>
+              </button>
+            </div>
+
+            <span class="thha-htw-sr-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/hotspot-tour-widget.js"></script>
+  </body>
+</html>

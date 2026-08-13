@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Icon Box</title>
+    <link rel="stylesheet" href="./scss/advanced-icon-box.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Design 1 : Aurora Spotlight
+         Dark cards on a night panel, gradient hairline border, and a light
+         source that follows the pointer across the card face. -->
+    <section
+      style="
+        background: radial-gradient(
+          120% 90% at 50% -10%,
+          #1b2130,
+          #0a0c12 60%,
+          #06070b
+        );
+        padding: 100px 0;
+      "
+    >
+      <div class="container">
+        <h2 class="header-title" style="color: #fff">Design 1</h2>
+
+        <div
+          class="thha-advanced-icon-box thha-presets-1"
+          data-thha-reveal
+          data-thha-spotlight
+        >
+          <article class="thha-aib-spot-card">
+            <span class="thha-aib-spot-glow" aria-hidden="true"></span>
+            <span class="thha-aib-spot-badge">Now in beta</span>
+            <span class="thha-aib-spot-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-spot-title">Edge Runtime</h3>
+            <p class="thha-aib-spot-text">
+              Functions boot in under 5&nbsp;ms at the nearest of 312 metros —
+              no container to warm, no region to pick.
+            </p>
+            <a class="thha-aib-spot-cta" href="#">
+              Read the spec
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="thha-aib-spot-card">
+            <span class="thha-aib-spot-glow" aria-hidden="true"></span>
+            <span class="thha-aib-spot-badge">Updated</span>
+            <span class="thha-aib-spot-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-spot-title">Anycast DNS</h3>
+            <p class="thha-aib-spot-text">
+              One record, every continent. Failover reroutes in a single TTL
+              window without a config change.
+            </p>
+            <a class="thha-aib-spot-cta" href="#">
+              See the map
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="thha-aib-spot-card">
+            <span class="thha-aib-spot-glow" aria-hidden="true"></span>
+            <span class="thha-aib-spot-badge">SOC 2</span>
+            <span class="thha-aib-spot-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-spot-title">Sealed Secrets</h3>
+            <p class="thha-aib-spot-text">
+              Envelope encryption with per-tenant keys. Plaintext never leaves
+              the enclave, not even for us.
+            </p>
+            <a class="thha-aib-spot-cta" href="#">
+              Audit trail
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 2 : Editorial Split
+         Wide horizontal rows on a paper panel, oversized index numeral and a
+         serif display face, hinged by a rule. -->
+    <section
+      style="
+        background: linear-gradient(180deg, #f6f2ea, #efe8dc);
+        padding: 100px 0;
+      "
+    >
+      <div class="container" style="max-width: 1000px">
+        <h2 class="header-title" style="color: #10131a">Design 2</h2>
+
+        <div class="thha-advanced-icon-box thha-presets-2" data-thha-reveal>
+          <article class="thha-aib-edit-row">
+            <div class="thha-aib-edit-media">
+              <img
+                class="thha-aib-edit-img"
+                src="https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80"
+                alt="A ship's wake trailing down a steep-walled Norwegian fjord in low sun"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="thha-aib-edit-body">
+              <div class="thha-aib-edit-meta">
+                <span class="thha-aib-edit-index">01</span>
+                <span class="thha-aib-edit-badge">Season 04</span>
+              </div>
+              <h3 class="thha-aib-edit-title">Nordic Light</h3>
+              <p class="thha-aib-edit-text">
+                Eleven days chasing the blue hour between Ålesund and Tromsø,
+                shot entirely on expired 400 speed film.
+              </p>
+              <a class="thha-aib-edit-cta" href="#">Open the journal</a>
+            </div>
+          </article>
+
+          <article class="thha-aib-edit-row">
+            <div class="thha-aib-edit-media">
+              <img
+                class="thha-aib-edit-img"
+                src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80"
+                alt="Wind-rippled Sahara dunes under a high sun"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="thha-aib-edit-body">
+              <div class="thha-aib-edit-meta">
+                <span class="thha-aib-edit-index">02</span>
+                <span class="thha-aib-edit-badge">Field notes</span>
+              </div>
+              <h3 class="thha-aib-edit-title">Erg Chebbi</h3>
+              <p class="thha-aib-edit-text">
+                How a dune migrates four metres a year, told by the guides who
+                navigate them without a single instrument.
+              </p>
+              <a class="thha-aib-edit-cta" href="#">Open the journal</a>
+            </div>
+          </article>
+
+          <article class="thha-aib-edit-row">
+            <div class="thha-aib-edit-media">
+              <img
+                class="thha-aib-edit-img"
+                src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80"
+                alt="A shallow coral reef with schooling fish in clear water"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="thha-aib-edit-body">
+              <div class="thha-aib-edit-meta">
+                <span class="thha-aib-edit-index">03</span>
+                <span class="thha-aib-edit-badge">Long read</span>
+              </div>
+              <h3 class="thha-aib-edit-title">Coral Ledger</h3>
+              <p class="thha-aib-edit-text">
+                A reef census run by volunteers for nineteen straight years, and
+                what its handwritten pages predicted.
+              </p>
+              <a class="thha-aib-edit-cta" href="#">Open the journal</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 3 : Neo-Brutalist Pop
+         Hard offset shadow, 2px ink border, sticker badge, and a card that
+         physically snaps into its own shadow on hover. -->
+    <section style="background: #f2f0e9; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title" style="color: #10131a">Design 3</h2>
+
+        <div class="thha-advanced-icon-box thha-presets-3" data-thha-reveal>
+          <article class="thha-aib-pop-card" style="background: #ffd93d">
+            <span class="thha-aib-pop-badge">New drop</span>
+            <span class="thha-aib-pop-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-pop-title">Zero-fee<br />payouts</h3>
+            <p class="thha-aib-pop-text">
+              Send to 40 currencies at the mid-market rate. We take nothing on
+              the transfer — the maths is on the receipt.
+            </p>
+            <a class="thha-aib-pop-cta" href="#"
+              >Start sending <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="thha-aib-pop-card" style="background: #7cf0c2">
+            <span class="thha-aib-pop-badge">Live</span>
+            <span class="thha-aib-pop-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 17V7m6 10V4m6 13v-6m6 6V9" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-pop-title">Settlement<br />in minutes</h3>
+            <p class="thha-aib-pop-text">
+              Funds clear while the customer is still on the page. No T+2, no
+              reserve held back for a rainy quarter.
+            </p>
+            <a class="thha-aib-pop-cta" href="#"
+              >See the timing <span aria-hidden="true">→</span></a
+            >
+          </article>
+
+          <article class="thha-aib-pop-card" style="background: #ff9de2">
+            <span class="thha-aib-pop-badge">Free tier</span>
+            <span class="thha-aib-pop-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="6" width="20" height="13" rx="2" />
+                <path d="M2 11h20M6 15h4" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-pop-title">
+              Cards that<br />explain themselves
+            </h3>
+            <p class="thha-aib-pop-text">
+              Every charge arrives tagged, matched and reconciled, so month-end
+              stops being a two-day archaeology dig.
+            </p>
+            <a class="thha-aib-pop-cta" href="#"
+              >Open a card <span aria-hidden="true">→</span></a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 4 : Glass Aurora
+         Frosted panels over a living mesh gradient, tilting toward the cursor,
+         with a dashed halo that only orbits while the card is hovered. -->
+    <section
+      style="
+        background:
+          radial-gradient(42% 46% at 14% 20%, #7c5cff, transparent 66%),
+          radial-gradient(40% 42% at 86% 24%, #ff6fa8, transparent 66%),
+          radial-gradient(48% 48% at 46% 92%, #23c9c0, transparent 66%),
+          linear-gradient(160deg, #1a1440, #0d1030);
+        padding: 100px 0;
+      "
+    >
+      <div class="container">
+        <h2 class="header-title" style="color: #fff">Design 4</h2>
+
+        <div
+          class="thha-advanced-icon-box thha-presets-4"
+          data-thha-reveal
+          data-thha-tilt
+        >
+          <article class="thha-aib-glass-card">
+            <span class="thha-aib-glass-badge">Pro</span>
+            <span class="thha-aib-glass-icon" aria-hidden="true">
+              <span class="thha-aib-glass-ring"></span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-glass-title">Sleep Intelligence</h3>
+            <p class="thha-aib-glass-text">
+              Reads temperature, HRV and motion together, so a restless night is
+              explained rather than merely scored.
+            </p>
+            <a class="thha-aib-glass-cta" href="#">
+              Explore
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="thha-aib-glass-card">
+            <span class="thha-aib-glass-badge">Daily</span>
+            <span class="thha-aib-glass-icon" aria-hidden="true">
+              <span class="thha-aib-glass-ring"></span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2 12h4l2-6 4 12 2.5-7 1.5 3h6" />
+              </svg>
+            </span>
+            <h3 class="thha-aib-glass-title">Recovery Curve</h3>
+            <p class="thha-aib-glass-text">
+              One honest number each morning, drawn from fourteen nights of
+              context instead of yesterday alone.
+            </p>
+            <a class="thha-aib-glass-cta" href="#">
+              Explore
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="thha-aib-glass-card">
+            <span class="thha-aib-glass-badge">Beta</span>
+            <span class="thha-aib-glass-icon" aria-hidden="true">
+              <span class="thha-aib-glass-ring"></span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2 8c2.5-2.5 5-2.5 7.5 0S15 10.5 17.5 8 22 5.5 22 5.5M2 16c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 4.5-2.5 4.5-2.5"
+                />
+              </svg>
+            </span>
+            <h3 class="thha-aib-glass-title">Soundscapes</h3>
+            <p class="thha-aib-glass-text">
+              Generative low-frequency beds that shift with your breathing rate
+              and fade out once you are actually under.
+            </p>
+            <a class="thha-aib-glass-cta" href="#">
+              Explore
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h13m-5-6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design 5 : Cinematic Reveal
+         Full-bleed tiles on an ink panel. The title stays visible; the copy and
+         CTA rise in only on hover or keyboard focus. -->
+    <section style="background: #08090c; padding: 100px 0">
+      <div class="container">
+        <h2 class="header-title" style="color: #fff">Design 5</h2>
+
+        <div class="thha-advanced-icon-box thha-presets-5" data-thha-reveal>
+          <a class="thha-aib-cine-card thha-aib-cine-card--cliff" href="#">
+            <span class="thha-aib-cine-badge">Featured</span>
+            <div class="thha-aib-cine-inner">
+              <span class="thha-aib-cine-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="m3 11 9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"
+                  />
+                </svg>
+              </span>
+              <h3 class="thha-aib-cine-title">The Cliff House</h3>
+              <div class="thha-aib-cine-reveal">
+                <div class="thha-aib-cine-reveal-inner">
+                  <p class="thha-aib-cine-text">
+                    Cantilevered eleven metres over basalt, anchored by a single
+                    post-tensioned spine.
+                  </p>
+                  <span class="thha-aib-cine-cta"
+                    >View the build <span aria-hidden="true">→</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="thha-aib-cine-card thha-aib-cine-card--kiln" href="#">
+            <span class="thha-aib-cine-badge">Restored</span>
+            <div class="thha-aib-cine-inner">
+              <span class="thha-aib-cine-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 21V8l8-5 8 5v13" />
+                  <path d="M9 21v-6h6v6" />
+                </svg>
+              </span>
+              <h3 class="thha-aib-cine-title">Kiln No. 7</h3>
+              <div class="thha-aib-cine-reveal">
+                <div class="thha-aib-cine-reveal-inner">
+                  <p class="thha-aib-cine-text">
+                    A 1908 brickworks kept as found — soot, scars and all — with
+                    glass slid quietly between the arches.
+                  </p>
+                  <span class="thha-aib-cine-cta"
+                    >View the build <span aria-hidden="true">→</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="thha-aib-cine-card thha-aib-cine-card--atrium" href="#">
+            <span class="thha-aib-cine-badge">In progress</span>
+            <div class="thha-aib-cine-inner">
+              <span class="thha-aib-cine-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2v20M2 12h20" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </span>
+              <h3 class="thha-aib-cine-title">Solar Atrium</h3>
+              <div class="thha-aib-cine-reveal">
+                <div class="thha-aib-cine-reveal-inner">
+                  <p class="thha-aib-cine-text">
+                    A courtyard that heats itself: 400 m² of glazing angled to
+                    the January sun and shaded by July.
+                  </p>
+                  <span class="thha-aib-cine-cta"
+                    >View the build <span aria-hidden="true">→</span></span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/advanced-icon-box.js"></script>
+  </body>
+</html>

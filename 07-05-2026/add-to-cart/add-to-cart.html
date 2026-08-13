@@ -16,263 +16,359 @@
   </head>
   <body>
     <!-- =================================================================
-         Design 1 : Morphing "cart rolls in" button (idle → loading → added)
+         Design 1 : Editorial card — warm neutral, morphing add button
          ================================================================= -->
-    <section style="background-color: #f4f6fa; padding: 100px 0">
+    <section style="background-color: #f6f5f2; padding: 100px 0">
       <div class="container">
         <h2 class="header-title">Design 1</h2>
 
         <div class="thha-add-to-cart thha-presets-1">
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
-              <span class="thha-atc-prod-badge">-25%</span>
+          <article class="thha-atc-ed" data-thha-reveal>
+            <div class="thha-atc-ed-media">
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&auto=format&fit=crop"
-                alt="Red running sneaker"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80&auto=format&fit=crop"
+                alt="Red running sneaker on a plain background"
                 loading="lazy"
               />
+              <span class="thha-atc-ed-chip">Footwear</span>
+              <span class="thha-atc-ed-badge">−25%</span>
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Footwear</span>
-              <h3 class="thha-atc-prod-title">Aero Runner Pro</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 4.5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <span class="thha-atc-prod-count">(128)</span>
+            <div class="thha-atc-ed-body">
+              <h3 class="thha-atc-ed-title">Aero Runner Pro</h3>
+              <p class="thha-atc-ed-desc">
+                Featherweight knit upper with a responsive foam midsole.
+              </p>
+              <div class="thha-atc-ed-meta">
+                <span class="thha-atc-ed-stars" aria-label="Rated 4.5 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </span>
+                <span class="thha-atc-ed-count">128 reviews</span>
               </div>
-              <div class="thha-atc-prod-price">
-                <span class="thha-atc-prod-was">$120</span> $89
-              </div>
-              <div class="thha-atc-prod-control">
-                <button type="button" class="thha-atc-roll" data-state="idle">
-                  <span class="thha-atc-roll-icon" aria-hidden="true">
-                    <i class="fa-solid fa-cart-shopping thha-atc-roll-cart"></i>
-                    <i class="fa-solid fa-check thha-atc-roll-check"></i>
+              <div class="thha-atc-ed-foot">
+                <p class="thha-atc-ed-price">
+                  <span class="thha-atc-ed-was">$120</span>$89
+                </p>
+                <button
+                  type="button"
+                  class="thha-atc-morph"
+                  data-thha-morph
+                  data-state="idle"
+                  data-product="Aero Runner Pro"
+                >
+                  <span class="thha-atc-morph-face thha-atc-morph-face--idle">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <span>Add to Cart</span>
                   </span>
-                  <span class="thha-atc-roll-text">
-                    <span class="thha-atc-roll-word thha-atc-roll-word--idle"
-                      >Add to Cart</span
-                    >
-                    <span class="thha-atc-roll-word thha-atc-roll-word--done"
-                      >Added to Cart</span
-                    >
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--busy"
+                    aria-hidden="true"
+                  >
+                    <span class="thha-atc-morph-spin"></span>
+                  </span>
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--done"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                    <span>Added</span>
                   </span>
                 </button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
-              <span class="thha-atc-prod-badge thha-atc-prod-badge--new">New</span>
+          <article class="thha-atc-ed" data-thha-reveal>
+            <div class="thha-atc-ed-media">
               <img
-                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80&auto=format&fit=crop"
-                alt="Trail backpack"
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=80&auto=format&fit=crop"
+                alt="Dark navy backpack standing upright against a pale wall"
                 loading="lazy"
               />
+              <span class="thha-atc-ed-chip">Outdoor</span>
+              <span class="thha-atc-ed-badge thha-atc-ed-badge--new">New</span>
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Bags</span>
-              <h3 class="thha-atc-prod-title">Trail Pack 22L</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 4 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="thha-atc-prod-count">(64)</span>
+            <div class="thha-atc-ed-body">
+              <h3 class="thha-atc-ed-title">Trail Pack 22L</h3>
+              <p class="thha-atc-ed-desc">
+                Water-repellent shell with a padded laptop sleeve inside.
+              </p>
+              <div class="thha-atc-ed-meta">
+                <span class="thha-atc-ed-stars" aria-label="Rated 4 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </span>
+                <span class="thha-atc-ed-count">64 reviews</span>
               </div>
-              <div class="thha-atc-prod-price">$78</div>
-              <div class="thha-atc-prod-control">
+              <div class="thha-atc-ed-foot">
+                <p class="thha-atc-ed-price">$78</p>
                 <button
                   type="button"
-                  class="thha-atc-roll thha-atc-roll--violet"
+                  class="thha-atc-morph"
+                  data-thha-morph
                   data-state="idle"
+                  data-product="Trail Pack 22L"
                 >
-                  <span class="thha-atc-roll-icon" aria-hidden="true">
-                    <i class="fa-solid fa-bag-shopping thha-atc-roll-cart"></i>
-                    <i class="fa-solid fa-check thha-atc-roll-check"></i>
+                  <span class="thha-atc-morph-face thha-atc-morph-face--idle">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <span>Add to Cart</span>
                   </span>
-                  <span class="thha-atc-roll-text">
-                    <span class="thha-atc-roll-word thha-atc-roll-word--idle"
-                      >Add to Bag</span
-                    >
-                    <span class="thha-atc-roll-word thha-atc-roll-word--done"
-                      >In Your Bag</span
-                    >
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--busy"
+                    aria-hidden="true"
+                  >
+                    <span class="thha-atc-morph-spin"></span>
+                  </span>
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--done"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                    <span>Added</span>
                   </span>
                 </button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
+          <article class="thha-atc-ed" data-thha-reveal>
+            <div class="thha-atc-ed-media">
               <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80&auto=format&fit=crop"
-                alt="Wireless headphones"
+                src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=700&q=80&auto=format&fit=crop"
+                alt="Teal suede derby shoe on a pale plinth"
                 loading="lazy"
               />
+              <span class="thha-atc-ed-chip">Footwear</span>
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Audio</span>
-              <h3 class="thha-atc-prod-title">Studio Wave 700</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="thha-atc-prod-count">(210)</span>
+            <div class="thha-atc-ed-body">
+              <h3 class="thha-atc-ed-title">Verde Derby</h3>
+              <p class="thha-atc-ed-desc">
+                Hand-finished suede on a stitched leather welt sole.
+              </p>
+              <div class="thha-atc-ed-meta">
+                <span class="thha-atc-ed-stars" aria-label="Rated 5 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="thha-atc-ed-count">41 reviews</span>
               </div>
-              <div class="thha-atc-prod-price">$199</div>
-              <div class="thha-atc-prod-control">
+              <div class="thha-atc-ed-foot">
+                <p class="thha-atc-ed-price">$145</p>
                 <button
                   type="button"
-                  class="thha-atc-roll thha-atc-roll--amber"
+                  class="thha-atc-morph"
+                  data-thha-morph
                   data-state="idle"
+                  data-product="Verde Derby"
                 >
-                  <span class="thha-atc-roll-icon" aria-hidden="true">
-                    <i class="fa-solid fa-cart-plus thha-atc-roll-cart"></i>
-                    <i class="fa-solid fa-check thha-atc-roll-check"></i>
+                  <span class="thha-atc-morph-face thha-atc-morph-face--idle">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <span>Add to Cart</span>
                   </span>
-                  <span class="thha-atc-roll-text">
-                    <span class="thha-atc-roll-word thha-atc-roll-word--idle"
-                      >Buy Now</span
-                    >
-                    <span class="thha-atc-roll-word thha-atc-roll-word--done"
-                      >Confirmed</span
-                    >
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--busy"
+                    aria-hidden="true"
+                  >
+                    <span class="thha-atc-morph-spin"></span>
+                  </span>
+                  <span
+                    class="thha-atc-morph-face thha-atc-morph-face--done"
+                    aria-hidden="true"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                    <span>Added</span>
                   </span>
                 </button>
               </div>
             </div>
           </article>
+
+          <span class="thha-atc-sr" role="status" aria-live="polite"></span>
         </div>
       </div>
     </section>
 
     <!-- =================================================================
-         Design 2 : All-in-one bar — quantity stepper + live price + add
+         Design 2 : Frosted glass on a dark mesh — stepper + live total
          ================================================================= -->
-    <section style="background-color: #ffffff; padding: 100px 0">
+    <section class="thha-atc-dark" style="padding: 110px 0">
       <div class="container">
         <h2 class="header-title">Design 2</h2>
 
         <div class="thha-add-to-cart thha-presets-2">
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
+          <article class="thha-atc-glass" data-thha-reveal>
+            <div class="thha-atc-glass-media">
               <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop"
-                alt="Wrist watch"
+                src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=700&q=80&auto=format&fit=crop"
+                alt="Copper and silver over-ear headphones lit warmly"
                 loading="lazy"
               />
+              <span class="thha-atc-glass-chip">Audio</span>
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Accessories</span>
-              <h3 class="thha-atc-prod-title">Nordic Time 02</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 4 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="thha-atc-prod-count">(76)</span>
+            <div class="thha-atc-glass-body">
+              <h3 class="thha-atc-glass-title">Lumen Over-Ear</h3>
+              <div class="thha-atc-glass-meta">
+                <span class="thha-atc-glass-stars" aria-label="Rated 4.5 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </span>
+                <span class="thha-atc-glass-unit">$189 each</span>
               </div>
-              <div class="thha-atc-prod-price">$59 <span class="thha-atc-prod-unit">/ each</span></div>
-              <div class="thha-atc-prod-control">
-                <div
-                  class="thha-atc-bar"
-                  data-unit-price="59"
-                  data-min="1"
-                  data-max="10"
-                >
-                  <div class="thha-atc-stepper" role="group" aria-label="Quantity">
-                    <button
-                      type="button"
-                      class="thha-atc-step thha-atc-step--minus"
-                      aria-label="Decrease quantity"
-                    >
-                      <i class="fa-solid fa-minus"></i>
-                    </button>
-                    <span class="thha-atc-qty" aria-live="polite">1</span>
-                    <button
-                      type="button"
-                      class="thha-atc-step thha-atc-step--plus"
-                      aria-label="Increase quantity"
-                    >
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
 
-                  <button type="button" class="thha-atc-bar-btn">
-                    <span class="thha-atc-bar-icon" aria-hidden="true">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </span>
-                    <span class="thha-atc-bar-label">Add to Cart</span>
-                    <span class="thha-atc-bar-price">$<span class="thha-atc-total">59</span></span>
+              <div
+                class="thha-atc-qbar"
+                data-unit-price="189"
+                data-min="1"
+                data-max="8"
+              >
+                <div class="thha-atc-stepper" role="group" aria-label="Quantity">
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--minus"
+                    aria-label="Decrease quantity"
+                  >
+                    <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                  </button>
+                  <span class="thha-atc-qty" aria-live="polite">1</span>
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--plus"
+                    aria-label="Increase quantity"
+                  >
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
+
+                <button type="button" class="thha-atc-qadd">
+                  <span class="thha-atc-qadd-label">Add</span>
+                  <span class="thha-atc-qadd-total"
+                    >$<span class="thha-atc-total">189</span></span
+                  >
+                </button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-prod thha-atc-prod--mint">
-            <div class="thha-atc-prod-media">
+          <article class="thha-atc-glass" data-thha-reveal>
+            <div class="thha-atc-glass-media">
               <img
-                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80&auto=format&fit=crop"
-                alt="Film camera"
+                src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=700&q=80&auto=format&fit=crop"
+                alt="Wireless earbuds resting beside their charging case"
                 loading="lazy"
               />
+              <span class="thha-atc-glass-chip">Audio</span>
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Photography</span>
-              <h3 class="thha-atc-prod-title">Snap 35mm</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 4.5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <span class="thha-atc-prod-count">(54)</span>
+            <div class="thha-atc-glass-body">
+              <h3 class="thha-atc-glass-title">Pulse Buds Mini</h3>
+              <div class="thha-atc-glass-meta">
+                <span class="thha-atc-glass-stars" aria-label="Rated 4 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </span>
+                <span class="thha-atc-glass-unit">$99 each</span>
               </div>
-              <div class="thha-atc-prod-price">$120 <span class="thha-atc-prod-unit">/ each</span></div>
-              <div class="thha-atc-prod-control">
-                <div
-                  class="thha-atc-bar thha-atc-bar--mint"
-                  data-unit-price="120"
-                  data-min="1"
-                  data-max="8"
-                >
-                  <div class="thha-atc-stepper" role="group" aria-label="Quantity">
-                    <button
-                      type="button"
-                      class="thha-atc-step thha-atc-step--minus"
-                      aria-label="Decrease quantity"
-                    >
-                      <i class="fa-solid fa-minus"></i>
-                    </button>
-                    <span class="thha-atc-qty" aria-live="polite">1</span>
-                    <button
-                      type="button"
-                      class="thha-atc-step thha-atc-step--plus"
-                      aria-label="Increase quantity"
-                    >
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
 
-                  <button type="button" class="thha-atc-bar-btn">
-                    <span class="thha-atc-bar-icon" aria-hidden="true">
-                      <i class="fa-solid fa-basket-shopping"></i>
-                    </span>
-                    <span class="thha-atc-bar-label">Add to Cart</span>
-                    <span class="thha-atc-bar-price">$<span class="thha-atc-total">120</span></span>
+              <div
+                class="thha-atc-qbar"
+                data-unit-price="99"
+                data-min="1"
+                data-max="12"
+              >
+                <div class="thha-atc-stepper" role="group" aria-label="Quantity">
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--minus"
+                    aria-label="Decrease quantity"
+                  >
+                    <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                  </button>
+                  <span class="thha-atc-qty" aria-live="polite">1</span>
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--plus"
+                    aria-label="Increase quantity"
+                  >
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
+
+                <button type="button" class="thha-atc-qadd">
+                  <span class="thha-atc-qadd-label">Add</span>
+                  <span class="thha-atc-qadd-total"
+                    >$<span class="thha-atc-total">99</span></span
+                  >
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="thha-atc-glass" data-thha-reveal>
+            <div class="thha-atc-glass-media">
+              <img
+                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=700&q=80&auto=format&fit=crop"
+                alt="Black studio headphones on a light grey background"
+                loading="lazy"
+              />
+              <span class="thha-atc-glass-chip">Audio</span>
+            </div>
+            <div class="thha-atc-glass-body">
+              <h3 class="thha-atc-glass-title">Monitor XT</h3>
+              <div class="thha-atc-glass-meta">
+                <span class="thha-atc-glass-stars" aria-label="Rated 5 out of 5">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="thha-atc-glass-unit">$229 each</span>
+              </div>
+
+              <div
+                class="thha-atc-qbar"
+                data-unit-price="229"
+                data-min="1"
+                data-max="6"
+              >
+                <div class="thha-atc-stepper" role="group" aria-label="Quantity">
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--minus"
+                    aria-label="Decrease quantity"
+                  >
+                    <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                  </button>
+                  <span class="thha-atc-qty" aria-live="polite">1</span>
+                  <button
+                    type="button"
+                    class="thha-atc-step thha-atc-step--plus"
+                    aria-label="Increase quantity"
+                  >
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+                <button type="button" class="thha-atc-qadd">
+                  <span class="thha-atc-qadd-label">Add</span>
+                  <span class="thha-atc-qadd-total"
+                    >$<span class="thha-atc-total">229</span></span
+                  >
+                </button>
               </div>
             </div>
           </article>
@@ -281,258 +377,353 @@
     </section>
 
     <!-- =================================================================
-         Design 3 : Product cards with hover-reveal "Add to Cart"
+         Design 3 : Minimal marketplace — swatches + slide-up quick add
          ================================================================= -->
-    <section style="background-color: #f8fafc; padding: 100px 0">
+    <section style="background-color: #ffffff; padding: 100px 0">
       <div class="container">
         <h2 class="header-title">Design 3</h2>
 
         <div class="thha-add-to-cart thha-presets-3">
-          <article class="thha-atc-card">
-            <div class="thha-atc-card-media">
-              <span class="thha-atc-card-badge">-25%</span>
+          <article class="thha-atc-min" data-thha-reveal>
+            <div class="thha-atc-min-media">
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&auto=format&fit=crop"
-                alt="Red running sneaker"
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80&auto=format&fit=crop"
+                alt="Round minimalist watch with a white silicone strap"
                 loading="lazy"
               />
-              <div class="thha-atc-card-actions" aria-hidden="true">
-                <button type="button" class="thha-atc-card-icon" title="Wishlist">
-                  <i class="fa-regular fa-heart"></i>
+              <div class="thha-atc-min-rail">
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  data-thha-wish
+                  aria-pressed="false"
+                  aria-label="Save Nordic Time 02 to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </button>
-                <button type="button" class="thha-atc-card-icon" title="Quick view">
-                  <i class="fa-regular fa-eye"></i>
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  aria-label="Quick view Nordic Time 02"
+                >
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
-            </div>
-            <div class="thha-atc-card-body">
-              <span class="thha-atc-card-cat">Footwear</span>
-              <h3 class="thha-atc-card-title">Aero Runner Pro</h3>
-              <div class="thha-atc-card-stars" aria-label="Rated 4.5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <span class="thha-atc-card-count">(128)</span>
-              </div>
-              <div class="thha-atc-card-foot">
-                <span class="thha-atc-card-price">
-                  <span class="thha-atc-card-was">$120</span> $89
+              <button
+                type="button"
+                class="thha-atc-min-quick"
+                data-thha-quick
+                data-product="Nordic Time 02"
+              >
+                <span class="thha-atc-min-quick-idle">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i> Quick Add
                 </span>
-                <button type="button" class="thha-atc-card-add" data-state="idle">
-                  <span class="thha-atc-card-add-idle">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span>Add to Cart</span>
-                  </span>
-                  <span class="thha-atc-card-add-done">
-                    <i class="fa-solid fa-check"></i>
-                    <span>Added</span>
-                  </span>
-                </button>
+                <span class="thha-atc-min-quick-done" aria-hidden="true">
+                  <i class="fa-solid fa-check"></i> Added
+                </span>
+              </button>
+            </div>
+            <div class="thha-atc-min-body">
+              <div class="thha-atc-min-top">
+                <span class="thha-atc-min-cat">Watches</span>
+                <span class="thha-atc-min-price">$59</span>
+              </div>
+              <h3 class="thha-atc-min-title">Nordic Time 02</h3>
+              <div class="thha-atc-min-sws" role="group" aria-label="Choose a strap colour">
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #e5e7eb"
+                  aria-pressed="true"
+                  aria-label="White silicone"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #1f2937"
+                  aria-pressed="false"
+                  aria-label="Black silicone"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #9ca3af"
+                  aria-pressed="false"
+                  aria-label="Steel mesh"
+                ></button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-card">
-            <div class="thha-atc-card-media">
-              <span class="thha-atc-card-badge thha-atc-card-badge--new">New</span>
+          <article class="thha-atc-min" data-thha-reveal>
+            <div class="thha-atc-min-media">
               <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80&auto=format&fit=crop"
-                alt="Wireless headphones"
+                src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=700&q=80&auto=format&fit=crop"
+                alt="Teal leather top-handle handbag beside a plant"
                 loading="lazy"
               />
-              <div class="thha-atc-card-actions" aria-hidden="true">
-                <button type="button" class="thha-atc-card-icon" title="Wishlist">
-                  <i class="fa-regular fa-heart"></i>
+              <div class="thha-atc-min-rail">
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  data-thha-wish
+                  aria-pressed="false"
+                  aria-label="Save Marlow Top Handle to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </button>
-                <button type="button" class="thha-atc-card-icon" title="Quick view">
-                  <i class="fa-regular fa-eye"></i>
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  aria-label="Quick view Marlow Top Handle"
+                >
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
+              <button
+                type="button"
+                class="thha-atc-min-quick"
+                data-thha-quick
+                data-product="Marlow Top Handle"
+              >
+                <span class="thha-atc-min-quick-idle">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i> Quick Add
+                </span>
+                <span class="thha-atc-min-quick-done" aria-hidden="true">
+                  <i class="fa-solid fa-check"></i> Added
+                </span>
+              </button>
             </div>
-            <div class="thha-atc-card-body">
-              <span class="thha-atc-card-cat">Audio</span>
-              <h3 class="thha-atc-card-title">Studio Wave 700</h3>
-              <div class="thha-atc-card-stars" aria-label="Rated 5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="thha-atc-card-count">(342)</span>
+            <div class="thha-atc-min-body">
+              <div class="thha-atc-min-top">
+                <span class="thha-atc-min-cat">Bags</span>
+                <span class="thha-atc-min-price">$240</span>
               </div>
-              <div class="thha-atc-card-foot">
-                <span class="thha-atc-card-price">$199</span>
-                <button type="button" class="thha-atc-card-add" data-state="idle">
-                  <span class="thha-atc-card-add-idle">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span>Add to Cart</span>
-                  </span>
-                  <span class="thha-atc-card-add-done">
-                    <i class="fa-solid fa-check"></i>
-                    <span>Added</span>
-                  </span>
-                </button>
+              <h3 class="thha-atc-min-title">Marlow Top Handle</h3>
+              <div class="thha-atc-min-sws" role="group" aria-label="Choose a colour">
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #0f766e"
+                  aria-pressed="true"
+                  aria-label="Teal"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #7c2d12"
+                  aria-pressed="false"
+                  aria-label="Cognac"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #111827"
+                  aria-pressed="false"
+                  aria-label="Black"
+                ></button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-card">
-            <div class="thha-atc-card-media">
+          <article class="thha-atc-min" data-thha-reveal>
+            <div class="thha-atc-min-media">
               <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop"
-                alt="Wrist watch"
+                src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=700&q=80&auto=format&fit=crop"
+                alt="Sunglasses with thick black frames on a white surface"
                 loading="lazy"
               />
-              <div class="thha-atc-card-actions" aria-hidden="true">
-                <button type="button" class="thha-atc-card-icon" title="Wishlist">
-                  <i class="fa-regular fa-heart"></i>
+              <div class="thha-atc-min-rail">
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  data-thha-wish
+                  aria-pressed="false"
+                  aria-label="Save Solis Shades to wishlist"
+                >
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </button>
-                <button type="button" class="thha-atc-card-icon" title="Quick view">
-                  <i class="fa-regular fa-eye"></i>
+                <button
+                  type="button"
+                  class="thha-atc-min-icon"
+                  aria-label="Quick view Solis Shades"
+                >
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
+              <button
+                type="button"
+                class="thha-atc-min-quick"
+                data-thha-quick
+                data-product="Solis Shades"
+              >
+                <span class="thha-atc-min-quick-idle">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i> Quick Add
+                </span>
+                <span class="thha-atc-min-quick-done" aria-hidden="true">
+                  <i class="fa-solid fa-check"></i> Added
+                </span>
+              </button>
             </div>
-            <div class="thha-atc-card-body">
-              <span class="thha-atc-card-cat">Accessories</span>
-              <h3 class="thha-atc-card-title">Nordic Time 02</h3>
-              <div class="thha-atc-card-stars" aria-label="Rated 4 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="thha-atc-card-count">(76)</span>
+            <div class="thha-atc-min-body">
+              <div class="thha-atc-min-top">
+                <span class="thha-atc-min-cat">Eyewear</span>
+                <span class="thha-atc-min-price">$45</span>
               </div>
-              <div class="thha-atc-card-foot">
-                <span class="thha-atc-card-price">$249</span>
-                <button type="button" class="thha-atc-card-add" data-state="idle">
-                  <span class="thha-atc-card-add-idle">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span>Add to Cart</span>
-                  </span>
-                  <span class="thha-atc-card-add-done">
-                    <i class="fa-solid fa-check"></i>
-                    <span>Added</span>
-                  </span>
-                </button>
+              <h3 class="thha-atc-min-title">Solis Shades</h3>
+              <div class="thha-atc-min-sws" role="group" aria-label="Choose a lens tint">
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #374151"
+                  aria-pressed="true"
+                  aria-label="Smoke"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #b45309"
+                  aria-pressed="false"
+                  aria-label="Amber"
+                ></button>
+                <button
+                  type="button"
+                  class="thha-atc-min-sw"
+                  style="--thha-sw: #1d4ed8"
+                  aria-pressed="false"
+                  aria-label="Blue mirror"
+                ></button>
               </div>
             </div>
           </article>
+
+          <span class="thha-atc-sr" role="status" aria-live="polite"></span>
         </div>
       </div>
     </section>
 
     <!-- =================================================================
-         Design 4 : Slide-to-confirm "Slide to Add to Cart"
+         Design 4 : Ink card with a slide-to-confirm gesture
          ================================================================= -->
-    <section style="background-color: #eef2f7; padding: 110px 0">
+    <section style="background-color: #eceae6; padding: 110px 0">
       <div class="container">
         <h2 class="header-title">Design 4</h2>
 
         <div class="thha-add-to-cart thha-presets-4">
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
-              <span class="thha-atc-prod-badge thha-atc-prod-badge--new">New</span>
+          <article class="thha-atc-ink" data-thha-reveal>
+            <div class="thha-atc-ink-media">
               <img
-                src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80&auto=format&fit=crop"
-                alt="Sunglasses"
+                src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=700&q=80&auto=format&fit=crop"
+                alt="Smartwatch with a black sport band"
                 loading="lazy"
               />
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Eyewear</span>
-              <h3 class="thha-atc-prod-title">Solis Shades</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 4.5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <span class="thha-atc-prod-count">(92)</span>
-              </div>
-              <div class="thha-atc-prod-price">$45</div>
-              <div class="thha-atc-prod-control">
-                <div class="thha-atc-slide" data-state="idle">
-                  <span class="thha-atc-slide-fill" aria-hidden="true"></span>
-                  <span class="thha-atc-slide-label">
-                    <span class="thha-atc-slide-label--idle">
-                      Slide to Add to Cart
-                      <i class="fa-solid fa-angles-right"></i>
-                    </span>
-                    <span class="thha-atc-slide-label--done">
-                      <i class="fa-solid fa-check"></i> Added to Cart
-                    </span>
+            <div class="thha-atc-ink-body">
+              <span class="thha-atc-ink-cat">Wearables</span>
+              <h3 class="thha-atc-ink-title">Vitals Watch S</h3>
+              <p class="thha-atc-ink-price">$299</p>
+              <div class="thha-atc-slide" data-state="idle" data-product="Vitals Watch S">
+                <span class="thha-atc-slide-fill" aria-hidden="true"></span>
+                <span class="thha-atc-slide-label" aria-hidden="true">
+                  <span class="thha-atc-slide-label--idle">
+                    Slide to add
+                    <i class="fa-solid fa-angles-right"></i>
                   </span>
-                  <button
-                    type="button"
-                    class="thha-atc-slide-thumb"
-                    aria-label="Slide to add to cart"
-                  >
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-solid fa-check"></i>
-                  </button>
-                </div>
+                  <span class="thha-atc-slide-label--done">
+                    <i class="fa-solid fa-check"></i> Added to cart
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  class="thha-atc-slide-thumb"
+                  aria-label="Slide to add Vitals Watch S to cart"
+                >
+                  <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </article>
 
-          <article class="thha-atc-prod">
-            <div class="thha-atc-prod-media">
-              <span class="thha-atc-prod-badge">-30%</span>
+          <article class="thha-atc-ink" data-thha-reveal>
+            <div class="thha-atc-ink-media">
               <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&auto=format&fit=crop"
-                alt="Running sneaker"
+                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=700&q=80&auto=format&fit=crop"
+                alt="White instant film camera on a neutral surface"
                 loading="lazy"
               />
             </div>
-            <div class="thha-atc-prod-body">
-              <span class="thha-atc-prod-cat">Footwear</span>
-              <h3 class="thha-atc-prod-title">Aero Runner Pro</h3>
-              <div class="thha-atc-prod-stars" aria-label="Rated 5 of 5">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="thha-atc-prod-count">(128)</span>
-              </div>
-              <div class="thha-atc-prod-price">
-                <span class="thha-atc-prod-was">$120</span> $89
-              </div>
-              <div class="thha-atc-prod-control">
-                <div class="thha-atc-slide thha-atc-slide--coral" data-state="idle">
-                  <span class="thha-atc-slide-fill" aria-hidden="true"></span>
-                  <span class="thha-atc-slide-label">
-                    <span class="thha-atc-slide-label--idle">
-                      Slide to Checkout
-                      <i class="fa-solid fa-angles-right"></i>
-                    </span>
-                    <span class="thha-atc-slide-label--done">
-                      <i class="fa-solid fa-check"></i> Order Placed
-                    </span>
+            <div class="thha-atc-ink-body">
+              <span class="thha-atc-ink-cat">Photography</span>
+              <h3 class="thha-atc-ink-title">Instant Snap 600</h3>
+              <p class="thha-atc-ink-price">$310</p>
+              <div class="thha-atc-slide" data-state="idle" data-product="Instant Snap 600">
+                <span class="thha-atc-slide-fill" aria-hidden="true"></span>
+                <span class="thha-atc-slide-label" aria-hidden="true">
+                  <span class="thha-atc-slide-label--idle">
+                    Slide to add
+                    <i class="fa-solid fa-angles-right"></i>
                   </span>
-                  <button
-                    type="button"
-                    class="thha-atc-slide-thumb"
-                    aria-label="Slide to checkout"
-                  >
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <i class="fa-solid fa-check"></i>
-                  </button>
-                </div>
+                  <span class="thha-atc-slide-label--done">
+                    <i class="fa-solid fa-check"></i> Added to cart
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  class="thha-atc-slide-thumb"
+                  aria-label="Slide to add Instant Snap 600 to cart"
+                >
+                  <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </article>
+
+          <article class="thha-atc-ink" data-thha-reveal>
+            <div class="thha-atc-ink-media">
+              <img
+                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=700&q=80&auto=format&fit=crop"
+                alt="Steel chronograph watch with a navy dial"
+                loading="lazy"
+              />
+            </div>
+            <div class="thha-atc-ink-body">
+              <span class="thha-atc-ink-cat">Watches</span>
+              <h3 class="thha-atc-ink-title">Meridian Chrono</h3>
+              <p class="thha-atc-ink-price">$420</p>
+              <div class="thha-atc-slide" data-state="idle" data-product="Meridian Chrono">
+                <span class="thha-atc-slide-fill" aria-hidden="true"></span>
+                <span class="thha-atc-slide-label" aria-hidden="true">
+                  <span class="thha-atc-slide-label--idle">
+                    Slide to add
+                    <i class="fa-solid fa-angles-right"></i>
+                  </span>
+                  <span class="thha-atc-slide-label--done">
+                    <i class="fa-solid fa-check"></i> Added to cart
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  class="thha-atc-slide-thumb"
+                  aria-label="Slide to add Meridian Chrono to cart"
+                >
+                  <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <span class="thha-atc-sr" role="status" aria-live="polite"></span>
         </div>
       </div>
     </section>
 
     <!-- =================================================================
-         Design 5 : Mini shop — fly-to-cart with floating badge counter
+         Design 5 : Mini shop — fly-to-cart with a floating counter
          ================================================================= -->
-    <section style="background-color: #ffffff; padding: 100px 0">
+    <section style="background-color: #f8fafc; padding: 100px 0">
       <div class="container">
         <h2 class="header-title">Design 5</h2>
 
@@ -541,84 +732,162 @@
             <button
               type="button"
               class="thha-atc-cart"
-              aria-label="View cart"
+              data-thha-cart-open
+              aria-label="View cart, empty"
+              aria-expanded="false"
+              aria-controls="thha-atc-drawer"
             >
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span class="thha-atc-cart-badge" data-count="0">0</span>
+              <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+              <span class="thha-atc-cart-badge" data-count="0" aria-hidden="true"
+                >0</span
+              >
             </button>
 
             <div class="thha-atc-grid">
               <article
                 class="thha-atc-tile"
-                data-img="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&q=80&auto=format&fit=crop"
+                data-thha-reveal
+                data-price="64"
+                data-img="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300&q=80&auto=format&fit=crop"
               >
                 <div class="thha-atc-tile-img">
                   <img
-                    src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80&auto=format&fit=crop"
-                    alt="Sunglasses"
+                    src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600&q=80&auto=format&fit=crop"
+                    alt="Skincare serum bottles stacked in mid-air"
                     loading="lazy"
                   />
                 </div>
-                <h3 class="thha-atc-tile-name">Solis Shades</h3>
-                <span class="thha-atc-tile-price">$45</span>
-                <button type="button" class="thha-atc-tile-add" aria-label="Add Solis Shades to cart">
-                  <i class="fa-solid fa-plus"></i>
+                <div class="thha-atc-tile-info">
+                  <h3 class="thha-atc-tile-name">Botanic Ritual Set</h3>
+                  <span class="thha-atc-tile-cat">Skincare</span>
+                </div>
+                <span class="thha-atc-tile-price">$64</span>
+                <button
+                  type="button"
+                  class="thha-atc-tile-add"
+                  data-product="Botanic Ritual Set"
+                  aria-label="Add Botanic Ritual Set to cart"
+                >
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 </button>
               </article>
 
               <article
                 class="thha-atc-tile"
-                data-img="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80&auto=format&fit=crop"
+                data-thha-reveal
+                data-price="129"
+                data-img="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&q=80&auto=format&fit=crop"
               >
                 <div class="thha-atc-tile-img">
                   <img
-                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80&auto=format&fit=crop"
-                    alt="Backpack"
+                    src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80&auto=format&fit=crop"
+                    alt="Slim white wireless keyboard on a desk"
                     loading="lazy"
                   />
                 </div>
-                <h3 class="thha-atc-tile-name">Trail Pack 22L</h3>
-                <span class="thha-atc-tile-price">$78</span>
-                <button type="button" class="thha-atc-tile-add" aria-label="Add Trail Pack to cart">
-                  <i class="fa-solid fa-plus"></i>
+                <div class="thha-atc-tile-info">
+                  <h3 class="thha-atc-tile-name">Slate Keys 75</h3>
+                  <span class="thha-atc-tile-cat">Desk</span>
+                </div>
+                <span class="thha-atc-tile-price">$129</span>
+                <button
+                  type="button"
+                  class="thha-atc-tile-add"
+                  data-product="Slate Keys 75"
+                  aria-label="Add Slate Keys 75 to cart"
+                >
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 </button>
               </article>
 
               <article
                 class="thha-atc-tile"
-                data-img="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&q=80&auto=format&fit=crop"
+                data-thha-reveal
+                data-price="110"
+                data-img="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=300&q=80&auto=format&fit=crop"
               >
                 <div class="thha-atc-tile-img">
                   <img
-                    src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&q=80&auto=format&fit=crop"
-                    alt="Camera"
+                    src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80&auto=format&fit=crop"
+                    alt="Pair of brightly patterned court sneakers"
                     loading="lazy"
                   />
                 </div>
-                <h3 class="thha-atc-tile-name">Snap 35mm</h3>
-                <span class="thha-atc-tile-price">$310</span>
-                <button type="button" class="thha-atc-tile-add" aria-label="Add Snap 35mm to cart">
-                  <i class="fa-solid fa-plus"></i>
+                <div class="thha-atc-tile-info">
+                  <h3 class="thha-atc-tile-name">Prism Court</h3>
+                  <span class="thha-atc-tile-cat">Footwear</span>
+                </div>
+                <span class="thha-atc-tile-price">$110</span>
+                <button
+                  type="button"
+                  class="thha-atc-tile-add"
+                  data-product="Prism Court"
+                  aria-label="Add Prism Court to cart"
+                >
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 </button>
               </article>
+            </div>
 
-              <article
-                class="thha-atc-tile"
-                data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80&auto=format&fit=crop"
+            <span class="thha-atc-sr" role="status" aria-live="polite"></span>
+
+            <!-- Off-canvas cart. Lines are rendered from the cart state in
+                 JS; this is only the shell. -->
+            <div class="thha-atc-drawer" id="thha-atc-drawer" data-thha-drawer>
+              <div class="thha-atc-drawer-scrim" data-thha-cart-close></div>
+
+              <aside
+                class="thha-atc-drawer-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="thha-atc-drawer-title"
               >
-                <div class="thha-atc-tile-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80&auto=format&fit=crop"
-                    alt="Sneaker"
-                    loading="lazy"
-                  />
+                <header class="thha-atc-drawer-head">
+                  <h3 class="thha-atc-drawer-title" id="thha-atc-drawer-title">
+                    Your Cart
+                    <span class="thha-atc-drawer-count">0 items</span>
+                  </h3>
+                  <button
+                    type="button"
+                    class="thha-atc-drawer-x"
+                    data-thha-cart-close
+                    aria-label="Close cart"
+                  >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                  </button>
+                </header>
+
+                <div class="thha-atc-drawer-body">
+                  <p class="thha-atc-drawer-empty">
+                    <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                    <span>Your cart is empty.</span>
+                    <small>Add something from the shop to see it here.</small>
+                  </p>
+                  <ul class="thha-atc-lines"></ul>
                 </div>
-                <h3 class="thha-atc-tile-name">Aero Runner</h3>
-                <span class="thha-atc-tile-price">$89</span>
-                <button type="button" class="thha-atc-tile-add" aria-label="Add Aero Runner to cart">
-                  <i class="fa-solid fa-plus"></i>
-                </button>
-              </article>
+
+                <footer class="thha-atc-drawer-foot">
+                  <div class="thha-atc-sum">
+                    <span>Subtotal</span>
+                    <span class="thha-atc-sum-total">$0</span>
+                  </div>
+                  <p class="thha-atc-sum-note">
+                    Shipping and taxes calculated at checkout.
+                  </p>
+                  <div class="thha-atc-drawer-actions">
+                    <button
+                      type="button"
+                      class="thha-atc-clear"
+                      data-thha-cart-clear
+                    >
+                      Clear all
+                    </button>
+                    <button type="button" class="thha-atc-checkout">
+                      Checkout
+                    </button>
+                  </div>
+                </footer>
+              </aside>
             </div>
           </div>
         </div>
